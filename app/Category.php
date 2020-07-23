@@ -138,6 +138,6 @@ class Category extends Model implements HasMedia
 
 	public function getIsParentAttribute(): bool
 	{
-		return (bool) !$this->category_id;
+		return (bool) ! $this->category_id;
 	}
 }

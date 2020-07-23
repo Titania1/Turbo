@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Laravel\Nova\Nova;
+use KABBOUCHI\LogsTool\LogsTool;
 use Illuminate\Support\Facades\Gate;
 use Whitecube\NovaPage\NovaPageTool;
 use Jubeki\Nova\Cards\Linkable\Linkable;
-use KABBOUCHI\LogsTool\LogsTool;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Vyuldashev\NovaPermission\NovaPermissionTool;
 
