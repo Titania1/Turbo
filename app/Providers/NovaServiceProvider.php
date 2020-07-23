@@ -24,8 +24,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 		Nova::style('admin', public_path('css/admin.css'));
 		if (app()->isLocale('fr')) {
 			Nova::translations([
-				"Load per file" => "Importer par excel",
-				"Manual loading" => "Chargement Manuel",
+				'Load per file' => 'Importer par excel',
+				'Manual loading' => 'Chargement Manuel',
 			]);
 		}
 		parent::boot();
