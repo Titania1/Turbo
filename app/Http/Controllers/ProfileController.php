@@ -58,7 +58,10 @@ class ProfileController extends Controller
 	 */
 	public function edit()
 	{
-		$profile = auth()->user()->profile;
+		$profile = auth()->user()->profile()->firstOrCreate([
+			'avatar' => '/images/avatar.png',
+			'locale' => app()->getLocale(),
+		]);
 
 		return view('profile', compact('profile'));
 	}
