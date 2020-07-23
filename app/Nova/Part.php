@@ -13,6 +13,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\KeyValue;
 use Armincms\Fields\BelongsToMany;
 use App\Nova\Actions\ChangePartViews;
+use App\Supplier;
 use Emiliogrv\NovaBatchLoad\BatchLoadField;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Caddydz\NovaPreviewResource\NovaPreviewResource;
@@ -87,13 +88,11 @@ class Part extends Resource
 			Number::make(__('Views'), fn ($part) => $part->views)->canSee(fn ($request) => $request->user()->can('See Part Views')),
 			NovaPreviewResource::make(__('Preview'))
 				->image($this->cartHeaderImage)
-				->title("$this->sku $this->title")
-				->buyPrice(function () {
-					return optional(InvoicePart::where('part_id', $this->id)->first())->buyPrice;
-				})
-				->sellPrice(function () {
-					return optional(InvoicePart::where('part_id', $this->id)->first())->sellPrice;
-				}),
+				->options([
+					__('Buy Price') => $this->buyPrice,
+					__('Sell Price') => $this->sellPrice,
+					__('Supplier') => $this->supplier,
+				])
 		];
 	}
 

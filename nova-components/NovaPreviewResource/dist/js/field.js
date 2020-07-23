@@ -266,7 +266,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: ["resourceName", "field"],
@@ -274,20 +273,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			image: "",
-			title: "",
-			buyPrice: 0,
-			sellPrice: 0,
-			related: "",
-			list: []
+			value: []
 		};
 	},
 	created: function created() {
 		this.image = this.field.image;
-		this.title = this.field.title;
-		this.buyPrice = this.field.buyPrice;
-		this.sellPrice = this.field.sellPrice;
-		this.related = this.field.related;
-		this.list = this.field.list;
+		this.field.value = this.field.value || {};
+
+		this.value = _(this.field.options).map(function (o) {
+			return {
+				name: o.name,
+				label: o.label
+			};
+		}).value();
 	}
 });
 
@@ -326,13 +324,33 @@ var render = function() {
             [
               _c("img", { attrs: { src: _vm.image, alt: _vm.__("Photo") } }),
               _vm._v(" "),
-              _c("div", [_vm._v(_vm._s(_vm.title))]),
-              _vm._v(" "),
-              _c("ol", [
-                _c("li", [_vm._v(_vm._s(_vm.buyPrice))]),
-                _vm._v(" "),
-                _c("li", [_vm._v(_vm._s(_vm.sellPrice))])
-              ])
+              _c(
+                "ul",
+                { staticClass: "list-reset" },
+                _vm._l(_vm.value, function(option) {
+                  return _c("li", { key: option, staticClass: "mb-1" }, [
+                    option.label
+                      ? _c(
+                          "span",
+                          {
+                            staticClass:
+                              "inline-flex items-center py-1 pl-2 pr-3 rounded-full font-bold text-sm"
+                          },
+                          [
+                            _c("span", { staticClass: "ml-1" }, [
+                              _vm._v(_vm._s(option.name))
+                            ]),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "ml-1" }, [
+                              _vm._v(_vm._s(option.label))
+                            ])
+                          ]
+                        )
+                      : _vm._e()
+                  ])
+                }),
+                0
+              )
             ]
           )
         ],

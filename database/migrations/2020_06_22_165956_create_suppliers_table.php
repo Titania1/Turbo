@@ -24,8 +24,8 @@ class CreateSuppliersTable extends Migration
 			$table->unsignedBigInteger('owner_id')->nullable();
 			$table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
 			$table->string('name');
-			$table->string('address');
-			$table->integer('phone');
+			$table->string('address')->nullable();
+			$table->integer('phone')->nullable();
 			$table->decimal('credit')->nullable();
 			$table->timestamps();
 		});

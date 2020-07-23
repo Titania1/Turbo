@@ -16,6 +16,7 @@ class CreatePartVehicleTable extends Migration
 	public function up()
 	{
 		Schema::create('part_vehicle', function (Blueprint $table) {
+			$table->id();
 			$table->unsignedBigInteger('part_id');
 			$table->unsignedBigInteger('vehicle_id');
 			$table->unique(['part_id', 'vehicle_id']);
