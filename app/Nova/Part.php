@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use App\InvoicePart;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
@@ -13,7 +12,6 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\KeyValue;
 use Armincms\Fields\BelongsToMany;
 use App\Nova\Actions\ChangePartViews;
-use App\Supplier;
 use Emiliogrv\NovaBatchLoad\BatchLoadField;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Caddydz\NovaPreviewResource\NovaPreviewResource;
@@ -92,7 +90,7 @@ class Part extends Resource
 					__('Buy Price') => $this->buyPrice,
 					__('Sell Price') => $this->sellPrice,
 					__('Supplier') => $this->supplier,
-				])
+				]),
 		];
 	}
 

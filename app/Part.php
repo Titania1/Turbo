@@ -190,7 +190,7 @@ class Part extends Model implements HasMedia, Buyable
 	public function getIndexImageAttribute(): string
 	{
 		$mediaItems = $this->getMedia();
-		if (!empty($mediaItems)) {
+		if (! empty($mediaItems)) {
 			return $mediaItems[0]->getUrl('_245x245');
 		}
 
@@ -200,7 +200,7 @@ class Part extends Model implements HasMedia, Buyable
 	public function getCartHeaderImageAttribute(): string
 	{
 		$mediaItems = $this->getMedia();
-		if (!empty($mediaItems)) {
+		if (! empty($mediaItems)) {
 			return $mediaItems[0]->getUrl('_70x70');
 		}
 
@@ -210,7 +210,7 @@ class Part extends Model implements HasMedia, Buyable
 	public function getNewArrivalImageAttribute(): string
 	{
 		$mediaItems = $this->getMedia();
-		if (!empty($mediaItems)) {
+		if (! empty($mediaItems)) {
 			try {
 				return $mediaItems[0]->getUrl('_92x92');
 			} catch (Exception $ex) {
@@ -271,6 +271,7 @@ class Part extends Model implements HasMedia, Buyable
 	public function getSupplierAttribute()
 	{
 		$supplier_id = optional(InvoicePart::where('part_id', $this->id)->first())->supplier_id;
+
 		return optional(Supplier::find($supplier_id))->name;
 	}
 }
