@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App;
 
+use Laravel\Cashier\Billable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Laravel\Cashier\Billable;
 
 /**
  * App\User.
