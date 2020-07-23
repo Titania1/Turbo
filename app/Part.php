@@ -257,4 +257,21 @@ class Part extends Model implements HasMedia, Buyable
 	{
 		return $this->belongsTo(User::class);
 	}
+
+	public function getBuyPriceAttribute()
+	{
+		return optional(InvoicePart::where('part_id', $this->id)->first())->buyPrice;
+	}
+
+	public function getSellPriceAttribute()
+	{
+		return optional(InvoicePart::where('part_id', $this->id)->first())->sellPrice;
+	}
+
+	public function getSupplierAttribute()
+	{
+		$supplier_id = optional(InvoicePart::where('part_id', $this->id)->first())->supplier_id;
+
+		return optional(Supplier::find($supplier_id))->name;
+	}
 }

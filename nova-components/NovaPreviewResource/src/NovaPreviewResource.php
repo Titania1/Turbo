@@ -16,6 +16,13 @@ class NovaPreviewResource extends Field
 	public $component = 'nova-preview-resource';
 
 	/**
+	 * The text alignment for the field's text in tables.
+	 *
+	 * @var string
+	 */
+	public $textAlign = 'center';
+
+	/**
 	 * Set the image for the preview.
 	 *
 	 * @param string image path
@@ -30,52 +37,26 @@ class NovaPreviewResource extends Field
 	}
 
 	/**
-	 * Set the title for the preview.
+	 * Set the options for the field.
 	 *
-	 * @param string title text
-	 *
+	 * @param  array|\Closure|\Illuminate\Support\Collection
 	 * @return $this
 	 */
-	public function title($text)
+	public function options($options)
 	{
-		return $this->withMeta([
-			'title' => $text,
-		]);
-	}
-
-	public function list($list)
-	{
-		return $this->withMeta([
-			'list' => $list,
-		]);
-	}
-
-	public function buyPrice($price)
-	{
-		if (is_callable($price)) {
-			$price = $price();
+		info($options);
+		if (is_callable($options)) {
+			$options = $options();
 		}
 
 		return $this->withMeta([
-			'buyPrice' => $price,
-		]);
-	}
-
-	public function sellPrice($price)
-	{
-		if (is_callable($price)) {
-			$price = $price();
-		}
-
-		return $this->withMeta([
-			'sellPrice' => $price,
-		]);
-	}
-
-	public function related($related)
-	{
-		return $this->withMeta([
-			'related' => $related,
+			'options' => with(collect($options), function ($options) {
+				return $options->map(function ($label, $name) use ($options) {
+					return $options->isAssoc()
+						? ['label' => $label, 'name' => $name]
+						: ['label' => $label, 'name' => $label];
+				})->values()->all();
+			}),
 		]);
 	}
 }
