@@ -8,6 +8,7 @@ use Laravel\Nova\Nova;
 use Illuminate\Support\Facades\Gate;
 use Whitecube\NovaPage\NovaPageTool;
 use Jubeki\Nova\Cards\Linkable\Linkable;
+use KABBOUCHI\LogsTool\LogsTool;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use Vyuldashev\NovaPermission\NovaPermissionTool;
 
@@ -112,6 +113,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 			NovaPageTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
 			NovaPermissionTool::make()
 				->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
+			LogsTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
 		];
 	}
 

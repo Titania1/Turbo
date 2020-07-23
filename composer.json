@@ -13,6 +13,7 @@
         "armincms/many-to-many": "^0.2.1",
         "bissolli/nova-phone-field": "^0.0.4",
         "bumbummen99/shoppingcart": "^2.9",
+        "caddydz/nova-preview-resource": "*",
         "coderello/laravel-nova-lang": "^1.4",
         "dillingham/nova-attach-many": "^1.0",
         "emiliogrv/nova-batch-load": "^1.2",
@@ -23,6 +24,7 @@
         "guzzlehttp/guzzle": "^6.5.5",
         "inspheric/nova-defaultable": "^1.2",
         "jubeki/nova-card-linkable": "^1.1",
+        "kabbouchi/nova-logs-tool": "^0.2.0",
         "laravel/framework": "^7.0",
         "laravel/helpers": "^1.2",
         "laravel/horizon": "^4.3",
@@ -39,8 +41,7 @@
         "staudenmeir/eloquent-has-many-deep": "^1.7",
         "titasgailius/search-relations": "^1.0",
         "vyuldashev/nova-permission": "^2.9",
-        "whitecube/nova-page": "master",
-        "caddydz/nova-preview-resource": "*"
+        "whitecube/nova-page": "master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.3",
