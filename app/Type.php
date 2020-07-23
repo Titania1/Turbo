@@ -64,7 +64,7 @@ class Type extends Model implements HasMedia
 	public function getSubCategoryImageAttribute(): string
 	{
 		$mediaItems = $this->getMedia();
-		if (! empty($mediaItems)) {
+		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('_148x148');
 		}
 

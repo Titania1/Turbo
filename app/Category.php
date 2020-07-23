@@ -129,7 +129,7 @@ class Category extends Model implements HasMedia
 	public function getSubCategoryImageAttribute(): string
 	{
 		$mediaItems = $this->getMedia();
-		if (! empty($mediaItems)) {
+		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('_148x148');
 		}
 
@@ -138,6 +138,6 @@ class Category extends Model implements HasMedia
 
 	public function getIsParentAttribute(): bool
 	{
-		return (bool) ! $this->category_id;
+		return (bool) !$this->category_id;
 	}
 }

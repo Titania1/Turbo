@@ -93,7 +93,7 @@ class User extends Authenticatable implements MustVerifyEmail
 			return $this->profile->avatar;
 		}
 		$mediaItems = optional($this->profile)->getMedia();
-		if (! empty($mediaItems)) {
+		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getFullUrl();
 		}
 
@@ -106,7 +106,7 @@ class User extends Authenticatable implements MustVerifyEmail
 			return $this->profile->avatar;
 		}
 		$mediaItems = optional($this->profile)->getMedia();
-		if (! empty($mediaItems)) {
+		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('account_menu');
 		}
 
@@ -119,7 +119,7 @@ class User extends Authenticatable implements MustVerifyEmail
 			return $this->profile->avatar;
 		}
 		$mediaItems = optional($this->profile)->getMedia();
-		if (! empty($mediaItems)) {
+		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('dashboard');
 		}
 
