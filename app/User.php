@@ -105,7 +105,7 @@ class User extends Authenticatable implements MustVerifyEmail
 		if ($this->provider) {
 			return $this->profile->avatar;
 		}
-		$mediaItems = optional($this->profile)->getMedia();
+		$mediaItems = optional($this->profile)->getMedia() ?? collect([]);
 		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('account_menu');
 		}
@@ -118,7 +118,7 @@ class User extends Authenticatable implements MustVerifyEmail
 		if ($this->provider) {
 			return $this->profile->avatar;
 		}
-		$mediaItems = optional($this->profile)->getMedia();
+		$mediaItems = optional($this->profile)->getMedia() ?? collect([]);
 		if ($mediaItems->isNotEmpty()) {
 			return $mediaItems[0]->getUrl('dashboard');
 		}
