@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App;
 
+use Laravel\Cashier\Billable;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
@@ -47,7 +48,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
-	use Notifiable, HasRoles;
+	use Notifiable, HasRoles, Billable;
 
 	/**
 	 * The attributes that are mass assignable.
