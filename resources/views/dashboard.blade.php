@@ -31,10 +31,16 @@
 					<div class="address-card__body">
 						<div class="address-card__name">{{ $user->name }}</div>
 						<div class="address-card__row">{{ optional($profile)->address }}</div>
+						@if (optional($user->profile)->phone)
 						<div class="address-card__row">
-							<div class="address-card__row-title">@lang('Phone Number')</div>
-							<div class="address-card__row-content">{{ optional($user->profile)->phone }}</div>
+							<div class="address-card__row-title">
+								@lang('Phone Number')
+							</div>
+							<div class="address-card__row-content">
+								{{ optional($user->profile)->phone }}
+							</div>
 						</div>
+						@endif
 						<div class="address-card__row">
 							<div class="address-card__row-title">@lang('Email Address')</div>
 							<div class="address-card__row-content">{{ $user->email }}</div>
