@@ -7,8 +7,11 @@
 		<li class="account-nav__item">
 			<a href="/admin">@lang('Stock System')</a>
 		</li>
+		<li class="account-nav__item @if($active == 'shop') account-nav__item--active @endif">
+			<a href="{{ route('shop') }}">@lang('Shop')</a>
+		</li>
 		<li class="account-nav__item @if($active == 'garage') account-nav__item--active @endif">
-			<a href="/shop">@lang('Shop')</a>
+			<a href="{{ route('garage') }}">@lang('Garage')</a>
 		</li>
 		<li class="account-nav__item @if($active == 'profile') account-nav__item--active @endif">
 			<a href="{{ route('profile.edit') }}">@lang('Edit Profile')</a>

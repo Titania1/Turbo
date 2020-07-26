@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(DiscountSeeder::class);
 		$this->call(StoreSeeder::class);
 		$this->call(StoreContactSeeder::class);
+		$this->call(GarageSeeder::class);
 	}
 
 	/**

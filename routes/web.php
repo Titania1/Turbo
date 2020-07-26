@@ -47,7 +47,8 @@ Route::middleware('auth', 'verified')->group(function () {
 	Route::view('/account/orders', 'account-orders');
 	Route::get('/account/profile', 'ProfileController@edit')->name('profile.edit');
 	Route::post('/account/profile', 'ProfileController@update')->name('profile.update');
-	Route::get('/shop', 'PartsController@index');
+	Route::get('/account/shop', 'PartsController@index')->name('shop');
+	Route::get('/account/garage', 'GarageController@show')->name('garage');
 	Route::post('/parts/add', 'PartsController@store')->name('part.add');
 });
 Route::view('/shop-list', 'shop-list');

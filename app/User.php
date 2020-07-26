@@ -167,4 +167,9 @@ class User extends Authenticatable implements MustVerifyEmail
 	{
 		return $this->hasMany(Part::class);
 	}
+
+	public function garage(): HasOne
+	{
+		return $this->hasOne(Garage::class);
+	}
 }
