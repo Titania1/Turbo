@@ -1,0 +1,338 @@
+/* Section
+================================================================ */
+.section {
+	padding: 6rem 0;
+}
+
+.section .section {
+	padding: 0;
+}
+
+.section header {
+	text-align: center;
+}
+
+.section header.sep {
+	position: relative;
+	margin-bottom: 5.25em;
+}
+
+.section header.sep:after {
+	content: "• • •";
+	position: absolute;
+	font-size: 24px;
+	font-weight: 600;
+	color: rgba(0, 0, 0, 0.2);
+	bottom: -3.25rem;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.section header ul {
+	font-size: 1rem;
+}
+
+.section header ul li {
+	display: inline-block;
+}
+
+.section header ul li:after {
+	content: "•";
+	margin: 0 0.5em;
+	color: rgba(0, 0, 0, 0.25);
+}
+
+.section header ul li:last-child:after {
+	display: none;
+}
+
+.section header ul li .fa {
+	color: #1795C5;
+}
+
+.section header ul li .fa-calendar {
+	font-size: 0.9rem;
+}
+
+.section .section-title h2,
+.section .section-title h3 {
+	margin: 0.25em 0;
+}
+
+.section .section-title h2:first-child,
+.section .section-title h3:first-child {
+	margin-top: 0;
+}
+
+.section .section-title h2:last-child,
+.section .section-title h3:last-child {
+	margin-bottom: 0;
+}
+
+.section .section-title h2 {
+	font-size: 1.8rem;
+}
+
+.section .section-title h3 {
+	font-size: 1.4rem;
+	line-height: 1.2;
+	text-transform: uppercase;
+}
+
+.section .section-title p {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 1.8rem;
+	line-height: 1;
+	color: #1795C5;
+}
+
+.section.section-map {
+	position: relative;
+}
+
+.section.section-map:after {
+	display: none;
+	content: "";
+	background-image: url("../../images/dot-map.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 60%;
+	left: 0;
+	right: 0;
+	margin: auto;
+	opacity: 0.05;
+	height: 20%;
+	position: absolute;
+	bottom: 0;
+}
+
+.section .lead {
+	font-size: 1.4rem;
+}
+
+.section .nav-carousel {
+	visibility: visible;
+	opacity: 1;
+	transition: 0.4s;
+}
+
+.section .nav-carousel [class*="nav-"] {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	cursor: pointer;
+}
+
+.section .nav-carousel [class*="nav-"] .fa {
+	cursor: pointer;
+}
+
+.section .nav-carousel .nav-prev {
+	left: 3rem;
+}
+
+.section .nav-carousel .nav-next {
+	right: 3rem;
+}
+
+@media (min-width: 720px) {
+	.section header {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.section header ul {
+		font-size: 1.4rem;
+	}
+
+	.section .section-title h2 {
+		font-size: 2.2rem;
+	}
+
+	.section .section-title h3 {
+		font-size: 1.8rem;
+		line-height: 0.9;
+	}
+}
+
+@media (min-width: 940px) {
+	.section header p {
+		font-size: 1.4rem;
+	}
+
+	.section.section-map {
+		padding-bottom: 11em !important;
+	}
+
+	.section.section-map:after {
+		display: block;
+	}
+
+	.section .section-title h2 {
+		font-size: 2.85rem;
+	}
+
+	.section .section-title h3 {
+		font-size: 2rem;
+	}
+}
+
+/* Pricing Section
+================================================================ */
+.section.pricing {
+	overflow: hidden;
+}
+
+.section.pricing.inactive .price-chart-container {
+	top: 3rem;
+	opacity: 0;
+}
+
+.section.pricing .price-chart-container {
+	position: relative;
+	transition: 0.4s;
+	top: 0;
+	opacity: 1;
+}
+
+.section.pricing .price-chart-container:not(:last-child) {
+	margin-bottom: 4em;
+}
+
+.section.pricing .price-chart-container:nth-child(2) {
+	transition-delay: 0.4s;
+}
+
+.section.pricing .price-chart-container:nth-child(3) {
+	transition-delay: 0.8s;
+}
+
+@media (min-width: 940px) {
+	.section.pricing .price-chart-container {
+		margin-bottom: 0 !important;
+	}
+
+	.section.pricing .price-chart:hover {
+		-webkit-transform: scale(1.1);
+		-ms-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+}
+
+/* Price Charts
+================================================================ */
+.price-chart {
+	position: relative;
+	background: #1795c5;
+	padding: 0.5em;
+	color: white;
+	transition: 0.4s;
+	text-align: center;
+}
+
+.price-chart h4 {
+	margin-top: 0.5em;
+	margin-bottom: 0.25em;
+	font-size: 1.8rem;
+}
+
+.price-chart h4 .fa {
+	color: white;
+	line-height: 0;
+}
+
+.price-chart h5 {
+	margin-top: 0;
+	margin-bottom: 1.25em;
+	font-weight: 100;
+	font-family: "Lato", sans-serif;
+	font-size: 1.2rem;
+}
+
+.price-chart .price {
+	padding: 0.1em;
+	background: rgba(0, 0, 0, 0.6);
+	height: 2.75em;
+	font-size: 1.8rem;
+}
+
+.price-chart .price span {
+	font-size: 2.85rem;
+}
+
+.price-chart ul {
+	background: #f7f7f7;
+	color: #4a4a4a;
+	text-align: left;
+}
+
+.price-chart ul li {
+	padding: 0 1.25em;
+	line-height: 3;
+	display: table;
+	width: 100%;
+}
+
+.price-chart ul li:nth-child(even) {
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.price-chart ul li .fa {
+	width: 1.5em;
+}
+
+.price-chart ul li strong,
+.price-chart ul li span {
+	display: table-cell;
+}
+
+.price-chart ul li strong {
+	text-align: right;
+}
+
+.price-chart .buy-now {
+	background: rgba(255, 255, 255, 0.5);
+	padding: 0.75em;
+	font-size: 1.2rem;
+}
+
+.price-chart.free,
+.price-chart.free .button {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.price-chart.free .button:hover {
+	background: rgba(0, 0, 0, 0.5);
+}
+
+/* Lists
+================================================================ */
+.price-chart ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.button.brand-1 {
+	background: #1795C5;
+}
+
+.button.brand-1:hover {
+	background: #127297;
+}
+
+.hover-bg-brand-1:hover {
+	background: #1795C5 !important;
+	border-color: #1795C5 !important;
+}
+
+.brand-1-active.active {
+	background-color: #1795C5 !important;
+	border-color: #1795C5 !important;
+}
