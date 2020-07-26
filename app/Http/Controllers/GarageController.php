@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Garage;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class GarageController extends Controller
 {
@@ -31,7 +33,6 @@ class GarageController extends Controller
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
@@ -47,15 +48,13 @@ class GarageController extends Controller
 	public function show(): View
 	{
 		$garage = auth()->user()->garage;
+
 		return view('garage', compact('garage'));
 	}
-
-
 
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(Garage $garage)
@@ -66,8 +65,6 @@ class GarageController extends Controller
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \App\Garage  $garage
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, Garage $garage)
@@ -78,7 +75,6 @@ class GarageController extends Controller
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(Garage $garage)

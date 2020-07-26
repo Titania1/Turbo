@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\User;
 use App\Garage;
 use Illuminate\Database\Seeder;

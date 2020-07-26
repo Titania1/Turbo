@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Observers;
 
 use App\Garage;
@@ -8,9 +10,6 @@ class GarageObserver
 {
 	/**
 	 * Handle the garage "creating" event.
-	 *
-	 * @param  \App\Garage  $garage
-	 * @return void
 	 */
 	public function creating(Garage $garage): void
 	{
@@ -23,7 +22,6 @@ class GarageObserver
 	/**
 	 * Handle the garage "created" event.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return void
 	 */
 	public function created(Garage $garage)
@@ -34,7 +32,6 @@ class GarageObserver
 	/**
 	 * Handle the garage "updated" event.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return void
 	 */
 	public function updated(Garage $garage)
@@ -45,7 +42,6 @@ class GarageObserver
 	/**
 	 * Handle the garage "deleted" event.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return void
 	 */
 	public function deleted(Garage $garage)
@@ -56,7 +52,6 @@ class GarageObserver
 	/**
 	 * Handle the garage "restored" event.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return void
 	 */
 	public function restored(Garage $garage)
@@ -67,7 +62,6 @@ class GarageObserver
 	/**
 	 * Handle the garage "force deleted" event.
 	 *
-	 * @param  \App\Garage  $garage
 	 * @return void
 	 */
 	public function forceDeleted(Garage $garage)
