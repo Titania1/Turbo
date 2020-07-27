@@ -8,7 +8,6 @@
 		<div class="block-header__body">
 			<nav class="breadcrumb block-header__breadcrumb" aria-label="breadcrumb">
 				<ol class="breadcrumb__list">
-					<li class="breadcrumb__spaceship-safe-area" role="presentation"></li>
 					<li class="breadcrumb__item breadcrumb__item--parent breadcrumb__item--first">
 						<a href="/" class="breadcrumb__item-link">
 							@lang('Home')
@@ -20,13 +19,19 @@
 						</span>
 					</li>
 					@if($store->has('contact')->exists())
-					<li class="contact_store breadcrumb__item--parent breadcrumb__item--first">
+					<li class="store_link breadcrumb__item--parent breadcrumb__item--first">
 						<a href="{{ route('store.contact', ['store' => $store]) }}" class="breadcrumb__item-link">
 							@lang('Contact US')
 						</a>
 					</li>
 					@endif
-					<li class="breadcrumb__title-safe-area" role="presentation"></li>
+					@if($store->has('about')->exists())
+					<li class="store_link breadcrumb__item--parent breadcrumb__item--first">
+						<a href="{{ route('store.about', ['store' => $store]) }}" class="breadcrumb__item-link">
+							@lang('About')
+						</a>
+					</li>
+					@endif
 				</ol>
 			</nav>
 			<h1 class="block-header__title">{{ $store->name }}</h1>

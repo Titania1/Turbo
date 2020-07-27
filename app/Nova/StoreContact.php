@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Place;
 use Bissolli\NovaPhoneField\PhoneNumber;
 use GeneaLabs\NovaMapMarkerField\MapMarker;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use SadekD\NovaOpeningHoursField\NovaOpeningHoursField;
 
@@ -24,6 +25,8 @@ class StoreContact extends Resource
 
 	/**
 	 * Get the displayable label of the resource.
+	 *
+	 * @return string
 	 */
 	public static function label(): string
 	{
@@ -32,6 +35,8 @@ class StoreContact extends Resource
 
 	/**
 	 * Get the displayable singular label of the resource.
+	 *
+	 * @return string
 	 */
 	public static function singularLabel(): string
 	{
@@ -46,6 +51,9 @@ class StoreContact extends Resource
 	 */
 	public static function indexQuery(NovaRequest $request, $query)
 	{
+		if ($request->user()->hasRole('Super Admin')) {
+			return $query;
+		}
 		return $query->where('store_id', optional(auth()->user()->store)->id);
 	}
 
@@ -80,6 +88,9 @@ class StoreContact extends Resource
 	public function fields(Request $request)
 	{
 		return [
+			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(function($request) {
+				return $request->user()->hasRole('Super Admin');
+			}),
 			MapMarker::make(__('Address'))->defaultZoom(17)
 				->defaultLatitude(36.6966649)
 				->defaultLongitude(3.0922204)
@@ -90,7 +101,7 @@ class StoreContact extends Resource
 				->sortable()
 				->rules('nullable', 'email', 'max:254')
 				->creationRules('unique:users,email')
-				->updateRules('unique:store_contacts,email,{{resourceId}}'),
+				->updateRules('unique:store_contacts,email,{{ resourceId }}'),
 			PhoneNumber::make(__('Phone Number'), 'phone')->onlyCountries('DZ'),
 			Trix::make(__('Comment'), 'comment'),
 		];

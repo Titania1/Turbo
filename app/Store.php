@@ -25,6 +25,11 @@ class Store extends Model
 		return $this->hasOne(StoreContact::class);
 	}
 
+	public function about(): HasOne
+	{
+		return $this->hasOne(StoreAbout::class);
+	}
+
 	/**
 	 * Get the route key for the model.
 	 */

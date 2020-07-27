@@ -30,8 +30,10 @@ use App\Observers\InvoiceObserver;
 use App\Observers\ProfileObserver;
 use App\Observers\ReceiptObserver;
 use App\Observers\CategoryObserver;
+use App\Observers\StoreAboutObserver;
 use App\Observers\SupplierObserver;
 use App\Observers\StoreContactObserver;
+use App\StoreAbout;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -55,6 +57,7 @@ class ObserverServiceProvider extends ServiceProvider
 		User::observe(UserObserver::class);
 		Store::observe(StoreObserver::class);
 		StoreContact::observe(StoreContactObserver::class);
+		StoreAbout::observe(StoreAboutObserver::class);
 		Supplier::observe(SupplierObserver::class);
 		Garage::observe(GarageObserver::class);
 	}
