@@ -76,5 +76,6 @@ Route::get('/login/facebook/callback', 'Auth\LoginController@handleFacebookCallb
 Route::post('/review/{part}', 'ReviewsController@store')->name('review.store');
 Route::get('/store/{store}', 'StoresController@show')->name('store');
 Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store.contact');
+Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
 Route::fallback(fn () => response()->view('errors.404', [], 404));
