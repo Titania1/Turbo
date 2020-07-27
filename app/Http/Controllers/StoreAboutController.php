@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Store;
@@ -31,7 +33,6 @@ class StoreAboutController extends Controller
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
@@ -42,7 +43,6 @@ class StoreAboutController extends Controller
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  \App\Store  $store
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show(Store $store)
@@ -55,7 +55,6 @@ class StoreAboutController extends Controller
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  \App\StoreAbout  $storeAbout
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(StoreAbout $storeAbout)
@@ -66,8 +65,6 @@ class StoreAboutController extends Controller
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \App\StoreAbout  $storeAbout
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, StoreAbout $storeAbout)
@@ -78,7 +75,6 @@ class StoreAboutController extends Controller
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  \App\StoreAbout  $storeAbout
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(StoreAbout $storeAbout)

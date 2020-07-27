@@ -8,9 +8,9 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\Place;
+use Laravel\Nova\Fields\BelongsTo;
 use Bissolli\NovaPhoneField\PhoneNumber;
 use GeneaLabs\NovaMapMarkerField\MapMarker;
-use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use SadekD\NovaOpeningHoursField\NovaOpeningHoursField;
 
@@ -25,8 +25,6 @@ class StoreContact extends Resource
 
 	/**
 	 * Get the displayable label of the resource.
-	 *
-	 * @return string
 	 */
 	public static function label(): string
 	{
@@ -35,8 +33,6 @@ class StoreContact extends Resource
 
 	/**
 	 * Get the displayable singular label of the resource.
-	 *
-	 * @return string
 	 */
 	public static function singularLabel(): string
 	{
@@ -54,6 +50,7 @@ class StoreContact extends Resource
 		if ($request->user()->hasRole('Super Admin')) {
 			return $query;
 		}
+
 		return $query->where('store_id', optional(auth()->user()->store)->id);
 	}
 
@@ -88,7 +85,7 @@ class StoreContact extends Resource
 	public function fields(Request $request)
 	{
 		return [
-			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(function($request) {
+			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(function ($request) {
 				return $request->user()->hasRole('Super Admin');
 			}),
 			MapMarker::make(__('Address'))->defaultZoom(17)
