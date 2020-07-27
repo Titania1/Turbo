@@ -156,7 +156,7 @@ class Part extends Resource
 	public function actions(Request $request)
 	{
 		return [
-			// new DownloadExcel,
+			(new DownloadExcel)->except('image'),
 			(new ChangePartViews)->confirmButtonText(__('Update'))
 				->canSee(fn ($request) => $request->user()->can('Update Part Views')),
 		];
