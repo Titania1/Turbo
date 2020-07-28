@@ -99,7 +99,7 @@ class Receipt extends Resource
 			DateTime::make(__('Created at'), function () {
 				return $this->created_at;
 			}),
-			BelongsTo::make(__('Client'), 'client', Client::class)->showCreateRelationButton(),
+			$this->clientField(),
 			// Should only show parts which we have stock for
 			BelongsToMany::make(__('Parts'), 'parts', 'App\Nova\Receipt\Part')->hideFromIndex()
 				->fields(function ($ids) {
@@ -137,6 +137,11 @@ class Receipt extends Resource
 				return $price;
 			}),
 		];
+	}
+
+	protected function clientField()
+	{
+		return BelongsTo::make(__('Client'), 'client', Client::class)->showCreateRelationButton();
 	}
 
 	/**

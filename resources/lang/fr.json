@@ -543,5 +543,7 @@
 	"Buy Price": "Prix d'achat",
 	"Counter": "Comptoir",
 	"Enter Address": "Entrer l'adresse",
-	"Could not send your message": "Impossible d'envoyer votre message"
+	"Could not send your message": "Impossible d'envoyer votre message",
+	"Bills": "Bons",
+	"Bill": "Bon"
 }
