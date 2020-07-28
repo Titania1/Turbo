@@ -7,6 +7,7 @@ namespace App\Nova;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
@@ -72,7 +73,7 @@ class Client extends Resource
 		return [
 			ID::make()->sortable(),
 			Text::make(__('Name'), 'name')->required()->sortable(),
-			Text::make(__('Address'), 'address')->hideFromIndex(),
+			Place::make(__('Address'), 'address')->hideFromIndex(),
 			Number::make(__('Phone number'), 'phone')->resolveUsing(fn ($phone) => 0 . $phone),
 			Number::make(__('Credit'), 'credit')->resolveUsing(fn ($credit) => round($credit) . ' DZD'),
 		];
