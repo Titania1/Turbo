@@ -17,7 +17,7 @@ class ClientSeeder extends Seeder
 	{
 		Client::create([
 			'user_id' => 1,
-			'name' => 'Anonymous'
+			'name' => 'Anonymous',
 		]);
 		$ids = User::select('id')->pluck('id');
 		foreach ($ids as $id) {
