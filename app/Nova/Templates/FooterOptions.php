@@ -6,6 +6,7 @@ namespace App\Nova\Templates;
 
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Place;
 use Whitecube\NovaPage\Pages\Template;
 
 class FooterOptions extends Template
@@ -22,7 +23,7 @@ class FooterOptions extends Template
 		return [
 			Text::make(__('Comment'), 'comment')->translatable(),
 			Text::make(__('Email Address'), 'email'),
-			Text::make(__('Location Address'), 'address'),
+			Place::make(__('Location Address'), 'address'),
 			Text::make(__('Working Hours'), 'schedule'),
 			Text::make(__('Facebook Page'), 'facebook'),
 			Text::make(__('Twitter Account'), 'twitter'),
