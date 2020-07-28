@@ -99,9 +99,9 @@ class Receipt extends Resource
 			DateTime::make(__('Created at'), function () {
 				return $this->created_at;
 			}),
-			BelongsTo::make(__('Client'), 'client', 'App\Nova\Client')->showCreateRelationButton(),
+			BelongsTo::make(__('Client'), 'client', Client::class)->showCreateRelationButton(),
 			// Should only show parts which we have stock for
-			BelongsToMany::make(__('Parts'), 'parts', Part::class)->hideFromIndex()
+			BelongsToMany::make(__('Parts'), 'parts', 'App\Nova\Receipt\Part')->hideFromIndex()
 				->fields(function ($ids) {
 					$part_receipt = PartReceipt::where([
 						'part_id' => $ids['relatedId'],
@@ -110,9 +110,8 @@ class Receipt extends Resource
 
 					return [
 						Number::make(__('Quantity'), 'quantity')
-							->rules('required', 'numeric')->displayUsing(function () use ($part_receipt) {
-								return $part_receipt->quantity;
-							}),
+							->rules('required', 'numeric')
+							->displayUsing(fn () => $part_receipt->quantity),
 					];
 				})
 				->pivots(),

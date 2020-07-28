@@ -25,7 +25,10 @@ class Part extends NovaPart
 	 */
 	public static function indexQuery(NovaRequest $request, $query)
 	{
-		return $query->where('user_id', auth()->id());
+		$parts_in_stock = Stock::where('user_id', auth()->id())
+				->select('part_id')->pluck('part_id')->toArray();
+
+		return $query->whereIn('id', $parts_in_stock);
 	}
 
 	/**
@@ -33,12 +36,13 @@ class Part extends NovaPart
 	 *
 	 * This query determines which instances of the model may be attached to other resources.
 	 *
-	 * @param  \Illuminate\Database\Eloquent\Builder  $query
+	 * @param  \Illuminate\Database\Eloquent\Builder $query
 	 * @return \Illuminate\Database\Eloquent\Builder
 	 */
 	public static function relatableQuery(NovaRequest $request, $query)
 	{
-		$parts_in_stock = Stock::where('user_id', auth()->id())->select('part_id')->pluck('part_id')->toArray();
+		$parts_in_stock = Stock::where('user_id', auth()->id())
+				->select('part_id')->pluck('part_id')->toArray();
 
 		return parent::relatableQuery($request, $query->whereIn('id', $parts_in_stock));
 	}
