@@ -2377,7 +2377,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "a0b8116e09411d6d2ad7275eb5cb81fbfded4148"
+                "reference": "2f1586897fe34b07e44aadf604b59d7f526ce18b"
             },
             "require": {
                 "brick/math": "^0.8.15",
@@ -4819,16 +4819,16 @@
         },
         {
             "name": "sadekd/nova-opening-hours-field",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sadekd/nova-opening-hours-field.git",
-                "reference": "f4fb3e248741706bdf7e6a4f135a8004f63b2b14"
+                "reference": "ed4c2d2a42b6fc5fc919cffbb332451932d50e94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sadekd/nova-opening-hours-field/zipball/f4fb3e248741706bdf7e6a4f135a8004f63b2b14",
-                "reference": "f4fb3e248741706bdf7e6a4f135a8004f63b2b14",
+                "url": "https://api.github.com/repos/sadekd/nova-opening-hours-field/zipball/ed4c2d2a42b6fc5fc919cffbb332451932d50e94",
+                "reference": "ed4c2d2a42b6fc5fc919cffbb332451932d50e94",
                 "shasum": ""
             },
             "require": {
@@ -4857,7 +4857,7 @@
                 "nova",
                 "opening hours"
             ],
-            "time": "2020-04-23T11:33:12+00:00"
+            "time": "2020-07-28T10:20:01+00:00"
         },
         {
             "name": "spatie/image",
