@@ -6,6 +6,9 @@ namespace App\Observers;
 
 use App\Invoice;
 use App\Jobs\UpdateStockFromInvoice;
+use App\Notifications\Arrival;
+use App\User;
+use Notification;
 
 class InvoiceObserver
 {
@@ -27,6 +30,9 @@ class InvoiceObserver
 	public function created(Invoice $invoice)
 	{
 		dispatch(new UpdateStockFromInvoice($invoice->id, auth()->id()))->delay(now()->addSeconds(3));
+		// Dispatch a the arrival notification
+		$users = User::all();
+		Notification::send($users, new Arrival($invoice, 'info'));
 	}
 
 	/**
