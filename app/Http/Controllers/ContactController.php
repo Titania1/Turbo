@@ -46,4 +46,9 @@ class ContactController extends Controller
 
 		return $details;
 	}
+
+	public function show()
+	{
+		return view('contact');
+	}
 }

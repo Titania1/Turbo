@@ -5,10 +5,7 @@
 @section('content')
 <div class="block-map block">
 	<div class="block-map__body">
-		<iframe
-			src="https://maps.google.com/maps?q=Holbrook-Palmer%20Park&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-			frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
-		</iframe>
+		<iframe src="https://maps.google.com/maps?q=@get('latitude'),@get('longitude')&hl=es;z=14&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
 	</div>
 </div>
 <div class="block-header block-header--has-breadcrumb block-header--has-title">
@@ -44,15 +41,22 @@
 							<h4 class="contact-us__header card-title">@lang('Our Address')</h4>
 							<div class="contact-us__address">
 								<p>
-									715 Fake Ave, Apt. 34, New York, NY 10021 USA<br>
-									@lang('Email Address'): redparts@example.com<br>
-									@lang('Phone Number'): +1 754 000-00-00
+									@get('address') <br>
+									@lang('Email Address'): @option('footer.email')<br>
+									@lang('Phone Number'): @option('header.phone')
 								</p>
 								<p>
 									<strong>@lang('Opening Hours')</strong><br>
-									@lang('Monday to Friday'): 8am-8pm<br>
-									@lang('Saturday'): 8am-6pm<br>
-									@lang('Sunday'): 10am-4pm
+									{{-- @foreach (Page::get('opening_hours') as $day => $hours)
+										{{ __(ucfirst($day)) }}:
+										@if(empty($hours))
+											@lang('Closed') <br>
+										@else
+										@foreach ($hours as $hour)
+											{{ $hour }}
+										@endforeach <br>
+										@endif
+									@endforeach --}}
 								</p>
 								<p>
 									<strong>@lang('Comment')</strong><br>

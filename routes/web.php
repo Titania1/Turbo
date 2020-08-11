@@ -23,7 +23,9 @@ Route::get('/lang/{locale}', 'LocalizationController@switch')
 Route::get('/', 'PagesController@index');
 Route::post('/search', 'SearchController@search')->name('search');
 Route::view('/about', 'about')->name('about');
-Route::view('/contact', 'contact');
+Route::get('/contact', 'ContactController@show')
+	->template(\App\Nova\Templates\Contact::class)
+	->name('contact');
 Route::post('/contact', 'ContactController@send')->name('contact');
 Route::get('/part/{part}', 'PartsController@show')->name('part');
 Route::view('/track-order', 'track-order')->name('track');
