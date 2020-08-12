@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Nova\Templates;
 
 use Illuminate\Http\Request;
@@ -12,16 +14,15 @@ class Contact extends Template
 	protected $jsonAttributes = ['opening_hours'];
 
 	/**
-	 * The page's title
+	 * The page's title.
 	 *
 	 * @var string
 	 */
-	protected $title = "Contact Page";
+	protected $title = 'Contact Page';
 
 	/**
 	 * Get the fields displayed by the resource.
 	 *
-	 * @param  \Illuminate\Http\Request $request
 	 * @return array
 	 */
 	public function fields(Request $request)
@@ -38,7 +39,6 @@ class Contact extends Template
 	/**
 	 * Get the cards available for the request.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
 	 * @return array
 	 */
 	public function cards(Request $request)
