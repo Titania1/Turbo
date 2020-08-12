@@ -85,7 +85,7 @@ class Part extends Resource
 				->keepOriginalFields('belongs|select|boolean'), // Optional
 			Number::make(__('Views'), fn ($part) => $part->views)->canSee(fn ($request) => $request->user()->can('See Part Views')),
 			NovaPreviewResource::make(__('Preview'))
-				->image($this->cartHeaderImage)
+				->image($this->indexImage)
 				->options([
 					__('Buy Price') => $this->buyPrice,
 					__('Sell Price') => $this->sellPrice,
