@@ -6,9 +6,12 @@
 			<ul class="main-menu__list">
 				{{-- Home button --}}
 				<li class="main-menu__item">
-					<a href="/" class="main-menu__link home-menu">@lang('Home')</a>
+					<a href="/" class="main-menu__link home-menu">
+						@lang('Home')
+					</a>
 				</li>
 				{{-- Shop button --}}
+				@if($categories->isNotEmpty())
 				<li class="main-menu__item main-menu__item--submenu--menu main-menu__item--has-submenu">
 					<a href="/shop-grid-4-columns-sidebar" class="main-menu__link">
 						@lang('Shop') @include('svg.arrow_down')
@@ -25,6 +28,7 @@
 						</ul>
 					</div>
 				</li>
+				@endif
 				{{-- Account button --}}
 				<li class="main-menu__item main-menu__item--submenu--menu main-menu__item--has-submenu">
 					<a href="@guest /login @else # @endguest" class="main-menu__link">
