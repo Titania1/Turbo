@@ -1628,11 +1628,6 @@
 	left: 0
 }
 
-.search__button--hover:after,
-.search__button:hover:after {
-	background: #f0f0f0
-}
-
 .search__button--hover:active,
 .search__button:active {
 	transition-duration: 0s
@@ -1696,11 +1691,10 @@
 
 .search__box {
 	left: 92px;
-	right: 92px
 }
 
 .suggestions {
-	padding: 14px 0
+	padding: 14px;
 }
 
 .suggestions__group+.suggestions__group {
