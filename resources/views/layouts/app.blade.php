@@ -37,6 +37,10 @@
 </head>
 
 <body>
+	<noscript>
+	@lang('For full functionality of this site it is necessary to enable JavaScript. Here are the :link instructions how to enable JavaScript in your web browser', ['link' => '<a href="https://www.enable-javascript.com/">'])</a>.
+	<style>#app {display:none;}</style>
+	</noscript>
 	<!-- site -->
 	<div class="site" id="app">
 		@include('layouts.mobile_header')
