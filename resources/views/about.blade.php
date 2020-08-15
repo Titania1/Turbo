@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div class="about__card">
-			<div class="about__card-title">About Us</div>
+			<div class="about__card-title">@lang('About Us')</div>
 			<div class="about__card-text">RedParts is an international company with 30 years of history
 				selling spare parts for cars, trucks and motorcycles. During our work we managed to create a
 				unique service for the sale and delivery of spare parts around the world.</div>
