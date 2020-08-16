@@ -17,7 +17,7 @@ class StorePolicy
 	 */
 	public function viewAny(User $user)
 	{
-		return $user->has('store')->exists();
+		return $user->store;
 	}
 
 	/**
