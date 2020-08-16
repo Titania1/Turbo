@@ -10,6 +10,8 @@ use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
+	protected $defer = true;
+
 	/**
 	 * Register services.
 	 *
