@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('nova-api/articles/count', 'CatalogCountController@articles');
 Auth::routes(['verify' => true]);
 Route::get('/dashboard', 'HomeController@index')->name('home');
 Route::get('/lang/{locale}', 'LocalizationController@switch')
