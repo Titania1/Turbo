@@ -27,7 +27,7 @@ Route::view('/about', 'about')->name('about');
 Route::get('/contact', 'ContactController@show')
 	->template(\App\Nova\Templates\Contact::class)
 	->name('contact');
-Route::post('/contact', 'ContactController@send')->name('contact');
+Route::post('/contact', 'ContactController@send');
 Route::get('/part/{part}', 'PartsController@show')->name('part');
 Route::view('/track-order', 'track-order')->name('track');
 Route::view('/wishlist', 'wishlist')->name('wishlist');
@@ -81,4 +81,4 @@ Route::get('/store/{store}', 'StoresController@show')->name('store');
 Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store.contact');
 Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
-Route::fallback(fn () => response()->view('errors.404', [], 404));
+Route::fallback('FallBackController');
