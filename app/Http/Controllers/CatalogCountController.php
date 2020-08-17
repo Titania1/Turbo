@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 /*
 This entire controller is a hack for sake of performance
@@ -12,14 +13,12 @@ Because the SQL operation to count is resource incentive and super slow, for exa
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class CatalogCountController extends Controller
 {
 	public function articles()
 	{
 		return response([
-			'count' => 6722202
+			'count' => 6722202,
 		], 200);
 	}
 }

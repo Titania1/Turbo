@@ -33,7 +33,7 @@ class StoreContactPolicy
 	 */
 	public function create(User $user)
 	{
-		return !optional(optional($user->store)->has('contact'))->exists();
+		return ! optional(optional($user->store)->has('contact'))->exists();
 	}
 
 	/**
