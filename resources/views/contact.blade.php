@@ -84,7 +84,7 @@
 								<p>@lang('Your message has been sent! We will be in touch as soon as possible.')</p>
 							</div>
 							@endif
-							<form action="{{ route('contact') }}" method="POST" role="form" accept-charset="UTF-8">
+							<form action="/contact" method="POST" role="form" accept-charset="UTF-8">
 								@csrf
 								<div class="form-row">
 									<div class="form-group col-md-6">

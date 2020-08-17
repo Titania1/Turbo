@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 $brands = [
+	'Alfa Romeo' => '',
 	'Audi' => 'DE',
 	'BMW' => 'DE',
 	'Mercedes' => 'DE',

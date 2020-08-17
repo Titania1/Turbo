@@ -14,6 +14,20 @@ abstract class Resource extends NovaResource
 	use SearchesRelations, HasDefaultableFields;
 
 	/**
+	 * Whether to show borders for each column on the X-axis.
+	 *
+	 * @var bool
+	 */
+	public static $showColumnBorders = true;
+
+	/**
+	 * The visual style used for the table. Available options are 'tight' and 'default'.
+	 *
+	 * @var string
+	 */
+	public static $tableStyle = 'tight';
+
+	/**
 	 * Build an "index" query for the given resource.
 	 *
 	 * @param  \Illuminate\Database\Eloquent\Builder  $query

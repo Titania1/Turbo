@@ -17,7 +17,7 @@ class StockPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		return $user->has('stocks')->exists();
+		return $user->stocks;
 	}
 
 	/**
