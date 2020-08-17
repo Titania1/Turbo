@@ -8,7 +8,6 @@ use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\Country;
 use Laravel\Nova\Fields\HasMany;
 
 class Brand extends Resource
@@ -62,7 +61,6 @@ class Brand extends Resource
 		return [
 			ID::make()->sortable(),
 			Text::make(__('Name'), 'name')->required(),
-			Country::make(__('Country'), 'country')->required()->displayUsingLabels(),
 			Avatar::make(__('Logo'), 'logo')->required(),
 			HasMany::make(__('Vehicles'), 'vehicles'),
 		];
