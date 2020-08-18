@@ -14,7 +14,6 @@ $factory->define(Brand::class, function (Faker $faker) {
 
 	return [
 		'name' => $v['brand'],
-		'country' => $faker->country,
 		'logo' => 'brands/' . $faker->file(
 			$sourceDir = 'data/brands',
 			$targetDir = storage_path('/app/public/brands'),
