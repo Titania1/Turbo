@@ -20,7 +20,7 @@
 		"emiliogrv/nova-batch-load": "^1.2",
 		"fideloper/proxy": "^4.2",
 		"fruitcake/laravel-cors": "^2.0",
-		"genealabs/nova-map-marker-field": "^0.1.16",
+		"genealabs/nova-map-marker-field": "^0.2.0",
 		"gregoriohc/laravel-nova-theme-responsive": "master",
 		"guzzlehttp/guzzle": "^6.5.5",
 		"inspheric/nova-defaultable": "^1.2",
