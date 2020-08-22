@@ -10,7 +10,7 @@ class ModelSeeder extends Seeder
 	 *
 	 * @return void
 	 */
-	public function run()
+	public function run(): void
 	{
 		Storage::disk('public')->deleteDirectory('models');
 		Storage::disk('public')->makeDirectory('models');

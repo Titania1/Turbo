@@ -51,15 +51,6 @@ class User extends Authenticatable implements MustVerifyEmail
 	use Notifiable, HasRoles, Billable;
 
 	/**
-	 * The attributes that are mass assignable.
-	 *
-	 * @var array
-	 */
-	protected $fillable = [
-		'name', 'email', 'password', 'phone', 'token', 'google_id', 'provider', 'facebook_id',
-	];
-
-	/**
 	 * The attributes that should be hidden for arrays.
 	 *
 	 * @var array
