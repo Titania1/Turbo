@@ -48,6 +48,10 @@ class ViewComposerServiceProvider extends ServiceProvider
 			// Get brands
 			$brands = Brand::all();
 			$view->with('brands', $brands);
+			$commercial_brands = Brand::where('is_commercial', true)->get();
+			$view->with(['brands' => $brands, 'commercial_brands' => $commercial_brands]);
+			$brands = Brand::all();
+			$view->with('brands', $brands);
 		});
 		view()->composer('layouts.header.cart', fn ($view) => $view->with('cart', Cart::content()));
 	}
