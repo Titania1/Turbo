@@ -6,26 +6,31 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateVehicleModelsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('vehicle_models', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('vehicle_models', function (Blueprint $table) {
+			$table->id();
+			$table->foreignId('brand_id')->onDelete('cascade');
+			$table->date('from');
+			$table->date('to')->nullable();
+			$table->string('name');
+			$table->boolean('is_commercial')->default(false);
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('vehicle_models');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('vehicle_models');
+	}
 }
