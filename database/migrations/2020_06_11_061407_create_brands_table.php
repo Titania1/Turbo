@@ -19,9 +19,9 @@ class CreateBrandsTable extends Migration
 			$table->id();
 			$table->string('name');
 			$table->string('logo');
-			$table->boolean('is_commercial')->default(false);
 			$table->string('slug');
 			$table->timestamps();
+			$table->boolean('is_commercial')->default(false);
 		});
 	}
 
