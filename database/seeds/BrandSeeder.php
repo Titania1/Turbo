@@ -27,5 +27,16 @@ class BrandSeeder extends Seeder
 				'logo' => "brands/$name.png",
 			]);
 		}
+
+		// Seed commercial vehicles
+		foreach ($commercialVehicles as $image_url => $name) {
+			$response = Http::get('https://ghiar.com/' . $image_url);
+			Storage::disk('public')->put("/brands/$name.png", $response->body());
+			Brand::create([
+				'name' => $name,
+				'logo' => "brands/$name.png",
+				'is_commercial' => true,
+			]);
+		}
 	}
 }
