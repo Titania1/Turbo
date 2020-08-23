@@ -8330,7 +8330,6 @@ select.form-control-sm {
 	color: #999;
 	font-size: 14px;
 	font-family: inherit;
-	margin-top: 4px;
 	padding-left: 16px;
 }
 
@@ -16498,3 +16497,81 @@ select.form-control-sm {
 	list-style: none;
 	padding-left: 0;
 }
+
+
+/**/
+.brandsrcfrm input[type=text] {
+    width: 312px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('/images/searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+.brandsrcfrm input[type=text]:focus {width: 100%;padding: 6px 20px 6px 40px;color:#144a82;border: 1px solid #ccc;}
+.brandsrcfrm span{color: #144a82;font-size: 20px;}
+.desktopbrandtabsctn fieldset{border-top: 1px solid #144a82;}
+.desktopbrandtabsctn legend{color: #144a82;font-size: 22px;width: 50%;text-align: center;}
+.brand-main-div{float: left;color: #000; background:#F4F5F7;padding: 0px 10px 50px 10px;margin-top: -40px;}
+.brandtabmobile{display:none;}
+.referencetitle{text-align:right;}
+::placeholder {color:#144a82;/* Firefox */}
+:-ms-input-placeholder{ /* Internet Explorer 10-11 */color:#144a82;}
+::-ms-input-placeholder {/* Microsoft Edge */color:#144a82;}
+
+
+/* Style tab links */
+.tablink {
+    background-color: #144a82;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 50%;
+    white-space:normal;
+}
+.tablink:hover{background-color: #F4F5F7;color:#144a82;}
+
+/* Style the tab content (and add height:100% for full page content) */
+
+.tabcontent {color: #144a82;display: none;padding: 100px 20px;height: 100%;}
+
+#tab1 {	background-color: #fff;
+		text-align: center;	}
+
+#tab2 {
+		background-color: #fff;
+		text-align: center;
+}
+/***********************Tab CSS ends********************************/
+
+
+/*******************Media queries starts************************/
+
+@media (max-width:765px){
+  .desktopbrandtabsctn{display:none;}
+  .brandtabmobile{display:block;text-align:center;}
+  .mobtab{ background-color: #144a82;color: white;padding: 5% 5%;width: 100%;white-space: normal;}
+  .mobtab:hover{background-color: #F4F5F7;color:#144a82;padding: 5% 5%;width: 100%;white-space: normal;}
+  .tabcontent{padding: 32px 20px;}
+  .brandsrcfrm input[type="text"] {width: 100%;height: 40px;padding: 8px 20px 8px 40px;border: 1px solid #ccc;color:#144a82;font-size: 14px;}
+  .desktopbrandtabsctn legend {width: auto;}
+
+  .brandsrcfrm span {font-size: 15px;}
+  .desktopbrandtabsctn legend {font-size: 15px;}
+  .brandtabmobile select{width: 100%;color:#144a82;}
+  .brandtabmobile select, input[type="file"] {height: 42px;line-height: 35px;}
+  .referencetitle{text-align:center;}
+  .mobtab1{display:block;}
+  #car img, #truck img{margin-top:10px;}
+  .brandsrcfrm form{margin: 0px;}
+ }
