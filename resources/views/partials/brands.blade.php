@@ -1,18 +1,5 @@
 <div class="block block-brands block-brands--layout--columns-8-full">
 	<div class="container">
-<<<<<<< Updated upstream
-		<ul class="block-brands__list">
-			@foreach ($brands as $brand)
-			<li class="block-brands__item">
-				<a href="{{ route('brand', ['brand' => $brand]) }}" class="block-brands__item-link">
-					<img src="{{ secure_asset('storage/' . $brand->logo) }}" alt="@lang('Photo')" loading="lazy">
-					<span class="block-brands__item-name">{{ $brand->name }}</span>
-				</a>
-			</li>
-			<li class="block-brands__divider" role="presentation"></li>
-			@endforeach
-		</ul>
-=======
 		<div class="product__tabs product-tabs">
 			<ul class="product-tabs__list">
 				<li class="product-tabs__item product-tabs__item--active">
@@ -55,6 +42,5 @@
 				</div>
 			</div>
 		</div>
->>>>>>> Stashed changes
 	</div>
 </div>
