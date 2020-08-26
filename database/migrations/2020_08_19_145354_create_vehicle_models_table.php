@@ -16,9 +16,11 @@ class CreateVehicleModelsTable extends Migration
 		Schema::create('vehicle_models', function (Blueprint $table) {
 			$table->id();
 			$table->foreignId('brand_id')->onDelete('cascade');
-			$table->date('from');
+			$table->foreignId('vehicle_model_id')->nullable()->constrained();
+			$table->date('from')->nullable();
 			$table->date('to')->nullable();
 			$table->string('name');
+			$table->string('image')->nullable();
 			$table->boolean('is_commercial')->default(false);
 			$table->timestamps();
 		});
