@@ -26,7 +26,6 @@ class BrandSeeder extends Seeder
 				'name' => $name,
 				'logo' => "brands/$name.png",
 			]);
-			break;
 		}
 	}
 }
