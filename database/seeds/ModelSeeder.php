@@ -22,15 +22,17 @@ class ModelSeeder extends Seeder
 		require_once dirname(__FILE__) . '/data/brands.php';
 		foreach ($brands as $image_url => $name) {
 			$this->seedModels($name);
+			break;
 		}
 	}
 
 	public function create($tecdoc_model, $brand_name): void
 	{
+		$to = ($tecdoc_model->To == '0000-00-00') ? null : $tecdoc_model->To;
 		VehicleModel::create([
 			'brand_id' => Brand::select('id')->where('name', $brand_name)->first()->id,
 			'from' => $tecdoc_model->From,
-			'to' => $tecdoc_model->To,
+			'to' => $to,
 			'name' => $tecdoc_model->Description
 		]);
 	}
@@ -74,7 +76,6 @@ class ModelSeeder extends Seeder
 			->table('models')
 			->select('id', 'From', 'To', 'Description')
 			->where('ManufacturerId', $this->getBrandId($name))
-			->whereDate('To', '>', '1980-01-01')
 			->get();
 	}
 }
