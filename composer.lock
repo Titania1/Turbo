@@ -5483,16 +5483,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.5.1",
+            "version": "8.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "6e4d9369b53132ccc9cd889f01b53158940a58e3"
+                "reference": "7d32d4fa352f063db728e0916b723372a0cdf514"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/6e4d9369b53132ccc9cd889f01b53158940a58e3",
-                "reference": "6e4d9369b53132ccc9cd889f01b53158940a58e3",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/7d32d4fa352f063db728e0916b723372a0cdf514",
+                "reference": "7d32d4fa352f063db728e0916b723372a0cdf514",
                 "shasum": ""
             },
             "require": {
@@ -5579,7 +5579,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-24T18:39:33+00:00"
+            "time": "2020-08-26T19:04:06+00:00"
         },
         {
             "name": "spatie/laravel-permission",
