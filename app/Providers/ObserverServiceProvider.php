@@ -19,6 +19,7 @@ use App\Category;
 use App\Supplier;
 use App\StoreAbout;
 use App\StoreContact;
+use App\VehicleModel;
 use App\Observers\PartObserver;
 use App\Observers\TypeObserver;
 use App\Observers\UserObserver;
@@ -35,7 +36,6 @@ use App\Observers\SupplierObserver;
 use App\Observers\StoreAboutObserver;
 use App\Observers\StoreContactObserver;
 use App\Observers\VehicleModelObserver;
-use App\VehicleModel;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider

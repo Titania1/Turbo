@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Observers;
 
 use App\VehicleModel;
@@ -9,7 +11,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "creating" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function creating(VehicleModel $vehicleModel)
@@ -20,7 +21,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "created" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function created(VehicleModel $vehicleModel)
@@ -31,7 +31,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "updating" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function updating(VehicleModel $vehicleModel)
@@ -44,7 +43,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "updated" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function updated(VehicleModel $vehicleModel)
@@ -55,7 +53,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "deleted" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function deleted(VehicleModel $vehicleModel)
@@ -66,7 +63,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "restored" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function restored(VehicleModel $vehicleModel)
@@ -77,7 +73,6 @@ class VehicleModelObserver
 	/**
 	 * Handle the vehicle model "force deleted" event.
 	 *
-	 * @param  \App\VehicleModel  $vehicleModel
 	 * @return void
 	 */
 	public function forceDeleted(VehicleModel $vehicleModel)
