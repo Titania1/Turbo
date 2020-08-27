@@ -547,5 +547,7 @@
 	"Could not send your message": "Impossible d'envoyer votre message",
 	"Bills": "Bons",
 	"Bill": "Bon",
-	"For full functionality of this site it is necessary to enable JavaScript. Here are the :link instructions how to enable JavaScript in your web browser": "Pour bénéficier de toutes les fonctionnalités de ce site, il est nécessaire d'activer JavaScript. Voici les :link instructions pour activer JavaScript dans votre navigateur Web"
+	"For full functionality of this site it is necessary to enable JavaScript. Here are the :link instructions how to enable JavaScript in your web browser": "Pour bénéficier de toutes les fonctionnalités de ce site, il est nécessaire d'activer JavaScript. Voici les :link instructions pour activer JavaScript dans votre navigateur Web",
+	"to": "à",
+	"today": "aujourd'hui"
 }

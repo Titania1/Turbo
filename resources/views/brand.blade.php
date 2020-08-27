@@ -26,55 +26,40 @@
 		</div>
 	</div>
 </div>
-<div class="block block-split">
-	<div class="container">
-		<div class="block-split__row row no-gutters">
-			<div class="block-split__item block-split__item-content col-auto">
-				<div class="block-space block-space--layout--divider-nl"></div>
-				<div class="block block-products-carousel" data-layout="grid-5">
-					<div class="container">
-						<div class="section-header">
-							<div class="section-header__body">
-								<h2 class="section-header__title">@lang('Parts')</h2>
-								<div class="section-header__spring"></div>
-								<div class="section-header__arrows">
-									<div class="arrow section-header__arrow section-header__arrow--prev arrow--prev">
-										<button class="arrow__button" type="button">
-											@include('svg.arrow_left')
-										</button>
-									</div>
-									<div class="arrow section-header__arrow section-header__arrow--next arrow--next">
-										<button class="arrow__button" type="button">
-											@include('svg.arrow_right')
-										</button>
-									</div>
-								</div>
-								<div class="section-header__divider"></div>
-							</div>
+<div class="block block-teammates">
+	<div class="container container--max--xl">
+		<div class="block-teammates__title">Sélection du modèle {{ $brand->name }}</div>
+		<div class="block-teammates__list">
+			<div class="owl-carousel">
+				@foreach ($brand->models as $model)
+					<div class="block-teammates__item teammate">
+						<div class="teammate__avatar">
+							<img src="{{ $model->picture }}" alt="@lang('Photo')">
 						</div>
-						<div class="block-products-carousel__carousel">
-							<div class="block-products-carousel__carousel-loader"></div>
-							<div class="owl-carousel">
-								@foreach ($brand->parts as $part)
-									<div class="block-products-carousel__column">
-										<div class="block-products-carousel__cell">
-											<div class="product-card product-card--layout--grid">
-												@include('partials.part_card')
-											</div>
-										</div>
-									</div>
-								@endforeach
+						<div class="teammate__info">
+							<div class="teammate__name">{{ strtok($model->name, ' ') }}</div>
+							@if($model->children->isNotEmpty())
+							<div class="form-group">
+								<select class="form-control form-control-sm form-control-select2">
+									<option>@lang('Select Model')</option>
+									<option>{{ $model->name }}</option>
+									@foreach ($model->children as $child)
+										<option>{{ $child->name }}</option>
+									@endforeach
+								</select>
 							</div>
+							@else
+							<div class="teammate__position">{{ $model->name }}</div>
+							<div class="teammate__position">
+								{{ $model->lifeSpan }}
+							</div>
+							@endif
 						</div>
 					</div>
-				</div>
-				<div class="block-space block-space--layout--divider-nl"></div>
-				@include('partials.category_featured')
-				<div class="block-space block-space--layout--divider-nl"></div>
-				@include('partials.brands')
+				@endforeach
 			</div>
 		</div>
-		<div class="block-space block-space--layout--before-footer"></div>
 	</div>
 </div>
+<div class="block-space block-space--layout--before-footer"></div>
 @stop
