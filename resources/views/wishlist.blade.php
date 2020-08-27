@@ -1,8 +1,11 @@
 @extends('layouts.app')
 
-@section('title', __('Wishlist'))
+<pre>  {{ var_dump(Session::all()) }}    </pre>
 
 @section('content')
+
+
+
 <div class="block-header block-header--has-breadcrumb block-header--has-title">
 	<div class="container">
 		<div class="block-header__body">
