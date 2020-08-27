@@ -22,4 +22,9 @@ class Brand extends Model
 	{
 		return $this->hasManyThrough(Part::class, Vehicle::class);
 	}
+
+	public function models()
+	{
+		return $this->hasMany(VehicleModel::class)->whereNull('vehicle_model_id');
+	}
 }
