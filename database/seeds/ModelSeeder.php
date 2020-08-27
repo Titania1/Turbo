@@ -12,8 +12,6 @@ class ModelSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -28,13 +26,14 @@ class ModelSeeder extends Seeder
 	{
 		$to = ($tecdoc_model->To == '0000-00-00') ? null : $tecdoc_model->To;
 		$from = ($tecdoc_model->From == '0000-00-00') ? null : $tecdoc_model->From;
+
 		return VehicleModel::create([
 			'brand_id' => Brand::select('id')->where('name', $brand_name)->first()->id,
 			'from' => $from,
 			'to' => $to,
 			'name' => $tecdoc_model->Description,
 			'vehicle_model_id' => $parent_id,
-			'image' => $img
+			'image' => $img,
 		])->id;
 	}
 
@@ -64,6 +63,7 @@ class ModelSeeder extends Seeder
 			return false;
 		} else {
 			Storage::disk('public')->put("/models/$id.jpg", $response->body());
+
 			return true;
 		}
 	}

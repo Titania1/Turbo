@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
@@ -35,6 +37,7 @@ class VehicleModel extends Model
 	{
 		$from = $this->from->format('m.Y');
 		$to = ($this->to) ? $this->to->format('m.Y') : __('today');
+
 		return "($from " . __('to') . " $to)";
 	}
 }
