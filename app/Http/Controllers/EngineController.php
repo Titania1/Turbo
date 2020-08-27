@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\Engine;
@@ -30,7 +32,6 @@ class EngineController extends Controller
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
@@ -41,7 +42,6 @@ class EngineController extends Controller
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  \App\Engine  $engine
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show(Engine $engine)
@@ -52,7 +52,6 @@ class EngineController extends Controller
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  \App\Engine  $engine
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(Engine $engine)
@@ -63,8 +62,6 @@ class EngineController extends Controller
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \App\Engine  $engine
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, Engine $engine)
@@ -75,7 +72,6 @@ class EngineController extends Controller
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  \App\Engine  $engine
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(Engine $engine)
