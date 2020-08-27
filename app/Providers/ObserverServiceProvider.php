@@ -34,6 +34,8 @@ use App\Observers\CategoryObserver;
 use App\Observers\SupplierObserver;
 use App\Observers\StoreAboutObserver;
 use App\Observers\StoreContactObserver;
+use App\Observers\VehicleModelObserver;
+use App\VehicleModel;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -60,5 +62,6 @@ class ObserverServiceProvider extends ServiceProvider
 		StoreAbout::observe(StoreAboutObserver::class);
 		Supplier::observe(SupplierObserver::class);
 		Garage::observe(GarageObserver::class);
+		VehicleModel::observe(VehicleModelObserver::class);
 	}
 }
