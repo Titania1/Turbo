@@ -36,7 +36,6 @@ class BrandsController extends Controller
 	 */
 	public function show(Brand $brand)
 	{
-		// dd($brand->models);
 		return view('brand', compact('brand'));
 	}
 }

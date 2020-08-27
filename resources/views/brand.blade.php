@@ -34,10 +34,26 @@
 				@foreach ($brand->models as $model)
 					<div class="block-teammates__item teammate">
 						<div class="teammate__avatar">
-							<img src="{{ $model->image }}" alt="@lang('Photo')">
+							<img src="{{ $model->picture }}" alt="@lang('Photo')">
 						</div>
 						<div class="teammate__info">
-							<div class="teammate__name">{{ $model->name }}</div>
+							<div class="teammate__name">{{ strtok($model->name, ' ') }}</div>
+							@if($model->children->isNotEmpty())
+							<div class="form-group">
+								<select class="form-control form-control-sm form-control-select2">
+									<option>@lang('Select Model')</option>
+									<option>{{ $model->name }}</option>
+									@foreach ($model->children as $child)
+										<option>{{ $child->name }}</option>
+									@endforeach
+								</select>
+							</div>
+							@else
+							<div class="teammate__position">{{ $model->name }}</div>
+							<div class="teammate__position">
+								{{ $model->lifeSpan }}
+							</div>
+							@endif
 						</div>
 					</div>
 				@endforeach

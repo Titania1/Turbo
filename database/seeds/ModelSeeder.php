@@ -17,8 +17,7 @@ class ModelSeeder extends Seeder
 	 */
 	public function run(): void
 	{
-		Storage::disk('public')->deleteDirectory('models');
-		Storage::disk('public')->makeDirectory('models');
+		$this->prepareDirectory();
 		require_once dirname(__FILE__) . '/data/brands.php';
 		foreach ($brands as $image_url => $name) {
 			$this->seedModels($name);
@@ -45,33 +44,27 @@ class ModelSeeder extends Seeder
 		// Use that id to grab the models from tecdoc
 		$models = $this->getModelsByBrand($name);
 		foreach ($models as $model) {
-			// Create the model and insert it into DB
-			// If pic download is successful then the model is a parent
-			// We need to store its id so we can attach next models to it
-			$img = $this->download($name, $model->id);
-			if ($img) {
-				session(['current_parent' => $this->create($model, $name, null, $img)]);
-			} else {
-				$id = session('current_parent');
-				if ($id) {
-					// Pic not found so we need to attach the model to a parent
-					$this->create($model, $name, $id, null);
+			$havePic = $this->download($name, $model->id);
+			if ($havePic) {
+				$id = $this->create($model, $name, null, $model->id);
+				$children = $this->getSubModels($name, $model->Description);
+				foreach ($children as $child) {
+					$this->create($child, $name, $id, null);
 				}
 			}
 		}
 	}
 
 	// Download the model pic if available and store it locally
-	public function download(string $name, int $id)
+	public function download(string $name, int $id): bool
 	{
 		$url = 'https://ghiar.com/images/modelsphotos/';
 		$response = Http::get($url . strtolower($name) . '/' . $id . '.jpg');
 		if ($response->failed()) {
 			return false;
 		} else {
-			$name = md5($name);
-			Storage::disk('public')->put("/models/$name.jpg", $response->body());
-			return $name;
+			Storage::disk('public')->put("/models/$id.jpg", $response->body());
+			return true;
 		}
 	}
 
@@ -87,6 +80,17 @@ class ModelSeeder extends Seeder
 			->first();
 	}
 
+	public function getSubModels(string $name, string $description): Collection
+	{
+		return \DB::connection('tecdoc')
+			->table('models')
+			->select('id', 'From', 'To', 'Description')
+			->where('ManufacturerId', $this->getBrandId($name))
+			->where('Description', '!=', $description)
+			->where('Description', 'LIKE', strtok($description, ' ') . '%')
+			->get();
+	}
+
 	public function getModelsByBrand(string $name): Collection
 	{
 		return \DB::connection('tecdoc')
@@ -94,5 +98,11 @@ class ModelSeeder extends Seeder
 			->select('id', 'From', 'To', 'Description')
 			->where('ManufacturerId', $this->getBrandId($name))
 			->get();
+	}
+
+	public function prepareDirectory(): void
+	{
+		Storage::disk('public')->deleteDirectory('models');
+		Storage::disk('public')->makeDirectory('models');
 	}
 }
