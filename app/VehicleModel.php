@@ -18,6 +18,11 @@ class VehicleModel extends Model
 		'to' => 'date',
 	];
 
+	public function getRouteKeyName(): string
+	{
+		return 'slug';
+	}
+
 	public function parent()
 	{
 		return $this->belongsTo(self::class);
