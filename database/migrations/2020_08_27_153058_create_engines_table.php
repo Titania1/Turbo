@@ -17,6 +17,11 @@ class CreateEnginesTable extends Migration
 	{
 		Schema::create('engines', function (Blueprint $table) {
 			$table->id();
+			$table->foreignId('vehicle_model_id')->constrained();
+			$table->string('type');
+			$table->date('from');
+			$table->date('to');
+			$table->string('motor_code');
 			$table->timestamps();
 		});
 	}
