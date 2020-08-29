@@ -5,15 +5,13 @@ declare(strict_types=1);
 use App\Engine;
 use App\VehicleModel;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 class EngineSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -83,8 +81,10 @@ class EngineSeeder extends Seeder
 		if ($collection->count() > 1) {
 			// Concatenate results into a single string
 			$values = $info->where('AttributeType', $col)->pluck('DisplayValue')->ToArray();
+
 			return implode(' - ', $values);
 		}
+
 		return $info->where('AttributeType', $col)->first()->DisplayValue;
 	}
 
@@ -95,6 +95,7 @@ class EngineSeeder extends Seeder
 		$_2 = $this->query($info, 'Capacity'); // 1,3 l
 		$_2 = rtrim($_2, ' l'); // 1,3
 		$_2 = number_format(str_replace(',', '.', $_2) * 100); // 130
+
 		return $_1 . ' - ' . $_2 . ' L';
 	}
 }
