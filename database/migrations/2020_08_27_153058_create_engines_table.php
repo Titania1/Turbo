@@ -19,8 +19,12 @@ class CreateEnginesTable extends Migration
 			$table->id();
 			$table->foreignId('vehicle_model_id')->constrained();
 			$table->string('type');
-			$table->date('from');
-			$table->date('to');
+			$table->string('interval');
+			$table->string('power');
+			$table->string('capacity');
+			$table->unsignedTinyInteger('cylinders');
+			$table->string('body_type');
+			$table->string('fuel');
 			$table->string('motor_code');
 			$table->timestamps();
 		});

@@ -28,62 +28,62 @@
 </div>
 <div class="block">
 	<div class="container container--max--xl">
-		<div class="wishlist">
-			<table class="wishlist__table">
-				<thead class="wishlist__head">
-					<tr class="wishlist__row wishlist__row--head">
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+		<div>
+			<table class="table table-bordered table-hover">
+				<thead class="thead-dark">
+					<tr class="wishlist__row--head">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Type')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Construction interval')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Power')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Capacity')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Number of cylinders')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Body type')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Engine type')
 						</th>
-						<th class="wishlist__column wishlist__column--head wishlist__column--price">
+						<th class="wishlist__column--head wishlist__column--price">
 							@lang('Engine code')
 						</th>
 					</tr>
 				</thead>
-				<tbody class="wishlist__body">
+				<tbody>
 					@foreach ($engines as $engine)
-					<tr class="wishlist__row wishlist__row--body">
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
+					<tr class="wishlist__row--body">
+						<td class="wishlist__column--body wishlist__column--price">
 							{{ $engine->type }}
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							{{ $engine->interval }}
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							{{ $engine->power }}
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							{{ $engine->capacity }}
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							{{ $engine->cylinders }}
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							@lang($engine->body_type)
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							@lang($engine->fuel)
 						</td>
-						<td class="wishlist__column wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+						<td class="wishlist__column--body wishlist__column--price">
+							{{ $engine->motor_code }}
 						</td>
 					</tr>
 					@endforeach

@@ -556,5 +556,7 @@
 	"Number of cylinders": "No. de cylindres",
 	"Body type": "Type de corps",
 	"Engine type": "Type de moteur",
-	"Engine code": "Codes moteur"
+	"Engine code": "Codes moteur",
+	"Saloon": "A trois volumes",
+	"Petrol": "Essence"
 }
