@@ -14,7 +14,7 @@ class WishlistController extends Controller
 		$Wishlist = Wishlist::content();
 		return view('whishlist', compact('Wishlist'));
 	}
-gbnm,./
+
 
 	public function add(Part $part)
 	{
