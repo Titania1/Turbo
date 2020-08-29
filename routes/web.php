@@ -83,5 +83,5 @@ Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.abo
 Route::view('/pricing', 'pricing');
 Route::fallback('FallBackController');
 Route::get('/whishlist', 'WishlistController@index');
-Route::post('/whishlist/add/{part}', 'WishlistController@add')->name('whishlistFacade.add');
-Route::post('/whishlist/remove/{part}', 'WishlistController@remove')->name('whishlistFacade.remove');
+Route::post('/whishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
+Route::post('/whishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
