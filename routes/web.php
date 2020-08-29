@@ -82,3 +82,8 @@ Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store
 Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
 Route::fallback('FallBackController');
+
+
+Route::get('/whishlist', 'WishlistController@index');
+Route::post('/whishlist/add/{part}', 'whishlistController@add')->name('whishlistFacade.add');
+Route::post('/whishlist/remove/{part}', 'whishlistController@remove')->name('whishlistFacade.remove');
