@@ -5,18 +5,20 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Engine;
+use App\VehicleModel;
 use Illuminate\Http\Request;
 
-class EngineController extends Controller
+class EnginesController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index()
+	public function index(VehicleModel $model)
 	{
-		//
+		$engines = $model->engines;
+		return view('model', compact('engines', 'model'));
 	}
 
 	/**

@@ -31,7 +31,7 @@
 		<div class="block-teammates__title">Sélection du modèle {{ $brand->name }}</div>
 		<div class="block-teammates__list">
 			<div class="owl-carousel">
-				@foreach ($brand->models as $model)
+				@foreach($brand->models as $model)
 					<div class="block-teammates__item teammate">
 						<div class="teammate__avatar">
 							<img src="{{ $model->picture }}" alt="@lang('Photo')">
@@ -39,20 +39,28 @@
 						<div class="teammate__info">
 							<div class="teammate__name">{{ strtok($model->name, ' ') }}</div>
 							@if($model->children->isNotEmpty())
-							<div class="form-group">
-								<select class="form-control form-control-sm form-control-select2">
-									<option>@lang('Select Model')</option>
-									<option>{{ $model->name }}</option>
-									@foreach ($model->children as $child)
-										<option>{{ $child->name }}</option>
-									@endforeach
-								</select>
-							</div>
+								<div class="form-group">
+									<select class="form-control form-control-sm form-control-select2">
+										<option>@lang('Select Model')</option>
+										<option value="{{ route('model', ['model' => $model]) }}">
+											{{ $model->name }}
+										</option>
+										@foreach($model->children as $child)
+											<option value="{{ route('model', ['model' => $model]) }}">
+													{{ $child->name }}
+											</option>
+										@endforeach
+									</select>
+								</div>
 							@else
-							<div class="teammate__position">{{ $model->name }}</div>
-							<div class="teammate__position">
-								{{ $model->lifeSpan }}
-							</div>
+								<div class="teammate__position">
+									<a href="{{ route('model', ['model' => $model]) }}">
+										{{ $model->name }}
+									</a>
+								</div>
+								<div class="teammate__position">
+									{{ $model->lifeSpan }}
+								</div>
 							@endif
 						</div>
 					</div>

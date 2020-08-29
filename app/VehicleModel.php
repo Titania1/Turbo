@@ -28,6 +28,11 @@ class VehicleModel extends Model
 		return $this->hasMany(self::class);
 	}
 
+	public function engines()
+	{
+		return $this->hasMany(Engine::class);
+	}
+
 	public function getPictureAttribute(): string
 	{
 		return secure_asset('storage/models/' . $this->image . '.jpg');
