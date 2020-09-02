@@ -2409,16 +2409,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v4.3.3",
+            "version": "v4.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "0172084dd26f93fc3521b9118f4e3a330a36eda8"
+                "reference": "ffce0a8f69c19bdd63a22d972e605388903d70b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/0172084dd26f93fc3521b9118f4e3a330a36eda8",
-                "reference": "0172084dd26f93fc3521b9118f4e3a330a36eda8",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/ffce0a8f69c19bdd63a22d972e605388903d70b4",
+                "reference": "ffce0a8f69c19bdd63a22d972e605388903d70b4",
                 "shasum": ""
             },
             "require": {
@@ -2478,7 +2478,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2020-05-26T18:27:29+00:00"
+            "time": "2020-09-01T16:09:46+00:00"
         },
         {
             "name": "laravel/nova",
@@ -2486,7 +2486,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "19d09d22e07c0d5083be7761f607932675902791"
+                "reference": "e36eee4bd127f02172554fe711d95e1c2a824d60"
             },
             "require": {
                 "brick/money": "^0.4.2",
