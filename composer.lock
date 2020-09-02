@@ -2124,16 +2124,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v12.3.0",
+            "version": "v12.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "63c04086c61435d9e84c450b384ff4d095e531cb"
+                "reference": "9ca4eb279953be913480ff541c9f36c0dd76bf2e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/63c04086c61435d9e84c450b384ff4d095e531cb",
-                "reference": "63c04086c61435d9e84c450b384ff4d095e531cb",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/9ca4eb279953be913480ff541c9f36c0dd76bf2e",
+                "reference": "9ca4eb279953be913480ff541c9f36c0dd76bf2e",
                 "shasum": ""
             },
             "require": {
@@ -2194,7 +2194,7 @@
                 "laravel",
                 "stripe"
             ],
-            "time": "2020-08-25T17:02:36+00:00"
+            "time": "2020-09-01T15:17:21+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2486,7 +2486,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "19d09d22e07c0d5083be7761f607932675902791"
+                "reference": "e36eee4bd127f02172554fe711d95e1c2a824d60"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -5877,16 +5877,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.49.0",
+            "version": "v7.51.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "db6229bff448f7f3bf7f6aee112d5d9ba34ca4ba"
+                "reference": "879a3545126ebc77218c53d2055572b7e473fbcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/db6229bff448f7f3bf7f6aee112d5d9ba34ca4ba",
-                "reference": "db6229bff448f7f3bf7f6aee112d5d9ba34ca4ba",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/879a3545126ebc77218c53d2055572b7e473fbcf",
+                "reference": "879a3545126ebc77218c53d2055572b7e473fbcf",
                 "shasum": ""
             },
             "require": {
@@ -5930,7 +5930,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-08-19T22:48:20+00:00"
+            "time": "2020-09-02T21:04:02+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -6704,16 +6704,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v5.1.2",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "b21d69ebb33adfcb7e6d8b0a0a8799db7090705b"
+                "reference": "b6886c43cc1ae3367c569c5a8d4182555dd694fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/b21d69ebb33adfcb7e6d8b0a0a8799db7090705b",
-                "reference": "b21d69ebb33adfcb7e6d8b0a0a8799db7090705b",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/b6886c43cc1ae3367c569c5a8d4182555dd694fb",
+                "reference": "b6886c43cc1ae3367c569c5a8d4182555dd694fb",
                 "shasum": ""
             },
             "require": {
@@ -6790,7 +6790,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:35:19+00:00"
+            "time": "2020-08-17T07:42:30+00:00"
         },
         {
             "name": "symfony/mime",
@@ -8101,7 +8101,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v5.1.4",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
