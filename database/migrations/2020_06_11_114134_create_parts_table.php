@@ -35,6 +35,7 @@ class CreatePartsTable extends Migration
 			$table->string('slug');
 			$table->timestamp('deleted_at')->nullable();
 			$table->timestamps();
+			
 		});
 	}
 

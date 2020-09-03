@@ -30,7 +30,7 @@ Route::get('/contact', 'ContactController@show')
 Route::post('/contact', 'ContactController@send');
 Route::get('/part/{part}', 'PartsController@show')->name('part');
 Route::view('/track-order', 'track-order')->name('track');
-Route::view('/wishlist', 'wishlist')->name('wishlist');
+
 Route::get('/cart', 'CartController@index');
 Route::post('/cart/add/{part}', 'CartController@add')->name('cart.add');
 Route::post('/cart/remove/{part}', 'CartController@remove')->name('cart.remove');
@@ -82,6 +82,7 @@ Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store
 Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
 Route::fallback('FallBackController');
-Route::get('/whishlist', 'WishlistController@index');
-Route::post('/whishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
-Route::post('/whishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+
+Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
+Route::post('/wishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
+Route::post('/wishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');

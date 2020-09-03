@@ -13,9 +13,11 @@ class WishlistController extends Controller
 {
 	public function index(Request $request): View
 	{
-		$Wishlist = Wishlist::content();
+		dd(session('wishlist'));
 
-		return view('whishlist', compact('Wishlist'));
+		$wishlist = Wishlist::content();
+
+		return view('wishlist', compact('wishlist'));
 	}
 
 	public function add(int $part_id): RedirectResponse
