@@ -56,8 +56,8 @@ class PartsController extends Controller
 		}
 		$part->price = $request->price;
 		$part->sku = $request->sku;
+		$part->inStock::where('part_id', $this->id)->where('quantity', '>', 0)->exists();
 		$part->save();
-
 		return back();
 	}
 
