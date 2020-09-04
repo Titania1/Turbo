@@ -2486,7 +2486,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "e36eee4bd127f02172554fe711d95e1c2a824d60"
+                "reference": "9148d97c97eff31892a8aa3c4255d8d38d7edb58"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -5483,16 +5483,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.6.0",
+            "version": "8.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "7d32d4fa352f063db728e0916b723372a0cdf514"
+                "reference": "29906f88d78fdb3ca43b86cfe7c78bc985739f8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/7d32d4fa352f063db728e0916b723372a0cdf514",
-                "reference": "7d32d4fa352f063db728e0916b723372a0cdf514",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/29906f88d78fdb3ca43b86cfe7c78bc985739f8f",
+                "reference": "29906f88d78fdb3ca43b86cfe7c78bc985739f8f",
                 "shasum": ""
             },
             "require": {
@@ -5579,7 +5579,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-26T19:04:06+00:00"
+            "time": "2020-09-03T07:57:29+00:00"
         },
         {
             "name": "spatie/laravel-permission",
@@ -5996,16 +5996,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.1.4",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "51ff337ce194bdc3d8db12b20ce8cd54ac9f71e9"
+                "reference": "186f395b256065ba9b890c0a4e48a91d598fa2cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/51ff337ce194bdc3d8db12b20ce8cd54ac9f71e9",
-                "reference": "51ff337ce194bdc3d8db12b20ce8cd54ac9f71e9",
+                "url": "https://api.github.com/repos/symfony/console/zipball/186f395b256065ba9b890c0a4e48a91d598fa2cf",
+                "reference": "186f395b256065ba9b890c0a4e48a91d598fa2cf",
                 "shasum": ""
             },
             "require": {
@@ -6085,7 +6085,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-17T13:51:41+00:00"
+            "time": "2020-09-02T07:07:40+00:00"
         },
         {
             "name": "symfony/css-selector",
@@ -7727,7 +7727,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.4",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -7959,7 +7959,7 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.1.4",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
