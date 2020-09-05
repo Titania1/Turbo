@@ -130,14 +130,32 @@
 							<div class="footer-newsletter__text">
 								@lang('footer.subscribe')
 							</div>
-							<form action="#" class="footer-newsletter__form">
+
+							<!-- widad -->
+
+							@if (\Session::has('success'))
+							<div class="alert alert-success" role="alert">
+								{{ \Session::get('success') }}
+							</div>
+							@endif
+							@if (\Session::has('failure'))
+							<div class="alert alert-danger" role="alert">
+								<p>{{ \Session::get('failure') }}</p>
+							</div>
+							@endif
+
+
+							<form action="{{url('/newsletter')}}" class="footer-newsletter__form" method="post">
+								{{csrf_field()}}
 								<label class="sr-only" for="footer-newsletter-address">
 									@lang('Email Address')
 								</label>
-								<input type="text" class="footer-newsletter__form-input" id="footer-newsletter-address"
-									placeholder="@lang('Email Address')">
-								<button class="footer-newsletter__form-button">@lang('Subscribe')</button>
+								<input type="text" class="footer-newsletter__form-input" name="email" id="footer-newsletter-address" placeholder="@lang('Email Address')">
+								<button class="footer-newsletter__form-button" y>@lang('Subscribe')</button>
 							</form>
+
+							<!--  end   -->
+
 							<div class="footer-newsletter__text footer-newsletter__text--social">
 								@lang('Follow us on social networks')
 							</div>
