@@ -30,7 +30,7 @@ Route::get('/contact', 'ContactController@show')
 Route::post('/contact', 'ContactController@send');
 Route::get('/part/{part}', 'PartsController@show')->name('part');
 Route::view('/track-order', 'track-order')->name('track');
-Route::view('/wishlist', 'wishlist')->name('wishlist');
+
 Route::get('/cart', 'CartController@index');
 Route::post('/cart/add/{part}', 'CartController@add')->name('cart.add');
 Route::post('/cart/remove/{part}', 'CartController@remove')->name('cart.remove');
@@ -72,6 +72,7 @@ Route::view('/category-6-full', 'category-6-full');
 Route::view('/category-7-full', 'category-7-full');
 Route::view('/category-right-sidebar', 'category-right-sidebar');
 Route::get('brands/{brand}', 'BrandsController@show')->name('brand');
+Route::get('/models/{model}', 'EnginesController@index')->name('model');
 Route::get('print/receipt/{receipt}', 'ReceiptsController@print');
 Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->where('provider', '(google|facebook)');
 Route::get('/login/google/callback', 'Auth\LoginController@handleProviderCallback');
@@ -83,5 +84,9 @@ Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.abo
 Route::view('/pricing', 'pricing');
 Route::fallback('FallBackController');
 
-Route::get('newsletter', 'NewsletterController@create')->name('create');
+Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
+Route::post('/wishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
+Route::post('/wishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+
+Route::get('/newsletter', 'NewsletterController@create')->name('create');
 Route::post('/newsletter', 'NewsletterController@store')->name('store');

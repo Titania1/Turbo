@@ -760,7 +760,7 @@
 										<div class="product-card__info">
 											<div class="product-card__meta">
 												<span class="product-card__meta-title">SKU:
-												</span> A43-44328-B
+												</span> A43-44328-Bitem
 											</div>
 											<div class="product-card__name">
 												<div>
