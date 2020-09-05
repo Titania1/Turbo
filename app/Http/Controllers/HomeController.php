@@ -29,6 +29,4 @@ class HomeController extends Controller
 
 		return view('dashboard', compact('user', 'profile', 'orders'));
 	}
-
-
 }

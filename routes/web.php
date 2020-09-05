@@ -83,6 +83,5 @@ Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.abo
 Route::view('/pricing', 'pricing');
 Route::fallback('FallBackController');
 
-
 Route::get('newsletter', 'NewsletterController@create')->name('create');
 Route::post('/newsletter', 'NewsletterController@store')->name('store');
