@@ -51,10 +51,10 @@
 			<div class="rating__body">
 				@for($i = 0; $i < $part->rating; $i++)
 					<div class="rating__star rating__star--active"></div>
-				@endfor
-				@for($s = $part->rating; $s < 5; $s++)
-					<div class="rating__star"></div>
-				@endfor
+					@endfor
+					@for($s = $part->rating; $s < 5; $s++) <div class="rating__star">
+			</div>
+			@endfor
 		</div>
 	</div>
 	<div class="product-card__rating-label">3 on 7 reviews</div>
@@ -78,3 +78,4 @@
 		</button>
 	</form>
 </div>
+
