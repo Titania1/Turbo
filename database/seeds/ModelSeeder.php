@@ -32,6 +32,7 @@ class ModelSeeder extends Seeder
 			'from' => $from,
 			'to' => $to,
 			'name' => $tecdoc_model->Description,
+			'slug' => sluggify($tecdoc_model->Description),
 			'vehicle_model_id' => $parent_id,
 			'image' => $img,
 		])->id;
