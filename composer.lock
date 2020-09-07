@@ -1569,21 +1569,26 @@
         },
         {
             "name": "genealabs/nova-map-marker-field",
-            "version": "0.2.0",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GeneaLabs/nova-map-marker-field.git",
-                "reference": "2cb03c3b5c457eee8cc6b74f2692f3ff3f5d69e5"
+                "reference": "eaa7e7af2d206695f7718745b26750481681a031"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/nova-map-marker-field/zipball/2cb03c3b5c457eee8cc6b74f2692f3ff3f5d69e5",
-                "reference": "2cb03c3b5c457eee8cc6b74f2692f3ff3f5d69e5",
+                "url": "https://api.github.com/repos/GeneaLabs/nova-map-marker-field/zipball/eaa7e7af2d206695f7718745b26750481681a031",
+                "reference": "eaa7e7af2d206695f7718745b26750481681a031",
                 "shasum": ""
             },
             "require": {
+                "illuminate/support": "^7.0",
                 "laravel/nova": "*",
                 "symfony/thanks": "^1.1"
+            },
+            "require-dev": {
+                "sebastian/phpcpd": "^5.0",
+                "squizlabs/php_codesniffer": "^3.4"
             },
             "type": "library",
             "extra": {
@@ -1613,7 +1618,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-08-17T19:52:37+00:00"
+            "time": "2020-09-04T14:51:47+00:00"
         },
         {
             "name": "gregoriohc/laravel-nova-theme-responsive",
