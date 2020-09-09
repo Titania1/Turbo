@@ -32,7 +32,7 @@
 		"laravel/horizon": "^4.3",
 		"laravel/nova": "*",
 		"laravel/scout": "^8.0",
-		"laravel/socialite": "^4.4",
+		"laravel/socialite": "^5.0",
 		"laravel/tinker": "^2.0",
 		"laravel/ui": "^2.0",
 		"maatwebsite/laravel-nova-excel": "^1.2",
