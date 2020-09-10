@@ -62,7 +62,9 @@
 					@foreach ($engines as $engine)
 					<tr class="wishlist__row--body">
 						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->type }}
+							<a href="{{ route('engine', ['engine' => $engine]) }}">
+								{{ $engine->type }}
+							</a>
 						</td>
 						<td class="wishlist__column--body wishlist__column--price">
 							{{ $engine->interval }}
