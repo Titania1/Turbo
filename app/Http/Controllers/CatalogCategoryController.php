@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use App\CatalogCategory;
@@ -30,7 +32,6 @@ class CatalogCategoryController extends Controller
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
@@ -41,7 +42,6 @@ class CatalogCategoryController extends Controller
 	/**
 	 * Display the specified resource.
 	 *
-	 * @param  \App\CatalogCategory  $catalogCategory
 	 * @return \Illuminate\Http\Response
 	 */
 	public function show(CatalogCategory $catalogCategory)
@@ -52,7 +52,6 @@ class CatalogCategoryController extends Controller
 	/**
 	 * Show the form for editing the specified resource.
 	 *
-	 * @param  \App\CatalogCategory  $catalogCategory
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit(CatalogCategory $catalogCategory)
@@ -63,8 +62,6 @@ class CatalogCategoryController extends Controller
 	/**
 	 * Update the specified resource in storage.
 	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \App\CatalogCategory  $catalogCategory
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, CatalogCategory $catalogCategory)
@@ -75,7 +72,6 @@ class CatalogCategoryController extends Controller
 	/**
 	 * Remove the specified resource from storage.
 	 *
-	 * @param  \App\CatalogCategory  $catalogCategory
 	 * @return \Illuminate\Http\Response
 	 */
 	public function destroy(CatalogCategory $catalogCategory)

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Observers;
 
 use App\Engine;
@@ -8,9 +10,6 @@ class EngineObserver
 {
 	/**
 	 * Handle the engine "creating" event.
-	 *
-	 * @param \App\Engine $engine
-	 * @return void
 	 */
 	public function creating(Engine $engine): void
 	{
@@ -19,9 +18,6 @@ class EngineObserver
 
 	/**
 	 * Handle the engine "updating" event.
-	 *
-	 * @param \App\Engine $engine
-	 * @return void
 	 */
 	public function updating(Engine $engine): void
 	{

@@ -12,8 +12,6 @@ class ObserverServiceProvider extends ServiceProvider
 	 * Bootstrap services.
 	 *
 	 * Register observers.
-	 *
-	 * @return void
 	 */
 	public function boot(): void
 	{

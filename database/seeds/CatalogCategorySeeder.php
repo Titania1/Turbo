@@ -1,7 +1,9 @@
 <?php
 
-use App\CatalogCategory;
+declare(strict_types=1);
+
 use App\Engine;
+use App\CatalogCategory;
 use Illuminate\Database\Seeder;
 
 class CatalogCategorySeeder extends Seeder
