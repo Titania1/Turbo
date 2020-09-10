@@ -87,6 +87,8 @@ Route::view('pricing', 'pricing');
 Route::get('wishlist', 'WishlistController@index')->name('wishlist');
 Route::post('wishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
 Route::post('wishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+Route::get('/newsletter', 'NewsletterController@create')->name('create');
+Route::post('/newsletter', 'NewsletterController@store')->name('newsletter.store');
 
 // Keep this as the last route, catches everything else
 Route::fallback('FallBackController');
