@@ -2533,7 +2533,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "c085f7723da27c9926b06a47ea03a205b96f5973"
+                "reference": "716260e72be88f26f5564a37eef32a20fa80436d"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -5638,22 +5638,22 @@
         },
         {
             "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
+            "version": "4.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
+                "reference": "996aefb353a43eb30c09bbbbc967921d01639d56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
+                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/996aefb353a43eb30c09bbbbc967921d01639d56",
+                "reference": "996aefb353a43eb30c09bbbbc967921d01639d56",
                 "shasum": ""
             },
             "require": {
                 "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
+                "illuminate/support": "~5.8.0|^6.0|^7.0|^8.0",
+                "php": "^7.3"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3",
@@ -5700,7 +5700,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-03-03T12:49:27+00:00"
+            "time": "2020-09-09T09:31:58+00:00"
         },
         {
             "name": "spatie/laravel-permission",
