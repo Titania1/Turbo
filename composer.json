@@ -25,7 +25,7 @@
 		"guzzlehttp/guzzle": "^7.0.1",
 		"inspheric/nova-defaultable": "^1.2",
 		"jubeki/nova-card-linkable": "^1.1",
-		"kabbouchi/nova-logs-tool": "^0.2.0",
+		"kabbouchi/nova-logs-tool": "^0.3.0",
 		"laravel/cashier": "^12.2",
 		"laravel/framework": "^7.0",
 		"laravel/helpers": "^1.2",

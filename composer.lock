@@ -2073,22 +2073,22 @@
         },
         {
             "name": "kabbouchi/laravel-ward",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KABBOUCHI/laravel-ward.git",
-                "reference": "94996ee5ce3dc6c649a35943d32a46a735bc1db1"
+                "reference": "4e5803330f67f34a69c79f7c98a262cb8618ab4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KABBOUCHI/laravel-ward/zipball/94996ee5ce3dc6c649a35943d32a46a735bc1db1",
-                "reference": "94996ee5ce3dc6c649a35943d32a46a735bc1db1",
+                "url": "https://api.github.com/repos/KABBOUCHI/laravel-ward/zipball/4e5803330f67f34a69c79f7c98a262cb8618ab4e",
+                "reference": "4e5803330f67f34a69c79f7c98a262cb8618ab4e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/queue": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0"
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "illuminate/queue": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0"
@@ -2126,24 +2126,24 @@
                 "logs",
                 "ward"
             ],
-            "time": "2020-03-04T07:03:42+00:00"
+            "time": "2020-09-08T17:45:28+00:00"
         },
         {
             "name": "kabbouchi/nova-logs-tool",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KABBOUCHI/nova-logs-tool.git",
-                "reference": "7b59c497bac69ac33a438fa654d5c1a9c465d148"
+                "reference": "c3d55c4f58c502ece8d9be89d75fa9d047222c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KABBOUCHI/nova-logs-tool/zipball/7b59c497bac69ac33a438fa654d5c1a9c465d148",
-                "reference": "7b59c497bac69ac33a438fa654d5c1a9c465d148",
+                "url": "https://api.github.com/repos/KABBOUCHI/nova-logs-tool/zipball/c3d55c4f58c502ece8d9be89d75fa9d047222c9e",
+                "reference": "c3d55c4f58c502ece8d9be89d75fa9d047222c9e",
                 "shasum": ""
             },
             "require": {
-                "kabbouchi/laravel-ward": "^0.3.0",
+                "kabbouchi/laravel-ward": "^0.4.0",
                 "laravel/nova": "*",
                 "php": ">=7.1.0"
             },
@@ -2181,7 +2181,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2020-03-04T18:36:32+00:00"
+            "time": "2020-09-09T22:58:25+00:00"
         },
         {
             "name": "laravel/cashier",
