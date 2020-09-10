@@ -22,7 +22,7 @@
 		"fruitcake/laravel-cors": "^2.0",
 		"genealabs/nova-map-marker-field": "^0.2.0",
 		"gregoriohc/laravel-nova-theme-responsive": "master",
-		"guzzlehttp/guzzle": "^6.5.5",
+		"guzzlehttp/guzzle": "^7.0.1",
 		"inspheric/nova-defaultable": "^1.2",
 		"jubeki/nova-card-linkable": "^1.1",
 		"kabbouchi/nova-logs-tool": "^0.2.0",
