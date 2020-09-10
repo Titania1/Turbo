@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df6c0963b53be00a7ec4db346cd32336",
+    "content-hash": "9932d7625f886136859306484decf02a",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2059,22 +2059,22 @@
         },
         {
             "name": "kabbouchi/laravel-ward",
-            "version": "v0.3.0",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KABBOUCHI/laravel-ward.git",
-                "reference": "94996ee5ce3dc6c649a35943d32a46a735bc1db1"
+                "reference": "4e5803330f67f34a69c79f7c98a262cb8618ab4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KABBOUCHI/laravel-ward/zipball/94996ee5ce3dc6c649a35943d32a46a735bc1db1",
-                "reference": "94996ee5ce3dc6c649a35943d32a46a735bc1db1",
+                "url": "https://api.github.com/repos/KABBOUCHI/laravel-ward/zipball/4e5803330f67f34a69c79f7c98a262cb8618ab4e",
+                "reference": "4e5803330f67f34a69c79f7c98a262cb8618ab4e",
                 "shasum": ""
             },
             "require": {
-                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/queue": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0"
+                "illuminate/contracts": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "illuminate/queue": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0",
+                "illuminate/support": "5.5.*|5.6.*|5.7.*|5.8.*|^6.0|^7.0|^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0"
@@ -2112,24 +2112,24 @@
                 "logs",
                 "ward"
             ],
-            "time": "2020-03-04T07:03:42+00:00"
+            "time": "2020-09-08T17:45:28+00:00"
         },
         {
             "name": "kabbouchi/nova-logs-tool",
-            "version": "v0.2.0",
+            "version": "v0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/KABBOUCHI/nova-logs-tool.git",
-                "reference": "7b59c497bac69ac33a438fa654d5c1a9c465d148"
+                "reference": "c3d55c4f58c502ece8d9be89d75fa9d047222c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/KABBOUCHI/nova-logs-tool/zipball/7b59c497bac69ac33a438fa654d5c1a9c465d148",
-                "reference": "7b59c497bac69ac33a438fa654d5c1a9c465d148",
+                "url": "https://api.github.com/repos/KABBOUCHI/nova-logs-tool/zipball/c3d55c4f58c502ece8d9be89d75fa9d047222c9e",
+                "reference": "c3d55c4f58c502ece8d9be89d75fa9d047222c9e",
                 "shasum": ""
             },
             "require": {
-                "kabbouchi/laravel-ward": "^0.3.0",
+                "kabbouchi/laravel-ward": "^0.4.0",
                 "laravel/nova": "*",
                 "php": ">=7.1.0"
             },
@@ -2167,7 +2167,7 @@
                 "laravel",
                 "nova"
             ],
-            "time": "2020-03-04T18:36:32+00:00"
+            "time": "2020-09-09T22:58:25+00:00"
         },
         {
             "name": "laravel/cashier",
@@ -2533,7 +2533,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "4a2f8bc8b749dc133f54b66ea0ef5222ebb9bb55"
+                "reference": "c085f7723da27c9926b06a47ea03a205b96f5973"
             },
             "require": {
                 "brick/money": "^0.4.2",
@@ -5635,336 +5635,6 @@
                 }
             ],
             "time": "2020-09-08T17:55:03+00:00"
-        },
-        {
-            "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
-                "shasum": ""
-            },
-            "require": {
-                "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "newsletter"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-03-03T12:49:27+00:00"
-        },
-        {
-            "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
-                "shasum": ""
-            },
-            "require": {
-                "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "newsletter"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-03-03T12:49:27+00:00"
-        },
-        {
-            "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
-                "shasum": ""
-            },
-            "require": {
-                "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "newsletter"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-03-03T12:49:27+00:00"
-        },
-        {
-            "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
-                "shasum": ""
-            },
-            "require": {
-                "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "newsletter"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-03-03T12:49:27+00:00"
-        },
-        {
-            "name": "spatie/laravel-newsletter",
-            "version": "4.8.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/ac00cbe4662e64bde4f2f732935047e917919215",
-                "reference": "ac00cbe4662e64bde4f2f732935047e917919215",
-                "shasum": ""
-            },
-            "require": {
-                "drewm/mailchimp-api": "^2.4",
-                "illuminate/support": "~5.8.0|^6.0|^7.0",
-                "php": "~7.2"
-            },
-            "require-dev": {
-                "mockery/mockery": "^1.3",
-                "phpunit/phpunit": "^8.0|^9.0"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Spatie\\Newsletter\\NewsletterServiceProvider"
-                    ],
-                    "aliases": {
-                        "Newsletter": "Spatie\\Newsletter\\NewsletterFacade"
-                    }
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Newsletter\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://murze.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Manage newsletters in Laravel",
-            "homepage": "https://github.com/spatie/laravel-newsletter",
-            "keywords": [
-                "laravel",
-                "mailchimp",
-                "newsletter"
-            ],
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                }
-            ],
-            "time": "2020-03-03T12:49:27+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
