@@ -49,7 +49,7 @@ class EnginesController extends Controller
 	 */
 	public function show(Engine $engine)
 	{
-		//
+		return $engine;
 	}
 
 	/**

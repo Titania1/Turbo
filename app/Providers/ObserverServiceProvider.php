@@ -4,38 +4,6 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Part;
-use App\Type;
-use App\User;
-use App\Brand;
-use App\Order;
-use App\Store;
-use App\Garage;
-use App\Review;
-use App\Invoice;
-use App\Profile;
-use App\Receipt;
-use App\Category;
-use App\Supplier;
-use App\StoreAbout;
-use App\StoreContact;
-use App\VehicleModel;
-use App\Observers\PartObserver;
-use App\Observers\TypeObserver;
-use App\Observers\UserObserver;
-use App\Observers\BrandObserver;
-use App\Observers\OrderObserver;
-use App\Observers\StoreObserver;
-use App\Observers\GarageObserver;
-use App\Observers\ReviewObserver;
-use App\Observers\InvoiceObserver;
-use App\Observers\ProfileObserver;
-use App\Observers\ReceiptObserver;
-use App\Observers\CategoryObserver;
-use App\Observers\SupplierObserver;
-use App\Observers\StoreAboutObserver;
-use App\Observers\StoreContactObserver;
-use App\Observers\VehicleModelObserver;
 use Illuminate\Support\ServiceProvider;
 
 class ObserverServiceProvider extends ServiceProvider
@@ -43,25 +11,28 @@ class ObserverServiceProvider extends ServiceProvider
 	/**
 	 * Bootstrap services.
 	 *
+	 * Register observers.
+	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(): void
 	{
-		Part::observe(PartObserver::class);
-		Profile::observe(ProfileObserver::class);
-		Type::observe(TypeObserver::class);
-		Category::observe(CategoryObserver::class);
-		Invoice::observe(InvoiceObserver::class);
-		Receipt::observe(ReceiptObserver::class);
-		Brand::observe(BrandObserver::class);
-		Review::observe(ReviewObserver::class);
-		Order::observe(OrderObserver::class);
-		User::observe(UserObserver::class);
-		Store::observe(StoreObserver::class);
-		StoreContact::observe(StoreContactObserver::class);
-		StoreAbout::observe(StoreAboutObserver::class);
-		Supplier::observe(SupplierObserver::class);
-		Garage::observe(GarageObserver::class);
-		VehicleModel::observe(VehicleModelObserver::class);
+		\App\Part::observe(\App\Observers\PartObserver::class);
+		\App\Profile::observe(\App\Observers\ProfileObserver::class);
+		\App\Type::observe(\App\Observers\TypeObserver::class);
+		\App\Category::observe(\App\Observers\CategoryObserver::class);
+		\App\Invoice::observe(\App\Observers\InvoiceObserver::class);
+		\App\Receipt::observe(\App\Observers\ReceiptObserver::class);
+		\App\Brand::observe(\App\Observers\BrandObserver::class);
+		\App\Review::observe(\App\Observers\ReviewObserver::class);
+		\App\Order::observe(\App\Observers\OrderObserver::class);
+		\App\User::observe(\App\Observers\UserObserver::class);
+		\App\Store::observe(\App\Observers\StoreObserver::class);
+		\App\StoreContact::observe(\App\Observers\StoreContactObserver::class);
+		\App\StoreAbout::observe(\App\Observers\StoreAboutObserver::class);
+		\App\Supplier::observe(\App\Observers\SupplierObserver::class);
+		\App\Garage::observe(\App\Observers\GarageObserver::class);
+		\App\VehicleModel::observe(\App\Observers\VehicleModelObserver::class);
+		\App\Engine::observe(\App\Observers\EngineObserver::class);
 	}
 }
