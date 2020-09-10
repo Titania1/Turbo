@@ -84,4 +84,9 @@ Route::get('store/{store}', 'StoresController@show')->name('store');
 Route::get('store/{store}/contact', 'StoreContactController@show')->name('store.contact');
 Route::get('store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('pricing', 'pricing');
+Route::get('wishlist', 'WishlistController@index')->name('wishlist');
+Route::post('wishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
+Route::post('wishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+
+// Keep this as the last route, catches everything else
 Route::fallback('FallBackController');
