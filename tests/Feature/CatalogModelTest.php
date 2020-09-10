@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Brand;
-use App\VehicleModel;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\VehicleModel;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class CatalogModelTest extends TestCase
@@ -17,9 +15,7 @@ class CatalogModelTest extends TestCase
 
 	/**
 	 * Test that we can create a catalog model
-	 * And we can navigate to it
-	 *
-	 * @return void
+	 * And we can navigate to it.
 	 */
 	public function test_catalog_model_route(): void
 	{
