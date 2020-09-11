@@ -4,19 +4,22 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Engine;
 use App\VehicleModel;
 use Illuminate\Http\Request;
 
-class VehicleModelController extends Controller
+class EnginesController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index()
+	public function index(VehicleModel $model)
 	{
-		//
+		$engines = $model->engines;
+
+		return view('model', compact('engines', 'model'));
 	}
 
 	/**
@@ -44,7 +47,7 @@ class VehicleModelController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(VehicleModel $vehicleModel)
+	public function show(Engine $engine)
 	{
 		//
 	}
@@ -54,7 +57,7 @@ class VehicleModelController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(VehicleModel $vehicleModel)
+	public function edit(Engine $engine)
 	{
 		//
 	}
@@ -64,7 +67,7 @@ class VehicleModelController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, VehicleModel $vehicleModel)
+	public function update(Request $request, Engine $engine)
 	{
 		//
 	}
@@ -74,7 +77,7 @@ class VehicleModelController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy(VehicleModel $vehicleModel)
+	public function destroy(Engine $engine)
 	{
 		//
 	}

@@ -22,6 +22,7 @@ class CreateVehicleModelsTable extends Migration
 			$table->date('from')->nullable();
 			$table->date('to')->nullable();
 			$table->string('name');
+			$table->string('slug');
 			$table->string('image')->nullable();
 			$table->boolean('is_commercial')->default(false);
 			$table->timestamps();

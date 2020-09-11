@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function sluggify($string)
+function sluggify(string $string): string
 {
 	// replace non letter or digits by -
 	$url = preg_replace('~[^\pL\d]+~u', '-', $string);

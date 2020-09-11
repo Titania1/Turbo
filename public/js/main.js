@@ -1429,8 +1429,13 @@
 	// select2
 	*/
 	$(function() {
-		$('.form-control-select2, .block-finder__form-control--select select').select2({
+		var selects = $('.form-control-select2, .block-finder__form-control--select select');
+		selects.select2({
 			width: ''
+		});
+		selects.on('select2:select', function(e) {
+			var url = e.params.data.id;
+			window.location = url;
 		});
 	});
 
