@@ -34,6 +34,8 @@ Route::view('/wishlist', 'wishlist')->name('wishlist');
 Route::get('/cart', 'CartController@index');
 Route::post('/cart/add/{part}', 'CartController@add')->name('cart.add');
 Route::post('/cart/remove/{part}', 'CartController@remove')->name('cart.remove');
+Route::post('/cart/update/{part}', 'CartController@update')->name('cart.update');
+Route::get('/cart/{id}/quantity', 'CartController@getQuantity')->name('cart.quantity');
 Route::get('/categories/{category}', 'CategoriesController@show')->name('category');
 Route::get('/types/{type}', 'TypesController@show')->name('type');
 Route::view('/terms', 'terms');
@@ -81,7 +83,7 @@ Route::get('/store/{store}', 'StoresController@show')->name('store');
 Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store.contact');
 Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
-Route::fallback('FallBackController');
+Route::post('/newsletter', 'NewsletterController@store')->name('newsletter');
 
-Route::get('newsletter', 'NewsletterController@create')->name('create');
-Route::post('/newsletter', 'NewsletterController@store')->name('store');
+// Keep this route always the last one
+Route::fallback('FallBackController');

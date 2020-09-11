@@ -223,32 +223,18 @@
 							</div>
 
 							<div class="product__actions">
-								<div class="product__actions-item product__actions-item--quantity">
-									<div class="input-number">
-										<input class="input-number__input form-control form-control-lg" ata-productQuantity="{{ $part->quantity }}" data-id="quantity" type=" number" min="1" value="1">
-										<div class="input-number__add"></div>
-										<div class="input-number__sub"></div>
-									</div>
-								</div>
-								<form action="{{ route('cart.add', ['part' => $part]) }}" method="post">
 
-									<div class="product__actions-item product__actions-item--addtocart">
-										<button class="btn btn-primary btn-lg btn-block">Add to cart
-										</button>
-									</div>
-								</form>
-								<div class="product__actions-divider">
-								</div>
+								<part-quantity-update :part='@json($part)' />
+
+								<div class="product__actions-divider"></div>
 								<button class="product__actions-item product__actions-item--wishlist" type="button">
 									@include('svg.heart')
-									<span>Add to
-										wishlist
-									</span>
+									<span>Add to wishlist</span>
 								</button>
+								<div class="product__actions-divider"></div>
 								<button class="product__actions-item product__actions-item--compare" type="button">
 									@include('svg.chart')
-									<span>Add to compare
-									</span>
+									<span>Add to compare </span>
 								</button>
 							</div>
 							<div class="product__tags-and-share-links">
