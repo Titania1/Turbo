@@ -55,7 +55,7 @@ class Part extends Resource
 	 * @var array
 	 */
 	public static $search = [
-		'id', 'title', 'description', 'sku'
+		'id', 'title', 'description', 'sku',
 	];
 
 	/**
@@ -104,8 +104,10 @@ class Part extends Resource
 	{
 		if ($request->user()->hasRole('Super Admin')) {
 			info('Admoun');
+
 			return $query;
 		}
+
 		return $query->where('user_id', auth()->id());
 	}
 

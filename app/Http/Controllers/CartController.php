@@ -13,6 +13,7 @@ class CartController extends Controller
 	public function index()
 	{
 		$cart = Cart::content();
+
 		return view('cart', compact('cart'));
 	}
 
@@ -23,12 +24,14 @@ class CartController extends Controller
 		//request()->session()->flash('success', "$part->name added to cart!");
 		return redirect(url()->previous('/'));
 	}
+
 	public function remove(string $rowId)
 	{
 		Cart::remove($rowId);
 
 		return back();
 	}
+
 	public function update(request $request, $id)
 	{
 		Cart::update($id, $request->qty);
@@ -37,7 +40,7 @@ class CartController extends Controller
 	}
 
 	/**
-	 * Get cart item quantity
+	 * Get cart item quantity.
 	 *
 	 * Return the quantity of a cart item by model id
 	 *
@@ -50,8 +53,10 @@ class CartController extends Controller
 		if (request()->wantsJson()) {
 			$cart = Cart::content();
 			$item = $cart->where('id', $id)->first();
+
 			return $item ? (int) $item->qty : 0;
 		}
+
 		return abort(404);
 	}
 }

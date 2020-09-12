@@ -11,7 +11,7 @@ class NewsletterController extends Controller
 {
 	public function store(Request $request)
 	{
-		if (!Newsletter::isSubscribed($request->email)) {
+		if (! Newsletter::isSubscribed($request->email)) {
 			Newsletter::subscribePending($request->email);
 
 			return redirect('/')->with('success', 'Thanks For Subscribe');

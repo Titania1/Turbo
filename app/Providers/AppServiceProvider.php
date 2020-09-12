@@ -8,10 +8,10 @@ use App;
 use App\Facades\WishlistFacade;
 use App\Nova\Templates\FooterOptions;
 use App\Nova\Templates\HeaderOptions;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Whitecube\NovaPage\Pages\Manager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
