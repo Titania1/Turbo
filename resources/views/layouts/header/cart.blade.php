@@ -5,7 +5,8 @@
 			<span class="indicator__counter">{{ $cart->count() }}</span>
 		</span>
 		<span class="indicator__title">@lang('Shopping Cart')</span>
-		<span class="indicator__value">{{ Cart::total(0) }} DZD</span>
+		<span class="indicator__value">{{ Cart::total(0)}}DZA</span>
+
 	</a>
 	<div class="indicator__content">
 		<div class="dropcart">
