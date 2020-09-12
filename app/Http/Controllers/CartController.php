@@ -20,9 +20,13 @@ class CartController extends Controller
 	public function add(Part $part, Request $request)
 	{
 		Cart::setGlobalTax(0);
-		Cart::add($part, $request->quantity);
-		//request()->session()->flash('success', "$part->name added to cart!");
-		return redirect(url()->previous('/'));
+		Cart::add($part);
+		// request()->session()->flash('success', "$part->title added to cart!");
+
+		Cart::add($part->id, $part->name, $part->quantity, $part->price)
+			->associate('App\part');
+
+		return back();
 	}
 
 	public function remove(string $rowId)
@@ -34,29 +38,9 @@ class CartController extends Controller
 
 	public function update(request $request, $id)
 	{
-		Cart::update($id, $request->qty);
-		//session()->flash('success_message', 'Quantity was updated successfully!');
-		return back();
-	}
+		Cart::update($id, $request->quantity);
+		session()->flash('success_message', 'Quantity was updated successfully!');
 
-	/**
-	 * Get cart item quantity.
-	 *
-	 * Return the quantity of a cart item by model id
-	 *
-	 * @param int $id Model ID
-	 * @return int $qty
-	 * @throws NotFoundHttpException
-	 **/
-	public function getQuantity(int $id): int
-	{
-		if (request()->wantsJson()) {
-			$cart = Cart::content();
-			$item = $cart->where('id', $id)->first();
-
-			return $item ? (int) $item->qty : 0;
-		}
-
-		return abort(404);
+		return response()->json(['success' => true]);
 	}
 }

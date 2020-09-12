@@ -4,22 +4,19 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Engine;
-use App\VehicleModel;
+use App\CatalogCategory;
 use Illuminate\Http\Request;
 
-class EnginesController extends Controller
+class CatalogCategoryController extends Controller
 {
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index(VehicleModel $model)
+	public function index()
 	{
-		$engines = $model->engines;
-
-		return view('model', compact('engines', 'model'));
+		//
 	}
 
 	/**
@@ -47,9 +44,9 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Engine $engine)
+	public function show(CatalogCategory $catalogCategory)
 	{
-		return $engine;
+		//
 	}
 
 	/**
@@ -57,7 +54,7 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function edit(Engine $engine)
+	public function edit(CatalogCategory $catalogCategory)
 	{
 		//
 	}
@@ -67,7 +64,7 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function update(Request $request, Engine $engine)
+	public function update(Request $request, CatalogCategory $catalogCategory)
 	{
 		//
 	}
@@ -77,7 +74,7 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function destroy(Engine $engine)
+	public function destroy(CatalogCategory $catalogCategory)
 	{
 		//
 	}
