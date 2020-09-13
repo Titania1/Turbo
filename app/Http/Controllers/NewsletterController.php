@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 
 class NewsletterController extends Controller
 {
-	public function create()
-	{
-		return view('footer');
-	}
-
 	public function store(Request $request)
 	{
 		if (! Newsletter::isSubscribed($request->email)) {

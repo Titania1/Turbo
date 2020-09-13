@@ -55,7 +55,7 @@ class Part extends Resource
 	 * @var array
 	 */
 	public static $search = [
-		'id', 'title',
+		'id', 'title', 'description', 'sku',
 	];
 
 	/**
@@ -102,6 +102,12 @@ class Part extends Resource
 	 */
 	public static function indexQuery(NovaRequest $request, $query)
 	{
+		if ($request->user()->hasRole('Super Admin')) {
+			info('Admoun');
+
+			return $query;
+		}
+
 		return $query->where('user_id', auth()->id());
 	}
 

@@ -906,7 +906,8 @@
 .indicator__title,
 .indicator__value {
 	display: block;
-	margin-right: 50px
+	margin-right: 50px;
+	 display: inline;
 }
 
 .indicator__title {
@@ -916,7 +917,8 @@
 }
 
 .indicator__value {
-	font-size: 18px
+	font-size: 18px;
+	margin-right: 50px
 }
 
 .indicator__content {

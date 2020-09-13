@@ -17,7 +17,7 @@ class CartController extends Controller
 		return view('cart', compact('cart'));
 	}
 
-	public function add(Part $part)
+	public function add(Part $part, Request $request)
 	{
 		Cart::setGlobalTax(0);
 		Cart::add($part);
@@ -36,7 +36,7 @@ class CartController extends Controller
 		return back();
 	}
 
-	public function update(Request $request, $id)
+	public function update(request $request, $id)
 	{
 		Cart::update($id, $request->quantity);
 		session()->flash('success_message', 'Quantity was updated successfully!');
