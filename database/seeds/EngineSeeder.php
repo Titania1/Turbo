@@ -65,6 +65,7 @@ class EngineSeeder extends Seeder
 		Engine::create([
 			'vehicle_model_id' => VehicleModel::where('image', $model_id)->first()->id,
 			'type' => $car->Description,
+			'slug' => sluggify($car->Description),
 			'interval' => $this->query($info, 'ConstructionInterval'),
 			'power' => $this->query($info, 'Power'),
 			'capacity' => $this->getCapacity($info),

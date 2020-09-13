@@ -18,6 +18,7 @@ class EnginesController extends Controller
 	public function index(VehicleModel $model)
 	{
 		$engines = $model->engines;
+		return $engines;
 
 		return view('model', compact('engines', 'model'));
 	}

@@ -19,6 +19,7 @@ class ModelSeeder extends Seeder
 		require_once dirname(__FILE__) . '/data/brands.php';
 		foreach ($brands as $image_url => $name) {
 			$this->seedModels($name);
+			break;
 		}
 	}
 
