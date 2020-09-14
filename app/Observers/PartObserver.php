@@ -15,7 +15,7 @@ class PartObserver
 	{
 		$part->slug = sluggify($part->title);
 		$part->excerpt = str_limit($part->description, 200);
-		if (!$part->user_id && auth()->check()) {
+		if (! $part->user_id && auth()->check()) {
 			$part->user_id = auth()->id();
 		}
 		$part->price = preg_replace('/[^0-9]/', '', $part->price);
