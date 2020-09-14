@@ -1,4 +1,4 @@
-// require('./bootstrap');
+require('./bootstrap');
 
 window.Vue = require('vue');
 import VueI18n from 'vue-i18n';
@@ -28,3 +28,5 @@ new Vue({
 		}
 	}
 });
+
+

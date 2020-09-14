@@ -30,7 +30,8 @@
 					<div class="product__body">
 						<div class="product__card product__card--one"></div>
 						<div class="product__card product__card--two"></div>
-						<div class="product-gallery product-gallery--layout--product-full product__gallery" data-layout="product-full">
+						<div class="product-gallery product-gallery--layout--product-full product__gallery"
+							data-layout="product-full">
 							<div class="product-gallery__featured">
 								<button type="button" class="product-gallery__zoom">
 									@include('svg.magnifier')
@@ -52,16 +53,20 @@
 							</div>
 							<div class="product-gallery__thumbnails">
 								<div class="owl-carousel">
-									<a href="/images/products/product-2-700x700.jpg" class="product-gallery__thumbnails-item" target="_blank">
+									<a href="/images/products/product-2-700x700.jpg" class="product-gallery__thumbnails-item"
+										target="_blank">
 										<img src="/images/products/product-2-70x70.jpg" alt="">
 									</a>
-									<a href="/images/products/product-1-700x700.jpg" class="product-gallery__thumbnails-item" target="_blank">
+									<a href="/images/products/product-1-700x700.jpg" class="product-gallery__thumbnails-item"
+										target="_blank">
 										<img src="/images/products/product-1-70x70.jpg" alt="">
 									</a>
-									<a href="/images/products/product-3-700x700.jpg" class="product-gallery__thumbnails-item" target="_blank">
+									<a href="/images/products/product-3-700x700.jpg" class="product-gallery__thumbnails-item"
+										target="_blank">
 										<img src="/images/products/product-3-70x70.jpg" alt="">
 									</a>
-									<a href="/images/products/product-4-700x700.jpg" class="product-gallery__thumbnails-item" target="_blank">
+									<a href="/images/products/product-4-700x700.jpg" class="product-gallery__thumbnails-item"
+										target="_blank">
 										<img src="/images/products/product-4-70x70.jpg" alt="">
 									</a>
 								</div>
@@ -85,13 +90,15 @@
 								</div>
 								<div class="product__rating-label"><a href="#">3.5 on 7 reviews</a></div>
 							</div>
-							<div class="status-badge status-badge--style--success product__fit status-badge--has-icon status-badge--has-text">
+							<div
+								class="status-badge status-badge--style--success product__fit status-badge--has-icon status-badge--has-text">
 								<div class="status-badge__body">
 									<div class="status-badge__icon">
 										@include('svg.valid')
 									</div>
 									<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-									<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+									<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+										title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 								</div>
 							</div>
 						</div>
@@ -196,21 +203,25 @@
 										<div class="product-form__control">
 											<div class="input-radio-color">
 												<div class="input-radio-color__list">
-													<label class="input-radio-color__item input-radio-color__item--white" style="color: #fff;" data-toggle="tooltip" title="White">
+													<label class="input-radio-color__item input-radio-color__item--white" style="color: #fff;"
+														data-toggle="tooltip" title="White">
 														<input type="radio" name="color">
 														<span>
 														</span>
 													</label>
-													<label class="input-radio-color__item" style="color: #ffd333;" data-toggle="tooltip" title="Yellow"><input type="radio" name="color">
+													<label class="input-radio-color__item" style="color: #ffd333;" data-toggle="tooltip"
+														title="Yellow"><input type="radio" name="color">
 														<span>
 														</span>
 													</label>
-													<label class="input-radio-color__item" style="color: #ff4040;" data-toggle="tooltip" title="Red">
+													<label class="input-radio-color__item" style="color: #ff4040;" data-toggle="tooltip"
+														title="Red">
 														<input type="radio" name="color">
 														<span>
 														</span>
 													</label>
-													<label class="input-radio-color__item input-radio-color__item--disabled" style="color: #4080ff;" data-toggle="tooltip" title="Blue">
+													<label class="input-radio-color__item input-radio-color__item--disabled"
+														style="color: #4080ff;" data-toggle="tooltip" title="Blue">
 														<input type="radio" name="color" disabled="disabled">
 														<span>
 														</span>
@@ -221,25 +232,35 @@
 									</div>
 								</div>
 							</div>
-
 							<div class="product__actions">
+							
+												
 
-								<part-quantity-update :part='@json($part)' />
+							<!--	<part-quantity-update :part='@json($part)' /> -->
 
+								
+								<div class="product__actions-divider"></div>
+								
 								<div class="product__actions-divider"></div>
 								<button class="product__actions-item product__actions-item--wishlist" type="button">
 									@include('svg.heart')
-									<span>Add to wishlist</span>
+									<span>Add to
+										wishlist
+									</span>
 								</button>
-								<div class="product__actions-divider"></div>
 								<button class="product__actions-item product__actions-item--compare" type="button">
 									@include('svg.chart')
-									<span>Add to compare </span>
+									<span>Add to compare
+									</span>
 								</button>
 							</div>
+
+							<part-quantity-update :part='@json($part)' />
+							
 							<div class="product__tags-and-share-links">
 								<div class="product__tags tags tags--sm">
-									<div class="tags__list"><a href="#">Brake Kit</a> <a href="#">Brandix</a> <a href="#">Filter</a> <a href="#">Bumper</a> <a href="#">Transmission</a> <a href="#">Hood</a></div>
+									<div class="tags__list"><a href="#">Brake Kit</a> <a href="#">Brandix</a> <a href="#">Filter</a> <a
+											href="#">Bumper</a> <a href="#">Transmission</a> <a href="#">Hood</a></div>
 								</div>
 								<div class="product__share-links share-links">
 									<ul class="share-links__list">
@@ -323,7 +344,8 @@
 							</li>
 						</ul>
 						<div class="product-tabs__content">
-							<div class="product-tabs__pane @if(!session('active_tab')) product-tabs__pane--active @endif" id="product-tab-description">
+							<div class="product-tabs__pane @if(!session('active_tab')) product-tabs__pane--active @endif"
+								id="product-tab-description">
 								<div class="typography">
 									<p>
 										{!! $part->description !!}
@@ -396,7 +418,8 @@
 									</thead>
 									<tbody>
 										<tr>
-											<td class="analogs-table__column analogs-table__column--name"><a href="#" class="analogs-table__product-name">Sunset Brake Kit</a><br>
+											<td class="analogs-table__column analogs-table__column--name"><a href="#"
+													class="analogs-table__product-name">Sunset Brake Kit</a><br>
 												<div class="analogs-table__sku" data-title="SKU">SSX-780B390-S</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--rating">
@@ -415,12 +438,14 @@
 													<div class="analogs-table__rating-label">10 Reviews</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Sunset<div class="analogs-table__country">(Germany)</div>
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Sunset<div
+													class="analogs-table__country">(Germany)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$1259.00</td>
 										</tr>
 										<tr>
-											<td class="analogs-table__column analogs-table__column--name"><a href="#" class="analogs-table__product-name">Specter Brake Kit</a><br>
+											<td class="analogs-table__column analogs-table__column--name"><a href="#"
+													class="analogs-table__product-name">Specter Brake Kit</a><br>
 												<div class="analogs-table__sku" data-title="SKU">SCT-123A380-S</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--rating">
@@ -439,12 +464,14 @@
 													<div class="analogs-table__rating-label">34 Reviews</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Specter<div class="analogs-table__country">(China)</div>
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Specter<div
+													class="analogs-table__country">(China)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$799.00</td>
 										</tr>
 										<tr>
-											<td class="analogs-table__column analogs-table__column--name"><a href="#" class="analogs-table__product-name">Brake Kit</a><br>
+											<td class="analogs-table__column analogs-table__column--name"><a href="#"
+													class="analogs-table__product-name">Brake Kit</a><br>
 												<div class="analogs-table__sku" data-title="SKU">NNO-120K643-S</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--rating">
@@ -463,7 +490,8 @@
 													<div class="analogs-table__rating-label">7 Reviews</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">No Name<div class="analogs-table__country">(China)</div>
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">No Name<div
+													class="analogs-table__country">(China)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$569.00</td>
 										</tr>
@@ -482,7 +510,8 @@
 							<h2 class="section-header__title">Related Products</h2>
 							<div class="section-header__spring"></div>
 							<div class="section-header__arrows">
-								<div class="arrow section-header__arrow section-header__arrow--prev arrow--prev"><button class="arrow__button" type="button">
+								<div class="arrow section-header__arrow section-header__arrow--prev arrow--prev"><button
+										class="arrow__button" type="button">
 										@include('svg.arrow_left')
 									</button>
 								</div>
@@ -502,25 +531,30 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">
 												@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">
 												@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
 												<img src="/images/products/product-1-245x245.jpg" alt=""></a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -569,24 +603,27 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">@include('svg.chart')
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
 												<img src="/images/products/product-2-245x245.jpg" alt=""></a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">@include('svg.valid')</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
-											<form action="{{ route('cart.add', ['part' => $part]) }}" method="post">
-
 										</div>
 										<div class="product-card__info">
 											<div class="product-card__meta">
@@ -616,7 +653,8 @@
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$224.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">@include('svg.shop_circle')
+											<button class="product-card__addtocart-icon" type="button"
+												aria-label="Add to cart">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -626,22 +664,27 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">@include('svg.chart')
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
 												<img src="/images/products/product-3-245x245.jpg" alt=""></a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S
 													</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S">
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S">
 													</div>
 												</div>
 											</div>
@@ -676,7 +719,8 @@
 												<div class="product-card__price product-card__price--new">$349.00</div>
 												<div class="product-card__price product-card__price--old">$415.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">@include('svg.shop_circle')
+											<button class="product-card__addtocart-icon" type="button"
+												aria-label="Add to cart">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -686,31 +730,36 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
 												<img src="/images/products/product-4-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
 										<div class="product-card__info">
 											<div class="product-card__meta">
 												<span class="product-card__meta-title">SKU:
-												</span> A43-44328-Bitem
+												</span> A43-44328-B
 											</div>
 											<div class="product-card__name">
 												<div>
@@ -747,24 +796,29 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">@include('svg.chart')
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image">
 											<a href="product-full.html">
 												<img src="/images/products/product-5-245x245.jpg" alt=""></a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S
 													</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -805,11 +859,14 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -817,13 +874,15 @@
 											<a href="product-full.html">
 												<img src="/images/products/product-6-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -850,7 +909,8 @@
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$23.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">@include('svg.shop_circle')
+											<button class="product-card__addtocart-icon" type="button"
+												aria-label="Add to cart">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -860,26 +920,31 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">
 												@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">
 												@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">@include('svg.chart')
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image">
 											<a href="product-full.html">
 												<img src="/images/products/product-7-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -916,12 +981,15 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">
 												@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">@include('svg.heart')
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -929,13 +997,15 @@
 											<a href="product-full.html">
 												<img src="/images/products/product-8-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -973,12 +1043,15 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">@include('svg.zoom')
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">
 												@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -986,13 +1059,15 @@
 											<a href="product-full.html">
 												<img src="/images/products/product-9-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -1019,7 +1094,8 @@
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$879.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">@include('svg.shop_circle')
+											<button class="product-card__addtocart-icon" type="button"
+												aria-label="Add to cart">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -1029,13 +1105,16 @@
 								<div class="block-products-carousel__cell">
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
-											<button class="product-card__action product-card__action--quickview" type="button" aria-label="Quick view">
+											<button class="product-card__action product-card__action--quickview" type="button"
+												aria-label="Quick view">
 												@include('svg.zoom')
 											</button>
-											<button class="product-card__action product-card__action--wishlist" type="button" aria-label="Add to wish list">
+											<button class="product-card__action product-card__action--wishlist" type="button"
+												aria-label="Add to wish list">
 												@include('svg.heart')
 											</button>
-											<button class="product-card__action product-card__action--compare" type="button" aria-label="Add to compare">
+											<button class="product-card__action product-card__action--compare" type="button"
+												aria-label="Add to compare">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -1043,13 +1122,15 @@
 											<a href="product-full.html">
 												<img src="/images/products/product-10-245x245.jpg" alt="">
 											</a>
-											<div class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
+											<div
+												class="status-badge status-badge--style--success product-card__fit status-badge--has-icon status-badge--has-text">
 												<div class="status-badge__body">
 													<div class="status-badge__icon">
 														@include('svg.valid')
 													</div>
 													<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
-													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
+													<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
+														title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 												</div>
 											</div>
 										</div>
@@ -1093,22 +1174,3 @@
 </div>
 <div class="block-space block-space--layout--before-footer"></div>
 @stop
-
-
-
-<script>
-	(function() {
-		const classname = document.querySelectorAll('.quantity')
-		Array.from(classname).forEach(function(element) {
-			element.addEventListener('change', function() {
-				const id = element.getAttribute('data-id')
-				const partQuantity = element.getAttribute('data-partQuantity')
-				axios.patch(`/cart/${id}`, {
-					quantity: this.value,
-					partQuantity: partQuantity
-				})
-
-			})
-		})
-	})();
-</script>

@@ -1,8 +1,9 @@
 <template>
+<div>
 	<div class="product__actions">
-		<div class="product__actions-item product__actions-item--quantity">
+		<div class="product__actions-item product__actions-item--quantity ">
 			<input
-				class="input-number__input form-control form-control-lg"
+				class="input-number__input form-control form-control-lg "
 				id="quantity"
 				type="number"
 				min="1"
@@ -10,20 +11,19 @@
 			/>
 			<div class="input-number__add" @click="quantity++"></div>
 			<div class="input-number__sub" @click="quantity--"></div>
-
-			<form action="{{ route('cart.add', ['part' => $part]) }}" method="post">
-				<div
-					class="product__actions product__actions-item product__actions-item--addtocart product__actions-item--quantity"
-				>
-					<button class="btn btn-primary btn-lg btn-block" @click="addtocart">{{ $t('Add to cart') }}</button>
-				</div>
-			</form>
+			<div
+				class="product__action-item product__actions-item--addtocart  "
+			>
+				<button class="btn btn-primary btn-lg btn-block" @click="addtocart">{{ $t(' Update quantity') }}</button>
+			</div>
 		</div>
 	</div>
+
+
+</div>
 </template>
 
 <script>
-import axios from "axios";
 import swal from "sweetalert";
 
 export default {
@@ -45,12 +45,13 @@ export default {
 					quantity: this.quantity,
 				})
 				.then((response) => {
-					swal(this.$i18n.t("Success"), "Item quantity updated");
+					swal(this.$i18n.t("Success"), "Item quantity updated", "success");
 				})
 				.catch((errors) => {
-					console.log(errors.response.data);
+					swal(this.$i18n.t("error"), errors.response.data, "error");
+				
 				});
-		},
+		}
 	},
 	mounted() {
 		axios
@@ -60,3 +61,4 @@ export default {
 	},
 };
 </script>
+

@@ -8330,6 +8330,7 @@ select.form-control-sm {
 	color: #999;
 	font-size: 14px;
 	font-family: inherit;
+	margin-top: 4px;
 	padding-left: 16px;
 }
 
@@ -10807,6 +10808,16 @@ select.form-control-sm {
 	padding: 0 28px 24px;
 }
 
+.product__actions-item--quantity {
+	width: 100px;
+	margin-right: 8px;
+}
+
+.product__actions-item--addtocart {
+	-ms-flex-positive: 1;
+	flex-grow: 1;
+}
+
 .product__actions-item--compare,
 .product__actions-item--wishlist {
 	margin-top: 14px;
@@ -11763,10 +11774,6 @@ select.form-control-sm {
 		flex-grow: 0;
 	}
 
-	.product--layout--full .product__actions-item--addtocart {
-		-ms-flex-positive: 0;
-		flex-grow: 0;
-	}
 	.product--layout--full .product__actions-divider {
 		height: 10px;
 	}
