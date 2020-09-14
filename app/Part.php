@@ -71,7 +71,8 @@ class Part extends Model implements HasMedia, Buyable
 	 */
 	protected $casts = [
 		'key_features' => 'array',
-		'inStock' => ' Boolean',
+		'price' => 'float',
+		'inStock' => 'bool',
 	];
 
 	public function getBuyableIdentifier($options = null)
