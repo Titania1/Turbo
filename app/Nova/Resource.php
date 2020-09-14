@@ -58,6 +58,7 @@ abstract class Resource extends NovaResource
 	{
 		$searchable = in_array(Searchable::class, class_uses_recursive(static::newModel()));
 		$scout_enabled = config('scout.driver');
+
 		return $searchable && $scout_enabled;
 	}
 
