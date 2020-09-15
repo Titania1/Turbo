@@ -233,30 +233,21 @@
 								</div>
 							</div>
 							<div class="product__actions">
-							
-												
-
-							<!--	<part-quantity-update :part='@json($part)' /> -->
-
-								
-								<div class="product__actions-divider"></div>
-								
+								<part-quantity-update :part='@json($part)' />
 								<div class="product__actions-divider"></div>
 								<button class="product__actions-item product__actions-item--wishlist" type="button">
 									@include('svg.heart')
-									<span>Add to
-										wishlist
+									<span>
+										Add to wishlist
 									</span>
 								</button>
 								<button class="product__actions-item product__actions-item--compare" type="button">
 									@include('svg.chart')
-									<span>Add to compare
+									<span>
+										Add to compare
 									</span>
 								</button>
 							</div>
-
-							<part-quantity-update :part='@json($part)' />
-							
 							<div class="product__tags-and-share-links">
 								<div class="product__tags tags tags--sm">
 									<div class="tags__list"><a href="#">Brake Kit</a> <a href="#">Brandix</a> <a href="#">Filter</a> <a

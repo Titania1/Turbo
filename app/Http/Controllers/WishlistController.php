@@ -11,10 +11,16 @@ use Illuminate\Http\RedirectResponse;
 
 class WishlistController extends Controller
 {
+	/**
+	 * Wishlist index page
+	 *
+	 * Returns the wishlist view with its content
+	 *
+	 * @param \Illuminate\Http\Request $request Request object
+	 * @return \Illuminate\View\View wishlist
+	 **/
 	public function index(Request $request): View
 	{
-		dd(session('wishlist'));
-
 		$wishlist = Wishlist::content();
 
 		return view('wishlist', compact('wishlist'));

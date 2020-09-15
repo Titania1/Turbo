@@ -85,9 +85,10 @@ Route::get('/store/{store}/contact', 'StoreContactController@show')->name('store
 Route::get('/store/{store}/about', 'StoreAboutController@show')->name('store.about');
 Route::view('/pricing', 'pricing');
 Route::post('/newsletter', 'NewsletterController@store')->name('newsletter');
-
+// Wishlist routes
+Route::prefix('wishlist')->group(function () {
+	Route::get('/', 'WishlistController@index')->name('wishlist');
+	Route::post('add/{part}', 'WishlistController@add')->name('wishlist.add');
+	Route::post('remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+});
 Route::fallback('FallBackController');
-
-Route::get('/wishlist', 'WishlistController@index')->name('wishlist');
-Route::post('/wishlist/add/{part}', 'WishlistController@add')->name('wishlist.add');
-Route::post('/wishlist/remove/{part}', 'WishlistController@remove')->name('wishlist.remove');

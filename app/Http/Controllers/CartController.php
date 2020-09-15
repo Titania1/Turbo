@@ -21,7 +21,12 @@ class CartController extends Controller
 	{
 		Cart::setGlobalTax(0);
 		Cart::add($part, $request->quantity);
-		//request()->session()->flash('success', "$part->name added to cart!");
+		if ($request->wantsJson()) {
+			return response([
+				'message' => __('Part added')
+			], 200);
+		}
+		request()->session()->flash('success', "$part->name added to cart!");
 		return redirect(url()->previous('/'));
 	}
 
@@ -35,7 +40,7 @@ class CartController extends Controller
 	public function update(request $request, $id)
 	{
 		Cart::update($id, $request->qty);
-		//session()->flash('success_message', 'Quantity was updated successfully!');
+		session()->flash('success_message', 'Quantity was updated successfully!');
 		return back();
 	}
 

@@ -18,6 +18,6 @@ class Wishlist
 
 	public static function content(): array
 	{
-		return session('wishlist.parts');
+		return session('wishlist.parts', []);
 	}
 }
