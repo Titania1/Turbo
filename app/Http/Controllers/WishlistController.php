@@ -12,7 +12,7 @@ use Illuminate\Http\RedirectResponse;
 class WishlistController extends Controller
 {
 	/**
-	 * Wishlist index page
+	 * Wishlist index page.
 	 *
 	 * Returns the wishlist view with its content
 	 *

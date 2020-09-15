@@ -23,10 +23,11 @@ class CartController extends Controller
 		Cart::add($part, $request->quantity);
 		if ($request->wantsJson()) {
 			return response([
-				'message' => __('Part added')
+				'message' => __('Part added'),
 			], 200);
 		}
 		request()->session()->flash('success', "$part->name added to cart!");
+
 		return redirect(url()->previous('/'));
 	}
 
@@ -41,6 +42,7 @@ class CartController extends Controller
 	{
 		Cart::update($id, $request->qty);
 		session()->flash('success_message', 'Quantity was updated successfully!');
+
 		return back();
 	}
 
