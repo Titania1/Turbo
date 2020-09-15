@@ -24,7 +24,7 @@
 							@include('svg.mobile.search')
 						</button>
 						<button type="button" class="mobile-search__button mobile-search__button--close">
-							@include('svg.mobile.close_x')
+							@include('svg.X')
 						</button>
 						<div class="mobile-search__field">
 

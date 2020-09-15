@@ -10807,6 +10807,11 @@ select.form-control-sm {
 	padding: 0 28px 24px;
 }
 
+.product--layout--full .product__actions-item--addtocart {
+	-ms-flex-positive: 0;
+	flex-grow: 0;
+}
+
 .product__actions-item--compare,
 .product__actions-item--wishlist {
 	margin-top: 14px;
@@ -11763,10 +11768,6 @@ select.form-control-sm {
 		flex-grow: 0;
 	}
 
-	.product--layout--full .product__actions-item--addtocart {
-		-ms-flex-positive: 0;
-		flex-grow: 0;
-	}
 	.product--layout--full .product__actions-divider {
 		height: 10px;
 	}

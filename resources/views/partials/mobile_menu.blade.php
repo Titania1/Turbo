@@ -3,7 +3,7 @@
 	<div class="mobile-menu__backdrop"></div>
 	<div class="mobile-menu__body">
 		<button class="mobile-menu__close" type="button">
-			@include('svg.mobile.close_x')
+			@include('svg.X')
 		</button>
 		<div class="mobile-menu__panel">
 			<div class="mobile-menu__panel-header">

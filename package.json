@@ -29,6 +29,7 @@
         "popper.js": "^1.16.1",
         "sweetalert": "^2.1.2",
         "vue": "^2.6.11",
+        "vue-fragment": "^1.5.1",
         "vue-i18n": "^8.18.2",
         "vue-instantsearch": "^3.0.3"
     }
