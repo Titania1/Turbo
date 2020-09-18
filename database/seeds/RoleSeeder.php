@@ -8,14 +8,14 @@ use Spatie\Permission\Models\Permission;
 
 class RoleSeeder extends Seeder
 {
-	private permissions =[
+	private $permissions = [
 
 		'Articles' => [
 			'Browse Articles',
 			 'Read Articles', 
 			 'Edit Articles' , 
 			 'Add Articles' , 
-			 'Delete Articles'
+			 'Delete Articles',
 		]
  		
  		'Invoices' => [
