@@ -22,7 +22,7 @@ class RoleSeeder extends Seeder
 			'Read Invoices',
 			'Edit Invoices',
 			'Add Invoices',
-			'Delete Invoices'
+			'Delete Invoices',
 		],
 
 		'Bills' => [
@@ -30,7 +30,7 @@ class RoleSeeder extends Seeder
 			'Read Bills',
 			'Edit Bills',
 			'Add Bills',
-			'Delete Bills'
+			'Delete Bills',
 		],
 
 		'Receipts' => [
@@ -38,7 +38,7 @@ class RoleSeeder extends Seeder
 			'Read Receipts',
 			'Edit Receipts',
 			'Add Receipts',
-			'Delete Receipts'
+			'Delete Receipts',
 		],
 
 		'Orders' => [
@@ -46,7 +46,7 @@ class RoleSeeder extends Seeder
 			'Read Orders',
 			'Edit Orders',
 			'Add Orders',
-			'Delete Orders'
+			'Delete Orders',
 		],
 
 		'Categories' => [
@@ -54,7 +54,7 @@ class RoleSeeder extends Seeder
 			'Read Categories',
 			'Edit Categories',
 			'Add Categories',
-			'Delete Categories'
+			'Delete Categories',
 		],
 
 		'Clients' => [
@@ -62,7 +62,7 @@ class RoleSeeder extends Seeder
 			'Read Clients',
 			'Edit Clients',
 			'Add Clients',
-			'Delete Clients'
+			'Delete Clients',
 		],
 
 		'Parts' => [
@@ -70,7 +70,7 @@ class RoleSeeder extends Seeder
 			'Read Parts',
 			'Edit Parts',
 			'Add Parts',
-			'Delete Parts'
+			'Delete Parts',
 		],
 
 		'Types' => [
@@ -78,7 +78,7 @@ class RoleSeeder extends Seeder
 			'Read Types',
 			'Edit Types',
 			'Add Types',
-			'Delete Types'
+			'Delete Types',
 		],
 
 		'Suppliers' => [
@@ -86,7 +86,7 @@ class RoleSeeder extends Seeder
 			'Read Suppliers',
 			'Edit Suppliers',
 			'Add Suppliers',
-			'Delete Suppliers'
+			'Delete Suppliers',
 		],
 
 		'Profiles' => [
@@ -94,7 +94,7 @@ class RoleSeeder extends Seeder
 			'Read Profiles',
 			'Edit Profiles',
 			'Add Profiles',
-			'Delete Profiles'
+			'Delete Profiles',
 		],
 
 		'Discounts' => [
@@ -102,7 +102,7 @@ class RoleSeeder extends Seeder
 			'Read Discounts',
 			'Edit Discounts',
 			'Add Discounts',
-			'Delete Discounts'
+			'Delete Discounts',
 		],
 
 		'Permissions' => [
@@ -110,7 +110,7 @@ class RoleSeeder extends Seeder
 			'Read Permissions',
 			'Edit Permissions',
 			'Add Permissions',
-			'Delete Permissions'
+			'Delete Permissions',
 		],
 
 		'Roles' => [
@@ -118,7 +118,7 @@ class RoleSeeder extends Seeder
 			'Read Roles',
 			'Edit Roles',
 			'Add Roles',
-			'Delete Roles'
+			'Delete Roles',
 		],
 
 		'Store-contacts' => [
@@ -126,7 +126,7 @@ class RoleSeeder extends Seeder
 			'Read Store-contacts',
 			'Edit Store-contacts',
 			'Add Store-contacts',
-			'Delete Store-contacts'
+			'Delete Store-contacts',
 		],
 
 		'Store-abouts' => [
@@ -134,7 +134,7 @@ class RoleSeeder extends Seeder
 			'Read Store-abouts',
 			'Edit Store-abouts',
 			'Add Store-abouts',
-			'Delete Store-abouts'
+			'Delete Store-abouts',
 		],
 
 	];
