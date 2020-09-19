@@ -17,7 +17,7 @@ class StoreAboutPolicy
 	 */
 	public function viewAny(User $user)
 	{
-        return $user->hasRole('Super Admin');
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
