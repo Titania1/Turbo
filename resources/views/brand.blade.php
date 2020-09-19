@@ -28,7 +28,7 @@
 </div>
 <div class="block block-teammates">
 	<div class="container container--max--xl">
-		<div class="block-teammates__title">Sélection du modèle {{ $brand->name }}</div>
+		<div class="block-teammates__title">@('Select Model') {{ $brand->name }}</div>
 		<div class="block-teammates__list">
 			<div class="owl-carousel">
 				@foreach($brand->models as $model)

@@ -33,20 +33,20 @@
 			<thead class="wishlist__head">
 				<tr class="wishlist__row wishlist__row--head">
 					<th class="wishlist__column wishlist__column--head wishlist__column--image">
-						Image
+						@lang('Image')
 					</th>
 					<th class="wishlist__column wishlist__column--head wishlist__column--product">
-						Product
+						@lang('Product')
 					</th>
 					<th class="wishlist__column wishlist__column--head wishlist__column--stock">
-						Stock status
+						@lang('Stock status')
 					</th>
 					<th class="wishlist__column wishlist__column--head wishlist__column--price">
-						Price
+						@lang('Price')
 					</th>
 					<th class="wishlist__column wishlist__column--head wishlist__column--button"></th>
 					<th class="wishlist__column wishlist__column--head wishlist__column--remove">
-						Remove
+						@lang('Remove')
 					</th>
 				</tr>
 			</thead>
@@ -77,9 +77,9 @@
 							<div class="status-badge status-badge--style--success status-badge--has-text">
 								<div class="status-badge__body">
 									@if($part->inStock)
-										<div class="status-badge__text">In Stock</div>
+										<div class="status-badge__text">@lang('In Stock')</div>
 									@else
-										<div class="status-badge__text">Out Stock</div>
+										<div class="status-badge__text">@lang('Out Stock')</div>
 									@endif
 								</div>
 							</div>
@@ -88,7 +88,7 @@
 							{{ $item->price }}
 						</td>
 						<td class="wishlist__column wishlist__column--body wishlist__column--button">
-							<button type="button" class="btn btn-sm btn-primary">Add to cart</button>
+							<button type="button" class="btn btn-sm btn-primary">@lang('Add to cart')</button>
 						</td>
 						<td class="wishlist__column wishlist__column--body wishlist__column--remove">
 							<button type="button" class="wishlist__remove btn btn-sm btn-muted btn-icon">
