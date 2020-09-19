@@ -25,7 +25,7 @@ class StoreAboutPolicy
 	 */
 	public function view(User $user, StoreAbout $storeAbout)
 	{
-		 return $user->hasPermissionTo('Browse Store-abouts');
+		return $user->hasPermissionTo('Browse Store-abouts');
 	}
 
 	/**
