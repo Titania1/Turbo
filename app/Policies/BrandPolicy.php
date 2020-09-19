@@ -17,7 +17,7 @@ class BrandPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		//
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
@@ -25,7 +25,7 @@ class BrandPolicy
 	 */
 	public function view(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Read Brands');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class BrandPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Brands');
 	}
 
 	/**
@@ -41,7 +41,7 @@ class BrandPolicy
 	 */
 	public function update(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Edit Brand');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class BrandPolicy
 	 */
 	public function delete(User $user, Brand $brand)
 	{
-		return ! $brand->vehicles()->exists();
+		return !$brand->vehicles()->exists();
 	}
 
 	/**

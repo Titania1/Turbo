@@ -6,7 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class ClientsPolicy
 {
 	use HandlesAuthorization;
 
@@ -25,12 +25,12 @@ class UserPolicy
 	 * Determine whether the user can view the model.
 	 *
 	 * @param  \App\User  $user
-	 * @param  \App\Post  $post
+
 	 * @return mixed
 	 */
 	public function view(User $user)
 	{
-		return $user->hasPermissionTo('Read Users');
+		return $user->hasPermissionTo('Read Clients');
 	}
 
 	/**
@@ -42,38 +42,38 @@ class UserPolicy
 	public function create(User $user)
 	{
 
-		return $user->hasPermissionTo('Add Users');
+		return $user->hasPermissionTo('Add Clients');
 	}
 
 	/**
 	 * Determine whether the user can update the model.
 	 *
 	 * @param  \App\User  $user
-	 * @param  \App\Post  $post
+
 	 * @return mixed
 	 */
 	public function update(User $user)
 	{
-		return $user->hasPermissionTo('Edit Users');
+		return $user->hasPermissionTo('Edit Clients');
 	}
 
 	/**
 	 * Determine whether the user can delete the model.
 	 *
 	 * @param  \App\User  $user
-	 * @param  \App\Post  $post
+
 	 * @return mixed
 	 */
 	public function delete(User $user)
 	{
-		return $user->hasPermissionTo('Delete Users');
+		return $user->hasPermissionTo('Delete Clients');
 	}
 
 	/**
 	 * Determine whether the user can restore the model.
 	 *
 	 * @param  \App\User  $user
-	 * @param  \App\Post  $post
+
 	 * @return mixed
 	 */
 	public function restore(User $user)
@@ -85,7 +85,7 @@ class UserPolicy
 	 * Determine whether the user can permanently delete the model.
 	 *
 	 * @param  \App\User  $user
-	 * @param  \App\Post  $post
+
 	 * @return mixed
 	 */
 	public function forceDelete(User $user)

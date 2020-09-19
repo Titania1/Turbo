@@ -6,7 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class TypesPolicy
+class SuppliersPolicy
 {
     use HandlesAuthorization;
 
@@ -30,7 +30,7 @@ class TypesPolicy
      */
     public function view(User $user )
     {
-        return $user->hasPermissionTo('Read Types');
+        return $user->hasPermissionTo('Read Suppliers');
     }
 
     /**
@@ -42,7 +42,7 @@ class TypesPolicy
     public function create(User $user)
     {
 
-        return $user->hasPermissionTo('Add Types');
+        return $user->hasPermissionTo('Add Suppliers');
     }
 
     /**
@@ -54,7 +54,7 @@ class TypesPolicy
      */
     public function update(User $user )
     {
-         return $user->hasPermissionTo('Edit Types');
+         return $user->hasPermissionTo('Edit Suppliers');
     }
 
     /**
@@ -66,7 +66,7 @@ class TypesPolicy
      */
     public function delete(User $user )
     {
-        return $user->hasPermissionTo('Delete Types');
+        return $user->hasPermissionTo('Delete Suppliers');
     }
 
     /**

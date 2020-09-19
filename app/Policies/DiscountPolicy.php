@@ -25,7 +25,7 @@ class DiscountPolicy
 	 */
 	public function view(User $user, Discount $discount)
 	{
-		//
+		return $user->hasPermissionTo('Read Discounts'); 
 	}
 
 	/**
@@ -33,7 +33,7 @@ class DiscountPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Discounts'); 
 	}
 
 	/**
@@ -41,7 +41,7 @@ class DiscountPolicy
 	 */
 	public function update(User $user, Discount $discount)
 	{
-		//
+		return $user->hasPermissionTo('Edit Discounts'); 
 	}
 
 	/**
@@ -49,7 +49,7 @@ class DiscountPolicy
 	 */
 	public function delete(User $user, Discount $discount)
 	{
-		//
+		return $user->hasPermissionTo('Delete Discounts'); 
 	}
 
 	/**

@@ -6,7 +6,7 @@ use App\Post;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class ReceiptPolicy
 {
 	use HandlesAuthorization;
 
@@ -30,7 +30,7 @@ class UserPolicy
 	 */
 	public function view(User $user)
 	{
-		return $user->hasPermissionTo('Read Users');
+		return $user->hasPermissionTo('Read Receipts');
 	}
 
 	/**
@@ -42,7 +42,7 @@ class UserPolicy
 	public function create(User $user)
 	{
 
-		return $user->hasPermissionTo('Add Users');
+		return $user->hasPermissionTo('Add Receipts');
 	}
 
 	/**
@@ -54,7 +54,7 @@ class UserPolicy
 	 */
 	public function update(User $user)
 	{
-		return $user->hasPermissionTo('Edit Users');
+		return $user->hasPermissionTo('Edit Receipts');
 	}
 
 	/**
@@ -66,7 +66,7 @@ class UserPolicy
 	 */
 	public function delete(User $user)
 	{
-		return $user->hasPermissionTo('Delete Users');
+		return $user->hasPermissionTo('Delete Receipts');
 	}
 
 	/**
