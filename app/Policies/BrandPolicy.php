@@ -49,7 +49,7 @@ class BrandPolicy
 	 */
 	public function delete(User $user, Brand $brand)
 	{
-		return !$brand->vehicles()->exists();
+		return ! $brand->vehicles()->exists();
 	}
 
 	/**
