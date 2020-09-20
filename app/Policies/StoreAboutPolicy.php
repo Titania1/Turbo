@@ -65,6 +65,6 @@ class StoreAboutPolicy
 	 */
 	public function forceDelete(User $user, StoreAbout $storeAbout)
 	{
-		return $user->hasPermissionTo('ForceDelete Store-abouts');
+		return $user->hasPermissionTo('Force Delete Store-abouts');
 	}
 }

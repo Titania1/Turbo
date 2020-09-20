@@ -65,6 +65,6 @@ class InvoicePolicy
 	 */
 	public function forceDelete(User $user, Invoice $invoice)
 	{
-		return $user->hasPermissionTo('ForceDelete Invoices');
+		return $user->hasPermissionTo('Force Delete Invoices');
 	}
 }

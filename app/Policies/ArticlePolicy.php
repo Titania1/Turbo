@@ -75,6 +75,6 @@ class ArticlePolicy
 	 */
 	public function forceDelete(User $user, Article $article)
 	{
-		return $user->hasPermissionTo('ForceDelete Articles');
+		return $user->hasPermissionTo('Force Delete Articles');
 	}
 }

@@ -65,6 +65,6 @@ class SupplierPolicy
 	 */
 	public function forceDelete(User $user, Supplier $supplier)
 	{
-		return $user->hasPermissionTo('ForceDelete Suppliers');
+		return $user->hasPermissionTo('Force Delete Suppliers');
 	}
 }

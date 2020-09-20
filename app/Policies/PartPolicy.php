@@ -49,7 +49,7 @@ class PartPolicy
 	 */
 	public function delete(User $user, Part $part)
 	{
-		return $user->hasPermissionTo('Delet Parts');
+		return $user->hasPermissionTo('Delete Parts');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class PartPolicy
 	 */
 	public function forceDelete(User $user, Part $part)
 	{
-		return $user->hasPermissionTo('ForceDelete Parts');
+		return $user->hasPermissionTo('Force Delete Parts');
 	}
 }

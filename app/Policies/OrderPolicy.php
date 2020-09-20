@@ -65,6 +65,6 @@ class OrderPolicy
 	 */
 	public function forceDelete(User $user, Order $order)
 	{
-		return $user->hasPermissionTo('ForceDelete Orders');
+		return $user->hasPermissionTo('Force Delete Orders');
 	}
 }

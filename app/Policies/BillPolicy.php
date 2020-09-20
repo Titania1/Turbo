@@ -75,6 +75,6 @@ class BillPolicy
 	 */
 	public function forceDelete(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('ForceDelete Bills');
+		return $user->hasPermissionTo('Force Delete Bills');
 	}
 }

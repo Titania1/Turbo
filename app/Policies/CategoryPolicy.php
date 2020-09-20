@@ -65,6 +65,6 @@ class CategoryPolicy
 	 */
 	public function forceDelete(User $user, Category $category)
 	{
-		return $user->hasPermissionTo('ForceDelete Categories');
+		return $user->hasPermissionTo('Force Delete Categories');
 	}
 }

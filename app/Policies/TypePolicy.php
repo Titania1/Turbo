@@ -65,6 +65,6 @@ class TypePolicy
 	 */
 	public function forceDelete(User $user, Type $type)
 	{
-		return $user->hasPermissionTo('ForceDelete Types');
+		return $user->hasPermissionTo('Force Delete Types');
 	}
 }

@@ -65,6 +65,6 @@ class GaragePolicy
 	 */
 	public function forceDelete(User $user, Garage $garage)
 	{
-		return $user->hasPermissionTo('ForceDelete Garages');
+		return $user->hasPermissionTo('Force Delete Garages');
 	}
 }

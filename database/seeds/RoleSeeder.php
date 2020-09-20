@@ -16,7 +16,7 @@ class RoleSeeder extends Seeder
 			'Add Articles',
 			'Delete Articles',
 			'Restore Articles',
-			'ForceDelete Articles',
+			'Force Delete Articles',
 		],
 
 		'Invoices' => [
@@ -26,7 +26,7 @@ class RoleSeeder extends Seeder
 			'Add Invoices',
 			'Delete Invoices',
 			'Restore Invoices',
-			'ForceDelete Invoices',
+			'Force Delete Invoices',
 		],
 
 		'Bills' => [
@@ -36,7 +36,7 @@ class RoleSeeder extends Seeder
 			'Add Bills',
 			'Delete Bills',
 			'Restore Bills',
-			'ForceDelete Bills',
+			'Force Delete Bills',
 		],
 
 		'Receipts' => [
@@ -46,7 +46,7 @@ class RoleSeeder extends Seeder
 			'Add Receipts',
 			'Delete Receipts',
 			'Restore Receipts',
-			'ForceDelete Receipts',
+			'Force Delete Receipts',
 		],
 
 		'Orders' => [
@@ -56,7 +56,7 @@ class RoleSeeder extends Seeder
 			'Add Orders',
 			'Delete Orders',
 			'Restore Orders',
-			'ForceDelete Orders',
+			'Force Delete Orders',
 		],
 
 		'Categories' => [
@@ -66,7 +66,7 @@ class RoleSeeder extends Seeder
 			'Add Categories',
 			'Delete Categories',
 			'Restore Categories',
-			'ForceDelete Categories',
+			'Force Delete Categories',
 		],
 
 		'Clients' => [
@@ -76,7 +76,7 @@ class RoleSeeder extends Seeder
 			'Add Clients',
 			'Delete Clients',
 			'Restore Clients',
-			'ForceDelete Clients',
+			'Force Delete Clients',
 		],
 		'Garage' => [
 			'Browse Garages',
@@ -85,7 +85,7 @@ class RoleSeeder extends Seeder
 			'Add Garages',
 			'Delete Garages',
 			'Restore Garages',
-			'ForceDelete Garages',
+			'Force Delete Garages',
 
 		],
 
@@ -96,7 +96,7 @@ class RoleSeeder extends Seeder
 			'Add Parts',
 			'Delete Parts',
 			'Restore Parts',
-			'ForceDelete Parts',
+			'Force Delete Parts',
 		],
 
 		'Types' => [
@@ -106,7 +106,7 @@ class RoleSeeder extends Seeder
 			'Add Types',
 			'Delete Types',
 			'Restore Types',
-			'ForceDelete Types',
+			'Force Delete Types',
 		],
 
 		'Suppliers' => [
@@ -116,7 +116,7 @@ class RoleSeeder extends Seeder
 			'Add Suppliers',
 			'Delete Suppliers',
 			'Restore Suppliers',
-			'ForceDelete Suppliers',
+			'Force Delete Suppliers',
 		],
 
 		'Profiles' => [
@@ -126,7 +126,7 @@ class RoleSeeder extends Seeder
 			'Add Profiles',
 			'Delete Profiles',
 			'Restore Profiles',
-			'ForceDelete Profiles',
+			'Force Delete Profiles',
 		],
 
 		'Discounts' => [
@@ -136,7 +136,7 @@ class RoleSeeder extends Seeder
 			'Add Discounts',
 			'Delete Discounts',
 			'Restore Discounts',
-			'ForceDelete Discounts',
+			'Force Delete Discounts',
 		],
 
 		'Permissions' => [
@@ -146,7 +146,7 @@ class RoleSeeder extends Seeder
 			'Add Permissions',
 			'Delete Permissions',
 			'Restore Permissions',
-			'ForceDelete Permissions',
+			'Force Delete Permissions',
 		],
 
 		'Roles' => [
@@ -156,7 +156,7 @@ class RoleSeeder extends Seeder
 			'Add Roles',
 			'Delete Roles',
 			'Restore Roles',
-			'ForceDelete Roles',
+			'Force Delete Roles',
 		],
 
 		'Store-contacts' => [
@@ -166,7 +166,7 @@ class RoleSeeder extends Seeder
 			'Add Store-contacts',
 			'Delete Store-contacts',
 			'Restore Store-contacts',
-			'ForceDelete Store-contacts',
+			'Force Delete Store-contacts',
 		],
 
 		'Store-abouts' => [
@@ -176,11 +176,16 @@ class RoleSeeder extends Seeder
 			'Add Store-abouts',
 			'Delete Store-abouts',
 			'Restore Store-abouts',
-			'ForceDelete Store-abouts',
+			'Force Delete Store-abouts',
 		],
 
 	];
 
+	/**
+	 * Run the database seeds.
+	 *
+	 * @return void
+	 */
 	public function run()
 	{
 		foreach ($this->permissions as $resource => $permissions) {

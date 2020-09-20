@@ -65,6 +65,6 @@ class ProfilePolicy
 	 */
 	public function forceDelete(User $user, Profile $profile)
 	{
-		return $user->hasPermissionTo('ForceDelete Profiles');
+		return $user->hasPermissionTo('Force Delete Profiles');
 	}
 }

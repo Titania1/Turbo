@@ -65,6 +65,6 @@ class ClientPolicy
 	 */
 	public function forceDelete(User $user, Client $client)
 	{
-		return $user->hasPermissionTo('ForceDelete Clients');
+		return $user->hasPermissionTo('Force Delete Clients');
 	}
 }

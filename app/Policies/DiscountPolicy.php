@@ -65,6 +65,6 @@ class DiscountPolicy
 	 */
 	public function forceDelete(User $user, Discount $discount)
 	{
-		return $user->hasPermissionTo('ForceDelete Discounts');
+		return $user->hasPermissionTo('Force Delete Discounts');
 	}
 }
