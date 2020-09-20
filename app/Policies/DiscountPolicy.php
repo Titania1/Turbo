@@ -57,7 +57,7 @@ class DiscountPolicy
 	 */
 	public function restore(User $user, Discount $discount)
 	{
-		//
+		return $user->hasPermissionTo('Restore Discounts');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class DiscountPolicy
 	 */
 	public function forceDelete(User $user, Discount $discount)
 	{
-		//
+		return $user->hasPermissionTo('ForceDelete Discounts');
 	}
 }

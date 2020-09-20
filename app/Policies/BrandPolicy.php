@@ -49,7 +49,7 @@ class BrandPolicy
 	 */
 	public function delete(User $user, Brand $brand)
 	{
-		return ! $brand->vehicles()->exists();
+		return !$brand->vehicles()->exists();
 	}
 
 	/**
@@ -57,7 +57,7 @@ class BrandPolicy
 	 */
 	public function restore(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Restore Brands');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class BrandPolicy
 	 */
 	public function forceDelete(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('ForceDelete Brands');
 	}
 }

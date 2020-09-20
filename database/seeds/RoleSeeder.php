@@ -15,6 +15,8 @@ class RoleSeeder extends Seeder
 			'Edit Articles',
 			'Add Articles',
 			'Delete Articles',
+			'Restore Articles',
+			'ForceDelete Articles',
 		],
 
 		'Invoices' => [
@@ -23,6 +25,8 @@ class RoleSeeder extends Seeder
 			'Edit Invoices',
 			'Add Invoices',
 			'Delete Invoices',
+			'Restore Invoices',
+			'ForceDelete Invoices',
 		],
 
 		'Bills' => [
@@ -31,6 +35,8 @@ class RoleSeeder extends Seeder
 			'Edit Bills',
 			'Add Bills',
 			'Delete Bills',
+			'Restore Bills',
+			'ForceDelete Bills',
 		],
 
 		'Receipts' => [
@@ -39,6 +45,8 @@ class RoleSeeder extends Seeder
 			'Edit Receipts',
 			'Add Receipts',
 			'Delete Receipts',
+			'Restore Receipts',
+			'ForceDelete Receipts',
 		],
 
 		'Orders' => [
@@ -47,6 +55,8 @@ class RoleSeeder extends Seeder
 			'Edit Orders',
 			'Add Orders',
 			'Delete Orders',
+			'Restore Orders',
+			'ForceDelete Orders',
 		],
 
 		'Categories' => [
@@ -55,6 +65,8 @@ class RoleSeeder extends Seeder
 			'Edit Categories',
 			'Add Categories',
 			'Delete Categories',
+			'Restore Categories',
+			'ForceDelete Categories',
 		],
 
 		'Clients' => [
@@ -63,6 +75,18 @@ class RoleSeeder extends Seeder
 			'Edit Clients',
 			'Add Clients',
 			'Delete Clients',
+			'Restore Clients',
+			'ForceDelete Clients',
+		],
+		'Garage' => [
+			'Browse Garages',
+			'Read Garages',
+			'Edit Garages',
+			'Add Garages',
+			'Delete Garages',
+			'Restore Garages',
+			'ForceDelete Garages',
+
 		],
 
 		'Parts' => [
@@ -71,6 +95,8 @@ class RoleSeeder extends Seeder
 			'Edit Parts',
 			'Add Parts',
 			'Delete Parts',
+			'Restore Parts',
+			'ForceDelete Parts',
 		],
 
 		'Types' => [
@@ -79,6 +105,8 @@ class RoleSeeder extends Seeder
 			'Edit Types',
 			'Add Types',
 			'Delete Types',
+			'Restore Types',
+			'ForceDelete Types',
 		],
 
 		'Suppliers' => [
@@ -87,6 +115,8 @@ class RoleSeeder extends Seeder
 			'Edit Suppliers',
 			'Add Suppliers',
 			'Delete Suppliers',
+			'Restore Suppliers',
+			'ForceDelete Suppliers',
 		],
 
 		'Profiles' => [
@@ -95,6 +125,8 @@ class RoleSeeder extends Seeder
 			'Edit Profiles',
 			'Add Profiles',
 			'Delete Profiles',
+			'Restore Profiles',
+			'ForceDelete Profiles',
 		],
 
 		'Discounts' => [
@@ -103,6 +135,8 @@ class RoleSeeder extends Seeder
 			'Edit Discounts',
 			'Add Discounts',
 			'Delete Discounts',
+			'Restore Discounts',
+			'ForceDelete Discounts',
 		],
 
 		'Permissions' => [
@@ -111,6 +145,8 @@ class RoleSeeder extends Seeder
 			'Edit Permissions',
 			'Add Permissions',
 			'Delete Permissions',
+			'Restore Permissions',
+			'ForceDelete Permissions',
 		],
 
 		'Roles' => [
@@ -119,6 +155,8 @@ class RoleSeeder extends Seeder
 			'Edit Roles',
 			'Add Roles',
 			'Delete Roles',
+			'Restore Roles',
+			'ForceDelete Roles',
 		],
 
 		'Store-contacts' => [
@@ -127,6 +165,8 @@ class RoleSeeder extends Seeder
 			'Edit Store-contacts',
 			'Add Store-contacts',
 			'Delete Store-contacts',
+			'Restore Store-contacts',
+			'ForceDelete Store-contacts',
 		],
 
 		'Store-abouts' => [
@@ -135,6 +175,8 @@ class RoleSeeder extends Seeder
 			'Edit Store-abouts',
 			'Add Store-abouts',
 			'Delete Store-abouts',
+			'Restore Store-abouts',
+			'ForceDelete Store-abouts',
 		],
 
 	];
@@ -146,7 +188,6 @@ class RoleSeeder extends Seeder
 				Permission::create(['name' => $permission]);
 			}
 		}
-		$admin = Role::create(['name' => 'Super Admin']);
 		$admin = Role::create(['name' => 'Super Admin']);
 		$canUpdatePartScore = Permission::create(['name' => 'Update Part Views']);
 		$admin->givePermissionTo($canUpdatePartScore);
