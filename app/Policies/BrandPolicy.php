@@ -47,14 +47,12 @@ class BrandPolicy
 	/**
 	 * Determine whether the user can delete the model.
 	 * Brands containing models should be deletable.
-	 * @param \App\User $user
-	 * @param \App\Brand $brand
 	 *
 	 * @return bool condition
 	 */
 	public function delete(User $user, Brand $brand)
 	{
-		return !$brand->vehicles()->exists();
+		return ! $brand->vehicles()->exists();
 	}
 
 	/**
