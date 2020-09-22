@@ -16,11 +16,18 @@ class UserPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		return $user->hasPermissionTo('View Users');
+		return $user->hasPermissionTo('Browse Users');
 	}
 
 	/**
 	 * Determine whether the user can view the model.
+	 *
+	 * The user can view only themselves.
+	 *
+	 * @param \App\User $user the authenticated user
+	 * @param \App\User $model the user eloquent model (subject)
+	 *
+	 * @return bool
 	 */
 	public function view(User $user, User $model)
 	{

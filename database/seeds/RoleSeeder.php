@@ -19,6 +19,16 @@ class RoleSeeder extends Seeder
 			'Force Delete Articles',
 		],
 
+		'Brands' => [
+			'Browse Brands',
+			'Read Brands',
+			'Edit Brands',
+			'Add Brands',
+			'Delete Brands',
+			'Restore Brands',
+			'Force Delete Brands',
+		],
+
 		'Invoices' => [
 			'Browse Invoices',
 			'Read Invoices',
@@ -78,6 +88,7 @@ class RoleSeeder extends Seeder
 			'Restore Clients',
 			'Force Delete Clients',
 		],
+
 		'Garage' => [
 			'Browse Garages',
 			'Read Garages',
@@ -179,6 +190,16 @@ class RoleSeeder extends Seeder
 			'Force Delete Store-abouts',
 		],
 
+		'Users' => [
+			'Browse Users',
+			'Read Users',
+			'Edit Users',
+			'Add Users',
+			'Delete Users',
+			'Restore Users',
+			'Force Delete Users',
+		]
+
 	];
 
 	/**
@@ -197,6 +218,7 @@ class RoleSeeder extends Seeder
 		$canUpdatePartScore = Permission::create(['name' => 'Update Part Views']);
 		$admin->givePermissionTo($canUpdatePartScore);
 		$permission = Permission::create(['name' => 'Access Stock']);
+		$admin->givePermissionTo($permission);
 		$role = Role::create(['name' => 'Member']);
 		$role->givePermissionTo($permission);
 	}
