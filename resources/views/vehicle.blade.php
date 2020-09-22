@@ -62,7 +62,7 @@
 					@foreach ($engines as $engine)
 						<tr class="wishlist__row--body">
 							<td class="wishlist__column--body wishlist__column--price">
-								<a href="{{ route('engine', ['engine' => $engine]) }}">
+								<a href="{{ url('brands/'. $vehicle->model->brand->id . '/' . $vehicle->model->brand->slug . '/models/' . $vehicle->model->id . '/' . $vehicle->model->slug . '/vehicles/' . $vehicle->id . '/' . $vehicle->slug . '/engines/' . $engine->id . '/' . $engine->slug) }}">
 									{{ $engine->type }}
 								</a>
 							</td>

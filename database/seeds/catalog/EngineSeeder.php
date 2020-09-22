@@ -21,7 +21,9 @@ class EngineSeeder extends Seeder
 		foreach ($vehicles as $internal_id => $vehicle_id) {
 			foreach ($this->getCars((int) $internal_id) as $car) {
 				$this->createCarEngines((int) $vehicle_id, $car);
+				break;
 			}
+			break;
 		}
 	}
 
@@ -69,6 +71,7 @@ class EngineSeeder extends Seeder
 				'valves' => $this->query($info, 'NumberOfValves'),
 				'motor_code' => $motor_code,
 			]);
+			break;
 		}
 	}
 

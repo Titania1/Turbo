@@ -18,9 +18,10 @@ class ModelSeeder extends Seeder
 	public function run(): void
 	{
 		$this->prepareDirectory();
-		$brands = Brand::select('id', 'internal_id')->get();
+		$brands = Brand::select('id', 'internal_id', 'slug')->get();
 		foreach ($brands as $brand) {
 			$this->seedModelsOfBrand($brand);
+			break;
 		}
 	}
 
@@ -31,7 +32,8 @@ class ModelSeeder extends Seeder
 		$models = $this->getModelsByBrand($brand->internal_id);
 		foreach ($models as $model) {
 			try {
-				$this->create($model, $brand->id);
+				$this->create($model, $brand);
+				break;
 			} catch (\Illuminate\Database\QueryException $ex) {
 				// Do nothing, it's a duplicate
 			}
@@ -47,16 +49,24 @@ class ModelSeeder extends Seeder
 			->get();
 	}
 
-	private function create(object $tecdoc_model, int $brand_id): int
+	private function create(object $tecdoc_model, Brand $brand): int
 	{
 		$name = strtok($tecdoc_model->Description, ' ');
-
-		return Model::create([
+		$slug = sluggify($name);
+		$path = "models/$brand->slug/$slug.jpg";
+		$model = Model::create([
 			'internal_id' => $tecdoc_model->id,
-			'brand_id' => $brand_id,
+			'brand_id' => $brand->id,
 			'name' => $name,
-			'slug' => sluggify($name),
-		])->id;
+			'slug' => $slug,
+			'image' => $path,
+		]);
+		Storage::disk('public')->makeDirectory("models/$brand->slug");
+		copy(
+			base_path('data/models/' . $brand->slug . '_' . $slug . '.jpg'),
+			storage_path("app/public/$path")
+		);
+		return $model->id;
 	}
 
 	private function prepareDirectory(): void

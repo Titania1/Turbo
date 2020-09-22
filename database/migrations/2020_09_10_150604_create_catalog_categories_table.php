@@ -19,7 +19,7 @@ class CreateCatalogCategoriesTable extends Migration
 			$table->unsignedBigInteger('internal_id')->index('categories_catalog');
 			$table->string('name');
 			$table->string('image')->nullable();
-			$table->string('slug')->unique();
+			$table->string('slug');
 			$table->timestamps();
 		});
 	}

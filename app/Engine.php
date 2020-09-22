@@ -13,8 +13,13 @@ class Engine extends Model
 		return $this->belongsTo(Vehicle::class);
 	}
 
-	public function getRouteKeyName(): string
+	public function categories()
 	{
-		return 'slug';
+		return $this->hasMany(CatalogCategory::class);
+	}
+
+	public function getRouteKey()
+	{
+		return $this->id . '/' . $this->slug;
 	}
 }

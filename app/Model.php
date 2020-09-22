@@ -16,6 +16,11 @@ class Model extends Eloquent
 		return $this->id . '/' . $this->slug;
 	}
 
+	public function brand()
+	{
+		return $this->belongsTo(Brand::class);
+	}
+
 	public function vehicles()
 	{
 		return $this->hasMany(Vehicle::class);

@@ -15,7 +15,8 @@ class CatalogSeeder extends Seeder
 			\App\Seeders\BrandSeeder::class,
 			\App\Seeders\ModelSeeder::class,
 			\App\Seeders\VehicleSeeder::class,
+			\App\Seeders\EngineSeeder::class,
+			\App\Seeders\CatalogCategorySeeder::class,
 		]);
-		// $this->call(CatalogCategorySeeder::class);
 	}
 }

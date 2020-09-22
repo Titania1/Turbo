@@ -25,9 +25,9 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Engine $engine, string $slug = null)
+	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Engine $engine, string $slug = null)
 	{
-		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $slug != $vehicle->slug) {
+		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $vehicle_slug != $vehicle->slug || $slug != $engine->slug) {
 			return redirect()->route('engine', [
 				$brand->id,
 				$brand->slug,
@@ -40,9 +40,7 @@ class EnginesController extends Controller
 			]);
 		}
 
-		return $model;
-		$engines = $model->engines;
-
-		return view('model', compact('engines', 'model'));
+		$categories = $engine->categories()->paginate(16);
+		return view('catalog.categories', compact('brand', 'model', 'vehicle', 'engine', 'categories'));
 	}
 }

@@ -7,12 +7,10 @@
 	<ul class="categories-list__body">
 		@foreach($models as $model)
 			<li class="categories-list__item">
-				{{-- <a href="{{ url("brands/$brand->id/$brand->slug/models/$model->id/$model->slug") }}"> --}}
-					<img src="{{ $model->image }}" alt="@lang('Photo')">
-					<div class="categories-list__item-name">
-						{{ $model->name }}
-					</div>
-				{{-- </a> --}}
+				<img src="{{ secure_asset('storage/' . $model->image) }}" alt="@lang('Photo')">
+				<div class="categories-list__item-name">
+					{{ $model->name }}
+				</div>
 				<div class="categories-list__item-products">{{ $model->vehicles()->count() }}</div>
 				<div class="form-group">
 					<select class="form-control form-control-sm form-control-select2">
