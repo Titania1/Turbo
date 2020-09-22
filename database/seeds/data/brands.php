@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 // Insert the title directly, use the Laravel HTTP guzzle wrapper to download the images
 // We do need a multidimensional array after all ¯\_(ツ)_/¯
-$brands = [
+
+/**
+ * @var array $manufacturers
+ */
+$manufacturers = [
 	'/images/carslogos/alfaromeo.png' => 'ALFA ROMEO',
 	'/images/carslogos/audi.png' => 'AUDI',
 	'/images/carslogos/baic.png' => 'BAIC',
@@ -28,10 +32,10 @@ $brands = [
 	'/images/carslogos/gonow.png' => 'GONOW',
 	'/images/carslogos/greatwall.png' => 'GREAT WALL',
 	'/images/carslogos/hafei.png' => 'HAFEI',
-	'/images/carslogos/haima.png' => 'HAIMA',
+	'/images/carslogos/haima.png' => 'HAIMA (FAW)',
 	'/images/carslogos/honda.png' => 'HONDA',
 	'/images/carslogos/hyundai.png' => 'HYUNDAI',
-	'/images/carslogos/irankhodro.png' => 'IRAN KHODRO',
+	'/images/carslogos/irankhodro.png' => 'IRAN KHODRO (IKCO)',
 	'/images/carslogos/isuzu.png' => 'ISUZU',
 	'/images/carslogos/jac.png' => 'JAC',
 	'/images/carslogos/jeep.png' => 'JEEP',
@@ -59,10 +63,13 @@ $brands = [
 	'/images/carslogos/tata.png' => 'TATA',
 	'/images/carslogos/toyota.png' => 'TOYOTA',
 	'/images/carslogos/volvo.png' => 'VOLVO',
-	'/images/carslogos/volkswagen.png' => 'VOLKSWAGEN',
+	'/images/carslogos/volkswagen.png' => 'VW',
 	'/images/carslogos/zotye.png' => 'ZOTYE',
 ];
 
+/**
+ * @var array $commercialVehicles
+ */
 $commercialVehicles = [
 	'/images/carslogos/asiamotors.png' => 'ASIA MOTORS',
 	'/images/carslogos/amw.png' => 'AMW',
@@ -94,9 +101,35 @@ $commercialVehicles = [
 	'/images/carslogos/scania.png' => 'SCANIA',
 	'/images/carslogos/shaanxi.png' => 'SHAANXI',
 	'/images/carslogos/shacman.png' => 'SHACMAN',
-	'/images/carslogos/sinotruck.png' => 'SINOTRUCK',
 	'/images/carslogos/temsa.png' => 'TEMSA',
 	'/images/carslogos/vanhool.png' => 'VAN HOOL',
 	'/images/carslogos/volvo.png' => 'VOLVO',
-	'/images/carslogos/volkswagen.png' => 'VOLKSWAGEN',
+	'/images/carslogos/volkswagen.png' => 'VW',
+];
+
+/**
+ * @var array $brands
+ */
+$brands = [
+	'Audi' => 'DE',
+	'BMW' => 'DE',
+	'Chevrolet' => 'US',
+	'Citroen' => 'FR',
+	'Ford' => 'US',
+	'Hyundai' => 'KR',
+	'Kia' => 'KR',
+	'LandRover' => 'GB',
+	'Mazda' => 'JP',
+	'Mercedes' => 'DE',
+	'Mitsubishi' => 'JP',
+	'Nissan' => 'JP',
+	'Peugeot' => 'FR',
+	'Porsche' => 'DE',
+	'Renault' => 'FR',
+	'Seat' => 'DE',
+	'Skoda' => 'DE',
+	'Subaru' => 'JP',
+	'Suzuki' => 'KR',
+	'Toyota' => 'JP',
+	'Volksvagen' => 'DE',
 ];

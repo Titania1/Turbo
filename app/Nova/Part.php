@@ -103,8 +103,6 @@ class Part extends Resource
 	public static function indexQuery(NovaRequest $request, $query)
 	{
 		if ($request->user()->hasRole('Super Admin')) {
-			info('Admoun');
-
 			return $query;
 		}
 

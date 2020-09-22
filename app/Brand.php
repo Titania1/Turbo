@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Brand extends Model
+class Brand extends Eloquent
 {
-	public function getRouteKeyName()
+	/**
+	 * Get the value of the model's route key.
+	 */
+	public function getRouteKey()
 	{
-		return 'slug';
+		return $this->id . '/' . $this->slug;
 	}
 
 	public function vehicles()
@@ -25,6 +28,6 @@ class Brand extends Model
 
 	public function models()
 	{
-		return $this->hasMany(VehicleModel::class)->whereNull('vehicle_model_id');
+		return $this->hasMany(Model::class);
 	}
 }

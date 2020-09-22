@@ -32,5 +32,6 @@ class ObserverServiceProvider extends ServiceProvider
 		\App\Garage::observe(\App\Observers\GarageObserver::class);
 		\App\VehicleModel::observe(\App\Observers\VehicleModelObserver::class);
 		\App\Engine::observe(\App\Observers\EngineObserver::class);
+		\App\Client::observe(\App\Observers\ClientObserver::class);
 	}
 }

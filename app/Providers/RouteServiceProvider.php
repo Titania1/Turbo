@@ -27,12 +27,12 @@ class RouteServiceProvider extends ServiceProvider
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.
-	 *
-	 * @return void
 	 */
-	public function boot()
+	public function boot(): void
 	{
-		//
+		// Route::bind('brand', function ($value) {
+		// 	return App\Models\User::where('name', $value)->firstOrFail();
+		// });
 
 		parent::boot();
 	}

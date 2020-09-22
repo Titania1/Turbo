@@ -33,7 +33,7 @@ class GaragePolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Garages');
 	}
 
 	/**
@@ -41,7 +41,7 @@ class GaragePolicy
 	 */
 	public function update(User $user, Garage $garage)
 	{
-		//
+		return $user->hasPermissionTo('Edit Garages');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class GaragePolicy
 	 */
 	public function delete(User $user, Garage $garage)
 	{
-		//
+		return $user->hasPermissionTo('Delete Garages');
 	}
 
 	/**
@@ -57,7 +57,7 @@ class GaragePolicy
 	 */
 	public function restore(User $user, Garage $garage)
 	{
-		//
+		return $user->hasPermissionTo('Restore Garages');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class GaragePolicy
 	 */
 	public function forceDelete(User $user, Garage $garage)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Garages');
 	}
 }

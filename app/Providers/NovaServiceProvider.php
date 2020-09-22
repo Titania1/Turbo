@@ -54,6 +54,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 	protected function gate()
 	{
 		Gate::define('viewNova', function ($user) {
+			info($user);
+
 			return $user->hasPermissionTo('Access Stock');
 		});
 	}
