@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use App\Part;
-use App\Type;
 use App\User;
 use App\Vehicle;
 use App\Category;
@@ -16,7 +15,7 @@ class PartSeeder extends Seeder
 	 *
 	 * @return void
 	 */
-	public function run()
+	public function run(): void
 	{
 		// We need to seed parts for each main category
 		// Limit main categories to 3

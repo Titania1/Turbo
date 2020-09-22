@@ -4,81 +4,44 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\Brand;
+use App\Model;
 use App\Engine;
-use App\VehicleModel;
-use Illuminate\Http\Request;
+use App\Vehicle;
 
 class EnginesController extends Controller
 {
 	/**
-	 * Display a listing of the resource.
+	 * Display the specified resource.
+	 *
+	 * @param \App\Brand $brand The Brand model or ID
+	 * @param string $brand_slug The brand slug (optional)
+	 * @param \App\Model $model The vehicles grouping model
+	 * @param string|null $model_slug The model slug
+	 * @param \App\Vehicle $vehicle The vehicle model or ID
+	 * @param string|null $vehicle_slug The vehicle slug
+	 * @param \App\Engine $engine The engine model or ID
+	 * @param string|null $slug The engine slug
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index(VehicleModel $model)
+	public function index(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Engine $engine, string $slug = null)
 	{
+		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $slug != $vehicle->slug) {
+			return redirect()->route('engine', [
+				$brand->id,
+				$brand->slug,
+				$model->id,
+				$model->slug,
+				$vehicle->id,
+				$vehicle->slug,
+				$engine->id,
+				$engine->slug,
+			]);
+		}
+		return $model;
 		$engines = $model->engines;
 
 		return view('model', compact('engines', 'model'));
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store(Request $request)
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show(Engine $engine)
-	{
-		return $engine;
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function edit(Engine $engine)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function update(Request $request, Engine $engine)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy(Engine $engine)
-	{
-		//
 	}
 }

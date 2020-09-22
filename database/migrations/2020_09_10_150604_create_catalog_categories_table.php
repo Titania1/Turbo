@@ -16,10 +16,10 @@ class CreateCatalogCategoriesTable extends Migration
 		Schema::create('catalog_categories', function (Blueprint $table) {
 			$table->id();
 			$table->foreignId('engine_id')->constrained();
-			$table->unsignedBigInteger('internal_id')->index('catalog');
+			$table->unsignedBigInteger('internal_id')->index('categories_catalog');
 			$table->string('name');
 			$table->string('image')->nullable();
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->timestamps();
 		});
 	}

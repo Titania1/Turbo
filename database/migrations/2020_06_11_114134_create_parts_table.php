@@ -27,12 +27,12 @@ class CreatePartsTable extends Migration
 			$table->text('excerpt')->nullable();
 			$table->text('description')->nullable();
 			$table->string('image')->nullable();
-			$table->decimal('price');
+			$table->decimal('price', 8, 2);
 			$table->decimal('old_price')->nullable();
 			$table->string('sku')->nullable();
 			$table->tinyInteger('rating')->default(0);
 			$table->json('key_features')->nullable();
-			$table->string('slug');
+			$table->string('slug')->unique();
 			$table->timestamp('deleted_at')->nullable();
 			$table->timestamps();
 		});

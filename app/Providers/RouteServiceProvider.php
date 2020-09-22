@@ -30,9 +30,11 @@ class RouteServiceProvider extends ServiceProvider
 	 *
 	 * @return void
 	 */
-	public function boot()
+	public function boot(): void
 	{
-		//
+		// Route::bind('brand', function ($value) {
+		// 	return App\Models\User::where('name', $value)->firstOrFail();
+		// });
 
 		parent::boot();
 	}
@@ -48,7 +50,7 @@ class RouteServiceProvider extends ServiceProvider
 
 		$this->mapWebRoutes();
 
-		if (! app()->isProduction()) {
+		if (!app()->isProduction()) {
 			$this->mapDevRoutes();
 		}
 	}

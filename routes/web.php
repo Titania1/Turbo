@@ -72,9 +72,12 @@ Route::view('category-6-full', 'category-6-full');
 Route::view('category-7-full', 'category-7-full');
 Route::view('category-right-sidebar', 'category-right-sidebar');
 // Catalog routes
-Route::get('brands/{brand}', 'BrandsController@show')->name('brand');
-Route::get('models/{model}', 'EnginesController@index')->name('model');
-Route::get('engines/{engine}', 'EnginesController@show')->name('engine');
+
+Route::get('brands/{brand}/{slug?}', 'BrandsController@show')->name('brand');
+Route::get('brands/{brand}/{brand_slug?}/models/{model}/{slug?}', 'ModelsController@show')->name('model');
+Route::get('brands/{brand}/{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}/{slug?}', 'VehiclesController@show')->name('vehicle');
+Route::get('brands/{brand}/{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}/{vehicle_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
+
 Route::get('print/receipt/{receipt}', 'ReceiptsController@print');
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->where('provider', '(google|facebook)');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallback');
