@@ -7,6 +7,7 @@ namespace Tests\Feature;
 use App\Brand;
 use App\Model;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -14,6 +15,13 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 class BrandTest extends TestCase
 {
 	use DatabaseMigrations, RefreshDatabase;
+
+	public function setUp(): void
+	{
+		parent::setUp();
+		Storage::disk('public')->deleteDirectory('brands');
+		Storage::disk('public')->makeDirectory('brands');
+	}
 
 	/**
 	 * A basic feature test example.
