@@ -6,7 +6,7 @@ namespace Tests\Feature;
 
 use App\Brand;
 use Tests\TestCase;
-use App\VehicleModel;
+use App\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
@@ -23,9 +23,9 @@ class CatalogModelTest extends TestCase
 		Storage::disk('public')->deleteDirectory('brands');
 		Storage::disk('public')->makeDirectory('brands');
 		$brand = create(Brand::class);
-		$model = create(VehicleModel::class, [], 'make')->toArray();
+		$model = create(Model::class, [], 'make')->toArray();
 		$model = $brand->models()->create($model);
-		$response = $this->get(route('model', ['model' => $model]));
+		$response = $this->get("/brands/$brand->id/$brand->slug/models/$model->id/$model->slug");
 
 		$response->assertOk();
 	}

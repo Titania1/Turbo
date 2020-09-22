@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Brand;
+use App\Model;
 use App\Vehicle;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
@@ -31,10 +32,11 @@ class FinderTest extends TestCase
 	public function test_brands_by_year()
 	{
 		$brand = factory(Brand::class)->create();
-		$vehicle = factory(Vehicle::class)->create(['brand_id' => $brand->id]);
+		$model = factory(Model::class)->create(['brand_id' => $brand->id]);
+		$vehicle = factory(Vehicle::class)->create(['model_id' => $model->id]);
 		$response = $this->post('/api/getYearBrands', [
-			'year' => $vehicle->year,
+			'year' => $vehicle->from,
 		]);
-		$response->assertStatus(200);
+		$response->assertOk();
 	}
 }

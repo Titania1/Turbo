@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Engine extends Model
 {
-	public function model()
+	public function vehicle()
 	{
-		return $this->belongsTo(VehicleModel::class, 'vehicle_model_id');
+		return $this->belongsTo(Vehicle::class);
 	}
 
 	public function getRouteKeyName(): string

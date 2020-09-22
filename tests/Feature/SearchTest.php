@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Brand;
+use App\Engine;
+use App\Model;
 use App\Vehicle;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
@@ -29,15 +31,16 @@ class SearchTest extends TestCase
 	 */
 	public function test_vehicle_parts_search()
 	{
-		$this->withoutExceptionHandling();
 		Vehicle::withoutSyncingToSearch(function () {
 			$brand = factory(Brand::class)->create();
-			$vehicle = factory(Vehicle::class)->create(['brand_id' => $brand->id]);
+			$model = factory(Model::class)->create(['brand_id' => $brand->id]);
+			$vehicle = factory(Vehicle::class)->create(['model_id' => $model->id]);
+			$engine = factory(Engine::class)->create(['vehicle_id' => $vehicle->id]);
 			$response = $this->post('/search', [
-				'year' => $vehicle->year,
+				'year' => $vehicle->from,
 				'brand' => $brand->id,
-				'model' => $vehicle->model,
-				'fuel' => $vehicle->fuel,
+				'model' => $model->id,
+				'fuel' => $engine->fuel,
 			]);
 			$response->assertOk();
 		});
