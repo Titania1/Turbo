@@ -25,7 +25,7 @@ class CategoryPolicy
 	 */
 	public function view(User $user, Category $category)
 	{
-		//
+		return $user->hasPermissionTo('Read Categories');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class CategoryPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Categories');
 	}
 
 	/**
@@ -41,7 +41,7 @@ class CategoryPolicy
 	 */
 	public function update(User $user, Category $category)
 	{
-		//
+		return $user->hasPermissionTo('Edit Categories');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class CategoryPolicy
 	 */
 	public function delete(User $user, Category $category)
 	{
-		//
+		return $user->hasPermissionTo('Delete Categories');
 	}
 
 	/**
@@ -57,7 +57,7 @@ class CategoryPolicy
 	 */
 	public function restore(User $user, Category $category)
 	{
-		//
+		return $user->hasPermissionTo('Restore Categories');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class CategoryPolicy
 	 */
 	public function forceDelete(User $user, Category $category)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Categories');
 	}
 }

@@ -55,7 +55,7 @@ class Part extends Resource
 	 * @var array
 	 */
 	public static $search = [
-		'id', 'title',
+		'id', 'title', 'description', 'sku',
 	];
 
 	/**
@@ -72,7 +72,7 @@ class Part extends Resource
 			Image::make(__('Image'), 'image'),
 			Number::make(__('Price'), 'price')
 				->min(1)->max(1e6)->step(0.01)
-				->required()->displayUsing(fn () => round($this->price) . ' DZD'),
+				->required()->displayUsing(fn ($p) => $p . ' DZD'),
 			KeyValue::make(__('Key Features'), 'key_features')->rules('json')
 				->keyLabel(__('Feature'))
 				->valueLabel(__('Value'))
@@ -90,7 +90,7 @@ class Part extends Resource
 					__('Buy Price') => $this->buyPrice,
 					__('Sell Price') => $this->sellPrice,
 					__('Supplier') => $this->supplier,
-				]),
+				])->onlyOnIndex(),
 		];
 	}
 
@@ -102,6 +102,10 @@ class Part extends Resource
 	 */
 	public static function indexQuery(NovaRequest $request, $query)
 	{
+		if ($request->user()->hasRole('Super Admin')) {
+			return $query;
+		}
+
 		return $query->where('user_id', auth()->id());
 	}
 

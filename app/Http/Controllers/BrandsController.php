@@ -35,8 +35,13 @@ class BrandsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Brand $brand)
+	public function show(Brand $brand, string $slug = null)
 	{
-		return view('brand', compact('brand'));
+		if ($slug != $brand->slug) {
+			return redirect()->route('brand', [$brand->id, $brand->slug]);
+		}
+		$models = $brand->models()->paginate(21);
+
+		return view('brand', compact('brand', 'models'));
 	}
 }

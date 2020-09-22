@@ -21,11 +21,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(UserSeeder::class);
 		$this->call(SupplierSeeder::class);
 		$this->call(ClientSeeder::class);
-		$this->call(CategorySeeder::class);
-		$this->call(TypeSeeder::class);
-		$this->call(BrandSeeder::class);
-		$this->call(VehicleSeeder::class);
-		$this->call(PartSeeder::class);
+		$this->seedProducts();
 		$this->call(StockSeeder::class);
 		$this->call(ReviewSeeder::class);
 		$this->call(OrderSeeder::class);
@@ -33,6 +29,15 @@ class DatabaseSeeder extends Seeder
 		$this->call(StoreSeeder::class);
 		$this->call(StoreContactSeeder::class);
 		$this->call(GarageSeeder::class);
+	}
+
+	public function seedProducts(): void
+	{
+		$this->call(CategorySeeder::class);
+		$this->call(TypeSeeder::class);
+		$this->call(BrandSeeder::class);
+		$this->call(VehicleSeeder::class);
+		$this->call(PartSeeder::class);
 	}
 
 	/**
@@ -55,13 +60,15 @@ class DatabaseSeeder extends Seeder
 	 **/
 	public function cleanupStorage(): void
 	{
-		Storage::disk('public')->deleteDirectory('parts');
-		Storage::disk('public')->makeDirectory('parts');
-		Storage::disk('public')->deleteDirectory('avatars');
-		Storage::disk('public')->makeDirectory('avatars');
 		Storage::disk('public')->deleteDirectory('categories');
 		Storage::disk('public')->makeDirectory('categories');
 		Storage::disk('public')->deleteDirectory('types');
 		Storage::disk('public')->makeDirectory('types');
+		Storage::disk('public')->deleteDirectory('brands');
+		Storage::disk('public')->makeDirectory('brands');
+		Storage::disk('public')->deleteDirectory('parts');
+		Storage::disk('public')->makeDirectory('parts');
+		Storage::disk('public')->deleteDirectory('avatars');
+		Storage::disk('public')->makeDirectory('avatars');
 	}
 }

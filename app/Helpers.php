@@ -8,7 +8,11 @@ function sluggify(string $string): string
 	$url = preg_replace('~[^\pL\d]+~u', '-', $string);
 
 	// transliterate
-	$url = iconv('utf-8', 'us-ascii//TRANSLIT', $url);
+	try {
+		$url = iconv('utf-8', 'us-ascii//TRANSLIT', $url);
+	} catch (Exception $ex) {
+		return 'n-a';
+	}
 
 	// remove unwanted characters
 	$url = preg_replace('~[^-\w]+~', '', $url);

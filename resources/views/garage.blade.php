@@ -40,13 +40,13 @@
 				</div>
 				<div class="card-divider"></div>
 				<div class="card-header">
-					<h5>Add A Vehicle</h5>
+					<h5>@lang('Add A Vehicle')</h5>
 				</div>
 				<div class="card-divider"></div>
 				<div class="card-body card-body--padding--2">
 					<div class="vehicle-form vehicle-form--layout--account">
-						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="Year">
-								<option value="none">Select Year</option>
+						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="@lang('Year')">
+								<option value="none">@lang('Select Year')</option>
 								<option>2010</option>
 								<option>2011</option>
 								<option>2012</option>
@@ -59,8 +59,8 @@
 								<option>2019</option>
 								<option>2020</option>
 							</select></div>
-						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="Brand" disabled="disabled">
-								<option value="none">Select Brand</option>
+						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="@lang('Brand')" disabled="disabled">
+								<option value="none">@lang('Select Brand')</option>
 								<option>Audi</option>
 								<option>BMW</option>
 								<option>Ferrari</option>
@@ -70,23 +70,23 @@
 								<option>Tesla</option>
 								<option>Toyota</option>
 							</select></div>
-						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="Model" disabled="disabled">
-								<option value="none">Select Model</option>
+						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="@lang('Model')" disabled="disabled">
+								<option value="none">@lang('Select Model')</option>
 								<option>Explorer</option>
 								<option>Focus S</option>
 								<option>Fusion SE</option>
 								<option>Mustang</option>
 							</select></div>
 						<div class="vehicle-form__item vehicle-form__item--select"><select class="form-control form-control-select2" aria-label="Engine" disabled="disabled">
-								<option value="none">Select Engine</option>
+								<option value="none">@lang('Select Engine')</option>
 								<option>Gas 1.6L 125 hp AT/L4</option>
 								<option>Diesel 2.5L 200 hp AT/L5</option>
 								<option>Diesel 3.0L 250 hp MT/L5</option>
 							</select></div>
-						<div class="vehicle-form__divider">Or</div>
-						<div class="vehicle-form__item"><input type="text" class="form-control" placeholder="Enter VIN number" aria-label="VIN number"></div>
+						<div class="vehicle-form__divider">@lang('Or')</div>
+						<div class="vehicle-form__item"><input type="text" class="form-control" placeholder="@lang('Enter VIN number')" aria-label="@lang('VIN number')"></div>
 					</div>
-					<div class="mt-4 pt-3"><a href="#" class="btn btn-sm btn-primary">Add A Vehicle</a></div>
+					<div class="mt-4 pt-3"><a href="#" class="btn btn-sm btn-primary">@lang('Add A Vehicle')</a></div>
 				</div>
 			</div>
 		</div>

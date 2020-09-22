@@ -17,15 +17,27 @@ class CreateEnginesTable extends Migration
 	{
 		Schema::create('engines', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('vehicle_model_id')->constrained();
-			$table->string('type')->unique()->index();
-			$table->string('slug')->unique();
+			$table->unsignedBigInteger('internal_id')->nullable()->index('engines_catalog');
+			$table->foreignId('vehicle_id')->constrained();
+			$table->string('type')->index();
+			$table->string('slug');
 			$table->string('interval');
 			$table->string('power');
 			$table->string('capacity');
-			$table->unsignedTinyInteger('cylinders');
-			$table->string('body_type');
-			$table->string('fuel');
+			$table->string('construction')->nullable();
+			$table->string('fuel')->nullable();
+			$table->string('fuel_mixture')->nullable();
+			$table->string('charge')->nullable();
+			$table->string('cylinder_construction')->nullable();
+			$table->string('engine_management')->nullable();
+			$table->string('cooling_type')->nullable();
+			$table->string('compression')->nullable();
+			$table->string('torque')->nullable();
+			$table->string('bore')->nullable();
+			$table->string('stroke')->nullable();
+			$table->unsignedTinyInteger('cylinders')->nullable();
+			$table->unsignedTinyInteger('valves')->nullable();
+			$table->unsignedTinyInteger('bearings')->nullable();
 			$table->string('motor_code');
 			$table->timestamps();
 		});

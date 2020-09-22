@@ -17,7 +17,7 @@ class BrandPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		//
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
@@ -25,7 +25,7 @@ class BrandPolicy
 	 */
 	public function view(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Read Brands');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class BrandPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Brands');
 	}
 
 	/**
@@ -41,11 +41,14 @@ class BrandPolicy
 	 */
 	public function update(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Edit Brand');
 	}
 
 	/**
 	 * Determine whether the user can delete the model.
+	 * Brands containing models should be deletable.
+	 *
+	 * @return bool condition
 	 */
 	public function delete(User $user, Brand $brand)
 	{
@@ -57,7 +60,7 @@ class BrandPolicy
 	 */
 	public function restore(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Restore Brands');
 	}
 
 	/**
@@ -65,6 +68,6 @@ class BrandPolicy
 	 */
 	public function forceDelete(User $user, Brand $brand)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Brands');
 	}
 }

@@ -17,7 +17,7 @@ class StoreAboutPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		//
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
@@ -25,7 +25,7 @@ class StoreAboutPolicy
 	 */
 	public function view(User $user, StoreAbout $storeAbout)
 	{
-		//
+		return $user->hasPermissionTo('Browse Store-abouts');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class StoreAboutPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Store-abouts');
 	}
 
 	/**
@@ -41,7 +41,7 @@ class StoreAboutPolicy
 	 */
 	public function update(User $user, StoreAbout $storeAbout)
 	{
-		//
+		return $user->hasPermissionTo('Edit Store-abouts');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class StoreAboutPolicy
 	 */
 	public function delete(User $user, StoreAbout $storeAbout)
 	{
-		//
+		return $user->hasPermissionTo('Delete Store-abouts');
 	}
 
 	/**
@@ -57,7 +57,7 @@ class StoreAboutPolicy
 	 */
 	public function restore(User $user, StoreAbout $storeAbout)
 	{
-		//
+		return $user->hasPermissionTo('Restore Store-abouts');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class StoreAboutPolicy
 	 */
 	public function forceDelete(User $user, StoreAbout $storeAbout)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Store-abouts');
 	}
 }

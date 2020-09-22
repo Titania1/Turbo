@@ -26,10 +26,10 @@ class SearchRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'year' => 'bail|required|integer|exists:vehicles,year',
+			'year' => 'bail|required|integer|exists:vehicles,from',
 			'brand' => 'bail|required|integer|exists:brands,id',
-			'model' => 'bail|required|string|exists:vehicles,model',
-			'fuel' => 'bail|required|string|exists:vehicles,fuel',
+			'model' => 'bail|required|integer|exists:vehicles,model_id',
+			'fuel' => 'bail|required|string|exists:engines,fuel',
 		];
 	}
 }

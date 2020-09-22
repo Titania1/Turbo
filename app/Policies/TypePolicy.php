@@ -25,7 +25,7 @@ class TypePolicy
 	 */
 	public function view(User $user, Type $type)
 	{
-		//
+		return $user->hasPermissionTo('Read Types');
 	}
 
 	/**
@@ -33,7 +33,7 @@ class TypePolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Types');
 	}
 
 	/**
@@ -41,7 +41,7 @@ class TypePolicy
 	 */
 	public function update(User $user, Type $type)
 	{
-		//
+		return $user->hasPermissionTo('Edit Types');
 	}
 
 	/**
@@ -49,7 +49,7 @@ class TypePolicy
 	 */
 	public function delete(User $user, Type $type)
 	{
-		//
+		return $user->hasPermissionTo('Delete Types');
 	}
 
 	/**
@@ -57,7 +57,7 @@ class TypePolicy
 	 */
 	public function restore(User $user, Type $type)
 	{
-		//
+		return $user->hasPermissionTo('Restore Types');
 	}
 
 	/**
@@ -65,6 +65,6 @@ class TypePolicy
 	 */
 	public function forceDelete(User $user, Type $type)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Types');
 	}
 }

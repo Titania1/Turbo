@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $model->name)
+@section('title', $vehicle->name)
 
 @section('content')
 <div class="block-header block-header--has-breadcrumb block-header--has-title">
@@ -16,13 +16,13 @@
 					</li>
 					<li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
 						<span class="breadcrumb__item-link">
-							{{ $model->name }}
+							{{ $vehicle->name }}
 						</span>
 					</li>
 					<li class="breadcrumb__title-safe-area" role="presentation"></li>
 				</ol>
 			</nav>
-			<h1 class="block-header__title">{{ $model->name }}</h1>
+			<h1 class="block-header__title">{{ $vehicle->name }}</h1>
 		</div>
 	</div>
 </div>
@@ -60,34 +60,34 @@
 				</thead>
 				<tbody>
 					@foreach ($engines as $engine)
-					<tr class="wishlist__row--body">
-						<td class="wishlist__column--body wishlist__column--price">
-							<a href="{{ route('engine', ['engine' => $engine]) }}">
-								{{ $engine->type }}
-							</a>
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->interval }}
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->power }}
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->capacity }}
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->cylinders }}
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							@lang($engine->body_type)
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							@lang($engine->fuel)
-						</td>
-						<td class="wishlist__column--body wishlist__column--price">
-							{{ $engine->motor_code }}
-						</td>
-					</tr>
+						<tr class="wishlist__row--body">
+							<td class="wishlist__column--body wishlist__column--price">
+								<a href="{{ route('engine', ['engine' => $engine]) }}">
+									{{ $engine->type }}
+								</a>
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								{{ $engine->interval }}
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								{{ $engine->power }}
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								{{ $engine->capacity }}
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								{{ $engine->cylinders }}
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								@lang($engine->body_type)
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								@lang($engine->fuel)
+							</td>
+							<td class="wishlist__column--body wishlist__column--price">
+								{{ $engine->motor_code }}
+							</td>
+						</tr>
 					@endforeach
 				</tbody>
 			</table>
