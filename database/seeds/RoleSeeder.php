@@ -198,7 +198,7 @@ class RoleSeeder extends Seeder
 			'Delete Users',
 			'Restore Users',
 			'Force Delete Users',
-		]
+		],
 
 	];
 
