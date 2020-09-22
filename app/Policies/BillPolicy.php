@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Policies;
 
 use App\User;
-use App\Category;
+use App\Nova\Bill;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class CategoryPolicy
+class BillPolicy
 {
 	use HandlesAuthorization;
 
@@ -22,10 +22,12 @@ class CategoryPolicy
 
 	/**
 	 * Determine whether the user can view the model.
+	 *
+	 * @param  \App\Bill  $bill
 	 */
-	public function view(User $user, Category $category)
+	public function view(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('Read Categories');
+		return $user->hasPermissionTo('Read Bills');
 	}
 
 	/**
@@ -33,38 +35,46 @@ class CategoryPolicy
 	 */
 	public function create(User $user)
 	{
-		return $user->hasPermissionTo('Add Categories');
+		return $user->hasPermissionTo('Add Bills');
 	}
 
 	/**
 	 * Determine whether the user can update the model.
+	 *
+	 * @param  \App\Bill  $bill
 	 */
-	public function update(User $user, Category $category)
+	public function update(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('Edit Categories');
+		return $user->hasPermissionTo('Edit Bills');
 	}
 
 	/**
 	 * Determine whether the user can delete the model.
+	 *
+	 * @param  \App\Bill  $bill
 	 */
-	public function delete(User $user, Category $category)
+	public function delete(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('Delete Categories');
+		return $user->hasPermissionTo('Delete Bills');
 	}
 
 	/**
 	 * Determine whether the user can restore the model.
+	 *
+	 * @param  \App\Bill  $bill
 	 */
-	public function restore(User $user, Category $category)
+	public function restore(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('Restore Categories');
+		return $user->hasPermissionTo('Restore Bills');
 	}
 
 	/**
 	 * Determine whether the user can permanently delete the model.
+	 *
+	 * @param  \App\Bill  $bill
 	 */
-	public function forceDelete(User $user, Category $category)
+	public function forceDelete(User $user, Bill $bill)
 	{
-		return $user->hasPermissionTo('Force Delete Categories');
+		return $user->hasPermissionTo('Force Delete Bills');
 	}
 }

@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
+use App\Part;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class PartPolicy
 {
 	use HandlesAuthorization;
 
@@ -16,15 +17,15 @@ class UserPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		return $user->hasPermissionTo('View Users');
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
 	 * Determine whether the user can view the model.
 	 */
-	public function view(User $user, User $model)
+	public function view(User $user, Part $part)
 	{
-		return $user->is($model);
+		return $user->hasPermissionTo('Read Parts');
 	}
 
 	/**
@@ -32,38 +33,38 @@ class UserPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Parts');
 	}
 
 	/**
 	 * Determine whether the user can update the model.
 	 */
-	public function update(User $user, User $model)
+	public function update(User $user, Part $part)
 	{
-		//
+		return $user->hasPermissionTo('Edit Parts');
 	}
 
 	/**
 	 * Determine whether the user can delete the model.
 	 */
-	public function delete(User $user, User $model)
+	public function delete(User $user, Part $part)
 	{
-		//
+		return $user->hasPermissionTo('Delete Parts');
 	}
 
 	/**
 	 * Determine whether the user can restore the model.
 	 */
-	public function restore(User $user, User $model)
+	public function restore(User $user, Part $part)
 	{
-		//
+		return $user->hasPermissionTo('Restore Parts');
 	}
 
 	/**
 	 * Determine whether the user can permanently delete the model.
 	 */
-	public function forceDelete(User $user, User $model)
+	public function forceDelete(User $user, Part $part)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Parts');
 	}
 }

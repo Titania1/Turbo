@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace App\Policies;
 
 use App\User;
+use App\Order;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class UserPolicy
+class OrderPolicy
 {
 	use HandlesAuthorization;
 
@@ -16,15 +17,15 @@ class UserPolicy
 	 */
 	public function viewAny(User $user)
 	{
-		return $user->hasPermissionTo('View Users');
+		return $user->hasRole('Super Admin');
 	}
 
 	/**
 	 * Determine whether the user can view the model.
 	 */
-	public function view(User $user, User $model)
+	public function view(User $user, Order $order)
 	{
-		return $user->is($model);
+		return $user->hasPermissionTo('Add Orders');
 	}
 
 	/**
@@ -32,38 +33,38 @@ class UserPolicy
 	 */
 	public function create(User $user)
 	{
-		//
+		return $user->hasPermissionTo('Add Orders');
 	}
 
 	/**
 	 * Determine whether the user can update the model.
 	 */
-	public function update(User $user, User $model)
+	public function update(User $user, Order $order)
 	{
-		//
+		return $user->hasPermissionTo('Edit Orders');
 	}
 
 	/**
 	 * Determine whether the user can delete the model.
 	 */
-	public function delete(User $user, User $model)
+	public function delete(User $user, Order $order)
 	{
-		//
+		return $user->hasPermissionTo('Delete Orders');
 	}
 
 	/**
 	 * Determine whether the user can restore the model.
 	 */
-	public function restore(User $user, User $model)
+	public function restore(User $user, Order $order)
 	{
-		//
+		return $user->hasPermissionTo('Restore Orders');
 	}
 
 	/**
 	 * Determine whether the user can permanently delete the model.
 	 */
-	public function forceDelete(User $user, User $model)
+	public function forceDelete(User $user, Order $order)
 	{
-		//
+		return $user->hasPermissionTo('Force Delete Orders');
 	}
 }
