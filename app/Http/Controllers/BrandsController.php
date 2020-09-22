@@ -21,11 +21,11 @@ class BrandsController extends Controller
 	 **/
 	public function getByYear(YearsBrandRequest $request): Collection
 	{
-		// Get vehicles of year
-		$vehicles = Vehicle::where('from', $request->year)
-			->select('brand_id')->distinct()->pluck('brand_id')->toArray();
+		// Get model ids of year
+		$models = Vehicle::where('from', $request->year)
+			->select('model_id')->distinct()->pluck('model_id')->toArray();
 
-		$brands = Brand::whereIn('id', $vehicles)->select('name', 'id')->get();
+		$brands = Brand::whereIn('id', $models)->select('name', 'id')->get();
 
 		return $brands;
 	}
