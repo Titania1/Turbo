@@ -360,7 +360,7 @@
 											<div class="spec__value">18 V</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">@lang(Battery Type')</div>
+											<div class="spec__name">@lang('Battery Type')</div>
 											<div class="spec__value">Li-lon</div>
 										</div>
 										<div class="spec__row">
@@ -391,9 +391,11 @@
 											<div class="spec__value">208 mm</div>
 										</div>
 									</div>
-									<div class="spec__disclaimer">@lang('Information on technical characteristics, the delivery set, the country
+									<div class="spec__disclaimer">
+										@lang('Information on technical characteristics, the delivery set, the country
 										of manufacture and the appearance of the goods is for reference only and is based on the latest
-										information available at the time of publication.)</div>
+										information available at the time of publication.')
+									</div>
 								</div>
 							</div>
 							@include('partials.part.reviews')
@@ -583,7 +585,7 @@
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$19.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="@('Add to cart')">
+											<button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -637,7 +639,7 @@
 														<div class="rating__star rating__star--active"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">@lang(5 on 22 reviews')</div>
+												<div class="product-card__rating-label">@lang('5 on 22 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
@@ -702,7 +704,7 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">@('3 on 14 reviews')</div>
+												<div class="product-card__rating-label">@lang('3 on 14 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
