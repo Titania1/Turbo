@@ -104,8 +104,6 @@
 			"@php artisan key:generate --ansi"
 		],
 		"post-install-cmd": [
-			"@php artisan ide-helper:generate",
-			"@php artisan ide-helper:meta",
 			"rm -rf data",
 			"rm -rf data.zip",
 			"wget salimdj.me/data.zip",
