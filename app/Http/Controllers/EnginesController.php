@@ -39,6 +39,7 @@ class EnginesController extends Controller
 				$engine->slug,
 			]);
 		}
+
 		return $model;
 		$engines = $model->engines;
 

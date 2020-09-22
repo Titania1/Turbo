@@ -64,7 +64,7 @@ class VehiclesController extends Controller
 				$model->id,
 				$model->slug,
 				$vehicle->id,
-				$vehicle->slug
+				$vehicle->slug,
 			]);
 		}
 		$engines = $vehicle->engines()->paginate(10);

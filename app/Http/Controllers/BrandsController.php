@@ -40,6 +40,7 @@ class BrandsController extends Controller
 			return redirect()->route('brand', [$brand->id, $brand->slug]);
 		}
 		$models = $brand->models()->paginate(21);
+
 		return view('brand', compact('brand', 'models'));
 	}
 }

@@ -24,6 +24,7 @@ class ModelsController extends Controller
 		if ($brand_slug != $brand->slug || $slug != $model->slug) {
 			return redirect()->route('model', [$brand->id, $brand->slug, $model->id, $model->slug]);
 		}
+
 		return $model;
 		$engines = $model->engines;
 

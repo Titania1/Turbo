@@ -50,6 +50,7 @@ class ModelSeeder extends Seeder
 	private function create(object $tecdoc_model, int $brand_id): int
 	{
 		$name = strtok($tecdoc_model->Description, ' ');
+
 		return Model::create([
 			'internal_id' => $tecdoc_model->id,
 			'brand_id' => $brand_id,

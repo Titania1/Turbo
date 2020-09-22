@@ -103,6 +103,7 @@ class EngineSeeder extends Seeder
 		} elseif ($collection->count()) {
 			return $info->where('AttributeType', $col)->first()->DisplayValue;
 		}
+
 		return null;
 	}
 
@@ -114,6 +115,7 @@ class EngineSeeder extends Seeder
 		$_2 = $this->query($info, 'Capacity'); // 1,3 l
 		$_2 = rtrim($_2, ' l'); // 1,3
 		$_2 = number_format(str_replace(',', '.', $_2) * 100); // 130
+
 		return $_1 . ' - ' . $_2 . ' L';
 	}
 }

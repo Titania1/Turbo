@@ -27,8 +27,6 @@ class RouteServiceProvider extends ServiceProvider
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.
-	 *
-	 * @return void
 	 */
 	public function boot(): void
 	{
@@ -50,7 +48,7 @@ class RouteServiceProvider extends ServiceProvider
 
 		$this->mapWebRoutes();
 
-		if (!app()->isProduction()) {
+		if (! app()->isProduction()) {
 			$this->mapDevRoutes();
 		}
 	}
