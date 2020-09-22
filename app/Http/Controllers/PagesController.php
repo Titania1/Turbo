@@ -26,7 +26,7 @@ class PagesController extends Controller
 		$categories = Category::whereHas('categories', function (Builder $query) {
 			$query->whereHas('types');
 		})->limit(3)->with('subParts')->get();
-		$years = Vehicle::select('year')->distinct()->orderBy('year')->pluck('year');
+		$years = Vehicle::select('from', 'to')->distinct()->pluck('from', 'to');
 		// Get new arrivals
 		$new_parts = Part::latest()->get();
 		// Get their types

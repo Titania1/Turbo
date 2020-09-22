@@ -40,7 +40,8 @@ class ViewComposerServiceProvider extends ServiceProvider
 		});
 		view()->composer(['partials.featured', 'partials.index.featured', 'partials.category_featured'], function ($view) {
 			// Get 10 most popular (viewed) products
-			$ids = \Illuminate\Support\Facades\Redis::zrevrange('popular_parts', 0, 9);
+			$ids = [];
+			// $ids = \Illuminate\Support\Facades\Redis::zrevrange('popular_parts', 0, 9);
 			$featured_parts = Part::whereIn('id', $ids)->with('media.model')->get();
 			$view->with('featured_parts', $featured_parts);
 		});

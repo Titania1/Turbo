@@ -4,40 +4,25 @@ declare(strict_types=1);
 
 use App\Brand;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Storage;
 
 class BrandSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
-	public function run()
+	public function run(): void
 	{
-		Storage::disk('public')->deleteDirectory('brands');
-		Storage::disk('public')->makeDirectory('brands');
 		require_once dirname(__FILE__) . '/data/brands.php';
-		foreach ($brands as $image_url => $name) {
-			$response = Http::get('https://ghiar.com/' . $image_url);
-			Storage::disk('public')->put("/brands/$name.png", $response->body());
+		foreach ($brands as $name => $country) {
+			copy(
+				base_path("data/brands/$name.png"),
+				storage_path("app/public/brands/$name.png")
+			);
 			Brand::create([
 				'name' => $name,
+				'country' => $country,
 				'logo' => "brands/$name.png",
 			]);
-			break;
 		}
-
-		// Seed commercial vehicles
-		// foreach ($commercialVehicles as $image_url => $name) {
-		// 	$response = Http::get('https://ghiar.com/' . $image_url);
-		// 	Storage::disk('public')->put("/brands/$name.png", $response->body());
-		// 	Brand::create([
-		// 		'name' => $name,
-		// 		'logo' => "brands/$name.png",
-		// 		'is_commercial' => true,
-		// 	]);
-		// }
 	}
 }

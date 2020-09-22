@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStoresTable extends Migration
+class CreateModelsTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -15,11 +15,14 @@ class CreateStoresTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('stores', function (Blueprint $table) {
+		Schema::create('models', function (Blueprint $table) {
 			$table->id();
-			$table->foreignId('user_id')->onDelete('cascade');
+			$table->unsignedBigInteger('internal_id')->unique()->index('catalog_models');
+			$table->foreignId('brand_id')->constrained();
+			$table->string('image')->default('/models/model.jpg');
 			$table->string('name');
-			$table->string('slug')->unique();
+			$table->string('slug');
+			$table->unique(['name', 'brand_id']);
 			$table->timestamps();
 		});
 	}
@@ -31,6 +34,6 @@ class CreateStoresTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('stores');
+		Schema::dropIfExists('models');
 	}
 }

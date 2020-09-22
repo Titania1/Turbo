@@ -6,7 +6,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Brand extends Eloquent
+class Model extends Eloquent
 {
 	/**
 	 * Get the value of the model's route key.
@@ -19,15 +19,5 @@ class Brand extends Eloquent
 	public function vehicles()
 	{
 		return $this->hasMany(Vehicle::class);
-	}
-
-	public function parts()
-	{
-		return $this->hasManyThrough(Part::class, Vehicle::class);
-	}
-
-	public function models()
-	{
-		return $this->hasMany(Model::class);
 	}
 }

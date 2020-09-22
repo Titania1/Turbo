@@ -130,9 +130,6 @@
 							<div class="footer-newsletter__text">
 								@lang('footer.subscribe')
 							</div>
-
-							<!-- widad -->
-
 							@if (\Session::has('success'))
 							<div class="alert alert-success" role="alert">
 								{{ \Session::get('success') }}
@@ -143,8 +140,6 @@
 								<p>{{ \Session::get('failure') }}</p>
 							</div>
 							@endif
-
-
 							<form action="{{url('/newsletter')}}" class="footer-newsletter__form" method="post">
 								{{csrf_field()}}
 								<label class="sr-only" for="footer-newsletter-address">
