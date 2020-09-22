@@ -1761,14 +1761,14 @@ select.form-control-sm {
 
 .input-number {
 	display: block;
-	width: 30%;
+	width: 100%;
 	position: relative;
 }
 
 .input-number__input {
 	-moz-appearance: textfield;
 	display: block;
-	width: 30%;
+	width: 100%;
 	min-width: 88px;
 	padding-left: 24px;
 	padding-right: 24px;
@@ -11890,7 +11890,6 @@ select.form-control-sm {
 .product__actions-item--quantity {
 	width: 100px;
 	margin-left: 8px;
-	display: inline-block;
 }
 
 .product__actions-item--addtocart {
