@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 use Laravel\Scout\Searchable;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
@@ -33,13 +33,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Vehicle whereYear($value)
  * @mixin \Eloquent
  */
-class Vehicle extends Model
+class Vehicle extends Eloquent
 {
 	use Searchable;
 
-	public function brand()
+	public function model()
 	{
-		return $this->belongsTo(Brand::class);
+		return $this->belongsTo(Model::class);
+	}
+
+	public function engines()
+	{
+		return $this->hasMany(Engine::class);
 	}
 
 	/**

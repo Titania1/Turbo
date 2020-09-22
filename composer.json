@@ -75,7 +75,8 @@
 		"classmap": [
 			"database/seeds",
 			"database/factories",
-			"database/helpers"
+			"database/helpers",
+			"database/seeds/catalog"
 		],
 		"files": [
 			"app/Helpers.php"
