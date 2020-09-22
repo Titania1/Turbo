@@ -66,6 +66,7 @@ class ModelSeeder extends Seeder
 			base_path('data/models/' . $brand->slug . '_' . $slug . '.jpg'),
 			storage_path("app/public/$path")
 		);
+
 		return $model->id;
 	}
 

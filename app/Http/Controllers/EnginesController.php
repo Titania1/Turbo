@@ -41,6 +41,7 @@ class EnginesController extends Controller
 		}
 
 		$categories = $engine->categories()->paginate(16);
+
 		return view('catalog.categories', compact('brand', 'model', 'vehicle', 'engine', 'categories'));
 	}
 }
