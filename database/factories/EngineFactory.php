@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Engine;
@@ -16,6 +18,6 @@ $factory->define(Engine::class, function (Faker $faker) {
 		'interval' => 'tmp',
 		'power' => '68 pw',
 		'capacity' => '89',
-		'motor_code' => '1K0 DSJQL'
+		'motor_code' => '1K0 DSJQL',
 	];
 });

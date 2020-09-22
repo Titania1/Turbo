@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Brand;
-use App\Engine;
 use App\Model;
+use App\Engine;
 use App\Vehicle;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;

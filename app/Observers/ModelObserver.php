@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Observers;
 
 use App\Model;
@@ -9,7 +11,6 @@ class ModelObserver
 	/**
 	 * Handle the model "creating" event.
 	 *
-	 * @param  \App\Model  $model
 	 * @return void
 	 */
 	public function creating(Model $model)
@@ -20,7 +21,6 @@ class ModelObserver
 	/**
 	 * Handle the model "updated" event.
 	 *
-	 * @param  \App\Model  $model
 	 * @return void
 	 */
 	public function updated(Model $model)
