@@ -4,17 +4,20 @@ declare(strict_types=1);
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Vehicle;
+use App\Engine;
 use Faker\Provider\Fakecar;
 use Faker\Generator as Faker;
 
-$factory->define(Vehicle::class, function (Faker $faker) {
+$factory->define(Engine::class, function (Faker $faker) {
 	$faker->addProvider(new Fakecar($faker));
 	$v = $faker->vehicleArray();
 
 	return [
-		'from' => $faker->biasedNumberBetween(1998, 2010, 'sqrt'),
-		'to' => $faker->biasedNumberBetween(2010, 2020, 'sqrt'),
-		'name' => $v['model'],
+		'fuel' => $faker->vehicleFuelType,
+		'type' => $v['model'],
+		'interval' => 'tmp',
+		'power' => '68 pw',
+		'capacity' => '89',
+		'motor_code' => '1K0 DSJQL',
 	];
 });

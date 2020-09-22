@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use App\Brand;
+use App\Model;
 use Tests\TestCase;
-use App\VehicleModel;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -24,9 +24,8 @@ class BrandTest extends TestCase
 	{
 		$brand = create(Brand::class);
 		$brand->models()->createMany(
-			create(VehicleModel::class, [], 'make', 2)->toArray()
+			create(Model::class, [], 'make', 2)->toArray()
 		);
-		dd(create(VehicleModel::class, [], 'make', 2)->toArray());
 		$this->assertInstanceOf(Collection::class, $brand->models);
 		$response = $this->get(route('brand', $brand));
 		$response->assertSee($brand->name);

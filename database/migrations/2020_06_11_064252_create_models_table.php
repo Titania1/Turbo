@@ -17,7 +17,7 @@ class CreateModelsTable extends Migration
 	{
 		Schema::create('models', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('internal_id')->unique()->index('catalog_models');
+			$table->unsignedBigInteger('internal_id')->nullable()->unique()->index('catalog_models');
 			$table->foreignId('brand_id')->constrained();
 			$table->string('image')->default('/models/model.jpg');
 			$table->string('name');

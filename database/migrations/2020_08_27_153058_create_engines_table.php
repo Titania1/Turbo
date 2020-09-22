@@ -17,7 +17,7 @@ class CreateEnginesTable extends Migration
 	{
 		Schema::create('engines', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('internal_id')->index('engines_catalog');
+			$table->unsignedBigInteger('internal_id')->nullable()->index('engines_catalog');
 			$table->foreignId('vehicle_id')->constrained();
 			$table->string('type')->index();
 			$table->string('slug');

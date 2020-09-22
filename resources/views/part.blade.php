@@ -88,7 +88,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="product__rating-label"><a href="#">3.5 on 7 reviews</a></div>
+								<div class="product__rating-label"><a href="#">3.5 @lang('on') 7 @lang('reviews')</a></div>
 							</div>
 							<div
 								class="status-badge status-badge--style--success product__fit status-badge--has-icon status-badge--has-text">
@@ -96,7 +96,7 @@
 									<div class="status-badge__icon">
 										@include('svg.valid')
 									</div>
-									<div class="status-badge__text">Part Fit for 2011 Ford Focus S</div>
+									<div class="status-badge__text">Part Fit for 2011 Ford Focus S'</div>
 									<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip"
 										title="Part&#x20;Fit&#x20;for&#x20;2011&#x20;Ford&#x20;Focus&#x20;S"></div>
 								</div>
@@ -134,7 +134,7 @@
 									</div>
 									<div class="status-badge status-badge--style--success product__stock status-badge--has-text">
 										<div class="status-badge__body">
-											<div class="status-badge__text">In Stock</div>
+											<div class="status-badge__text">@lang('In Stock')</div>
 											<div class="status-badge__tooltip" tabindex="0" data-toggle="tooltip" title="In&#x20;Stock"></div>
 										</div>
 									</div>
@@ -175,7 +175,7 @@
 							<div class="product-form product__form">
 								<div class="product-form__body">
 									<div class="product-form__row">
-										<div class="product-form__title">Material</div>
+										<div class="product-form__title">@lang('Material')</div>
 										<div class="product-form__control">
 											<div class="input-radio-label">
 												<div class="input-radio-label__list">
@@ -186,12 +186,12 @@
 													</label>
 													<label class="input-radio-label__item">
 														<input type="radio" name="material" class="input-radio-label__input">
-														<span class="input-radio-label__title">Aluminium
+														<span class="input-radio-label__title">@lang('Aluminium')
 														</span>
 													</label>
 													<label class="input-radio-label__item">
 														<input type="radio" name="material" class="input-radio-label__input" disabled="disabled">
-														<span class="input-radio-label__title">Thorium
+														<span class="input-radio-label__title">@lang('Thorium')
 														</span>
 													</label>
 												</div>
@@ -199,7 +199,7 @@
 										</div>
 									</div>
 									<div class="product-form__row">
-										<div class="product-form__title">Color</div>
+										<div class="product-form__title">@lang('Color')</div>
 										<div class="product-form__control">
 											<div class="input-radio-color">
 												<div class="input-radio-color__list">
@@ -238,13 +238,13 @@
 								<button class="product__actions-item product__actions-item--wishlist" type="button">
 									@include('svg.heart')
 									<span>
-										Add to wishlist
+										@lang('Add to wishlist')
 									</span>
 								</button>
 								<button class="product__actions-item product__actions-item--compare" type="button">
 									@include('svg.chart')
 									<span>
-										Add to compare
+										@lang('Add to compare')
 									</span>
 								</button>
 							</div>
@@ -330,7 +330,7 @@
 							</li>
 							<li class="product-tabs__item">
 								<a href="#product-tab-analogs">
-									Analogs
+									@lang('Analogs')
 								</a>
 							</li>
 						</ul>
@@ -352,48 +352,50 @@
 											<div class="spec__value">Aluminium, Plastic</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Engine Type</div>
-											<div class="spec__value">Brushless</div>
+											<div class="spec__name">@lang('Engine Type')</div>
+											<div class="spec__value">@lang('Brushless')</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Battery Voltage</div>
+											<div class="spec__name">@lang('Battery Voltage')</div>
 											<div class="spec__value">18 V</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Battery Type</div>
+											<div class="spec__name">@lang('Battery Type')</div>
 											<div class="spec__value">Li-lon</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Number of Speeds</div>
+											<div class="spec__name">@lang('Number of Speeds')</div>
 											<div class="spec__value">2</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Charge Time</div>
+											<div class="spec__name">@lang('Charge Time')</div>
 											<div class="spec__value">1.08 h</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Weight</div>
+											<div class="spec__name">@lang('Weight')</div>
 											<div class="spec__value">1.5 kg</div>
 										</div>
 									</div>
 									<div class="spec__section">
 										<h4 class="spec__section-title">Dimensions</h4>
 										<div class="spec__row">
-											<div class="spec__name">Length</div>
+											<div class="spec__name">@lang('Length')</div>
 											<div class="spec__value">99 mm</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Width</div>
+											<div class="spec__name">@lang('Width')</div>
 											<div class="spec__value">207 mm</div>
 										</div>
 										<div class="spec__row">
-											<div class="spec__name">Height</div>
+											<div class="spec__name">@lang('Height')</div>
 											<div class="spec__value">208 mm</div>
 										</div>
 									</div>
-									<div class="spec__disclaimer">Information on technical characteristics, the delivery set, the country
+									<div class="spec__disclaimer">
+										@lang('Information on technical characteristics, the delivery set, the country
 										of manufacture and the appearance of the goods is for reference only and is based on the latest
-										information available at the time of publication.</div>
+										information available at the time of publication.')
+									</div>
 								</div>
 							</div>
 							@include('partials.part.reviews')
@@ -401,10 +403,10 @@
 								<table class="analogs-table">
 									<thead>
 										<tr>
-											<th class="analogs-table__column analogs-table__column--name">Name</th>
-											<th class="analogs-table__column analogs-table__column--rating">Rating</th>
-											<th class="analogs-table__column analogs-table__column--vendor">Vendor</th>
-											<th class="analogs-table__column analogs-table__column--price">Price</th>
+											<th class="analogs-table__column analogs-table__column--name">@lang('Name')</th>
+											<th class="analogs-table__column analogs-table__column--rating">@lang('Rating')</th>
+											<th class="analogs-table__column analogs-table__column--vendor">@lang('Vendor')</th>
+											<th class="analogs-table__column analogs-table__column--price">@lang('Price')</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -426,10 +428,10 @@
 															</div>
 														</div>
 													</div>
-													<div class="analogs-table__rating-label">10 Reviews</div>
+													<div class="analogs-table__rating-label">@lang('10 Reviews')</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Sunset<div
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">@lang('Sunset')<div
 													class="analogs-table__country">(Germany)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$1259.00</td>
@@ -452,10 +454,10 @@
 															</div>
 														</div>
 													</div>
-													<div class="analogs-table__rating-label">34 Reviews</div>
+													<div class="analogs-table__rating-label">@lang('34 Reviews')</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">Specter<div
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">@lang('Specter')<div
 													class="analogs-table__country">(China)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$799.00</td>
@@ -478,10 +480,10 @@
 															</div>
 														</div>
 													</div>
-													<div class="analogs-table__rating-label">7 Reviews</div>
+													<div class="analogs-table__rating-label">@lang('7 Reviews')</div>
 												</div>
 											</td>
-											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">No Name<div
+											<td class="analogs-table__column analogs-table__column--vendor" data-title="Vendor">@lang('No Name')<div
 													class="analogs-table__country">(China)</div>
 											</td>
 											<td class="analogs-table__column analogs-table__column--price">$569.00</td>
@@ -498,7 +500,7 @@
 				<div class="container">
 					<div class="section-header">
 						<div class="section-header__body">
-							<h2 class="section-header__title">Related Products</h2>
+							<h2 class="section-header__title">@lang('Related Products')</h2>
 							<div class="section-header__spring"></div>
 							<div class="section-header__arrows">
 								<div class="arrow section-header__arrow section-header__arrow--prev arrow--prev"><button
@@ -523,15 +525,15 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">
+												aria-label="@lang('Quick view')">
 												@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">
+												aria-label="@lang('Add to wish list')">
 												@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -576,14 +578,14 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">4 on 3 reviews</div>
+												<div class="product-card__rating-label">@lang('4 on 3 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$19.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											<button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -595,13 +597,13 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lang('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">@include('svg.chart')
+												aria-label="@lang('Add to compare')">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
@@ -637,7 +639,7 @@
 														<div class="rating__star rating__star--active"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">5 on 22 reviews</div>
+												<div class="product-card__rating-label">@lang('5 on 22 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
@@ -645,7 +647,7 @@
 												<div class="product-card__price product-card__price--current">$224.00</div>
 											</div>
 											<button class="product-card__addtocart-icon" type="button"
-												aria-label="Add to cart">@include('svg.shop_circle')
+												aria-label="@lang('Add to cart')">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -656,13 +658,13 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lang('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">@include('svg.chart')
+												aria-label="@lang('Add to compare')">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image"><a href="product-full.html">
@@ -702,7 +704,7 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">3 on 14 reviews</div>
+												<div class="product-card__rating-label">@lang('3 on 14 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
@@ -711,7 +713,7 @@
 												<div class="product-card__price product-card__price--old">$415.00</div>
 											</div>
 											<button class="product-card__addtocart-icon" type="button"
-												aria-label="Add to cart">@include('svg.shop_circle')
+												aria-label="@lang('Add to cart')">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -722,13 +724,13 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lnag('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -769,14 +771,14 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">4 on 26 reviews</div>
+												<div class="product-card__rating-label">@lang('4 on 26 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$589.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											<button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -788,13 +790,13 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lang('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">@include('svg.chart')
+												aria-label="@lang('Add to compare')">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image">
@@ -833,13 +835,13 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">4 on 9 reviews</div>
+												<div class="product-card__rating-label">@lang('4 on 9 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$749.00</div>
-											</div><button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											</div><button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -851,13 +853,13 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lang('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -901,7 +903,7 @@
 												<div class="product-card__price product-card__price--current">$23.00</div>
 											</div>
 											<button class="product-card__addtocart-icon" type="button"
-												aria-label="Add to cart">@include('svg.shop_circle')
+												aria-label="@lang('Add to cart')">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -912,15 +914,15 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">
+												aria-label="@lang('Quick view')">
 												@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">
+												aria-label="@lang('Add to wish list')">
 												@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">@include('svg.chart')
+												aria-label="@lang('Add to compare')">@include('svg.chart')
 											</button>
 										</div>
 										<div class="product-card__image">
@@ -955,13 +957,13 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">0 on 0 reviews</div>
+												<div class="product-card__rating-label">@lang('0 on 0 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$452.00</div>
-											</div><button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											</div><button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -973,14 +975,14 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">
+												aria-label="@lang('Quick view')">
 												@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">@include('svg.heart')
+												aria-label="@lang('Add to wish list')">@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -1016,14 +1018,14 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">3 on 7 reviews</div>
+												<div class="product-card__rating-label">@lang('3 on 7 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$345.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											<button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>
@@ -1035,14 +1037,14 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">@include('svg.zoom')
+												aria-label="@lang('Quick view')">@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">
+												aria-label="@lang('Add to wish list')">
 												@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -1078,7 +1080,7 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">4 on 6 reviews</div>
+												<div class="product-card__rating-label">@lang('4 on 6 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
@@ -1086,7 +1088,7 @@
 												<div class="product-card__price product-card__price--current">$879.00</div>
 											</div>
 											<button class="product-card__addtocart-icon" type="button"
-												aria-label="Add to cart">@include('svg.shop_circle')
+												aria-label="@lang('Add to cart')">@include('svg.shop_circle')
 											</button>
 										</div>
 									</div>
@@ -1097,15 +1099,15 @@
 									<div class="product-card product-card--layout--grid">
 										<div class="product-card__actions-list">
 											<button class="product-card__action product-card__action--quickview" type="button"
-												aria-label="Quick view">
+												aria-label="@lang('Quick view')">
 												@include('svg.zoom')
 											</button>
 											<button class="product-card__action product-card__action--wishlist" type="button"
-												aria-label="Add to wish list">
+												aria-label="@lang('Add to wish list')">
 												@include('svg.heart')
 											</button>
 											<button class="product-card__action product-card__action--compare" type="button"
-												aria-label="Add to compare">
+												aria-label="@lang('Add to compare')">
 												@include('svg.chart')
 											</button>
 										</div>
@@ -1141,14 +1143,14 @@
 														<div class="rating__star"></div>
 													</div>
 												</div>
-												<div class="product-card__rating-label">4 on 16 reviews</div>
+												<div class="product-card__rating-label">@lang('4 on 16 reviews')</div>
 											</div>
 										</div>
 										<div class="product-card__footer">
 											<div class="product-card__prices">
 												<div class="product-card__price product-card__price--current">$78.00</div>
 											</div>
-											<button class="product-card__addtocart-icon" type="button" aria-label="Add to cart">
+											<button class="product-card__addtocart-icon" type="button" aria-label="@lang('Add to cart')">
 												@include('svg.shop_circle')
 											</button>
 										</div>

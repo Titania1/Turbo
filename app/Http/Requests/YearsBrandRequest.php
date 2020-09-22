@@ -26,7 +26,7 @@ class YearsBrandRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'year' => 'required|integer|exists:vehicles,year',
+			'year' => 'required|integer|exists:vehicles,from',
 		];
 	}
 }

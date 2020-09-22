@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-use App\VehicleModel;
-use PHPUnit\Framework\TestCase;
+use App\Model;
+use Tests\TestCase;
 use Illuminate\Database\Eloquent\Collection;
 
 class VehicleTest extends TestCase
@@ -17,8 +17,8 @@ class VehicleTest extends TestCase
 	 */
 	public function testExample()
 	{
-		$vehicle = new VehicleModel();
-		$this->assertInstanceOf(Collection::class, $vehicle->children);
+		$model = new Model();
+		$this->assertInstanceOf(Collection::class, $model->vehicles);
 		$this->assertTrue(true);
 	}
 }
