@@ -4,17 +4,17 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Catalog;
 
-use App\Brand;
-use App\Category;
-use App\Engine;
-use App\Model;
 use App\Part;
 use App\Type;
 use App\User;
+use App\Brand;
+use App\Model;
+use App\Engine;
 use App\Vehicle;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use App\Category;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class PartTest extends TestCase
 {
