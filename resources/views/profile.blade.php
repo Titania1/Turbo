@@ -59,7 +59,7 @@
 									<label for="profile-phone">
 										@lang('Phone Number')
 									</label>
-									<input type="tel" class="form-control @error('phone', 'profile') is-invalid @enderror" id="profile-phone" name="phone" placeholder="@lang('Phone Number')" maxlength="10" pattern="(0)(5|6|7)(4|5|6|7)[0-9]{7}" value="{{ $profile->phone }}">
+									<input type="tel" class="form-control @error('phone', 'profile') is-invalid @enderror" id="profile-phone" name="phone" placeholder="@lang('Phone Number')" maxlength="10" pattern="(0)(5|6|7)(4|5|6|7)[0-9]{7}" value="{{ optional($profile)->phone }}">
 									@error('phone', 'profile')
 									<span class="invalid-feedback" role="alert">
 										<strong>{{ $message }}</strong>

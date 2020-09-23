@@ -5,64 +5,31 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Profile;
-use Illuminate\Http\Request;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UpdateProfileRequest;
 
 class ProfileController extends Controller
 {
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function index()
-	{
-		//
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function store(Request $request)
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function show(Profile $profile)
-	{
-		//
-	}
-
-	/**
 	 * Show the form for editing the user's profile.
 	 *
+	 * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist
 	 * @return \Illuminate\View\View profile
 	 */
 	public function edit()
 	{
-		$profile = auth()->user()->profile()->firstOrCreate([
-			'avatar' => '/images/avatar.png',
-			'locale' => app()->getLocale(),
-		]);
-
+		$user = auth()->user();
+		$profile = $user->profile;
+		if (!$profile) {
+			Profile::withoutEvents(fn() =>
+				Profile::create([
+					'user_id' => auth()->id(),
+					'avatar' => '/images/avatar.png',
+					'locale' => app()->getLocale(),
+				])
+			);
+		}
+		$profile = $user->profile;
 		return view('profile', compact('profile'));
 	}
 
@@ -80,16 +47,6 @@ class ProfileController extends Controller
 		auth()->user()->email = $request->email;
 		auth()->user()->save();
 
-		return back()->with('status', 'Profile updated successfully!');
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @return \Illuminate\Http\Response
-	 */
-	public function destroy(Profile $profile)
-	{
-		//
+		return back()->with('status', __('Profile updated successfully!'));
 	}
 }

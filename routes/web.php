@@ -46,14 +46,16 @@ Route::view('/checkout', 'checkout');
 Route::view('/compare', 'compare');
 Route::view('/product', 'product');
 Route::middleware('auth', 'verified')->group(function () {
-	Route::view('/account/addresses', 'account-addresses');
-	Route::view('/account/password', 'auth.passwords.change')->middleware('password.confirm');
-	Route::post('/account/change-password', 'AccountController@changePassword')->name('password.change');
-	Route::view('/account/orders', 'account-orders');
-	Route::get('/account/profile', 'ProfileController@edit')->name('profile.edit');
-	Route::post('/account/profile', 'ProfileController@update')->name('profile.update');
-	Route::get('/account/shop', 'PartsController@index')->name('shop');
-	Route::get('/account/garage', 'GarageController@show')->name('garage');
+	Route::prefix('account')->group(function () {
+		Route::view('addresses', 'account-addresses');
+		Route::view('password', 'auth.passwords.change')->middleware('password.confirm');
+		Route::post('change-password', 'AccountController@changePassword')->name('password.change');
+		Route::view('orders', 'account-orders');
+		Route::get('profile', 'ProfileController@edit')->name('profile.edit');
+		Route::post('profile', 'ProfileController@update')->name('profile.update');
+		Route::get('shop', 'PartsController@index')->name('shop');
+		Route::get('garage', 'GarageController@show')->name('garage');
+	});
 	Route::post('/parts/add', 'PartsController@store')->name('part.add');
 });
 Route::view('shop-list', 'shop-list');
