@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
-use App\Profile;
 use App\User;
+use App\Profile;
 
 class UserObserver
 {
@@ -14,7 +14,6 @@ class UserObserver
 	 *
 	 * Create a profile for the newly created user.
 	 *
-	 * @param \App\User $user
 	 *
 	 * @return void
 	 */

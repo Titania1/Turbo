@@ -49,7 +49,7 @@ class PagesTest extends TestCase
 	}
 
 	/**
-	 * Test FAQ page
+	 * Test FAQ page.
 	 *
 	 * Hit the route and assert 200 success status
 	 *
