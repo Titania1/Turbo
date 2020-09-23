@@ -14,7 +14,7 @@
 	<ul class="account-menu__links">
 		<li><a href="/dashboard">@lang('Dashboard')</a></li>
 		<li><a href="/admin">@lang('Stock System')</a></li>
-		<li><a href="/shop">@lang('Shop')</a></li>
+		<li><a href="{{ route('shop') }}">@lang('Shop')</a></li>
 		<li><a href="{{ route('profile.edit') }}">@lang('Edit Profile')</a></li>
 		<li><a href="/account-orders">@lang('Order History')</a></li>
 		<li><a href="/account-addresses">@lang('Addresses')</a></li>
