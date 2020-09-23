@@ -17,11 +17,9 @@ class CreateInvoicesTable extends Migration
 	{
 		Schema::create('invoices', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
 			$table->dateTime('reception_date');
-			$table->unsignedBigInteger('supplier_id');
-			$table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+			$table->foreignId('supplier_id')->constrained();
 			$table->timestamps();
 		});
 	}

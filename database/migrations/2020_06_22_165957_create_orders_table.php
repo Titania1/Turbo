@@ -17,10 +17,8 @@ class CreateOrdersTable extends Migration
 	{
 		Schema::create('orders', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-			$table->unsignedBigInteger('supplier_id');
-			$table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
+			$table->foreignId('supplier_id')->constrained();
 			$table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
 			$table->timestamps();
 		});

@@ -17,10 +17,8 @@ class CreateReviewsTable extends Migration
 	{
 		Schema::create('reviews', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('part_id');
-			$table->foreign('part_id')->references('id')->on('parts')->onDelete('cascade');
-			$table->unsignedBigInteger('user_id')->nullable();
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('part_id')->constrained();
+			$table->foreignId('user_id')->constrained();
 			$table->string('name')->nullable();
 			$table->string('email')->nullable();
 			$table->text('content')->nullable();

@@ -18,11 +18,9 @@ class CreateSuppliersTable extends Migration
 		Schema::create('suppliers', function (Blueprint $table) {
 			$table->id();
 			// The user who is also a supplier (treated like a profile)
-			$table->unsignedBigInteger('user_id')->nullable();
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
 			// The supplier owner (when the supplier isn't a user)
-			$table->unsignedBigInteger('owner_id')->nullable();
-			$table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('owner_id')->constrained('users');
 			$table->string('name');
 			$table->string('address')->nullable();
 			$table->integer('phone')->nullable();

@@ -17,8 +17,7 @@ class CreateWorkshopsTable extends Migration
 	{
 		Schema::create('workshops', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
 			$table->string('service');
 			$table->timestamps();
 		});

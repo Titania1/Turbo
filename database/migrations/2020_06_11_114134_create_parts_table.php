@@ -17,12 +17,9 @@ class CreatePartsTable extends Migration
 	{
 		Schema::create('parts', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-			$table->unsignedBigInteger('vehicle_id')->nullable();
-			$table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
-			$table->unsignedBigInteger('type_id')->nullable();
-			$table->foreign('type_id')->references('id')->on('types')->onDelete('cascade');
+			$table->foreignId('user_id')->constrained();
+			$table->foreignId('vehicle_id')->constrained();
+			$table->foreignId('type_id')->constrained();
 			$table->string('title');
 			$table->text('excerpt')->nullable();
 			$table->text('description')->nullable();
