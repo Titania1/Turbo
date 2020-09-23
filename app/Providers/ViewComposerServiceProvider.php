@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Part;
 use App\Brand;
+use App\Vehicle;
 use App\Category;
 use Illuminate\Support\ServiceProvider;
 use Gloudemans\Shoppingcart\Facades\Cart;
@@ -52,5 +53,9 @@ class ViewComposerServiceProvider extends ServiceProvider
 			$view->with(['brands' => $brands, 'commercial_brands' => $commercial_brands]);
 		});
 		view()->composer('layouts.header.cart', fn ($view) => $view->with('cart', Cart::content()));
+		view()->composer('partials.index.finder', function ($view) {
+			$years = Vehicle::select('from', 'to')->distinct()->pluck('from', 'to');
+			$view->with('years', $years);
+		});
 	}
 }

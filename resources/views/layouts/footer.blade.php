@@ -148,9 +148,6 @@
 								<input type="text" class="footer-newsletter__form-input" name="email" id="footer-newsletter-address" placeholder="@lang('Email Address')">
 								<button class="footer-newsletter__form-button" y>@lang('Subscribe')</button>
 							</form>
-
-							<!--  end   -->
-
 							<div class="footer-newsletter__text footer-newsletter__text--social">
 								@lang('Follow us on social networks')
 							</div>
