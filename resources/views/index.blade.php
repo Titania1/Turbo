@@ -4,7 +4,7 @@
 
 @section('content')
 @include('partials.new_arrivals')
-@include('partials.index.features')
+{{-- @include('partials.index.features') --}}
 @include('partials.index.featured')
 @foreach ($categories as $category)
 	@include('partials.index.category_block')
