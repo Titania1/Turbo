@@ -26,8 +26,9 @@ class PagesController extends Controller
 		$new_parts = Part::latest()->get();
 		// Get their types
 		$categories = Category::whereHas('categories', function (Builder $query) {
-				$query->whereHas('types');
-			})->limit(3)->with('subParts')->get();
+			$query->whereHas('types');
+		})->limit(3)->with('subParts')->get();
+
 		return view('index', compact('new_parts', 'categories'));
 	}
 }
