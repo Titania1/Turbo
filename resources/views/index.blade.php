@@ -3,9 +3,7 @@
 @section('title', __('Home'))
 
 @section('content')
-@include('partials.index.finder')
 @include('partials.index.features')
-@include('partials.brands')
 <div class="block-space block-space--layout--divider-nl"></div>
 @include('partials.index.featured')
 <div class="block-space block-space--layout--divider-nl"></div>

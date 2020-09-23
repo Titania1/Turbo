@@ -1,4 +1,4 @@
-<div class="block-finder block">
+<div class="block-finder block" id="finder" style="display: none;">
 	<div class="decor block-finder__decor decor--type--bottom">
 		<div class="decor__body">
 			<div class="decor__start"></div>

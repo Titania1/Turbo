@@ -1,4 +1,4 @@
-<div class="block block-brands block-brands--layout--columns-8-full">
+<div class="block block-brands block-brands--layout--columns-8-full" id="catalog" style="display: none;">
 	<div class="container">
 		<div class="product__tabs product-tabs">
 			<ul class="product-tabs__list">

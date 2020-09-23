@@ -52,6 +52,8 @@
 		@include('layouts.header')
 		<!-- site__body -->
 		<div class="site__body">
+			@include('partials.index.finder')
+			@include('partials.brands')
 			@yield('content')
 			<div class="block-space block-space--layout--before-footer"></div>
 		</div><!-- site__body / end -->

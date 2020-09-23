@@ -7,11 +7,18 @@
 			type="text"
 			:placeholder="$t('Enter Keyword or Part Number')"
 		/>
-		<div class="search__button search__button--start">
+		<button class="search__button search__button--start" type="button" @click="toggleCatalog">
+			<span class="search__button-icon">
+				<svg-car></svg-car>
+			</span>
+			<span class="search__button-title">{{ $t('Show Catalog') }}</span>
+		</button>
+		<button class="search__button search__button--end" type="button" @click="toggleFinder">
 			<span class="search__button-icon">
 				<svg-magnifier></svg-magnifier>
 			</span>
-		</div>
+			<span class="search__button-title">{{ $t('Advanced Search') }}</span>
+		</button>
 		<div class="search__box"></div>
 		<div class="search__decor">
 			<div class="search__decor-start"></div>
@@ -103,6 +110,12 @@ export default {
 	methods: {
 		sluggify(title) {
 			title = title.trim().toLowerCase();
+		},
+		toggleFinder() {
+			$('#finder').toggle();
+		},
+		toggleCatalog() {
+			$('#catalog').toggle();
 		}
 	}
 };
