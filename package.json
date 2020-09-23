@@ -22,7 +22,7 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "algoliasearch": "^4.3.0",
+        "algoliasearch": "^4.5.1",
         "axios": "^0.19",
         "bootstrap": "^4.5.0",
         "jquery": "^3.5.1",
