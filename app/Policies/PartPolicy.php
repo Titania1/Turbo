@@ -31,7 +31,6 @@ class PartPolicy
 	/**
 	 * Determine whether the user can create parts.
 	 *
-	 * @param \App\User $user
 	 *
 	 * @return bool
 	 */

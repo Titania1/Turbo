@@ -23,8 +23,6 @@ class OrderPolicy
 	/**
 	 * Determine whether the user can view the order.
 	 *
-	 * @param \App\User $user
-	 * @param \App\Order $order
 	 *
 	 * @return bool
 	 */

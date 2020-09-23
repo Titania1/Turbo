@@ -2,8 +2,8 @@
 
 declare(strict_types=1);
 
-use App\User;
 use App\Part;
+use App\User;
 use App\Order;
 use App\Supplier;
 use Illuminate\Database\Seeder;
@@ -25,7 +25,7 @@ class OrderSeeder extends Seeder
 				factory(Order::class, 5)->create([
 					'supplier_id' => $supplier,
 					'user_id' => $user,
-				])->each(fn($order) => $order->attach($parts));
+				])->each(fn ($order) => $order->attach($parts));
 			}
 		}
 	}
