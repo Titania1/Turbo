@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Feature;
+namespace Tests\Feature\Catalog;
 
 use App\Part;
 use App\User;
@@ -16,6 +16,8 @@ class PartTest extends TestCase
 
 	/**
 	 * Test part view and route.
+	 *
+	 * @return void
 	 */
 	public function test_we_can_view_a_part(): void
 	{

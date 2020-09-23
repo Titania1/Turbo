@@ -2,7 +2,7 @@
 
 @section('title', __('Verify Your Email Address'))
 
-@section('block')
+@section('content')
 <div class="container container--max-lg">
 	<div class="row justify-content-center">
 		<div class="col-md-8">

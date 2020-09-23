@@ -12,6 +12,12 @@
     <testsuite name="Feature">
       <directory suffix="Test.php">./tests/Feature</directory>
     </testsuite>
+	<testsuite name="Catalog">
+      <directory suffix="Test.php">./tests/Feature/Catalog</directory>
+    </testsuite>
+	<testsuite name="Stock">
+      <directory suffix="Test.php">./tests/Feature/Stock</directory>
+    </testsuite>
   </testsuites>
   <php>
     <server name="APP_ENV" value="testing"/>

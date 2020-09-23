@@ -2,7 +2,7 @@
 
 @section('title', __('Shop'))
 
-@section('block')
+@section('content')
 <div class="container container--max--xl">
 	<div class="row">
 		<div class="col-12 col-lg-3 d-flex">

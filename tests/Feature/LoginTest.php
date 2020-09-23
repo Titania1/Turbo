@@ -22,6 +22,22 @@ class LoginTest extends TestCase
 	}
 
 	/**
+	 * Test login route
+	 *
+	 * Assert we can hit the login route
+	 * Also check that we see the form.
+	 *
+	 * @return void
+	 * @throws conditon
+	 **/
+	public function test_login_route(): void
+	{
+		$response = $this->get('/login');
+		$response->assertOk();
+		$response->assertSee(__('E-Mail Address'));
+	}
+
+	/**
 	 * Test that a registered user has to
 	 * provide BOTH his username and email
 	 * alongside the password to be able

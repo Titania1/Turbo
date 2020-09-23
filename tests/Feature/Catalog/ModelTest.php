@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\Feature;
+namespace Tests\Feature\Catalog;
 
 use App\Brand;
 use App\Model;
@@ -10,7 +10,7 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
-class CatalogModelTest extends TestCase
+class ModelTest extends TestCase
 {
 	use DatabaseMigrations;
 

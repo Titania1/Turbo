@@ -2,7 +2,7 @@
 
 @section('title', __('Change Password'))
 
-@section('block')
+@section('content')
 <div class="container container--max--xl">
 	@if (session('message'))
 	<div class="alert alert-success" role="alert">

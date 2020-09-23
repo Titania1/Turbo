@@ -2,7 +2,7 @@
 
 @section('title', __('Reset Password'))
 
-@section('block')
+@section('content')
 <div class="container container--max-lg">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
