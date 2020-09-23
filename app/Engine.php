@@ -76,7 +76,7 @@ class Engine extends Model
 
 	public function categories()
 	{
-		return $this->hasMany(CatalogCategory::class);
+		return $this->hasMany(Category::class);
 	}
 
 	public function getRouteKey()

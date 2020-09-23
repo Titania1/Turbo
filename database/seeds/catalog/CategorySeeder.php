@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Seeders;
 
 use App\Engine;
-use App\CatalogCategory;
+use App\Category;
 use Illuminate\Database\Seeder;
 
-class CatalogCategorySeeder extends Seeder
+class CategorySeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
@@ -33,7 +33,7 @@ class CatalogCategorySeeder extends Seeder
 					->where('node_id', $id)
 					->select('Description')
 					->first();
-				CatalogCategory::create([
+				Category::create([
 					'engine_id' => $engine->id,
 					'internal_id' => $id,
 					'name' => $category->Description,
