@@ -53,8 +53,11 @@
 		<!-- site__body -->
 		<div class="site__body">
 			@include('partials.index.finder')
-			@include('partials.brands')
-			@yield('content')
+			<div class="block-space block-space--layout--after-header"></div>
+				<div class="block">
+					@include('partials.brands')
+					@yield('content')
+				</div>
 			<div class="block-space block-space--layout--before-footer"></div>
 		</div><!-- site__body / end -->
 		@include('layouts.footer')

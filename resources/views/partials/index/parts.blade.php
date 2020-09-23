@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-4">
 				<div class="block-products-columns__title">
-					@lang('Produits les mieux notés')
+					@lang('Top Rated Products')
 				</div>
 				<div class="block-products-columns__list">
 					<div class="block-products-columns__list-item">

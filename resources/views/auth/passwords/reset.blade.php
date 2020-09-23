@@ -1,4 +1,4 @@
-@extends('layouts.block')
+@extends('layouts.app')
 
 @section('title', __('Reset Password'))
 
