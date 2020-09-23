@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Nova\Dashboards\Statistics;
 use Laravel\Nova\Nova;
 use KABBOUCHI\LogsTool\LogsTool;
+use App\Nova\Dashboards\Statistics;
 use Illuminate\Support\Facades\Gate;
 use Whitecube\NovaPage\NovaPageTool;
 use Jubeki\Nova\Cards\Linkable\Linkable;
