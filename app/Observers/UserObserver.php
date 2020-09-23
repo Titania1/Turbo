@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
+use App\Profile;
 use App\User;
 
 class UserObserver
@@ -11,11 +12,18 @@ class UserObserver
 	/**
 	 * Handle the user "created" event.
 	 *
+	 * Create a profile for the newly created user.
+	 *
+	 * @param \App\User $user
+	 *
 	 * @return void
 	 */
 	public function created(User $user)
 	{
-		//
+		// Profile::create([
+		// 	'user_id' => $user->id,
+		// 	'avatar' => '/'
+		// ]);
 	}
 
 	/**
@@ -40,35 +48,5 @@ class UserObserver
 		if ($user->isDirty('email')) {
 			$user->sendEmailVerificationNotification();
 		}
-	}
-
-	/**
-	 * Handle the user "deleted" event.
-	 *
-	 * @return void
-	 */
-	public function deleted(User $user)
-	{
-		//
-	}
-
-	/**
-	 * Handle the user "restored" event.
-	 *
-	 * @return void
-	 */
-	public function restored(User $user)
-	{
-		//
-	}
-
-	/**
-	 * Handle the user "force deleted" event.
-	 *
-	 * @return void
-	 */
-	public function forceDeleted(User $user)
-	{
-		//
 	}
 }

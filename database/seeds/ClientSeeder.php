@@ -15,12 +15,15 @@ class ClientSeeder extends Seeder
 	 */
 	public function run()
 	{
-		Client::create([
-			'user_id' => 1,
-			'name' => 'Anonymous',
-		]);
+		// Create the anonymous client
+		// Client::create([
+		// 	'user_id' => 1, // Should belong to the admin.
+		// 	'name' => 'Anonymous',
+		// ]);
+		// Get all the ids of existing users
 		$ids = User::select('id')->pluck('id');
 		foreach ($ids as $id) {
+			// Create 50 clients for each user
 			factory(Client::class, 50)->create(['user_id' => $id]);
 		}
 	}

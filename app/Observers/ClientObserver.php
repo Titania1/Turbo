@@ -15,6 +15,8 @@ class ClientObserver
 	 */
 	public function creating(Client $client)
 	{
-		$client->user_id = auth()->id();
+		if (auth()->check()) {
+			$client->user_id = auth()->id();
+		}
 	}
 }

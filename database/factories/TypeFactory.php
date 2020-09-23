@@ -8,7 +8,7 @@ use App\Type;
 use Faker\Generator as Faker;
 
 $factory->define(Type::class, fn (Faker $faker) => [
-	'name' => $faker->word,
+	'name' => $faker->unique()->word,
 	'image' => 'types/' . $faker->file(
 		$sourceDir = 'data/departments',
 		$targetDir = storage_path('/app/public/types'),

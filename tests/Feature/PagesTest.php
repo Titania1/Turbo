@@ -49,6 +49,21 @@ class PagesTest extends TestCase
 	}
 
 	/**
+	 * Test FAQ page
+	 *
+	 * Hit the route and assert 200 success status
+	 *
+	 * @return bool
+	 * @throws \InvalidArgumentException
+	 **/
+	public function test_faq(): void
+	{
+		$response = $this->get('/faq');
+
+		$response->assertOk();
+	}
+
+	/**
 	 * Test dashboard page.
 	 */
 	public function test_dashboard_page(): void
