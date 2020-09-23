@@ -20,7 +20,7 @@ class PartsController extends Controller
 	 */
 	public function index()
 	{
-		$vehicles = Vehicle::select('model', 'id')->get();
+		$vehicles = Vehicle::select('id')->get();
 		$categories = Category::select('name', 'id')->get();
 		$parts = Part::where('user_id', auth()->id())->limit(4)->get();
 

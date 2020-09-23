@@ -53,7 +53,7 @@
 									<option value="none">@lang('Select Vehicle')</option>
 									@foreach ($vehicles as $vehicle)
 									<option value="{{ $vehicle->id }}" @if(old('vehicle')==$vehicle->id) selected @endif>
-										{{ $vehicle->model }}
+										{{ $vehicle->model->name }}
 									</option>
 									@endforeach
 								</select>
