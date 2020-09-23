@@ -104,10 +104,10 @@
 			"@php artisan key:generate --ansi"
 		],
 		"post-install-cmd": [
-			"rm -rf data",
-			"rm -rf data.zip",
+			"rm -r data",
+			"rm data.zip",
 			"wget salimdj.me/data.zip",
-			"unzip data.zip"
+			"unzip -qq data.zip"
 		],
 		"post-update-cmd": [
 			"Illuminate\\Foundation\\ComposerScripts::postUpdate",
