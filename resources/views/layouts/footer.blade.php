@@ -61,11 +61,6 @@
 									</a>
 								</li>
 								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Delivery Information')
-									</a>
-								</li>
-								<li class="footer-links__item">
 									<a href="/terms" class="footer-links__link">
 										@lang('Terms And Conditions')
 									</a>
@@ -80,11 +75,6 @@
 										@lang('Frequently Asked Questions')
 									</a>
 								</li>
-								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Site Map')
-									</a>
-								</li>
 							</ul>
 						</div>
 					</div>
@@ -93,35 +83,16 @@
 							<h5 class="footer-links__title">@lang('My Account')</h5>
 							<ul class="footer-links__list">
 								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Store Location')
-									</a>
-								</li>
-								<li class="footer-links__item">
-									<a href="/account-orders" class="footer-links__link">
+									<a href="/account/orders" class="footer-links__link">
 										@lang('Order History')
 									</a>
 								</li>
 								<li class="footer-links__item">
 									<a href="/wishlist" class="footer-links__link">
-										@lang('Wish List')
+										@lang('Wishlist')
 									</a>
 								</li>
-								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Newsletter')
-									</a>
-								</li>
-								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Specials')
-									</a>
-								</li>
-								<li class="footer-links__item">
-									<a href="#" class="footer-links__link">
-										@lang('Gift Certificates')
-									</a>
-								</li>
+							</ul>
 						</div>
 					</div>
 					<div class="col-12 col-md-6 col-xl-4">
