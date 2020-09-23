@@ -13,7 +13,7 @@ class VehicleSeeder extends Seeder
 	 *
 	 * @return void
 	 */
-	public function run()
+	public function run(): void
 	{
 		$brands = Brand::all();
 		foreach ($brands as $brand) {

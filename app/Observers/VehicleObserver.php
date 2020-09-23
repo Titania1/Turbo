@@ -11,9 +11,13 @@ class VehicleObserver
 	/**
 	 * Handle the vehicle model "creating" event.
 	 *
+	 * Sluggify the vehicle name before DB insertion.
+	 *
+	 * @param \App\Vehicle $vehicle
+	 *
 	 * @return void
 	 */
-	public function creating(Vehicle $vehicle)
+	public function creating(Vehicle $vehicle): void
 	{
 		$vehicle->slug = sluggify($vehicle->name);
 	}
@@ -21,9 +25,13 @@ class VehicleObserver
 	/**
 	 * Handle the vehicle model "updating" event.
 	 *
+	 * Sluggify the new name if changed.
+	 *
+	 * @param \App\Vehicle $vehicle
+	 *
 	 * @return void
 	 */
-	public function updating(Vehicle $vehicle)
+	public function updating(Vehicle $vehicle): void
 	{
 		if ($vehicle->isDirty('name')) {
 			$vehicle->slug = sluggify($vehicle->name);

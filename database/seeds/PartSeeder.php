@@ -11,18 +11,12 @@ use Illuminate\Database\Seeder;
 class PartSeeder extends Seeder
 {
 	/**
-	 * Run the database seeds.
+	 * Seed parts.
+	 *
+	 * @return void
 	 */
 	public function run(): void
 	{
-		// We need to seed parts for each main category
-		// Limit main categories to 3
-		// Each main category has many sub categories
-		// Limit subcategories to 1
-		// Each subcategory has many types
-		// Limit types to 1
-		// Seed 4 parts for each type
-		// The goal is to get 3 types at the end
 		$categories = Category::whereHas('subType')->limit(3)->select('id')
 			->with('subType:types.id')->get()->map(function ($category) {
 				return $category->subTypes()->limit(1)->pluck('types.id')->toArray();
