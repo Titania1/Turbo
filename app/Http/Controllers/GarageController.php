@@ -48,6 +48,9 @@ class GarageController extends Controller
 	public function show(): View
 	{
 		$garage = auth()->user()->garage;
+		if(!$garage) {
+			$garage = Garage::create(['user_id' => auth()->id()]);
+		}
 
 		return view('garage', compact('garage'));
 	}
