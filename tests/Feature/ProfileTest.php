@@ -8,7 +8,6 @@ use Storage;
 use App\User;
 use App\Profile;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ProfileTest extends TestCase
 {

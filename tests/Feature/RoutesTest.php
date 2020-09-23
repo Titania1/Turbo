@@ -7,7 +7,8 @@ namespace Tests\Feature;
 use Tests\TestCase;
 
 class RoutesTest extends TestCase
-{	/**
+{
+	/**
 	 * Test dev routes resolution.
 	 *
 	 * Asserts that the routes service provider

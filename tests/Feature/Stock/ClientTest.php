@@ -6,7 +6,6 @@ namespace Tests\Feature\Stock;
 
 use App\Client;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ClientTest extends TestCase
 {

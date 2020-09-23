@@ -9,7 +9,6 @@ use App\Model;
 use App\Vehicle;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class FinderTest extends TestCase
 {

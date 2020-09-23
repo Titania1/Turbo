@@ -7,7 +7,6 @@ namespace Tests\Feature;
 use App\User;
 use Tests\TestCase;
 use App\Notifications\EmailVerificationNotification;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EmailVerificationTest extends TestCase
 {

@@ -7,7 +7,6 @@ namespace Tests\Feature;
 use App\User;
 use Tests\TestCase;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LoginTest extends TestCase
 {

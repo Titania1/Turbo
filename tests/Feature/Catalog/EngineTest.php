@@ -7,10 +7,9 @@ namespace Tests\Feature\Catalog;
 use Tests\TestCase;
 
 class EngineTest extends TestCase
-{	/**
+{
+	/**
 	 * A basic feature test example.
-	 *
-	 * @return void
 	 */
 	public function testExample(): void
 	{

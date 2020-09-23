@@ -8,7 +8,6 @@ use App\Brand;
 use App\Model;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ModelTest extends TestCase
 {

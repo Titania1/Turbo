@@ -8,7 +8,8 @@ use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 
 class ContactTest extends TestCase
-{	use WithFaker;
+{
+	use WithFaker;
 
 	/**
 	 * Test sending a contact email.

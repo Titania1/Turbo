@@ -7,7 +7,6 @@ namespace Tests\Feature\Stock;
 use App\User;
 use App\Store;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class StoreTest extends TestCase
 {

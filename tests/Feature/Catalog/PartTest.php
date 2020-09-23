@@ -8,7 +8,6 @@ use App\Part;
 use App\User;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PartTest extends TestCase
 {

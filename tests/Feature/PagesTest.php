@@ -6,7 +6,6 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PagesTest extends TestCase
 {

@@ -10,7 +10,6 @@ use App\Engine;
 use App\Vehicle;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SearchTest extends TestCase
 {
