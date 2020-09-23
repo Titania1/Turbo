@@ -20,16 +20,16 @@ class ProfileController extends Controller
 	{
 		$user = auth()->user();
 		$profile = $user->profile;
-		if (!$profile) {
-			Profile::withoutEvents(fn() =>
-				Profile::create([
-					'user_id' => auth()->id(),
-					'avatar' => '/images/avatar.png',
-					'locale' => app()->getLocale(),
-				])
+		if (! $profile) {
+			Profile::withoutEvents(fn () => Profile::create([
+				'user_id' => auth()->id(),
+				'avatar' => '/images/avatar.png',
+				'locale' => app()->getLocale(),
+			])
 			);
 		}
 		$profile = $user->profile;
+
 		return view('profile', compact('profile'));
 	}
 
