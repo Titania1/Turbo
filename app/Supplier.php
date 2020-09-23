@@ -31,6 +31,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Supplier whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Supplier whereUserId($value)
  * @mixin \Eloquent
+ * @property int|null $owner_id
+ * @property-read \App\User|null $owner
+ * @method static \Illuminate\Database\Eloquent\Builder|Supplier whereOwnerId($value)
  */
 class Supplier extends Model
 {

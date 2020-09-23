@@ -45,6 +45,38 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $token
+ * @property string|null $provider
+ * @property string|null $google_id
+ * @property string|null $facebook_id
+ * @property string|null $stripe_id
+ * @property string|null $card_brand
+ * @property string|null $card_last_four
+ * @property string|null $trial_ends_at
+ * @property-read \App\Garage|null $garage
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $parts
+ * @property-read int|null $parts_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Permission\Models\Permission[] $permissions
+ * @property-read int|null $permissions_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Spatie\Permission\Models\Role[] $roles
+ * @property-read int|null $roles_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Stock[] $stocks
+ * @property-read int|null $stocks_count
+ * @property-read \App\Store|null $store
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Cashier\Subscription[] $subscriptions
+ * @property-read int|null $subscriptions_count
+ * @property-read \App\Supplier|null $supplier
+ * @property-read \App\Workshop|null $workshop
+ * @method static \Illuminate\Database\Eloquent\Builder|User permission($permissions)
+ * @method static \Illuminate\Database\Eloquent\Builder|User role($roles, $guard = null)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCardBrand($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereCardLastFour($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereFacebookId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereGoogleId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereProvider($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereStripeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereTrialEndsAt($value)
  */
 class User extends Authenticatable implements MustVerifyEmail
 {

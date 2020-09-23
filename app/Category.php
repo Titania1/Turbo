@@ -43,6 +43,12 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read Category|null $category
+ * @property-read bool $is_parent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Type[] $subType
+ * @property-read int|null $sub_type_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Type[] $subTypes
+ * @property-read int|null $sub_types_count
  */
 class Category extends Model implements HasMedia
 {

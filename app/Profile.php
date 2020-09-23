@@ -34,6 +34,10 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Profile whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Profile whereUserId($value)
  * @mixin \Eloquent
+ * @property string $locale
+ * @property string|null $avatar_original
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereAvatarOriginal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Profile whereLocale($value)
  */
 class Profile extends Model implements HasMedia
 {

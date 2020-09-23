@@ -59,6 +59,30 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Part whereUserId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Part whereVehicleId($value)
  * @mixin \Eloquent
+ * @property string|null $excerpt
+ * @property array|null $key_features
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Nova\Actions\ActionEvent[] $actions
+ * @property-read int|null $actions_count
+ * @property-read \App\Brand|null $brand
+ * @property-read mixed $buy_price
+ * @property-read string $compatibility
+ * @property-read mixed $sell_price
+ * @property-read mixed $supplier
+ * @property-read mixed $views
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Invoice[] $invoices
+ * @property-read int|null $invoices_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Review[] $reviews
+ * @property-read int|null $reviews_count
+ * @property-read \App\User $user
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Vehicle[] $vehicles
+ * @property-read int|null $vehicles_count
+ * @method static \Illuminate\Database\Query\Builder|Part onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Part whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Part whereExcerpt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Part whereKeyFeatures($value)
+ * @method static \Illuminate\Database\Query\Builder|Part withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|Part withoutTrashed()
  */
 class Part extends Model implements HasMedia, Buyable
 {

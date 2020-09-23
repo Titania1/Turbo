@@ -32,6 +32,24 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Vehicle whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Vehicle whereYear($value)
  * @mixin \Eloquent
+ * @property int|null $internal_id
+ * @property int $model_id
+ * @property string|null $from
+ * @property string|null $to
+ * @property string $name
+ * @property string $slug
+ * @property string|null $image
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $compatibileParts
+ * @property-read int|null $compatibile_parts_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Engine[] $engines
+ * @property-read int|null $engines_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereFrom($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereInternalId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereModelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Vehicle whereTo($value)
  */
 class Vehicle extends Eloquent
 {

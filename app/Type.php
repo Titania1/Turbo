@@ -33,6 +33,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Type whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Type whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $parts
+ * @property-read int|null $parts_count
  */
 class Type extends Model implements HasMedia
 {

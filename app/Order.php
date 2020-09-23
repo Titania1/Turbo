@@ -27,6 +27,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order whereUserId($value)
  * @mixin \Eloquent
+ * @property int $supplier_id
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $parts
+ * @property-read int|null $parts_count
+ * @property-read \App\Supplier $supplier
+ * @method static \Illuminate\Database\Eloquent\Builder|Order whereSupplierId($value)
  */
 class Order extends Model
 {

@@ -8,6 +8,29 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/**
+ * App\Store
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $name
+ * @property string $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\StoreAbout|null $about
+ * @property-read \App\StoreContact|null $contact
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Store newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Store newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Store query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Store whereUserId($value)
+ * @mixin \Eloquent
+ */
 class Store extends Model
 {
 	/**
