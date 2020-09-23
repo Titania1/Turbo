@@ -12,7 +12,7 @@
 		"algolia/algoliasearch-client-php": "^2.2",
 		"armincms/many-to-many": "^0.2.1",
 		"bissolli/nova-phone-field": "^0.0.4",
-		"bumbummen99/shoppingcart": "^2.9",
+		"bumbummen99/shoppingcart": "^3.0",
 		"caddydz/nova-preview-resource": "*",
 		"coderello/laravel-nova-lang": "^1.4",
 		"coreproc/nova-notification-feed": "^1.4",
