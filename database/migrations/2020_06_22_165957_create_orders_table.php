@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
 			$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 			$table->unsignedBigInteger('supplier_id');
 			$table->foreign('supplier_id')->references('id')->on('suppliers')->onDelete('cascade');
+			$table->enum('status', ['pending', 'approved', 'rejected'])->default('pending');
 			$table->timestamps();
 		});
 	}

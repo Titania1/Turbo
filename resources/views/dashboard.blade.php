@@ -48,6 +48,7 @@
 						<div class="address-card__footer"><a href="#">@lang('Edit Address')</a></div>
 					</div>
 				</div>
+				@if($user->orders->isNotEmpty())
 				<div class="dashboard__orders card">
 					<div class="card-header">
 						<h5>@lang('Recent Orders')</h5>
@@ -67,10 +68,10 @@
 								<tbody>
 									@foreach ($orders as $order)
 									<tr>
-										<td><a href="#">#{{ $order->id }}</a></td>
-										<td>{{ $order->created_at->format('d M, Y') }} 02 April, 2019</td>
-										<td>Pending</td>
-										<td>$2,719.00 for 5 item(s)</td>
+										<td><a href="{{ url(config('nova.path') . '/resources/orders/' . $order->id) }}">#{{ $order->id }}</a></td>
+										<td>{{ $order->created_at->format('d F, Y') }}</td>
+										<td>{{ $order->status }}</td>
+										<td>$2,719.00 @lang('for') {{ $order->parts->count() }} item(s)</td>
 									</tr>
 									@endforeach
 								</tbody>
@@ -78,6 +79,7 @@
 						</div>
 					</div>
 				</div>
+				@endif
 			</div>
 		</div>
 	</div>

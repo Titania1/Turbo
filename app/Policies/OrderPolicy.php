@@ -21,11 +21,16 @@ class OrderPolicy
 	}
 
 	/**
-	 * Determine whether the user can view the model.
+	 * Determine whether the user can view the order.
+	 *
+	 * @param \App\User $user
+	 * @param \App\Order $order
+	 *
+	 * @return bool
 	 */
 	public function view(User $user, Order $order)
 	{
-		return $user->hasPermissionTo('Add Orders');
+		return $order->user->is($user) || $user->hasRole('Super Admin');
 	}
 
 	/**
