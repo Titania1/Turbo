@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\Nova\Dashboards\Statistics;
 use Laravel\Nova\Nova;
 use KABBOUCHI\LogsTool\LogsTool;
 use Illuminate\Support\Facades\Gate;
@@ -95,6 +96,21 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 				->title(__('Orders'))
 				->url('/resources/orders')
 				->subtitle(__('List of orders')),
+
+			(new Linkable)
+				->title(__('Store'))
+				->url('/resources/stores')
+				->subtitle(__('My Public Store')),
+
+			(new Linkable)
+				->title(__('Wishlists'))
+				->url('/resources/wishlists')
+				->subtitle(__('My Wishlists')),
+
+			(new Linkable)
+				->title(__('Statistics'))
+				->url('/dashboards/statistics')
+				->subtitle(__('Statistics')),
 		];
 	}
 
@@ -105,7 +121,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 	 */
 	protected function dashboards()
 	{
-		return [];
+		return [
+			new Statistics,
+		];
 	}
 
 	/**
