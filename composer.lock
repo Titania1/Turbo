@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "8bd04e8de3c245038c69db2fc24ce4780c13b1de"
+                "reference": "b810fe25269a4fbf962703075e521728d16b709d"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -6852,16 +6852,16 @@
         },
         {
             "name": "symfony/intl",
-            "version": "v5.1.2",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/intl.git",
-                "reference": "b21d69ebb33adfcb7e6d8b0a0a8799db7090705b"
+                "reference": "b6886c43cc1ae3367c569c5a8d4182555dd694fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/intl/zipball/b21d69ebb33adfcb7e6d8b0a0a8799db7090705b",
-                "reference": "b21d69ebb33adfcb7e6d8b0a0a8799db7090705b",
+                "url": "https://api.github.com/repos/symfony/intl/zipball/b6886c43cc1ae3367c569c5a8d4182555dd694fb",
+                "reference": "b6886c43cc1ae3367c569c5a8d4182555dd694fb",
                 "shasum": ""
             },
             "require": {
@@ -6938,7 +6938,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-05-30T20:35:19+00:00"
+            "time": "2020-08-17T07:42:30+00:00"
         },
         {
             "name": "symfony/mime",
