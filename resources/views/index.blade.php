@@ -9,8 +9,8 @@
 @foreach ($categories as $category)
 	@include('partials.index.category_block')
 @endforeach
-@include('partials.index.banners')
 {{-- @include('partials.index.parts') --}}
+@include('partials.index.banners')
 @stop
 
 @push('styles')

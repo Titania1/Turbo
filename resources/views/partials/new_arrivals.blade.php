@@ -1,3 +1,4 @@
+@if ($new_parts->isNotEmpty())
 <div class="block block-products-carousel" data-layout="horizontal">
 	<div class="container">
 		<div class="section-header">
@@ -58,3 +59,4 @@
 		</div>
 	</div>
 </div>
+@endif
