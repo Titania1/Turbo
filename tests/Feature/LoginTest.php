@@ -22,12 +22,11 @@ class LoginTest extends TestCase
 	}
 
 	/**
-	 * Test login route
+	 * Test login route.
 	 *
 	 * Assert we can hit the login route
 	 * Also check that we see the form.
 	 *
-	 * @return void
 	 * @throws conditon
 	 **/
 	public function test_login_route(): void

@@ -16,8 +16,6 @@ class PartTest extends TestCase
 
 	/**
 	 * Test part view and route.
-	 *
-	 * @return void
 	 */
 	public function test_we_can_view_a_part(): void
 	{
