@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Discount
+ * App\Discount.
  *
  * @property int $id
  * @property string $percentage

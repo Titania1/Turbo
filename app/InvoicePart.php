@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\InvoicePart
+ * App\InvoicePart.
  *
  * @property int $id
  * @property int $part_id

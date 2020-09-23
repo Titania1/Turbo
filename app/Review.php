@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Review
+ * App\Review.
  *
  * @property int $id
  * @property int $part_id

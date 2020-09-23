@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Engine
+ * App\Engine.
  *
  * @property int $id
  * @property int|null $internal_id

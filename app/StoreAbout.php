@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\StoreAbout
+ * App\StoreAbout.
  *
  * @property int $id
  * @property int $store_id

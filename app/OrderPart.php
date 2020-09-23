@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 
 /**
- * App\OrderPart
+ * App\OrderPart.
  *
  * @property int $id
  * @property int $order_id

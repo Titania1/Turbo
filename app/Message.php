@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Message
+ * App\Message.
  *
  * @property int $id
  * @property int $user_id

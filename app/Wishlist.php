@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Wishlist
+ * App\Wishlist.
  *
  * @property int $id
  * @property \Illuminate\Support\Carbon|null $created_at

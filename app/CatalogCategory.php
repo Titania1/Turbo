@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\CatalogCategory
+ * App\CatalogCategory.
  *
  * @property int $id
  * @property int $engine_id

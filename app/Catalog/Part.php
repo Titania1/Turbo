@@ -7,7 +7,7 @@ namespace App\Catalog;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Catalog\Part
+ * App\Catalog\Part.
  *
  * @property int $id
  * @property string|null $DataSupplierArticleNumber

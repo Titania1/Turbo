@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Workshop
+ * App\Workshop.
  *
  * @property int $id
  * @property int $user_id

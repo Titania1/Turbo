@@ -7,7 +7,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Receipt
+ * App\Receipt.
  *
  * @property int $id
  * @property int $user_id
