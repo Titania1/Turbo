@@ -17,11 +17,12 @@ class CreateCategoriesTable extends Migration
 	{
 		Schema::create('categories', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('category_id')->nullable();
-			$table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+			$table->foreignId('category_id')->constrained();
+			$table->foreignId('engine_id')->constrained();
+			$table->unsignedBigInteger('internal_id')->index('categories_catalog');
 			$table->string('name');
 			$table->string('image')->nullable();
-			$table->string('slug')->unique();
+			$table->string('slug');
 			$table->timestamps();
 		});
 	}
