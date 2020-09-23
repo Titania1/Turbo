@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "43337916fcb6f9cb10bf44ea4421afb5303ca173"
+                "reference": "8bd04e8de3c245038c69db2fc24ce4780c13b1de"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -7875,7 +7875,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.3",
+            "version": "v5.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
