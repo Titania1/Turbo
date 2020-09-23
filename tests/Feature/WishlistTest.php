@@ -9,8 +9,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class WishlistTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test wishlist index route.
 	 */

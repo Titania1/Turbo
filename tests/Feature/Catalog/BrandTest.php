@@ -13,8 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class BrandTest extends TestCase
-{
-	use DatabaseMigrations, RefreshDatabase;
+{	use DatabaseMigrations, RefreshDatabase;
 
 	public function setUp(): void
 	{

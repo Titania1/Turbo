@@ -9,8 +9,7 @@ use Tests\TestCase;
 use Illuminate\Database\Eloquent\Collection;
 
 class VehicleTest extends TestCase
-{
-	/**
+{	/**
 	 * A basic unit test example.
 	 *
 	 * @return void

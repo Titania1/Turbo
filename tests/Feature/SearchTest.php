@@ -14,8 +14,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class SearchTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	public function setUp(): void
 	{
 		parent::setUp();

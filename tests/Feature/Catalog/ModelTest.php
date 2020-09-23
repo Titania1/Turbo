@@ -12,8 +12,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ModelTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test that we can create a catalog model
 	 * And we can navigate to it.

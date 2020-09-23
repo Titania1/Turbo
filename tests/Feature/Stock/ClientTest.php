@@ -10,8 +10,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ClientTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Assert clients can be created.
 	 */

@@ -12,8 +12,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ProfileTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	private object $user;
 	private object $profile;
 

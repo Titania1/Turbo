@@ -11,8 +11,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class EmailVerificationTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/** @test */
 	public function an_user_can_verify_his_email_address()
 	{

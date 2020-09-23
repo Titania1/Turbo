@@ -7,14 +7,14 @@ namespace Tests\Feature\Catalog;
 use Tests\TestCase;
 
 class EngineTest extends TestCase
-{
-	/**
+{	/**
 	 * A basic feature test example.
 	 *
 	 * @return void
 	 */
-	public function testExample()
+	public function testExample(): void
 	{
+		$this->withoutExceptionHandling();
 		$response = $this->get('/');
 
 		$response->assertStatus(200);

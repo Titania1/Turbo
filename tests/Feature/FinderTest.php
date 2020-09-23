@@ -13,8 +13,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class FinderTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	public function setUp(): void
 	{
 		parent::setUp();

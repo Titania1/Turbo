@@ -11,8 +11,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LoginTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	private $user;
 
 	public function setUp(): void

@@ -10,8 +10,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RegisterTest extends TestCase
-{
-	use DatabaseMigrations, RefreshDatabase;
+{	use DatabaseMigrations, RefreshDatabase;
 
 	/**
 	 * Test users can register.

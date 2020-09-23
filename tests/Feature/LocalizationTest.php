@@ -9,8 +9,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class LocalizationTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test users can change locale.
 	 *

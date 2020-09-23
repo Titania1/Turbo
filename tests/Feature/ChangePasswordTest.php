@@ -10,8 +10,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class ChangePasswordTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	private object $user;
 
 	public function setUp(): void

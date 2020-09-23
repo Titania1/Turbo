@@ -11,8 +11,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class StoreTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test store page.
 	 */

@@ -10,8 +10,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PagesTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test index page.
 	 *

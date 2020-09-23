@@ -12,8 +12,6 @@ use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class PartTest extends TestCase
 {
-	use DatabaseMigrations;
-
 	/**
 	 * Test part view and route.
 	 */
