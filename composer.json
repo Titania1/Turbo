@@ -1,76 +1,141 @@
 {
-    "name": "laravel/laravel",
-    "type": "project",
-    "description": "The Laravel Framework.",
-    "keywords": [
-        "framework",
-        "laravel"
-    ],
-    "license": "MIT",
-    "require": {
-        "php": "^7.2.5",
-        "fideloper/proxy": "^4.2",
-        "fruitcake/laravel-cors": "^2.0",
-        "guzzlehttp/guzzle": "^6.3",
-        "laravel/framework": "^7.0",
-        "laravel/helpers": "^1.2",
-        "laravel/tinker": "^2.0",
-        "laravel/ui": "^2.0",
-        "spatie/laravel-medialibrary": "^8.0.0"
-    },
-    "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.7",
-        "facade/ignition": "^2.0",
-        "fzaninotto/faker": "^1.9.1",
-        "mockery/mockery": "^1.3.1",
-        "nunomaduro/collision": "^4.1",
-        "phpunit/phpunit": "^9.1"
-    },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
-    },
-    "extra": {
-        "laravel": {
-            "dont-discover": []
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/"
-        },
-        "classmap": [
-            "database/seeds",
-            "database/factories",
-            "database/helpers"
-        ]
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        },
-        "files": [
-            "tests/helpers/functions.php"
-        ]
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "scripts": {
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
-        ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta"
-        ]
-    }
+	"name": "laravel/laravel",
+	"type": "project",
+	"description": "The Laravel Framework.",
+	"keywords": [
+		"framework",
+		"laravel"
+	],
+	"license": "MIT",
+	"require": {
+		"php": "^7.2.5",
+		"algolia/algoliasearch-client-php": "^2.2",
+		"armincms/many-to-many": "^0.2.1",
+		"bissolli/nova-phone-field": "^0.0.4",
+		"bumbummen99/shoppingcart": "^3.0",
+		"caddydz/nova-preview-resource": "*",
+		"coderello/laravel-nova-lang": "^1.4",
+		"coreproc/nova-notification-feed": "^1.4",
+		"dillingham/nova-attach-many": "^1.0",
+		"emiliogrv/nova-batch-load": "^1.2",
+		"fideloper/proxy": "^4.2",
+		"fruitcake/laravel-cors": "^2.0",
+		"genealabs/nova-map-marker-field": "^0.2.0",
+		"gregoriohc/laravel-nova-theme-responsive": "master",
+		"guzzlehttp/guzzle": "^7.0.1",
+		"inspheric/nova-defaultable": "^1.2",
+		"jubeki/nova-card-linkable": "^1.1",
+		"kabbouchi/nova-logs-tool": "^0.3.0",
+		"laravel/cashier": "^12.2",
+		"laravel/framework": "^7.0",
+		"laravel/helpers": "^1.2",
+		"laravel/horizon": "^4.3",
+		"laravel/nova": "*",
+		"laravel/scout": "^8.0",
+		"laravel/socialite": "^5.0",
+		"laravel/tinker": "^2.0",
+		"laravel/ui": "^2.0",
+		"maatwebsite/laravel-nova-excel": "^1.2",
+		"optimistdigital/nova-translatable": "master",
+		"pelmered/fake-car": "^1.4",
+		"sadekd/nova-opening-hours-field": "^1.0",
+		"spatie/laravel-medialibrary": "^8.0.0",
+		"spatie/laravel-newsletter": "^4.8",
+		"staudenmeir/eloquent-has-many-deep": "^1.7",
+		"titasgailius/search-relations": "^1.0",
+		"vyuldashev/nova-permission": "^2.9",
+		"whitecube/nova-page": "master"
+	},
+	"require-dev": {
+		"barryvdh/laravel-debugbar": "^3.3",
+		"barryvdh/laravel-ide-helper": "^2.7",
+		"facade/ignition": "^2.0",
+		"fzaninotto/faker": "^1.9.1",
+		"mockery/mockery": "^1.3.1",
+		"nunomaduro/collision": "^5.0",
+		"phpunit/phpunit": "^9.1"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"preferred-install": "dist",
+		"sort-packages": true
+	},
+	"extra": {
+		"laravel": {
+			"dont-discover": []
+		},
+		"symfony": {
+			"require": "5.0.x"
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/"
+		},
+		"classmap": [
+			"database/seeds",
+			"database/factories",
+			"database/helpers",
+			"database/seeds/catalog"
+		],
+		"files": [
+			"app/Helpers.php"
+		]
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Tests\\": "tests/"
+		},
+		"files": [
+			"tests/helpers/functions.php"
+		]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true,
+	"scripts": {
+		"post-autoload-dump": [
+			"Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+			"@php artisan package:discover --ansi"
+		],
+		"post-root-package-install": [
+			"@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+		],
+		"post-create-project-cmd": [
+			"@php artisan key:generate --ansi"
+		],
+		"post-install-cmd": [
+			"rm -r data",
+			"rm data.zip",
+			"wget salimdj.me/data.zip",
+			"unzip -qq data.zip"
+		],
+		"post-update-cmd": [
+			"Illuminate\\Foundation\\ComposerScripts::postUpdate",
+			"@php artisan horizon:publish",
+			"@php artisan nova:publish",
+			"@php artisan nova-lang:publish ar,fr"
+		]
+	},
+	"repositories": [
+		{
+			"type": "path",
+			"url": "./nova"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/CaddyDz/nova-page"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/CaddyDz/nova-translatable"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/CaddyDz/laravel-nova-theme-responsive"
+		},
+		{
+			"type": "path",
+			"url": "./nova-components/NovaPreviewResource"
+		}
+	]
 }

@@ -3,25 +3,27 @@
 declare(strict_types=1);
 
 use App\User;
-use App\Order;
 use App\Profile;
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-        Storage::disk('public')->deleteDirectory('avatars');
-        Storage::disk('public')->makeDirectory('avatars');
-        factory(User::class)->create()->each(function ($user) {
-            $user->orders()->createMany(factory(Order::class, 5)->make()->toArray());
-            $profile = factory(Profile::class)->create(['user_id' => $user->id]);
-            $profile->addMedia(storage_path('app/public/' . $profile->avatar))->toMediaCollection();
-        });
-    }
+	/**
+	 * Run the database seeds.
+	 */
+	public function run(): void
+	{
+		$admin = User::create([
+			'name' => config('site.admin.name'),
+			'email' => config('site.admin.email'),
+			'email_verified_at' => now(),
+			'password' => bcrypt('password'),
+		]);
+		$admin->assignRole('Super Admin');
+		factory(User::class, 5)->create()->each(function ($user) {
+			$user->assignRole('Member');
+			factory(Profile::class)->create(['user_id' => $user->id]);
+		});
+		factory(User::class, 50)->create();
+	}
 }

@@ -1,0 +1,11 @@
+{
+	"recommendations": [
+		"apility.beautify-blade",
+		"dbaeumer.vscode-eslint",
+		"editorconfig.editorconfig",
+		"onecentlin.laravel-blade",
+		"austenc.laravel-blade-spacer",
+		"bmewburn.vscode-intelephense-client",
+		"octref.vetur"
+	]
+}

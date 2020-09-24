@@ -11,3 +11,6 @@ finder:
   not-name:
     - index.php
     - server.php
+tab-width: 4
+use-tabs: true
+risky: true

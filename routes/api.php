@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::post('/getYearBrands', 'BrandsController@getByYear');
+Route::post('/getVehicleModelsByBrand', 'VehiclesController@getModelsByBrand');
+Route::post('/getFuelOptionsForModel', 'VehiclesController@getFuelOptionsForModel');
+Route::post('/getCategoryTypes', 'TypesController@getTypesByCategory');

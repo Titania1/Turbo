@@ -13,3 +13,16 @@ yarn-error.log
 _ide_helper.php
 .phpstorm.meta.php
 .DS_Store
+/public/vendor/horizon
+/nova
+/data
+nova.zip
+data.zip
+/public/vendor/nova
+/resources/lang/vendor
+/public/js/app.js
+/public/mix-manifest.json
+/storage/media-library
+/public/js/app.js.LICENSE.txt
+horizon.log
+.php_cs.cache
