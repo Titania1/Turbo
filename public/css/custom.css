@@ -1,0 +1,10 @@
+.select-models {
+	margin-bottom: 5px;
+	position: absolute;
+	bottom: 0;
+}
+
+.MyCustomHitsList {
+	list-style: none;
+	padding-left: 0;
+}

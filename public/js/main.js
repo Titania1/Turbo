@@ -1429,7 +1429,7 @@
 	// select2
 	*/
 	$(function() {
-		var selects = $('.form-control-select2, .block-finder__form-control--select select');
+		var selects = $('.select-vehicle');
 		selects.select2({
 			width: ''
 		});

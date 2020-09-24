@@ -19,7 +19,6 @@ class VehicleSeeder extends Seeder
 		$models = Model::select('id', 'name')->get();
 		foreach ($models as $model) {
 			$this->seedVehiclesOfModel($model);
-			break;
 		}
 	}
 
@@ -28,7 +27,6 @@ class VehicleSeeder extends Seeder
 		$vehicles = $this->getVehiclesByModel($model->name);
 		foreach ($vehicles as $vehicle) {
 			$this->create($vehicle, $model->id);
-			break;
 		}
 	}
 

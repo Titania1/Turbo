@@ -1,7 +1,7 @@
 <div class="account-menu">
 	@auth
 	<div class="account-menu__divider"></div>
-	<a href="#" class="account-menu__user">
+	<a href="{{ route('profile.edit') }}" class="account-menu__user">
 		<div class="account-menu__user-avatar">
 			<img src="{{ auth()->user()->accountMenuAvatar }}" alt="@lang('Avatar')" width="40" height="40">
 		</div>
@@ -17,7 +17,6 @@
 		<li><a href="{{ route('shop') }}">@lang('Shop')</a></li>
 		<li><a href="{{ route('profile.edit') }}">@lang('Edit Profile')</a></li>
 		<li><a href="{{ route('orders') }}">@lang('Order History')</a></li>
-		<li><a href="/account-addresses">@lang('Addresses')</a></li>
 	</ul>
 	<div class="account-menu__divider"></div>
 	<ul class="account-menu__links">

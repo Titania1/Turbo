@@ -39,6 +39,7 @@
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 	@endenv
+	<link rel="stylesheet" href="/css/custom.css">
 </head>
 
 <body>
@@ -53,7 +54,6 @@
 		<!-- site__body -->
 		<div class="site__body">
 			@include('partials.index.finder')
-			<div class="block-space block-space--layout--after-header"></div>
 				<div class="block">
 					@include('partials.brands')
 					@yield('content')
