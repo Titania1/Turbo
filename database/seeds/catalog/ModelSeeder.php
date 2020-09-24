@@ -45,6 +45,7 @@ class ModelSeeder extends Seeder
 			->table('models')
 			->select('id', 'Description')
 			->where('ManufacturerId', $id)
+			->where('CanBeDisplayed', 1)
 			->get();
 	}
 
