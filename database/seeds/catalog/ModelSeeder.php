@@ -6,6 +6,7 @@ namespace App\Seeders;
 
 use App\Brand;
 use App\Model;
+use Exception;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
@@ -21,7 +22,6 @@ class ModelSeeder extends Seeder
 		$brands = Brand::select('id', 'internal_id', 'slug')->get();
 		foreach ($brands as $brand) {
 			$this->seedModelsOfBrand($brand);
-			break;
 		}
 	}
 
@@ -33,7 +33,6 @@ class ModelSeeder extends Seeder
 		foreach ($models as $model) {
 			try {
 				$this->create($model, $brand);
-				break;
 			} catch (\Illuminate\Database\QueryException $ex) {
 				// Do nothing, it's a duplicate
 			}
@@ -54,6 +53,11 @@ class ModelSeeder extends Seeder
 		$name = strtok($tecdoc_model->Description, ' ');
 		$slug = sluggify($name);
 		$path = "models/$brand->slug/$slug.jpg";
+		if ($brand->is_commercial) {
+			$src = 'data/models/commercial/' . $brand->slug . '_' . $slug . '.jpg';
+		} else {
+			$src = 'data/models/not_commercial/' . $brand->slug . '_' . $slug . '.jpg';
+		}
 		$model = Model::create([
 			'internal_id' => $tecdoc_model->id,
 			'brand_id' => $brand->id,
@@ -62,10 +66,12 @@ class ModelSeeder extends Seeder
 			'image' => $path,
 		]);
 		Storage::disk('public')->makeDirectory("models/$brand->slug");
-		copy(
-			base_path('data/models/' . $brand->slug . '_' . $slug . '.jpg'),
-			storage_path("app/public/$path")
-		);
+		try {
+			copy(
+				base_path($src),
+				storage_path("app/public/$path")
+			);
+		} catch (Exception $ex){}
 
 		return $model->id;
 	}

@@ -27,7 +27,6 @@ class BrandSeeder extends Seeder
 		// TODO: Dry this
 		foreach ($manufacturers as $image_url => $name) {
 			$this->create($name);
-			break;
 		}
 	}
 
@@ -36,7 +35,6 @@ class BrandSeeder extends Seeder
 		// Seed commercial vehicles
 		foreach ($manufacturers as $image_url => $name) {
 			$this->create($name, true);
-			break;
 		}
 	}
 
