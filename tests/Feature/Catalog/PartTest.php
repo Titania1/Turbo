@@ -25,7 +25,10 @@ class PartTest extends TestCase
 	 */
 	public function test_we_can_view_a_part(): void
 	{
+		Storage::disk('public')->makeDirectory('brands');
 		Storage::disk('public')->makeDirectory('parts');
+		Storage::disk('public')->makeDirectory('categories');
+		Storage::disk('public')->makeDirectory('types');
 		$user = create(User::class);
 		$brand = create(Brand::class);
 		$model = create(Model::class, ['brand_id' => $brand->id]);
