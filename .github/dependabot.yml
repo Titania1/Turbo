@@ -21,10 +21,10 @@ updates:
     time: "04:00"
   open-pull-requests-limit: 20
   reviewers:
-    - CaddyDz
-    assignees:
-    - CaddyDz
-    versioning-strategy: increase
-    allow:
-    - dependency-type: direct
-    - dependency-type: indirect
+  - CaddyDz
+  assignees:
+  - CaddyDz
+  versioning-strategy: increase
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
