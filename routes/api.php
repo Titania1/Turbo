@@ -21,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/getYearBrands', 'BrandsController@getByYear');
-Route::post('/getVehicleModelsByBrand', 'VehiclesController@getModelsByBrand');
+Route::post('/getVehiclesByModel', 'VehiclesController@getVehiclesByModel');
+Route::post('/getModelsByBrand', 'VehiclesController@getModelsByBrand');
+Route::post('/getEnginesByVehicle', 'VehiclesController@getEnginesByVehicle');
+Route::post('/getCategoriesByEngine', 'VehiclesController@getCategoriesByEngine');
 Route::post('/getFuelOptionsForModel', 'VehiclesController@getFuelOptionsForModel');
 Route::post('/getCategoryTypes', 'TypesController@getTypesByCategory');
