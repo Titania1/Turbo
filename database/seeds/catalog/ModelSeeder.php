@@ -71,7 +71,8 @@ class ModelSeeder extends Seeder
 				base_path($src),
 				storage_path("app/public/$path")
 			);
-		} catch (Exception $ex){}
+		} catch (Exception $ex) {
+		}
 
 		return $model->id;
 	}
