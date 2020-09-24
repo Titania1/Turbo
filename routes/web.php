@@ -54,7 +54,7 @@ Route::middleware('auth', 'verified')->group(function () {
 		Route::get('profile', 'ProfileController@edit')->name('profile.edit');
 		Route::post('profile', 'ProfileController@update')->name('profile.update');
 		Route::get('shop', 'PartsController@index')->name('shop');
-		Route::get('garage', 'GarageController@show')->name('garage');
+		// Route::get('garage', 'GarageController@show')->name('garage');
 	});
 	Route::post('/parts/add', 'PartsController@store')->name('part.add');
 });

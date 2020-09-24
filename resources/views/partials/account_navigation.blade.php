@@ -10,9 +10,9 @@
 		<li class="account-nav__item @if($active == 'shop') account-nav__item--active @endif">
 			<a href="{{ route('shop') }}">@lang('Shop')</a>
 		</li>
-		<li class="account-nav__item @if($active == 'garage') account-nav__item--active @endif">
+		{{-- <li class="account-nav__item @if($active == 'garage') account-nav__item--active @endif">
 			<a href="{{ route('garage') }}">@lang('Garage')</a>
-		</li>
+		</li> --}}
 		<li class="account-nav__item @if($active == 'profile') account-nav__item--active @endif">
 			<a href="{{ route('profile.edit') }}">@lang('Edit Profile')</a>
 		</li>
