@@ -12,7 +12,3 @@
 {{-- @include('partials.index.parts') --}}
 @include('partials.index.banners')
 @stop
-
-@push('styles')
-<link rel="stylesheet" href="/css/index.css">
-@endpush

@@ -1,5 +1,5 @@
 /*
-	// .block-finder
+	.block-finder
 */
 $(function() {
 	$('#select-year').on('change', (event) => {

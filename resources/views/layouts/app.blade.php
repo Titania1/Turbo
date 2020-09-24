@@ -22,11 +22,11 @@
 	<link rel="stylesheet" href="/vendor/photoswipe/default-skin/default-skin.css">
 	<link rel="stylesheet" href="/vendor/select2/css/select2.min.css">
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/finder.css">
 	<link rel="stylesheet" href="/css/header.css" media="(min-width: 1200px)">
 	{{-- <link rel="stylesheet" href="/css/rtl.css">
 	<link rel="stylesheet" href="/css/header-rtl.css" media="(min-width: 1200px)"> --}}
 	<link rel="stylesheet" href="/css/mobile-header.css" media="(max-width: 1199px)">
-	@stack('styles')
 
 	<!-- Fonts -->
 	<!-- fontawesome -->

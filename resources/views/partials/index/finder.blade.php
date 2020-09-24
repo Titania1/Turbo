@@ -67,6 +67,9 @@
 	</div>
 </div>
 
+@push('styles')
+@endpush
+
 @push('scripts')
 	<script src="/js/finder.js"></script>
 @endpush
