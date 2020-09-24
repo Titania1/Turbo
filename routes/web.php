@@ -50,10 +50,10 @@ Route::middleware('auth', 'verified')->group(function () {
 		Route::view('addresses', 'account-addresses');
 		Route::view('password', 'auth.passwords.change')->middleware('password.confirm');
 		Route::post('change-password', 'AccountController@changePassword')->name('password.change');
-		Route::view('orders', 'account-orders');
 		Route::get('profile', 'ProfileController@edit')->name('profile.edit');
 		Route::post('profile', 'ProfileController@update')->name('profile.update');
 		Route::get('shop', 'PartsController@index')->name('shop');
+		Route::get('orders', 'OrdersController@index')->name('orders');
 		// Route::get('garage', 'GarageController@show')->name('garage');
 	});
 	Route::post('/parts/add', 'PartsController@store')->name('part.add');
