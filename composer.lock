@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "ae56ca980d23b5eb0fc4428b33d514bb7b9fd4f7"
+                "reference": "2019a123e0b0156f35af50dea5b3984d01dc2f14"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -6025,16 +6025,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.54.0",
+            "version": "v7.55.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "3a5cff6ce6f5f2f0fc75164d3677bd5dc3e96fe3"
+                "reference": "992057d4fd50b3979a8cdabf1d44bd13d55a78a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/3a5cff6ce6f5f2f0fc75164d3677bd5dc3e96fe3",
-                "reference": "3a5cff6ce6f5f2f0fc75164d3677bd5dc3e96fe3",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/992057d4fd50b3979a8cdabf1d44bd13d55a78a9",
+                "reference": "992057d4fd50b3979a8cdabf1d44bd13d55a78a9",
                 "shasum": ""
             },
             "require": {
@@ -6078,7 +6078,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-09-23T21:48:00+00:00"
+            "time": "2020-09-24T23:45:12+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
