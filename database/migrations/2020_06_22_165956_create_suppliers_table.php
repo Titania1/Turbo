@@ -18,7 +18,7 @@ class CreateSuppliersTable extends Migration
 		Schema::create('suppliers', function (Blueprint $table) {
 			$table->id();
 			// The user who is also a supplier (treated like a profile)
-			$table->foreignId('user_id')->constrained();
+			$table->foreignId('user_id')->constrained()->nullable();
 			// The supplier owner (when the supplier isn't a user)
 			$table->foreignId('owner_id')->constrained('users');
 			$table->string('name');
