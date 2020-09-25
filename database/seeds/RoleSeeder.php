@@ -209,6 +209,7 @@ class RoleSeeder extends Seeder
 	 */
 	public function run()
 	{
+		app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 		foreach ($this->permissions as $resource => $permissions) {
 			foreach ($permissions as $permission) {
 				Permission::create(['name' => $permission]);
