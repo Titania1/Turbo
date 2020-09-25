@@ -3,6 +3,7 @@
 @section('title', __('Edit Profile'))
 
 @section('content')
+<div class="block-space block-space--layout--after-header"></div>
 <div class="container container--max--xl">
 	<div class="row">
 		<div class="col-12 col-lg-3 d-flex">

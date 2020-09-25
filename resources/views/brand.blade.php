@@ -3,7 +3,7 @@
 @section('title', $brand->name)
 
 @section('block')
-<div class="categories-list categories-list--layout--columns-6-full">
+<div class="categories-list categories-list--layout--columns-5-full">
 	<ul class="categories-list__body">
 		@foreach($models as $model)
 			<li class="categories-list__item">
@@ -12,8 +12,8 @@
 					{{ $model->name }}
 				</div>
 				<div class="categories-list__item-products">{{ $model->vehicles()->count() }}</div>
-				<div class="form-group">
-					<select class="form-control form-control-sm form-control-select2">
+				<div class="form-group select-models">
+					<select class="form-control form-control-sm form-control-select2 select-vehicle">
 						<option>@lang('Select Model')</option>
 						@foreach($model->vehicles as $vehicle)
 							<option value="{{ url("brands/$brand->id/$brand->slug/models/$model->id/$model->slug/vehicles/$vehicle->id/$vehicle->slug") }}">

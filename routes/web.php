@@ -47,7 +47,6 @@ Route::view('/compare', 'compare');
 Route::view('/product', 'product');
 Route::middleware('auth', 'verified')->group(function () {
 	Route::prefix('account')->group(function () {
-		Route::view('addresses', 'account-addresses');
 		Route::view('password', 'auth.passwords.change')->middleware('password.confirm');
 		Route::post('change-password', 'AccountController@changePassword')->name('password.change');
 		Route::get('profile', 'ProfileController@edit')->name('profile.edit');

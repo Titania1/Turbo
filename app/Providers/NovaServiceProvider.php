@@ -111,6 +111,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
 				->title(__('Statistics'))
 				->url('/dashboards/statistics')
 				->subtitle(__('Statistics')),
+
+			(new Linkable)
+				->title(__('Categories'))
+				->url('/resources/categories')
+				->subtitle(__('Categories')),
 		];
 	}
 

@@ -209,16 +209,16 @@ class RoleSeeder extends Seeder
 	 */
 	public function run()
 	{
+		app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 		foreach ($this->permissions as $resource => $permissions) {
 			foreach ($permissions as $permission) {
 				Permission::create(['name' => $permission]);
 			}
 		}
-		$admin = Role::create(['name' => 'Super Admin']);
-		$canUpdatePartScore = Permission::create(['name' => 'Update Part Views']);
-		$admin->givePermissionTo($canUpdatePartScore);
+		Permission::create(['name' => 'Update Part Views']);
 		$permission = Permission::create(['name' => 'Access Stock']);
-		$admin->givePermissionTo($permission);
+		$admin = Role::create(['name' => 'Super Admin']);
+		$admin->givePermissionTo(Permission::all());
 		$role = Role::create(['name' => 'Member']);
 		$role->givePermissionTo($permission);
 	}

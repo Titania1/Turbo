@@ -3,6 +3,7 @@
 @section('title', __('Shop'))
 
 @section('content')
+<div class="block-space block-space--layout--after-header"></div>
 <div class="container container--max--xl">
 	<div class="row">
 		<div class="col-12 col-lg-3 d-flex">
@@ -18,7 +19,6 @@
 					<div class="vehicles-list vehicles-list--layout--account">
 						<div class="vehicles-list__body">
 							@foreach ($parts as $part)
-
 							<div class="vehicles-list__item">
 								<div class="vehicles-list__item-info">
 									<div class="vehicles-list__item-name">
@@ -49,13 +49,33 @@
 						@csrf
 						<div class="vehicle-form vehicle-form--layout--account">
 							<div class="vehicle-form__item vehicle-form__item--select">
-								<select class="form-control form-control-select2" aria-label="@lang('Vehicle')" name="vehicle">
-									<option value="none">@lang('Select Vehicle')</option>
-									@foreach ($vehicles as $vehicle)
-									<option value="{{ $vehicle->id }}" @if(old('vehicle')==$vehicle->id) selected @endif>
-										{{ $vehicle->model->name }}
+								<select class="form-control form-control-select2" aria-label="@lang('Brand')" name="brand" id="shop-brand">
+									<option value="none">@lang('Select Brand')</option>
+									@foreach ($brands as $brand)
+									<option value="{{ $brand->id }}" @if(old('brand')==$brand->id) selected @endif>
+										{{ $brand->name }}
 									</option>
 									@endforeach
+								</select>
+								@error('brand')
+								<span class="invalid-feedback" role="alert" style="display: block;">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
+							<div class="vehicle-form__item vehicle-form__item--select">
+								<select class="form-control form-control-select2" aria-label="@lang('Model')" name="model" disabled="disabled" id="shop-model">
+									<option value="none">@lang('Select Model')</option>
+								</select>
+								@error('model')
+								<span class="invalid-feedback" role="alert" style="display: block;">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
+							<div class="vehicle-form__item vehicle-form__item--select">
+								<select class="form-control form-control-select2" aria-label="@lang('Vehicle')" name="vehicle" disabled="disabled" id="shop-vehicle">
+									<option value="none">@lang('Select Vehicle')</option>
 								</select>
 								@error('vehicle')
 								<span class="invalid-feedback" role="alert" style="display: block;">
@@ -64,12 +84,18 @@
 								@enderror
 							</div>
 							<div class="vehicle-form__item vehicle-form__item--select">
-								<select class="form-control form-control-select2" aria-label="@lang('Category')" id="select-category"
-									name="category">
+								<select class="form-control form-control-select2" aria-label="@lang('Engine')" name="engine" disabled="disabled" id="shop-engine">
+									<option value="none">@lang('Select Engine')</option>
+								</select>
+								@error('engine')
+								<span class="invalid-feedback" role="alert" style="display: block;">
+									<strong>{{ $message }}</strong>
+								</span>
+								@enderror
+							</div>
+							<div class="vehicle-form__item vehicle-form__item--select">
+								<select class="form-control form-control-select2" aria-label="@lang('Category')" name="category" disabled="disabled" id="shop-category">
 									<option value="none">@lang('Select Category')</option>
-									@foreach ($categories as $category)
-									<option value="{{ $category->id }}">{{ $category->name }}</option>
-									@endforeach
 								</select>
 								@error('category')
 								<span class="invalid-feedback" role="alert" style="display: block;">
@@ -164,3 +190,7 @@
 	</div>
 </div>
 @stop
+
+@push('scripts')
+	<script src="/js/shop.js"></script>
+@endpush

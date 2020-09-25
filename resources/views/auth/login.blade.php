@@ -3,6 +3,7 @@
 @section('title', __('Login'))
 
 @section('content')
+<div class="block-space block-space--layout--after-header"></div>
 <div class="container container--max-lg">
 	<div class="row justify-content-center">
 		<div class="col-md-8">

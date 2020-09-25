@@ -19,10 +19,14 @@ class CreateClientsTable extends Migration
 			$table->id();
 			$table->foreignId('user_id')->constrained();
 			$table->string('name');
-			$table->string('address')->nullable();
-			$table->integer('phone')->nullable();
+			$table->string('company')->nullable();
+			$table->string('address');
+			$table->integer('phone');
 			$table->string('email')->nullable();
-			$table->decimal('credit')->nullable();
+			$table->string('ccp')->nullable();
+			// company registration number
+			$table->string('crn')->nullable();
+			$table->string('tax_card')->nullable();
 			$table->timestamps();
 		});
 	}

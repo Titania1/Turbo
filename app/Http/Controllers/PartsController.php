@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Part;
+use App\Brand;
 use App\Review;
-use App\Vehicle;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartRequest;
@@ -20,11 +20,11 @@ class PartsController extends Controller
 	 */
 	public function index()
 	{
-		$vehicles = Vehicle::select('id')->get();
+		$brands = Brand::select('id', 'name')->get();
 		$categories = Category::select('name', 'id')->get();
 		$parts = Part::where('user_id', auth()->id())->limit(4)->get();
 
-		return view('shop', compact('vehicles', 'categories', 'parts'));
+		return view('shop', compact('brands', 'categories', 'parts'));
 	}
 
 	/**

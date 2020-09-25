@@ -19,9 +19,6 @@
 		<li class="account-nav__item @if($active == 'orders') account-nav__item--active @endif">
 			<a href="{{ route('orders') }}">@lang('Order History')</a>
 		</li>
-		<li class="account-nav__item @if($active == 'address') account-nav__item--active @endif">
-			<a href="/addresses">@lang('Addresses')</a>
-		</li>
 		<li class="account-nav__item @if($active == 'password') account-nav__item--active @endif">
 			<a href="/account/password">@lang('Password')</a>
 		</li>

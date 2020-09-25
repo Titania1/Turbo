@@ -39,9 +39,7 @@ class CategorySeeder extends Seeder
 					'name' => $category->Description,
 					'slug' => sluggify($category->Description),
 				]);
-				break;
 			}
-			break;
 		}
 	}
 }

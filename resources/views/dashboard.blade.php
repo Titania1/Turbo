@@ -3,6 +3,7 @@
 @section('title', __('Dashboard'))
 
 @section('content')
+<div class="block-space block-space--layout--after-header"></div>
 <div class="container container--max--xl">
 	<div class="row">
 		<div class="col-12 col-lg-3 d-flex">
@@ -18,7 +19,7 @@
 						<div class="profile-card__name">{{ $user->name }}</div>
 						<div class="profile-card__email">{{ $user->email }}</div>
 						<div class="profile-card__edit">
-							<a href="/profile" class="btn btn-secondary btn-sm">
+							<a href="{{ route('profile.edit') }}" class="btn btn-secondary btn-sm">
 								@lang('Edit Profile')
 							</a>
 						</div>
@@ -45,7 +46,7 @@
 							<div class="address-card__row-title">@lang('Email Address')</div>
 							<div class="address-card__row-content">{{ $user->email }}</div>
 						</div>
-						<div class="address-card__footer"><a href="#">@lang('Edit Address')</a></div>
+						{{-- <div class="address-card__footer"><a href="#">@lang('Edit Address')</a></div> --}}
 					</div>
 				</div>
 				@if($user->orders->isNotEmpty())

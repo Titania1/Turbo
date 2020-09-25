@@ -6,7 +6,10 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Model;
+use App\Engine;
 use App\Vehicle;
+use App\Category;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\BrandModelsRequest;
 use App\Http\Requests\ModelFuelOptionsRequest;
@@ -23,7 +26,7 @@ class VehiclesController extends Controller
 	 **/
 	public function getModelsByBrand(BrandModelsRequest $request): Collection
 	{
-		$models = Vehicle::where('brand_id', $request->brand)->select('model')->distinct()->orderBy('brand_id')->pluck('model');
+		$models = Model::where('brand_id', $request->brand)->select('name', 'id')->distinct()->orderBy('name')->get();
 
 		return $models;
 	}
@@ -70,5 +73,28 @@ class VehiclesController extends Controller
 		$engines = $vehicle->engines()->paginate(10);
 
 		return view('vehicle', compact('vehicle', 'engines'));
+	}
+
+	public function getVehiclesByModel(Request $request)
+	{
+		$vehicles = Vehicle::where('model_id', $request->model)->select('name', 'id')->get();
+
+		return $vehicles;
+	}
+
+	public function getEnginesByVehicle(Request $request)
+	{
+		$engines = Engine::where('vehicle_id', $request->vehicle)->select('type', 'motor_code', 'id')->get();
+
+		return $engines;
+	}
+
+	public function getCategoriesByEngine(Request $request)
+	{
+		$categories = Category::where('engine_id', $request->engine)
+				->where('category_id', null)
+				->select('name', 'id')->get();
+
+		return $categories;
 	}
 }
