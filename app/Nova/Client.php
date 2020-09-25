@@ -73,9 +73,17 @@ class Client extends Resource
 		return [
 			ID::make()->sortable(),
 			Text::make(__('Name'), 'name')->required()->sortable(),
-			Place::make(__('Address'), 'address')->hideFromIndex(),
-			Number::make(__('Phone number'), 'phone')->resolveUsing(fn ($phone) => 0 . $phone),
-			Number::make(__('Credit'), 'credit')->resolveUsing(fn ($credit) => round($credit) . ' DZD'),
+			Text::make(__('Company'), 'company'),
+			Place::make(__('Address'), 'address')->hideFromIndex()->required(),
+			Number::make(__('Phone number'), 'phone')->required()->resolveUsing(fn ($phone) => 0 . $phone),
+			Text::make(__('Email'), 'email')
+				->sortable()
+				->rules('email', 'max:254')
+				->creationRules('unique:clients,email')
+				->updateRules('unique:clients,email,{{resourceId}}'),
+			Text::make(__('CCP'), 'ccp'),
+			Text::make(__('Company Registraion Number'), 'crn'),
+			Text::make(__('Tax Card'), 'tax_card'),
 		];
 	}
 
