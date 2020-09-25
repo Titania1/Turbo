@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Brand;
-use App\Category;
-use App\Engine;
 use App\Model;
+use App\Engine;
 use App\Vehicle;
+use App\Category;
+use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\BrandModelsRequest;
 use App\Http\Requests\ModelFuelOptionsRequest;
-use Illuminate\Http\Request;
 
 class VehiclesController extends Controller
 {
@@ -78,12 +78,14 @@ class VehiclesController extends Controller
 	public function getVehiclesByModel(Request $request)
 	{
 		$vehicles = Vehicle::where('model_id', $request->model)->select('name', 'id')->get();
+
 		return $vehicles;
 	}
 
 	public function getEnginesByVehicle(Request $request)
 	{
 		$engines = Engine::where('vehicle_id', $request->vehicle)->select('type', 'motor_code', 'id')->get();
+
 		return $engines;
 	}
 
@@ -92,6 +94,7 @@ class VehiclesController extends Controller
 		$categories = Category::where('engine_id', $request->engine)
 				->where('category_id', null)
 				->select('name', 'id')->get();
+
 		return $categories;
 	}
 }

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Brand;
 use App\Part;
+use App\Brand;
 use App\Review;
-use App\Vehicle;
 use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\StorePartRequest;
