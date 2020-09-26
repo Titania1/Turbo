@@ -33,9 +33,8 @@ class PartTest extends TestCase
 		$brand = create(Brand::class);
 		$model = create(Model::class, ['brand_id' => $brand->id]);
 		$vehicle = create(Vehicle::class, ['model_id' => $model->id]);
-		$engine = create(Engine::class, ['vehicle_id' => $vehicle->id]);
-		$category = create(Category::class, ['engine_id' => $engine->id, 'internal_id' => 1]);
-		$type = create(Type::class, ['category_id' => $category->id]);
+		$category = create(Category::class, ['internal_id' => 1, 'tree_id' => 1]);
+		$type = create(Type::class, ['category_id' => $category->id, 'internal_id' => 1, 'tree_id' => 1]);
 		$part = create(Part::class, [
 			'user_id' => $user->id,
 			'vehicle_id' => $vehicle->id,

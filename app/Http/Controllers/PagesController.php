@@ -8,6 +8,7 @@ use App\Part;
 use App\Category;
 use Illuminate\View\View;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Cache;
 
 class PagesController extends Controller
 {
@@ -25,9 +26,11 @@ class PagesController extends Controller
 		// Get new arrivals
 		$new_parts = Part::latest()->get();
 		// Get their types
-		$categories = Category::whereHas('categories', function (Builder $query) {
-			$query->whereHas('types');
-		})->limit(3)->with('subParts')->get();
+		$categories = Cache::rememberForever('categories_cards', function() {
+			return Category::whereHas('categories', function (Builder $query) {
+				$query->whereHas('types');
+			})->limit(3)->with('subParts')->get();
+		});
 
 		return view('index', compact('new_parts', 'categories'));
 	}

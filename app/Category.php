@@ -52,8 +52,9 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class Category extends Model implements HasMedia
 {
-	use HasRelationships;
-	use InteractsWithMedia;
+	use HasRelationships, InteractsWithMedia;
+
+	protected $with = ['categories', 'types'];
 
 	public function category()
 	{
@@ -67,7 +68,7 @@ class Category extends Model implements HasMedia
 
 	public function types()
 	{
-		return $this->hasMany(Type::class);
+		return $this->hasMany(Type::class)->limit(7);
 	}
 
 	public function parts()
@@ -77,7 +78,7 @@ class Category extends Model implements HasMedia
 
 	public function subTypes()
 	{
-		return $this->hasManyThrough(Type::class, self::class);
+		return $this->hasManyThrough(Type::class, self::class)->limit(7);
 	}
 
 	public function subType()
@@ -94,12 +95,12 @@ class Category extends Model implements HasMedia
 
 	public function getFertileSubCategoriesAttribute()
 	{
-		return $this->categories()->whereHas('types')->get();
+		return $this->categories()->whereHas('types')->limit(6)->get();
 	}
 
 	public function getInfertileSubCategoriesAttribute()
 	{
-		return $this->categories()->whereDoesntHave('types')->get();
+		return $this->categories()->whereDoesntHave('types')->limit(5)->get();
 	}
 
 	public function getMegaMenuSizeAttribute(): string

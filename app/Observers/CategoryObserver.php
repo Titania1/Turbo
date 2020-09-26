@@ -26,11 +26,11 @@ class CategoryObserver
 	public function created(Category $category)
 	{
 		// Just app/public because the image attribute already includes 'categories' folder name
-		if ($category->image) {
-			$category->addMedia(storage_path('app/public/' . $category->image))
-				->preservingOriginal()
-				->toMediaCollection();
-		}
+		// if ($category->image) {
+		// 	$category->addMedia(storage_path('app/public/' . $category->image))
+		// 		->preservingOriginal()
+		// 		->toMediaCollection();
+		// }
 	}
 
 	/**
@@ -53,11 +53,11 @@ class CategoryObserver
 	public function updated(Category $category)
 	{
 		// Just app/public because the image attribute already includes 'categories' folder name
-		if ($category->isDirty('image')) {
-			$category->addMedia(storage_path('app/public/' . $category->image))
-				->preservingOriginal()
-				->toMediaCollection();
-		}
+		// if ($category->isDirty('image')) {
+		// 	$category->addMedia(storage_path('app/public/' . $category->image))
+		// 		->preservingOriginal()
+		// 		->toMediaCollection();
+		// }
 	}
 
 	/**
