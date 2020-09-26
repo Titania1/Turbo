@@ -6,7 +6,6 @@ namespace App\Seeders;
 
 use App\Category;
 use Illuminate\Database\Seeder;
-use Illuminate\Http\File;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,7 +23,7 @@ class CategorySeeder extends Seeder
 			->where('parent_node_id', 0)
 			->select('Description', 'tree_id', 'node_id')
 			->get();
-		foreach($categories->unique('Description') as $category){
+		foreach ($categories->unique('Description') as $category) {
 			$parent_category = Category::create([
 				'internal_id' => $category->node_id,
 				'tree_id' => $category->tree_id,

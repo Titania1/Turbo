@@ -7,8 +7,8 @@ namespace App\Http\Controllers;
 use App\Part;
 use App\Category;
 use Illuminate\View\View;
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Database\Eloquent\Builder;
 
 class PagesController extends Controller
 {
@@ -26,7 +26,7 @@ class PagesController extends Controller
 		// Get new arrivals
 		$new_parts = Part::latest()->get();
 		// Get their types
-		$categories = Cache::rememberForever('categories_cards', function() {
+		$categories = Cache::rememberForever('categories_cards', function () {
 			return Category::whereHas('categories', function (Builder $query) {
 				$query->whereHas('types');
 			})->limit(3)->with('subParts')->get();

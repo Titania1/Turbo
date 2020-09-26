@@ -8,9 +8,9 @@ use App\Part;
 use App\Brand;
 use App\Vehicle;
 use App\Category;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Support\Facades\Cache;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -35,7 +35,7 @@ class ViewComposerServiceProvider extends ServiceProvider
 	{
 		view()->composer(['layouts.header.navbar', 'partials.mobile_menu_links'], function ($view) {
 			// Get parent categories which have sub categories
-			$categories = Cache::rememberForever('categories', function() {
+			$categories = Cache::rememberForever('categories', function () {
 				return Category::where('category_id', null)
 							->whereHas('categories')
 							->select('id', 'name', 'image', 'slug')
