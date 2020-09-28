@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "98d7c712739eea54f2c3a98024e08ad23f0bbb82"
+                "reference": "0ed3e9c8d4455391d87eb61bb28bd0a6af641063"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -7952,16 +7952,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.5",
+            "version": "v5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "1864216226af21eb76d9477f691e7cbf198e0402"
+                "reference": "d3a2e64866169586502f0cd9cab69135ad12cee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/1864216226af21eb76d9477f691e7cbf198e0402",
-                "reference": "1864216226af21eb76d9477f691e7cbf198e0402",
+                "url": "https://api.github.com/repos/symfony/process/zipball/d3a2e64866169586502f0cd9cab69135ad12cee9",
+                "reference": "d3a2e64866169586502f0cd9cab69135ad12cee9",
                 "shasum": ""
             },
             "require": {
@@ -8012,7 +8012,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-23T08:36:24+00:00"
+            "time": "2020-09-02T16:23:27+00:00"
         },
         {
             "name": "symfony/routing",
