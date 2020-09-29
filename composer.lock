@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "0ed3e9c8d4455391d87eb61bb28bd0a6af641063"
+                "reference": "c01dba968e4e68a0215fbff6b2b43430880d42ba"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -3176,16 +3176,16 @@
         },
         {
             "name": "league/oauth1-client",
-            "version": "v1.8.1",
+            "version": "v1.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/oauth1-client.git",
-                "reference": "3a68155c3f27a91f4b66a2dc03996cd6f3281c9f"
+                "reference": "159c3d2bf27568f9af87d6c3f4bb616a251eb12b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/3a68155c3f27a91f4b66a2dc03996cd6f3281c9f",
-                "reference": "3a68155c3f27a91f4b66a2dc03996cd6f3281c9f",
+                "url": "https://api.github.com/repos/thephpleague/oauth1-client/zipball/159c3d2bf27568f9af87d6c3f4bb616a251eb12b",
+                "reference": "159c3d2bf27568f9af87d6c3f4bb616a251eb12b",
                 "shasum": ""
             },
             "require": {
@@ -3243,7 +3243,7 @@
                 "tumblr",
                 "twitter"
             ],
-            "time": "2020-09-04T11:07:03+00:00"
+            "time": "2020-09-28T09:39:08+00:00"
         },
         {
             "name": "maatwebsite/excel",
