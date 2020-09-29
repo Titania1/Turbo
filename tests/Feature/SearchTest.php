@@ -23,8 +23,6 @@ class SearchTest extends TestCase
 	/**
 	 * Test users can search for parts
 	 * of a given vehicle criteria.
-	 *
-	 * @return void
 	 */
 	public function test_vehicle_parts_search(): void
 	{

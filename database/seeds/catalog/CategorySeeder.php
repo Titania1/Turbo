@@ -15,13 +15,11 @@ class CategorySeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
 		$categories = $this->getCatalogCategories();
-		foreach($categories as $category) {
+		foreach ($categories as $category) {
 			$grand_father = $this->create($category);
 			if ($grand_father) {
 				$sub_categories = $this->getCatalogCategories($grand_father->internal_id);
@@ -49,12 +47,11 @@ class CategorySeeder extends Seeder
 	}
 
 	/**
-	 * undocumented function summary
+	 * undocumented function summary.
 	 *
 	 * Undocumented function long description
 	 *
 	 * @param int $parent_id Description
-	 * @return \Illuminate\Support\Collection
 	 * @throws conditon
 	 **/
 	private function getCatalogCategories(int $parent_id = 0): Collection

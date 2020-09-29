@@ -44,8 +44,6 @@ class Brand extends Eloquent
 {
 	/**
 	 * Get the value of the model's route key.
-	 *
-	 * @return string
 	 */
 	public function getRouteKey(): string
 	{

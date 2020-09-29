@@ -14,8 +14,6 @@ class EngineSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -49,7 +47,6 @@ class EngineSeeder extends Seeder
 				]);
 			}
 		}
-
 	}
 
 	private function getBrandEngines(int $internal_id): Collection

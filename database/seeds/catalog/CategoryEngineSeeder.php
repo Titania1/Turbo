@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Seeders;
 
-use App\Category;
 use App\Engine;
+use App\Category;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,8 +13,6 @@ class CategoryEngineSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{

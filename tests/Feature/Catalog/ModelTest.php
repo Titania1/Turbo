@@ -14,8 +14,6 @@ class ModelTest extends TestCase
 	/**
 	 * Test that we can create a catalog model
 	 * And we can navigate to it.
-	 *
-	 * @return void
 	 */
 	public function test_catalog_model_route(): void
 	{

@@ -8,8 +8,6 @@ class CatalogSeeder extends Seeder
 {
 	/**
 	 * Run the catalog database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{

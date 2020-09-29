@@ -6,9 +6,9 @@ namespace App\Seeders;
 
 use App\Part;
 use App\User;
+use App\Product;
 use App\Vehicle;
 use App\Category;
-use App\Product;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +16,6 @@ class PartSeeder extends Seeder
 {
 	/**
 	 * Seed parts.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
