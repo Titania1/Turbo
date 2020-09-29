@@ -38,3 +38,4 @@ class CreateVehiclesTable extends Migration
 		Schema::dropIfExists('vehicles');
 	}
 }
+
