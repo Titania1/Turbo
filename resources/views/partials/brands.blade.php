@@ -1,3 +1,4 @@
+<div class="block-space block-space--layout--after-header"></div>
 <div class="block block-brands block-brands--layout--columns-8-full" id="catalog" style="display: none;">
 	<div class="container">
 		<div class="product__tabs product-tabs">

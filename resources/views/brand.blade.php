@@ -11,7 +11,7 @@
 				<div class="categories-list__item-name">
 					{{ $model->name }}
 				</div>
-				<div class="categories-list__item-products">{{ $model->vehicles()->count() }}</div>
+				<div class="categories-list__item-products">{{ $model->vehicles_count }}</div>
 				<div class="form-group select-models">
 					<select class="form-control form-control-sm form-control-select2 select-vehicle">
 						<option>@lang('Select Model')</option>

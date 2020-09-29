@@ -7,11 +7,10 @@ namespace Tests\Feature;
 use App\User;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class RegisterTest extends TestCase
 {
-	use DatabaseMigrations, RefreshDatabase;
+	use RefreshDatabase;
 
 	/**
 	 * Test users can register.

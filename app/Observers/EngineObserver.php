@@ -13,7 +13,7 @@ class EngineObserver
 	 */
 	public function creating(Engine $engine): void
 	{
-		$engine->slug = sluggify($engine->type);
+		$engine->slug = sluggify($engine->motor_code);
 	}
 
 	/**
@@ -21,8 +21,8 @@ class EngineObserver
 	 */
 	public function updating(Engine $engine): void
 	{
-		if ($engine->isDirty('type')) {
-			$engine->slug = sluggify($engine->type);
+		if ($engine->isDirty('motor_code')) {
+			$engine->slug = sluggify($engine->motor_code);
 		}
 	}
 }

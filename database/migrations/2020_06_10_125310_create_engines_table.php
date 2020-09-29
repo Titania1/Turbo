@@ -17,11 +17,11 @@ class CreateEnginesTable extends Migration
 	{
 		Schema::create('engines', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('internal_id')->nullable()->index('engines_catalog');
-			$table->foreignId('vehicle_id')->constrained();
-			$table->string('type')->index();
-			$table->string('slug');
-			$table->string('interval');
+			$table->unsignedBigInteger('internal_id')->unique()->index('engines_catalog');
+			$table->foreignId('brand_id')->constrained();
+			$table->string('motor_code')->index();
+			$table->unique(['brand_id', 'motor_code']);
+			$table->string('interval')->nullable();
 			$table->string('power');
 			$table->string('capacity');
 			$table->string('construction')->nullable();
@@ -38,7 +38,7 @@ class CreateEnginesTable extends Migration
 			$table->unsignedTinyInteger('cylinders')->nullable();
 			$table->unsignedTinyInteger('valves')->nullable();
 			$table->unsignedTinyInteger('bearings')->nullable();
-			$table->string('motor_code');
+			$table->string('slug');
 			$table->timestamps();
 		});
 	}

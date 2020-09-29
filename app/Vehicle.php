@@ -60,11 +60,6 @@ class Vehicle extends Eloquent
 		return $this->belongsTo(Model::class);
 	}
 
-	public function engines()
-	{
-		return $this->hasMany(Engine::class);
-	}
-
 	/**
 	 * Get the index name for the model.
 	 *
@@ -119,5 +114,10 @@ class Vehicle extends Eloquent
 	public function compatibileParts(): BelongsToMany
 	{
 		return $this->belongsToMany(Part::class);
+	}
+
+	public function cars()
+	{
+		return $this->hasMany(Car::class);
 	}
 }

@@ -17,7 +17,7 @@ class BrandSeeder extends Seeder
 	{
 		Storage::disk('public')->deleteDirectory('brands');
 		Storage::disk('public')->makeDirectory('brands');
-		require_once dirname(__FILE__, 2) . '/data/brands.php';
+		require_once dirname(__FILE__, 2) . '/data/demo.php';
 		$this->seedManufacturers($manufacturers);
 		$this->seedCommercialManufacturers($commercialVehicles);
 	}

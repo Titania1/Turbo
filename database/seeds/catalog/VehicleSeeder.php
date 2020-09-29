@@ -8,15 +8,18 @@ use App\Model;
 use App\Vehicle;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
+use Illuminate\Database\QueryException;
 
 class VehicleSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
+	 *
+	 * @return void
 	 */
 	public function run(): void
 	{
-		$models = Model::select('id', 'name')->get();
+		$models = Model::select('id', 'name', 'brand_id')->get();
 		foreach ($models as $model) {
 			$this->seedVehiclesOfModel($model);
 		}
@@ -24,18 +27,20 @@ class VehicleSeeder extends Seeder
 
 	private function seedVehiclesOfModel(Model $model): void
 	{
-		$vehicles = $this->getVehiclesByModel($model->name);
+		$vehicles = $this->getVehiclesByModel($model);
 		foreach ($vehicles as $vehicle) {
 			$this->create($vehicle, $model->id);
 		}
 	}
 
-	private function getVehiclesByModel(string $name): Collection
+	private function getVehiclesByModel(Model $model): Collection
 	{
 		return \DB::connection('tecdoc')
 			->table('models')
 			->select('id', 'From', 'To', 'Description')
-			->where('Description', 'LIKE', $name . '%')
+			->where('ManufacturerId', $model->brand->internal_id)
+			->where('CanBeDisplayed', 1)
+			->where('Description', 'LIKE', $model->name . '%')
 			->get();
 	}
 
@@ -43,14 +48,17 @@ class VehicleSeeder extends Seeder
 	{
 		$to = ($vehicle->To == '0000-00-00') ? null : $vehicle->To;
 		$from = ($vehicle->From == '0000-00-00') ? null : $vehicle->From;
-
-		Vehicle::create([
-			'internal_id' => $vehicle->id,
-			'model_id' => $model_id,
-			'from' => $from,
-			'to' => $to,
-			'name' => $vehicle->Description,
-			'slug' => sluggify($vehicle->Description),
-		]);
+		try {
+			Vehicle::create([
+				'internal_id' => $vehicle->id,
+				'model_id' => $model_id,
+				'from' => $from,
+				'to' => $to,
+				'name' => $vehicle->Description,
+				'slug' => sluggify($vehicle->Description),
+			]);
+		} catch (QueryException $exception) {
+			// Do nothing
+		}
 	}
 }

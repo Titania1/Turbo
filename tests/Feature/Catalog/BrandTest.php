@@ -10,11 +10,10 @@ use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 
 class BrandTest extends TestCase
 {
-	use DatabaseMigrations, RefreshDatabase;
+	use RefreshDatabase;
 
 	public function setUp(): void
 	{

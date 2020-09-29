@@ -43,7 +43,6 @@ class LoginTest extends TestCase
 	/** @test */
 	public function a_user_can_login_by_email(): void
 	{
-		$this->withoutExceptionHandling();
 		$this->post('/login', [
 			'email' => $this->user->email,
 			'password' => 'password',

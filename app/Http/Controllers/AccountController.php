@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\ChangePasswordRequest;
 
 class AccountController extends Controller
@@ -15,9 +16,9 @@ class AccountController extends Controller
 	 * Change the current account password.
 	 *
 	 * @param \App\Http\Requests\ChangePasswordRequest $request Validated change request.
-	 * @return redirect Redirect back with success message.
+	 * @return \Illuminate\Http\RedirectResponse Redirect back with success message.
 	 **/
-	public function changePassword(ChangePasswordRequest $request)
+	public function changePassword(ChangePasswordRequest $request): RedirectResponse
 	{
 		$user = User::find(auth()->id());
 		$user->password = bcrypt($request->new_password);

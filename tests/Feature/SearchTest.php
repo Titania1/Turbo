@@ -26,13 +26,13 @@ class SearchTest extends TestCase
 	 *
 	 * @return void
 	 */
-	public function test_vehicle_parts_search()
+	public function test_vehicle_parts_search(): void
 	{
 		Vehicle::withoutSyncingToSearch(function () {
 			$brand = factory(Brand::class)->create();
 			$model = factory(Model::class)->create(['brand_id' => $brand->id]);
 			$vehicle = factory(Vehicle::class)->create(['model_id' => $model->id]);
-			$engine = factory(Engine::class)->create(['vehicle_id' => $vehicle->id]);
+			$engine = factory(Engine::class)->create(['brand_id' => $brand->id]);
 			$response = $this->post('/search', [
 				'year' => $vehicle->from,
 				'brand' => $brand->id,

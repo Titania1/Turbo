@@ -69,18 +69,23 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Engine extends Model
 {
-	public function vehicle()
+	public function brand()
 	{
-		return $this->belongsTo(Vehicle::class);
+		return $this->belongsTo(Brand::class);
 	}
 
 	public function categories()
 	{
-		return $this->hasMany(Category::class);
+		return $this->belongsToMany(Category::class);
 	}
 
 	public function getRouteKey()
 	{
 		return $this->id . '/' . $this->slug;
+	}
+
+	public function cars()
+	{
+		return $this->belongsToMany(Car::class);
 	}
 }

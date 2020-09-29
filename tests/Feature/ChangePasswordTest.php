@@ -40,7 +40,6 @@ class ChangePasswordTest extends TestCase
 	 **/
 	public function testUsersCanConfirmPassword(): void
 	{
-		$this->withoutExceptionHandling();
 		$response = $this->post('/password/confirm', ['password' => 'password']);
 		$response->assertRedirect('/dashboard');
 		$response = $this->get('/account/password');

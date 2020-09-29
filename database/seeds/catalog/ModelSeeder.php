@@ -19,7 +19,7 @@ class ModelSeeder extends Seeder
 	public function run(): void
 	{
 		$this->prepareDirectory();
-		$brands = Brand::select('id', 'internal_id', 'slug')->get();
+		$brands = Brand::select('id', 'internal_id', 'is_commercial', 'slug')->get();
 		foreach ($brands as $brand) {
 			$this->seedModelsOfBrand($brand);
 		}
@@ -43,13 +43,13 @@ class ModelSeeder extends Seeder
 	{
 		return \DB::connection('tecdoc')
 			->table('models')
-			->select('id', 'Description')
+			->select('Description')
 			->where('ManufacturerId', $id)
 			->where('CanBeDisplayed', 1)
 			->get();
 	}
 
-	private function create(object $tecdoc_model, Brand $brand): int
+	private function create(object $tecdoc_model, Brand $brand): void
 	{
 		$name = strtok($tecdoc_model->Description, ' ');
 		$slug = sluggify($name);
@@ -59,8 +59,7 @@ class ModelSeeder extends Seeder
 		} else {
 			$src = 'data/models/not_commercial/' . $brand->slug . '_' . $slug . '.jpg';
 		}
-		$model = Model::create([
-			'internal_id' => $tecdoc_model->id,
+		Model::create([
 			'brand_id' => $brand->id,
 			'name' => $name,
 			'slug' => $slug,
@@ -73,9 +72,8 @@ class ModelSeeder extends Seeder
 				storage_path("app/public/$path")
 			);
 		} catch (Exception $ex) {
+			// Do nothing, couldn't find file
 		}
-
-		return $model->id;
 	}
 
 	private function prepareDirectory(): void

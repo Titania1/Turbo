@@ -13,7 +13,6 @@ class EngineTest extends TestCase
 	 */
 	public function testExample(): void
 	{
-		$this->withoutExceptionHandling();
 		$response = $this->get('/');
 
 		$response->assertStatus(200);

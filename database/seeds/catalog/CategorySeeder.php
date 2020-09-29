@@ -6,8 +6,10 @@ namespace App\Seeders;
 
 use App\Category;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\Client\RequestException;
 
 class CategorySeeder extends Seeder
 {
@@ -16,43 +18,100 @@ class CategorySeeder extends Seeder
 	 *
 	 * @return void
 	 */
-	public function run()
+	public function run(): void
 	{
-		$categories = \DB::connection('tecdoc')
+		$categories = $this->getCatalogCategories();
+		foreach($categories as $category) {
+			$grand_father = $this->create($category);
+			if ($grand_father) {
+				$sub_categories = $this->getCatalogCategories($grand_father->internal_id);
+				foreach ($sub_categories as $sub_category) {
+					$father = $this->create($sub_category, $grand_father->id);
+					if ($father) {
+						$sub_sub_categories = $this->getCatalogCategories($father->internal_id);
+						foreach ($sub_sub_categories as $kid) {
+							$grand_kid = $this->create($kid, $father->id);
+							if ($grand_kid) {
+								$this->copyImage($grand_kid);
+								$sub_sub_sub_categories = $this->getCatalogCategories($grand_kid->internal_id);
+								foreach ($sub_sub_sub_categories as $baby) {
+									$grand_grand_kid = $this->create($baby, $grand_kid->id);
+									if ($grand_grand_kid) {
+										$this->copyImage($grand_grand_kid);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	/**
+	 * undocumented function summary
+	 *
+	 * Undocumented function long description
+	 *
+	 * @param int $parent_id Description
+	 * @return \Illuminate\Support\Collection
+	 * @throws conditon
+	 **/
+	private function getCatalogCategories(int $parent_id = 0): Collection
+	{
+		return \DB::connection('tecdoc')
 			->table('search_trees')
-			->where('parent_node_id', 0)
-			->select('Description', 'tree_id', 'node_id')
+			->select('tree_id', 'node_id', 'Description')
+			->where('parent_node_id', $parent_id)
 			->get();
-		foreach ($categories->unique('Description') as $category) {
-			$parent_category = Category::create([
+	}
+
+	private function copyImage(Category $category)
+	{
+		$path = "app/public/categories/$category->id.png";
+		try {
+			copy(
+				base_path("data/categories/$category->internal_id.png"),
+				storage_path($path)
+			);
+			$category->image = $path;
+			$category->save();
+		} catch (\Exception $exception) {
+			//
+		}
+	}
+
+	private function downloadImage(Category $category): void
+	{
+		// https://autodatabases.ru/2q2018/img/sections/100121.png
+		try {
+			$response = Http::get("https://autodatabases.ru/2q2018/img/sections/$category->internal_id.png");
+			// Illuminate\Http\Client\RequestException
+			if ($response->successful()) {
+				Storage::disk('public')->put("/categories/$category->internal_id.png", $response->body());
+				$category->image = "/categories/$category->internal_id.png";
+				// Storage::disk('public')->put("/categories/$category->id.png", $response->body());
+				// $category->image = "/categories/$category->id.png";
+				$category->save();
+			}
+		} catch (RequestException $exception) {
+			$this->command->getOutput()
+			->writeln("<comment>{$category->internal_id} {$exception->response->status()}.</comment>");
+		}
+	}
+
+	private function create(object $category, $parent_id = null)
+	{
+		try {
+			return Category::create([
+				'category_id' => $parent_id,
 				'internal_id' => $category->node_id,
 				'tree_id' => $category->tree_id,
 				'name' => $category->Description,
 				'slug' => sluggify($category->Description),
 			]);
-			$sub_categories = \DB::connection('tecdoc')
-				->table('search_trees')
-				->where('parent_node_id', $parent_category->internal_id)
-				->select('Description', 'tree_id', 'node_id')
-				->get();
-			foreach ($sub_categories as $sub_category) {
-				$model = Category::create([
-					'category_id' => $parent_category->id,
-					'internal_id' => $sub_category->node_id,
-					'tree_id' => $sub_category->tree_id,
-					'name' => $sub_category->Description,
-					'slug' => sluggify($sub_category->Description),
-				]);
-				// https://autodatabases.ru/2q2018/img/sections/100121.png
-				$response = Http::get("https://autodatabases.ru/2q2018/img/sections/$sub_category->node_id.png");
-				if ($response->successful()) {
-					Storage::disk('public')->put("/categories/$model->internal_id.png", $response->body());
-					$model->image = "/categories/$model->internal_id.png";
-					// Storage::disk('public')->put("/categories/$model->id.png", $response->body());
-					// $model->image = "/categories/$model->id.png";
-					$model->save();
-				}
-			}
+		} catch (\Exception $ex) {
+			return false;
 		}
 	}
 }

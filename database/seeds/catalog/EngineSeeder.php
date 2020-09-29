@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Seeders;
 
+use App\Brand;
 use App\Engine;
-use App\Vehicle;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -14,72 +14,54 @@ class EngineSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
+	 *
+	 * @return void
 	 */
 	public function run(): void
 	{
-		$vehicles = Vehicle::select('id', 'internal_id')->pluck('id', 'internal_id');
-		foreach ($vehicles as $internal_id => $vehicle_id) {
-			foreach ($this->getCars((int) $internal_id) as $car) {
-				$this->createCarEngines((int) $vehicle_id, $car);
+		$brands = Brand::select('id', 'internal_id')->get();
+		foreach ($brands as $brand) {
+			$engines = $this->getBrandEngines($brand->internal_id);
+			foreach ($engines as $engine) {
+				$info = $this->getEngineInfo($engine->id);
+				Engine::create([
+					'brand_id' => $brand->id,
+					'internal_id' => $engine->id,
+					'motor_code' => $engine->Description,
+					'interval' => $this->query($info, 'ConstructionInterval'),
+					'power' => $this->query($info, 'Power'),
+					'capacity' => $this->query($info, 'Capacity'),
+					'construction' => $this->query($info, 'EngineConstruction'),
+					'fuel_mixture' => $this->query($info, 'FuelMixture'),
+					'charge' => $this->query($info, 'ChargeType'),
+					'cylinder_construction' => $this->query($info, 'CylinderConstruction'),
+					'engine_management' => $this->query($info, 'EngineManagement'),
+					'cooling_type' => $this->query($info, 'CoolingType'),
+					'compression' => $this->query($info, 'Compression'),
+					'torque' => $this->query($info, 'Torque'),
+					'bore' => $this->query($info, 'Bore'),
+					'stroke' => $this->query($info, 'Stroke'),
+					'fuel' => $this->query($info, 'FuelType'),
+					'bearings' => $this->query($info, 'NumberOfMainBearings'),
+					'cylinders' => $this->query($info, 'NumberOfCylinders'),
+					'valves' => $this->query($info, 'NumberOfValves'),
+					'slug' => sluggify($engine->Description),
+				]);
 			}
 		}
+
 	}
 
-	private function getCars(int $model_id): Collection
+	private function getBrandEngines(int $internal_id): Collection
 	{
 		return DB::connection('tecdoc')
-			->table('passengercars')
-			->where('Model', $model_id)
-			->select('Description', 'From', 'To', 'id')
+			->table('engines')
+			->where('manufacturer', $internal_id)
+			->where('CanBeDisplayed', 1)
+			// Description is the motor_code
+			// From & To are 0000-00-00, so we don't select them
+			->select('Description', 'id')
 			->get();
-	}
-
-	private function createCarEngines(int $vehicle_id, object $car): void
-	{
-		$car_id = $car->id;
-		$engine_links = $this->getEnginesLinks($car_id);
-		foreach ($engine_links as $engine_id) {
-			$motor_code = DB::connection('tecdoc')
-				->table('engines')
-				->where('id', $engine_id)
-				->select('Description', 'InternalID')
-				->first()
-				->Description;
-			$info = $this->getEngineInfo($engine_id);
-			Engine::create([
-				'internal_id' => $engine_id,
-				'vehicle_id' => $vehicle_id,
-				'type' => $car->Description,
-				'interval' => $this->query($info, 'ConstructionInterval'),
-				'power' => $this->query($info, 'Power'),
-				'capacity' => $this->query($info, 'Capacity'),
-				'construction' => $this->query($info, 'EngineConstruction'),
-				'fuel_mixture' => $this->query($info, 'FuelMixture'),
-				'charge' => $this->query($info, 'ChargeType'),
-				'cylinder_construction' => $this->query($info, 'CylinderConstruction'),
-				'engine_management' => $this->query($info, 'EngineManagement'),
-				'cooling_type' => $this->query($info, 'CoolingType'),
-				'compression' => $this->query($info, 'Compression'),
-				'torque' => $this->query($info, 'Torque'),
-				'bore' => $this->query($info, 'Bore'),
-				'stroke' => $this->query($info, 'Stroke'),
-				'fuel' => $this->query($info, 'FuelType'),
-				'bearings' => $this->query($info, 'NumberOfMainBearings'),
-				'cylinders' => $this->query($info, 'NumberOfCylinders'),
-				'valves' => $this->query($info, 'NumberOfValves'),
-				'motor_code' => $motor_code,
-			]);
-		}
-	}
-
-	private function getEnginesLinks(int $car_id): array
-	{
-		return DB::connection('tecdoc')
-			->table('passengercars_link_engines')
-			->where('car_id', $car_id)
-			->select('engine_id')
-			->pluck('engine_id')
-			->toArray();
 	}
 
 	private function getEngineInfo(int $engine_id)
@@ -105,17 +87,5 @@ class EngineSeeder extends Seeder
 		}
 
 		return null;
-	}
-
-	private function getCapacity(Collection $info): string
-	{
-		// We don't have capacity_technical in engines
-		$_1 = $this->query($info, 'Capacity_Technical'); // 1290 ccm
-		$_1 = rtrim($_1, 'm'); // 1290 cc
-		$_2 = $this->query($info, 'Capacity'); // 1,3 l
-		$_2 = rtrim($_2, ' l'); // 1,3
-		$_2 = number_format(str_replace(',', '.', $_2) * 100); // 130
-
-		return $_1 . ' - ' . $_2 . ' L';
 	}
 }

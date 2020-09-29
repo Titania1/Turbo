@@ -16,5 +16,6 @@ $factory->define(Vehicle::class, function (Faker $faker) {
 		'from' => $faker->biasedNumberBetween(1998, 2010, 'sqrt'),
 		'to' => $faker->biasedNumberBetween(2010, 2020, 'sqrt'),
 		'name' => $v['model'],
+		'internal_id' => 1,
 	];
 });

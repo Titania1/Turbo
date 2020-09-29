@@ -54,7 +54,7 @@ class Category extends Model implements HasMedia
 {
 	use HasRelationships, InteractsWithMedia;
 
-	protected $with = ['categories', 'types'];
+	// protected $with = ['categories', 'types'];
 
 	public function category()
 	{
@@ -146,5 +146,10 @@ class Category extends Model implements HasMedia
 	public function getIsParentAttribute(): bool
 	{
 		return (bool) ! $this->category_id;
+	}
+
+	public function engines()
+	{
+		return $this->belongsToMany(Engine::class);
 	}
 }

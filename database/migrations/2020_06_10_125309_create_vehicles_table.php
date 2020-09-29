@@ -17,13 +17,12 @@ class CreateVehiclesTable extends Migration
 	{
 		Schema::create('vehicles', function (Blueprint $table) {
 			$table->id();
-			$table->unsignedBigInteger('internal_id')->nullable()->index('catalog_vehicles');
+			$table->unsignedBigInteger('internal_id')->unique()->index('catalog_vehicles');
 			$table->foreignId('model_id')->constrained();
 			$table->date('from')->nullable();
 			$table->date('to')->nullable();
 			$table->string('name');
 			$table->string('slug');
-			$table->string('image')->nullable();
 			$table->timestamps();
 		});
 	}
