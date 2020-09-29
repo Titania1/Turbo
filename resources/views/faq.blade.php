@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('title', __('Frequently Asked Questions'))
-
 @section('content')
 <div class="block faq">
 	<div class="container container--max--xl">
@@ -89,7 +87,7 @@
 		</div>
 		<div class="faq__footer">
 			<div class="faq__footer-title">Still Have A Questions?</div>
-			<div class="faq__footer-subtitle">We will be happy to answer any questions you may have.</div><a href="contact-us-v1.html" class="btn btn-primary">Contact Us</a>
+			<div class="faq__footer-subtitle">We will be happy to answer any questions you may have.</div><a href="{{ route('contact')}} " class="btn btn-primary">Contact Us</a>
 		</div>
 	</div>
 </div>
