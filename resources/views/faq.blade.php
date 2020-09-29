@@ -1,9 +1,5 @@
 @extends('layouts.app')
 @section('title', __('Frequently Asked Questions'))
-
-
-<meta name="csrf-token" content="tKnsYZc5UH06z4868FBqbmm7I2pypaZ5tFtLjkX">
-
 @section('content')
 <div class="block faq">
 	<div class="container container--max--xl">
