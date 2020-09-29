@@ -20,6 +20,7 @@ class CreateCarsTable extends Migration
 			$table->string('type');
 			$table->date('from')->nullable();
 			$table->date('to')->nullable();
+			$table->unique(['vehicle_id', 'type']);
 			$table->timestamps();
 		});
 	}

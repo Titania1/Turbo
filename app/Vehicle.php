@@ -7,6 +7,7 @@ namespace App;
 use Laravel\Scout\Searchable;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
@@ -53,7 +54,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Vehicle extends Eloquent
 {
-	use Searchable;
+	use Searchable, HasRelationships;
 
 	public function model()
 	{
@@ -119,5 +120,10 @@ class Vehicle extends Eloquent
 	public function cars()
 	{
 		return $this->hasMany(Car::class);
+	}
+
+	public function engines()
+	{
+		return $this->hasManyDeep(Engine::class, [Car::class, 'car_engine']);
 	}
 }

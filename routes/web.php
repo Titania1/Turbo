@@ -57,23 +57,7 @@ Route::middleware('auth', 'verified')->group(function () {
 	});
 	Route::post('/parts/add', 'PartsController@store')->name('part.add');
 });
-Route::view('shop-list', 'shop-list');
-Route::view('shop-table', 'shop-table');
-Route::view('shop-right-sidebar', 'shop-right-sidebar');
-Route::view('shop-right-sidebar', 'shop-right-sidebar');
-Route::view('post-right', 'post-right');
-Route::view('post-left', 'post-left');
-Route::view('post-width', 'post-width');
-Route::view('blog-classic-left', 'blog-classic-left');
-Route::view('blog-classic-right', 'blog-classic-right');
-Route::view('category-3-sidebar', 'category-3-sidebar');
-Route::view('category-4-sidebar', 'category-4-sidebar');
-Route::view('category-5-sidebar', 'category-5-sidebar');
-Route::view('category-4-full', 'category-4-full');
-Route::view('category-5-full', 'category-5-full');
-Route::view('category-6-full', 'category-6-full');
-Route::view('category-7-full', 'category-7-full');
-Route::view('category-right-sidebar', 'category-right-sidebar');
+
 // Catalog routes
 
 Route::get('brands/{brand}/{slug?}', 'BrandsController@show')->name('brand');

@@ -41,7 +41,7 @@
 		"sadekd/nova-opening-hours-field": "^1.0",
 		"spatie/laravel-medialibrary": "^8.7.3",
 		"spatie/laravel-newsletter": "^4.8",
-		"staudenmeir/eloquent-has-many-deep": "^1.7",
+		"staudenmeir/eloquent-has-many-deep": "^1.12",
 		"titasgailius/search-relations": "^1.0",
 		"vyuldashev/nova-permission": "^2.9",
 		"whitecube/nova-page": "master"

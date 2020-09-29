@@ -88,4 +88,9 @@ class Engine extends Model
 	{
 		return $this->belongsToMany(Car::class);
 	}
+
+	public function getTypeAttribute()
+	{
+		return $this->cars()->select('type')->first()->type;
+	}
 }

@@ -79,7 +79,7 @@
 								{{ $engine->cylinders }}
 							</td>
 							<td class="wishlist__column--body wishlist__column--price">
-								@lang($engine->body_type)
+								@lang($engine->construction)
 							</td>
 							<td class="wishlist__column--body wishlist__column--price">
 								@lang($engine->fuel)

@@ -70,7 +70,7 @@ class VehiclesController extends Controller
 				$vehicle->slug,
 			]);
 		}
-		$engines = $vehicle->engines()->paginate(10);
+		$engines = $vehicle->engines()->get();
 
 		return view('vehicle', compact('vehicle', 'engines'));
 	}
