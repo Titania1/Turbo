@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "fe124a8d0cc46d2438345f32e4ad7b14",
+    "content-hash": "91f9bbbc10ad6617356a664312412b2b",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2203,16 +2203,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v12.3.1",
+            "version": "v12.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "9ca4eb279953be913480ff541c9f36c0dd76bf2e"
+                "reference": "1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/9ca4eb279953be913480ff541c9f36c0dd76bf2e",
-                "reference": "9ca4eb279953be913480ff541c9f36c0dd76bf2e",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102",
+                "reference": "1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102",
                 "shasum": ""
             },
             "require": {
@@ -2273,7 +2273,7 @@
                 "laravel",
                 "stripe"
             ],
-            "time": "2020-09-01T15:17:21+00:00"
+            "time": "2020-09-29T17:15:30+00:00"
         },
         {
             "name": "laravel/framework",
@@ -6025,16 +6025,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v7.56.0",
+            "version": "v7.57.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "987596ad7ca747ce498e13bc1e3d1a57fbeb94cc"
+                "reference": "e2475efff624c6b9b62e8ea14ba7ee4e417cbfe5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/987596ad7ca747ce498e13bc1e3d1a57fbeb94cc",
-                "reference": "987596ad7ca747ce498e13bc1e3d1a57fbeb94cc",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/e2475efff624c6b9b62e8ea14ba7ee4e417cbfe5",
+                "reference": "e2475efff624c6b9b62e8ea14ba7ee4e417cbfe5",
                 "shasum": ""
             },
             "require": {
@@ -6078,7 +6078,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2020-09-25T18:15:04+00:00"
+            "time": "2020-09-30T05:53:53+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
