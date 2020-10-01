@@ -5665,16 +5665,16 @@
         },
         {
             "name": "spatie/laravel-newsletter",
-            "version": "4.8.1",
+            "version": "4.8.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-newsletter.git",
-                "reference": "996aefb353a43eb30c09bbbbc967921d01639d56"
+                "reference": "246fc1bbfd17cfa1eb6808fcfe7632e8ad05545b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/996aefb353a43eb30c09bbbbc967921d01639d56",
-                "reference": "996aefb353a43eb30c09bbbbc967921d01639d56",
+                "url": "https://api.github.com/repos/spatie/laravel-newsletter/zipball/246fc1bbfd17cfa1eb6808fcfe7632e8ad05545b",
+                "reference": "246fc1bbfd17cfa1eb6808fcfe7632e8ad05545b",
                 "shasum": ""
             },
             "require": {
@@ -5727,7 +5727,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2020-09-09T09:31:58+00:00"
+            "time": "2020-09-30T22:15:21+00:00"
         },
         {
             "name": "spatie/laravel-permission",
