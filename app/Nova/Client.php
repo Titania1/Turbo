@@ -75,7 +75,11 @@ class Client extends Resource
 			Text::make(__('Name'), 'name')->required()->sortable(),
 			Text::make(__('Company'), 'company'),
 			Place::make(__('Address'), 'address')->hideFromIndex()->required(),
-			Number::make(__('Phone number'), 'phone')->required()->resolveUsing(fn ($phone) => 0 . $phone),
+			Number::make(__('Phone number'), 'phone')
+				->required()
+				->creationRules('unique:clients,phone')
+				->resolveUsing(fn ($phone) => 0 . $phone),
+
 			Text::make(__('Email'), 'email')
 				->sortable()
 				->rules('email', 'max:254')
@@ -86,7 +90,6 @@ class Client extends Resource
 			Text::make(__('Tax Card'), 'tax_card'),
 		];
 	}
-
 	/**
 	 * Get the cards available for the request.
 	 *
