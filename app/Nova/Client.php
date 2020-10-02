@@ -90,6 +90,7 @@ class Client extends Resource
 			Text::make(__('Tax Card'), 'tax_card'),
 		];
 	}
+
 	/**
 	 * Get the cards available for the request.
 	 *
