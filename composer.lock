@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f519651357f79bbaf9bed6eea4a43f2e",
+    "content-hash": "cfef667d4d333a36f7537bd28d82b920",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "ccb495dfb5368764a05b3fbb7b59cbde61a751ce"
+                "reference": "93318cc9ecd326f42b50e3317efc4333fe3cbd2c"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -5565,16 +5565,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.9.0",
+            "version": "8.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "464562a667b2f8ca0ed75aaa3bbf270decbb73a7"
+                "reference": "fca3f6ca7b847d389ffe4fedeec14a0c64588122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/464562a667b2f8ca0ed75aaa3bbf270decbb73a7",
-                "reference": "464562a667b2f8ca0ed75aaa3bbf270decbb73a7",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/fca3f6ca7b847d389ffe4fedeec14a0c64588122",
+                "reference": "fca3f6ca7b847d389ffe4fedeec14a0c64588122",
                 "shasum": ""
             },
             "require": {
@@ -5661,7 +5661,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-09-30T21:55:16+00:00"
+            "time": "2020-10-01T22:58:43+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
