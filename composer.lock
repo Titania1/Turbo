@@ -4264,16 +4264,16 @@
         },
         {
             "name": "pelmered/fake-car",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pelmered/fake-car.git",
-                "reference": "0c2267c5dc039ad88df517212d3998290d0ac8b0"
+                "reference": "a9f14c9cdb02655debef5e4abb40d491b0c5fd2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/0c2267c5dc039ad88df517212d3998290d0ac8b0",
-                "reference": "0c2267c5dc039ad88df517212d3998290d0ac8b0",
+                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/a9f14c9cdb02655debef5e4abb40d491b0c5fd2d",
+                "reference": "a9f14c9cdb02655debef5e4abb40d491b0c5fd2d",
                 "shasum": ""
             },
             "require": {
@@ -4307,7 +4307,7 @@
                 "faker",
                 "vehicle"
             ],
-            "time": "2019-09-06T14:09:50+00:00"
+            "time": "2020-10-01T10:29:44+00:00"
         },
         {
             "name": "phenx/php-font-lib",
