@@ -31,6 +31,7 @@ class CarSeeder extends Seeder
 						'type' => $car->Description,
 						'from' => $from,
 						'to' => $to,
+						'slug' => sluggify($car->Description),
 					]);
 				} catch (Exception $exception) {
 					// It's a duplicate

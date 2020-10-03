@@ -60,10 +60,14 @@ Route::middleware('auth', 'verified')->group(function () {
 
 // Catalog routes
 
-Route::get('brands/{brand}/{slug?}', 'BrandsController@show')->name('brand');
-Route::get('brands/{brand}/{brand_slug?}/models/{model}/{slug?}', 'ModelsController@show')->name('model');
-Route::get('brands/{brand}/{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}/{slug?}', 'VehiclesController@show')->name('vehicle');
-Route::get('brands/{brand}/{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}/{vehicle_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
+Route::prefix('brands/{brand}')->group(function() {
+	Route::get('{slug?}', 'BrandsController@show')->name('brand');
+	Route::prefix('{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}')->group(function() {
+		Route::get('{slug?}', 'VehiclesController@show')->name('vehicle');
+		Route::get('{vehicle_slug?}/cars/{car}/{car_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
+		Route::get('{vehicle_slug?}/cars/{car}/{slug?}', 'CarsController@show')->name('car');
+	});
+});
 
 Route::get('print/receipt/{receipt}', 'ReceiptsController@print');
 Route::get('/login/{provider}', 'Auth\LoginController@redirectToProvider')->where('provider', '(google|facebook)');

@@ -70,9 +70,9 @@ class VehiclesController extends Controller
 				$vehicle->slug,
 			]);
 		}
-		$engines = $vehicle->engines()->get();
+		$cars = $vehicle->cars()->get();
 
-		return view('vehicle', compact('vehicle', 'engines'));
+		return view('vehicle', compact('vehicle', 'cars'));
 	}
 
 	public function getVehiclesByModel(Request $request)

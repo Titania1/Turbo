@@ -1,5 +1,6 @@
+<div id="catalog" style="display: none;">
 <div class="block-space block-space--layout--after-header"></div>
-<div class="block block-brands block-brands--layout--columns-8-full" id="catalog" style="display: none;">
+<div class="block block-brands block-brands--layout--columns-8-full">
 	<div class="container">
 		<div class="product__tabs product-tabs">
 			<ul class="product-tabs__list">
@@ -44,4 +45,5 @@
 			</div>
 		</div>
 	</div>
+</div>
 </div>

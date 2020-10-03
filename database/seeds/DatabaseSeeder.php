@@ -33,7 +33,7 @@ class DatabaseSeeder extends Seeder
 		$this->call(GarageSeeder::class);
 	}
 
-	public function seedProducts(): void
+	private function seedProducts(): void
 	{
 		$this->call(CategorySeeder::class);
 		$this->call(TypeSeeder::class);
@@ -47,6 +47,7 @@ class DatabaseSeeder extends Seeder
 	 *
 	 * Calls scout flush artisan command
 	 *
+	 * @return void
 	 **/
 	private function clearSearchIndexes(): void
 	{
@@ -59,8 +60,9 @@ class DatabaseSeeder extends Seeder
 	 *
 	 * Delete and recreate storage directories
 	 *
+	 * @return void
 	 **/
-	public function cleanupStorage(): void
+	private function cleanupStorage(): void
 	{
 		Storage::disk('public')->deleteDirectory('categories');
 		Storage::disk('public')->makeDirectory('categories');

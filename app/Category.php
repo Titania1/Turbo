@@ -9,6 +9,9 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 /**
  * App\Category.
@@ -148,8 +151,19 @@ class Category extends Model implements HasMedia
 		return (bool) ! $this->category_id;
 	}
 
-	public function engines()
+	public function cars()
 	{
-		return $this->belongsToMany(Engine::class);
+		return $this->belongsToMany(Car::class);
+	}
+
+	public function products(): BelongsToMany
+	{
+		return $this->belongsToMany(Product::class);
+	}
+
+	public function carSubCategories(int $car_id): Collection
+	{
+		$ids = DB::table('car_category')->where('car_id', $car_id)->select('category_id')->pluck('category_id')->toArray();
+		return $this->categories()->whereIn('id', $ids)->get();
 	}
 }

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $vehicle->name)
+@section('title', $car->type)
 
 @section('content')
 <div class="block-header block-header--has-breadcrumb block-header--has-title">
@@ -16,13 +16,13 @@
 					</li>
 					<li class="breadcrumb__item breadcrumb__item--current breadcrumb__item--last" aria-current="page">
 						<span class="breadcrumb__item-link">
-							{{ $vehicle->name }}
+							{{ $car->type }}
 						</span>
 					</li>
 					<li class="breadcrumb__title-safe-area" role="presentation"></li>
 				</ol>
 			</nav>
-			<h1 class="block-header__title">{{ $vehicle->name }}</h1>
+			<h1 class="block-header__title">{{ $car->name }}</h1>
 		</div>
 	</div>
 </div>
@@ -38,7 +38,7 @@
 						<th class="wishlist__column--head wishlist__column--product">
 							@lang('Construction interval')
 						</th>
-						{{-- <th class="wishlist__column--head wishlist__column--product">
+						<th class="wishlist__column--head wishlist__column--product">
 							@lang('Power')
 						</th>
 						<th class="wishlist__column--head wishlist__column--product">
@@ -55,38 +55,44 @@
 						</th>
 						<th class="wishlist__column--head wishlist__column--product">
 							@lang('Engine code')
-						</th> --}}
+						</th>
 					</tr>
 				</thead>
 				<tbody>
-					@foreach ($cars as $car)
+					@foreach ($engines as $engine)
 						<tr class="wishlist__row--body">
 							<td class="wishlist__column--body wishlist__column--product">
-								<a href="{{ url('brands/'. $vehicle->model->brand->id . '/' . $vehicle->model->brand->slug . '/models/' . $vehicle->model->id . '/' . $vehicle->model->slug . '/vehicles/' . $vehicle->id . '/' . $vehicle->slug . '/cars/' . $car->id . '/' . $car->slug) }}">
-									{{ $car->type }}
+								<a href="{{ url(
+									'brands/'. $vehicle->model->brand->id . '/' . $vehicle->model->brand->slug .
+									'/models/' . $vehicle->model->id . '/' . $vehicle->model->slug .
+									'/vehicles/' . $vehicle->id . '/' . $vehicle->slug .
+									'/cars/' . $car->id . '/' . $car->slug .
+									'/engines/' . $engine->id . '/' . $engine->slug
+									) }}">
+									{{ $engine->type }}
 								</a>
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->from }} - {{ $car->to }}
-							</td>
-							{{-- <td class="wishlist__column--body wishlist__column--product">
-								{{ $car->power }}
+								{{ $engine->interval }}
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->capacity }}
+								{{ $engine->power }}
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->cylinders }}
+								{{ $engine->capacity }}
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								@lang($car->construction)
+								{{ $engine->cylinders }}
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								@lang($car->fuel)
+								@lang($engine->construction)
 							</td>
 							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->motor_code }}
-							</td> --}}
+								@lang($engine->fuel)
+							</td>
+							<td class="wishlist__column--body wishlist__column--product">
+								{{ $engine->motor_code }}
+							</td>
 						</tr>
 					@endforeach
 				</tbody>

@@ -9696,7 +9696,7 @@ select.form-control-sm {
 
 .categories-list__item img {
 	max-width: 100%;
-	height: auto;
+	height: 110px;
 }
 
 .categories-list__item:before {
@@ -9718,7 +9718,7 @@ select.form-control-sm {
 }
 
 .categories-list__item-products {
-	margin-top: 4px;
+	margin-bottom: 16px;
 	font-size: 14px;
 	color: #6c757d;
 }

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 
 /**
  * App\Vehicle.
@@ -117,12 +118,12 @@ class Vehicle extends Eloquent
 		return $this->belongsToMany(Part::class);
 	}
 
-	public function cars()
+	public function cars(): HasMany
 	{
 		return $this->hasMany(Car::class);
 	}
 
-	public function engines()
+	public function engines(): HasManyDeep
 	{
 		return $this->hasManyDeep(Engine::class, [Car::class, 'car_engine']);
 	}

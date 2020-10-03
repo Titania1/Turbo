@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Car;
+use App\Category;
 use App\Model;
 use App\Engine;
 use App\Vehicle;
@@ -25,9 +27,15 @@ class EnginesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Engine $engine, string $slug = null)
+	public function show(
+		Brand $brand, string $brand_slug = null,
+		Model $model, string $model_slug = null,
+		Vehicle $vehicle, string $vehicle_slug = null,
+		Car $car, string $car_slug = null,
+		Engine $engine, string $slug = null
+	)
 	{
-		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $vehicle_slug != $vehicle->slug || $slug != $engine->slug) {
+		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $vehicle_slug != $vehicle->slug || $car_slug != $car->slug || $slug != $engine->slug) {
 			return redirect()->route('engine', [
 				$brand->id,
 				$brand->slug,
@@ -35,13 +43,19 @@ class EnginesController extends Controller
 				$model->slug,
 				$vehicle->id,
 				$vehicle->slug,
+				$car->id,
+				$car->slug,
 				$engine->id,
 				$engine->slug,
 			]);
 		}
 
-		$categories = $engine->categories()->paginate(16);
+		$sidebar_categories = $car->categories()
+			->whereHas('category', fn ($q) => $q->groupBy('category_id'))
+			->get()
+			->groupBy('category_id');
 
-		return view('catalog.categories', compact('brand', 'model', 'vehicle', 'engine', 'categories'));
+		$categories = [];
+		return view('catalog.categories', compact('brand', 'model', 'vehicle', 'engine', 'car', 'categories', 'sidebar_categories'));
 	}
 }

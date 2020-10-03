@@ -7,7 +7,7 @@
 	<ul class="categories-list__body">
 		@foreach($models as $model)
 			<li class="categories-list__item">
-				<img src="{{ secure_asset('storage/' . $model->image) }}" alt="@lang('Photo')" >
+				<img src="{{ secure_asset('storage/' . $model->image) }}" alt="@lang('Photo')">
 				<div class="categories-list__item-name">
 					{{ $model->name }}
 				</div>

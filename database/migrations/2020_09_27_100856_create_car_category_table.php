@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCategoryEngineTable extends Migration
+class CreateCarCategoryTable extends Migration
 {
 	/**
 	 * Run the migrations.
@@ -15,10 +15,10 @@ class CreateCategoryEngineTable extends Migration
 	 */
 	public function up()
 	{
-		Schema::create('category_engine', function (Blueprint $table) {
+		Schema::create('car_category', function (Blueprint $table) {
 			$table->unsignedBigInteger('category_id');
-			$table->unsignedBigInteger('engine_id');
-			$table->unique(['category_id', 'engine_id']);
+			$table->unsignedBigInteger('car_id');
+			$table->unique(['category_id', 'car_id']);
 		});
 	}
 
@@ -29,6 +29,6 @@ class CreateCategoryEngineTable extends Migration
 	 */
 	public function down()
 	{
-		Schema::dropIfExists('category_engine');
+		Schema::dropIfExists('car_category');
 	}
 }

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Car extends Model
 {
+	public function getRouteKey(): string
+	{
+		return $this->id . '/' . $this->slug;
+	}
+
 	public function vehicle()
 	{
 		return $this->belongsTo(Vehicle::class);
@@ -16,5 +21,10 @@ class Car extends Model
 	public function engines()
 	{
 		return $this->belongsToMany(Engine::class);
+	}
+
+	public function categories()
+	{
+		return $this->belongsToMany(Category::class);
 	}
 }
