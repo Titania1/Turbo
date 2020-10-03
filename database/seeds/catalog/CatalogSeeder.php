@@ -8,8 +8,6 @@ class CatalogSeeder extends Seeder
 {
 	/**
 	 * Run the catalog database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -18,7 +16,6 @@ class CatalogSeeder extends Seeder
 		$this->clearSearchIndexes();
 		$this->cleanupStorage();
 		$this->callSeeders();
-
 	}
 
 	private function callSeeders(): void
@@ -42,7 +39,6 @@ class CatalogSeeder extends Seeder
 	 *
 	 * Calls scout flush artisan command
 	 *
-	 * @return void
 	 **/
 	private function clearSearchIndexes(): void
 	{
@@ -55,7 +51,6 @@ class CatalogSeeder extends Seeder
 	 *
 	 * Delete and recreate storage directories
 	 *
-	 * @return void
 	 **/
 	private function cleanupStorage(): void
 	{

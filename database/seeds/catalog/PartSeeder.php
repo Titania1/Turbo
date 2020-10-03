@@ -16,8 +16,6 @@ class PartSeeder extends Seeder
 {
 	/**
 	 * Seed parts.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{

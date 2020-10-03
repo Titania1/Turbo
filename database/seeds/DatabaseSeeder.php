@@ -47,7 +47,6 @@ class DatabaseSeeder extends Seeder
 	 *
 	 * Calls scout flush artisan command
 	 *
-	 * @return void
 	 **/
 	private function clearSearchIndexes(): void
 	{
@@ -60,7 +59,6 @@ class DatabaseSeeder extends Seeder
 	 *
 	 * Delete and recreate storage directories
 	 *
-	 * @return void
 	 **/
 	private function cleanupStorage(): void
 	{

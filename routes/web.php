@@ -60,9 +60,9 @@ Route::middleware('auth', 'verified')->group(function () {
 
 // Catalog routes
 
-Route::prefix('brands/{brand}')->group(function() {
+Route::prefix('brands/{brand}')->group(function () {
 	Route::get('{slug?}', 'BrandsController@show')->name('brand');
-	Route::prefix('{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}')->group(function() {
+	Route::prefix('{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}')->group(function () {
 		Route::get('{slug?}', 'VehiclesController@show')->name('vehicle');
 		Route::get('{vehicle_slug?}/cars/{car}/{car_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
 		Route::get('{vehicle_slug?}/cars/{car}/{slug?}', 'CarsController@show')->name('car');

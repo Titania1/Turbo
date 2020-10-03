@@ -5,13 +5,13 @@ declare(strict_types=1);
 namespace App;
 
 use Spatie\MediaLibrary\HasMedia;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\DB;
 
 /**
  * App\Category.
@@ -164,6 +164,7 @@ class Category extends Model implements HasMedia
 	public function carSubCategories(int $car_id): Collection
 	{
 		$ids = DB::table('car_category')->where('car_id', $car_id)->select('category_id')->pluck('category_id')->toArray();
+
 		return $this->categories()->whereIn('id', $ids)->get();
 	}
 }

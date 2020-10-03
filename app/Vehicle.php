@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App;
 
 use Laravel\Scout\Searchable;
+use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Illuminate\Database\Eloquent\Model as Eloquent;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 
 /**
  * App\Vehicle.

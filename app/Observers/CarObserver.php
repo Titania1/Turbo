@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Observers;
 
 use App\Car;
@@ -8,9 +10,6 @@ class CarObserver
 {
 	/**
 	 * Handle the car "creating" event.
-	 *
-	 * @param  \App\Car  $car
-	 * @return void
 	 */
 	public function creating(Car $car): void
 	{
@@ -19,9 +18,6 @@ class CarObserver
 
 	/**
 	 * Handle the car "updating" event.
-	 *
-	 * @param  \App\Car  $car
-	 * @return void
 	 */
 	public function updating(Car $car): void
 	{
