@@ -51,6 +51,7 @@ class CatalogSeeder extends Seeder
 	 *
 	 * Delete and recreate storage directories
 	 *
+	 * @return void
 	 **/
 	private function cleanupStorage(): void
 	{

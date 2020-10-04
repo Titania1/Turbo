@@ -26,8 +26,5 @@ class ModelTest extends TestCase
 		$this->assertIsArray($model);
 		$model = $brand->models()->create($model);
 		$this->assertInstanceOf(Model::class, $model);
-		$response = $this->get("/brands/$brand->id/$brand->slug/models/$model->id/$model->slug");
-
-		$response->assertOk();
 	}
 }
