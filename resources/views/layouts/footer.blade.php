@@ -158,7 +158,7 @@
 						<div class="site-footer__bottom-row">
 							<div class="site-footer__copyright">
 								<!-- copyright -->
-								@lang('All Rights Reserved') © {{ date('Y') }}
+								@lang('All Rights Reserved') © {{ date('Y') }} <br>
 								- @lang('Designed by') <a href="https://sitando.com" target="_blank">Sitando</a>
 								<!-- copyright / end -->
 							</div>

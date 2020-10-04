@@ -32,8 +32,8 @@
 					<li class="breadcrumb__title-safe-area" role="presentation"></li>
 				</ol>
 			</nav>
-			<h1 class="block-header__title">Sections de pièces: {{ "$brand->name $vehicle->name" }}</h1>
 			@include('partials.info_panel')
+			<h1 class="block-header__title">Sections de pièces: {{ "$brand->name $vehicle->name" }}</h1>
 		</div>
 	</div>
 </div>
