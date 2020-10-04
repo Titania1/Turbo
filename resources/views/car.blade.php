@@ -28,7 +28,7 @@
 </div>
 <div class="block">
 	<div class="container container--max--xl">
-		<div>
+		<div class="table-responsive">
 			<table class="table table-bordered table-hover">
 				<thead class="thead-dark">
 					<tr class="wishlist__row--head">

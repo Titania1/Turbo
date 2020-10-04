@@ -38,24 +38,6 @@
 						<th class="wishlist__column--head wishlist__column--product">
 							@lang('Construction interval')
 						</th>
-						{{-- <th class="wishlist__column--head wishlist__column--product">
-							@lang('Power')
-						</th>
-						<th class="wishlist__column--head wishlist__column--product">
-							@lang('Capacity')
-						</th>
-						<th class="wishlist__column--head wishlist__column--product">
-							@lang('Number of cylinders')
-						</th>
-						<th class="wishlist__column--head wishlist__column--product">
-							@lang('Body type')
-						</th>
-						<th class="wishlist__column--head wishlist__column--product">
-							@lang('Engine type')
-						</th>
-						<th class="wishlist__column--head wishlist__column--product">
-							@lang('Engine code')
-						</th> --}}
 					</tr>
 				</thead>
 				<tbody>
@@ -69,24 +51,6 @@
 							<td class="wishlist__column--body wishlist__column--product">
 								{{ $car->from }} - {{ $car->to }}
 							</td>
-							{{-- <td class="wishlist__column--body wishlist__column--product">
-								{{ $car->power }}
-							</td>
-							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->capacity }}
-							</td>
-							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->cylinders }}
-							</td>
-							<td class="wishlist__column--body wishlist__column--product">
-								@lang($car->construction)
-							</td>
-							<td class="wishlist__column--body wishlist__column--product">
-								@lang($car->fuel)
-							</td>
-							<td class="wishlist__column--body wishlist__column--product">
-								{{ $car->motor_code }}
-							</td> --}}
 						</tr>
 					@endforeach
 				</tbody>
