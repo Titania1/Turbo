@@ -1,160 +1,40 @@
 <div class="panel">
 	<ul class="atts" style="overflow: hidden;">
-		<div class="coll_s c_1" style="width: 33%; padding-left: 0%; float: left; clear: right;">
+		<div class="coll_s c_1">
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Year of issue</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : {{ $engine->interval }}</font>
-				</font>
-			</li>
+				<b> Year of issue </b> : {{ $engine->interval }} </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Power</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : {{ $engine->power }}</font>
-				</font>
-			</li>
+				<b> Power </b> : {{ $engine->power }} </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Engine displacement</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 0 ccm</font>
-				</font>
-			</li>
+				<b> Engine displacement </b> : 0 ccm </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Engine displacement, cm3</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 2967 ccm</font>
-				</font>
-			</li>
+				<b> Engine displacement, cm3 </b> : 2967 ccm </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Engine volume, l. </font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;">: 3 l</font>
-				</font>
-			</li>
+				<b> Engine volume, l. </b> : 3 l </li>
 		</div>
-		<div class="coll_s c_2" style="width: 33%; padding-left: 0%; float: left; clear: right;">
+		<div class="coll_s c_2">
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Number of valves</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 4</font>
-				</font>
-			</li>
+				<b> Number of valves </b> : 4 </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Number of cylinders</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 6</font>
-				</font>
-			</li>
+				<b> Number of cylinders </b> : 6 </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Motor type </font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;">: Diesel</font>
-				</font>
-			</li>
+				<b> Motor type </b> : Diesel </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Body</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : Hatchback</font>
-				</font>
-			</li>
+				<b> Body </b> : Hatchback </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Drive</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : Front wheel drive</font>
-				</font>
-			</li>
+				<b> Drive </b> : Front wheel drive </li>
 		</div>
-		<div class="coll_s c_3" style="width: 33%; padding-left: 0%; float: left; clear: right;">
+		<div class="coll_s c_3">
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Fuel</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : Diesel</font>
-				</font>
-			</li>
+				<b> Fuel </b> : Diesel </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Mixture</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : Direct injection</font>
-				</font>
-			</li>
+				<b> Mixture </b> : Direct injection </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">KBA number</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 0588 AQT</font>
-				</font>
-			</li>
+				<b> KBA number </b> : 0588 AQT </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">KBA number</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : 0588 AQX</font>
-				</font>
-			</li>
+				<b> KBA number </b> : 0588 AQX </li>
 			<li>
-				<b>
-					<font style="vertical-align: inherit;">
-						<font style="vertical-align: inherit;">Engine Code</font>
-					</font>
-				</b>
-				<font style="vertical-align: inherit;">
-					<font style="vertical-align: inherit;"> : CLAB</font>
-				</font>
-			</li>
+				<b> Engine Code </b> : CLAB </li>
 		</div>
 	</ul>
 </div>
