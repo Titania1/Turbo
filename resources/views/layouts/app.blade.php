@@ -67,7 +67,6 @@
 	<div id="quickview-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"></div>
 	<!-- quickview-modal / end -->
 	@include('partials.add_vehicle_modal')
-	@include('partials.vehicle_picker_modal')
 	@include('partials.photoswipe')
 	<!-- scripts -->
 	<script src="/vendor/jquery/jquery.min.js"></script>

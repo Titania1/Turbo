@@ -418,40 +418,9 @@
 			}, true);
 
 			$('.mobile-search__vehicle-picker').on('click', function() {
-				$('#vehicle-picker-modal').modal('show');
+				$('#catalog').toggle();
 			});
 		}
-	});
-
-	/*
-	// vehicle-picker-modal
-	*/
-	$(function() {
-		$('.vehicle-picker-modal').closest('.modal').each(function() {
-			const modal = $(this);
-
-			modal.on('hidden.bs.modal', function() {
-				modal.find('[data-panel]')
-					.removeClass('vehicle-picker-modal__panel--active')
-					.first()
-					.addClass('vehicle-picker-modal__panel--active');
-			});
-
-			modal.find('[data-to-panel]').on('click', function(event) {
-				event.preventDefault();
-
-				const toPanel = $(this).data('to-panel');
-				const currentPanel = modal.find('.vehicle-picker-modal__panel--active');
-				const nextPanel = modal.find('[data-panel="' + toPanel + '"]');
-
-				currentPanel.removeClass('vehicle-picker-modal__panel--active');
-				nextPanel.addClass('vehicle-picker-modal__panel--active');
-			});
-
-			modal.find('.vehicle-picker-modal__close, .vehicle-picker-modal__close-button').on('click', function() {
-				modal.modal('hide');
-			});
-		});
 	});
 
 	/*
