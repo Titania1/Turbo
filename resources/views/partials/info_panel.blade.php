@@ -1,3 +1,4 @@
+<h1 class="block-header__title">@lang('Engine Characteristics')</h1>
 <div class="panel">
 	<ul class="atts" style="overflow: hidden;">
 		<div class="coll_s c_1">
