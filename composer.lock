@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "0ed3e9c8d4455391d87eb61bb28bd0a6af641063"
+                "reference": "c01dba968e4e68a0215fbff6b2b43430880d42ba"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -8494,7 +8494,7 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.1.6",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
