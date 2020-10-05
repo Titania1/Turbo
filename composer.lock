@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cfef667d4d333a36f7537bd28d82b920",
+    "content-hash": "85815ed8c588dad5973e0d5ea1c884eb",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "0ed3e9c8d4455391d87eb61bb28bd0a6af641063"
+                "reference": "c01dba968e4e68a0215fbff6b2b43430880d42ba"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -5565,16 +5565,16 @@
         },
         {
             "name": "spatie/laravel-medialibrary",
-            "version": "8.9.1",
+            "version": "8.9.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-medialibrary.git",
-                "reference": "fca3f6ca7b847d389ffe4fedeec14a0c64588122"
+                "reference": "101bb63d411db177037ef71b55c9f325c6149efd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/fca3f6ca7b847d389ffe4fedeec14a0c64588122",
-                "reference": "fca3f6ca7b847d389ffe4fedeec14a0c64588122",
+                "url": "https://api.github.com/repos/spatie/laravel-medialibrary/zipball/101bb63d411db177037ef71b55c9f325c6149efd",
+                "reference": "101bb63d411db177037ef71b55c9f325c6149efd",
                 "shasum": ""
             },
             "require": {
@@ -5661,7 +5661,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-01T22:58:43+00:00"
+            "time": "2020-10-03T00:03:18+00:00"
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -6145,7 +6145,7 @@
         },
         {
             "name": "symfony/console",
-            "version": "v5.1.6",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
@@ -7953,7 +7953,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.6",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
@@ -8185,7 +8185,7 @@
         },
         {
             "name": "symfony/string",
-            "version": "v5.1.6",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
