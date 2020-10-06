@@ -39,7 +39,7 @@
 		"optimistdigital/nova-translatable": "master",
 		"pelmered/fake-car": "^1.4",
 		"sadekd/nova-opening-hours-field": "^1.0",
-		"spatie/laravel-medialibrary": "^8.9.3",
+		"spatie/laravel-medialibrary": "^8.10.1",
 		"spatie/laravel-newsletter": "^4.8",
 		"staudenmeir/eloquent-has-many-deep": "^1.12",
 		"titasgailius/search-relations": "^1.0",
