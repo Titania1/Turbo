@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "c01dba968e4e68a0215fbff6b2b43430880d42ba"
+                "reference": "e43277ebd454859b35fbb187fe14cc0c73793971"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -6603,7 +6603,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v5.1.6",
+            "version": "v5.1.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
