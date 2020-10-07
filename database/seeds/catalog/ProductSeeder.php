@@ -22,6 +22,14 @@ class ProductSeeder extends Seeder
 		}
 	}
 
+	/**
+	 * Get catalog products.
+	 *
+	 * Undocumented function long description
+	 *
+	 * @return type
+	 * @throws conditon
+	 **/
 	private function getCatalogProducts(): Collection
 	{
 		return DB::connection('tecdoc')

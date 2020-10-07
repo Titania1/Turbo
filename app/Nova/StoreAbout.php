@@ -80,6 +80,7 @@ class StoreAbout extends Resource
 	{
 		return [
 			ID::make()->sortable(),
+			// Blog
 		];
 	}
 

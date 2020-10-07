@@ -25,7 +25,9 @@ class CategoryProductSeeder extends Seeder
 	private function getProductIds(int $internal_id): array
 	{
 		return DB::connection('tecdoc')->table('tree_node_products')
-			->where('valid_state', 1)->where('itemId', $internal_id)
+			->where('itemId', $internal_id)
+			->where('valid_state', 1)
+			->where('tree_id', 1)
 			->where('product_id', '!=', 0)
 			->select('product_id')
 			->distinct('product_id')

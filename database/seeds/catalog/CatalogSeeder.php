@@ -29,8 +29,8 @@ class CatalogSeeder extends Seeder
 			\App\Seeders\CarEngineSeeder::class,
 			\App\Seeders\CategorySeeder::class,
 			\App\Seeders\CarCategorySeeder::class,
-			// \App\Seeders\ProductSeeder::class,
-			// \App\Seeders\CategoryProductSeeder::class,
+			\App\Seeders\ProductSeeder::class,
+			\App\Seeders\CategoryProductSeeder::class,
 		]);
 	}
 
