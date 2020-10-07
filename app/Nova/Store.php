@@ -20,6 +20,8 @@ class Store extends Resource
 
 	/**
 	 * Get the displayable label of the resource.
+	 *
+	 * @return string
 	 */
 	public static function label(): string
 	{
@@ -28,6 +30,8 @@ class Store extends Resource
 
 	/**
 	 * Get the displayable singular label of the resource.
+	 *
+	 * @return string
 	 */
 	public static function singularLabel(): string
 	{
@@ -94,10 +98,16 @@ class Store extends Resource
 	 *
 	 * @return array
 	 */
-	public function fields(Request $request)
+	public function fields(Request $request): array
 	{
 		return [
 			Text::make(__('Name'), 'name')->required()->rules('min:3|max:50'),
+			// Photo de profile, wajiha de mahal
+			// Logo
+			// Description
+			// Email
+			// Phone Number
+			// Fax
 			BelongsTo::make(__('User'), 'user', User::class)->canSee(function ($request) {
 				return $request->user()->hasRole('Super Admin');
 			}),

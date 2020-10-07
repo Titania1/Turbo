@@ -85,9 +85,9 @@ class StoreContact extends Resource
 	public function fields(Request $request)
 	{
 		return [
-			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(function ($request) {
-				return $request->user()->hasRole('Super Admin');
-			}),
+			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(fn ($request) =>
+				$request->user()->hasRole('Super Admin')
+			),
 			MapMarker::make(__('Address'))->defaultZoom(17)
 				->defaultLatitude(36.6966649)
 				->defaultLongitude(3.0922204)
@@ -97,10 +97,11 @@ class StoreContact extends Resource
 			Text::make(__('Email'), 'email')
 				->sortable()
 				->rules('nullable', 'email', 'max:254')
-				->creationRules('unique:users,email')
+				->creationRules('unique:store_contacts,email')
 				->updateRules('unique:store_contacts,email,{{ resourceId }}'),
 			PhoneNumber::make(__('Phone Number'), 'phone')->onlyCountries('DZ'),
 			Trix::make(__('Comment'), 'comment'),
+			// Links to social pages, FB, Twitter, YouTube, Insta, TikTok
 		];
 	}
 

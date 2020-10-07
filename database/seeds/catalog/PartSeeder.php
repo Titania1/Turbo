@@ -16,16 +16,20 @@ class PartSeeder extends Seeder
 {
 	/**
 	 * Seed parts.
+	 *
+	 * @return void
 	 */
 	public function run(): void
 	{
-		// // articles table in tecdoc containing 6 million records
-		// DB::connection('tecdoc')->table('articles') // Construct query
-		// 	// remove 999059 records
-		// 	->where('IsValid', 1) // Narrow down to valid (from 6722202 to 5723143)
-		// 	->select('DataSupplierArticleNumber', 'NormalizedDescription'); // Select necessary data
-		// // The searchable parts should be in the products table
-		// // We may not be able to use Algolia for searching by SKU
+		// Seed articles belonging to each category
+		// articles table in tecdoc containing 6 million records
+		DB::connection('tecdoc')->table('articles') // Construct query
+			// remove 999059 records
+			->where('IsValid', 1) // Narrow down to valid (from 6722202 to 5723143)
+			->select('DataSupplierArticleNumber', 'NormalizedDescription')
+			->get(); // Select necessary data
+		// The searchable parts should be in the products table
+		// We may not be able to use Algolia for searching by SKU
 		// Parts table should contain what the products table contains
 		$parts = DB::connection('tecdoc')
 			->table('products')

@@ -10,6 +10,8 @@ class CreateCategoryProductTable extends Migration
 {
 	/**
 	 * Run the migrations.
+	 *
+	 * @return void
 	 */
 	public function up(): void
 	{
@@ -22,6 +24,8 @@ class CreateCategoryProductTable extends Migration
 
 	/**
 	 * Reverse the migrations.
+	 *
+	 * @return void
 	 */
 	public function down(): void
 	{
