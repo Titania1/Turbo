@@ -27,7 +27,7 @@
 		"jubeki/nova-card-linkable": "^1.1",
 		"kabbouchi/nova-logs-tool": "^0.3.0",
 		"laravel/cashier": "^12.4",
-		"laravel/framework": "^7.0",
+		"laravel/framework": "^7.28",
 		"laravel/helpers": "^1.2",
 		"laravel/horizon": "^4.3",
 		"laravel/nova": "*",
