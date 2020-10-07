@@ -2203,16 +2203,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v12.4.0",
+            "version": "v12.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier-stripe.git",
-                "reference": "1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102"
+                "reference": "4775da2ddb76c8e04020bb2445930689f2e4ce70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102",
-                "reference": "1f5cf6b0068e6edf1d14689b1cd8fdf0b3025102",
+                "url": "https://api.github.com/repos/laravel/cashier-stripe/zipball/4775da2ddb76c8e04020bb2445930689f2e4ce70",
+                "reference": "4775da2ddb76c8e04020bb2445930689f2e4ce70",
                 "shasum": ""
             },
             "require": {
@@ -2273,7 +2273,7 @@
                 "laravel",
                 "stripe"
             ],
-            "time": "2020-09-29T17:15:30+00:00"
+            "time": "2020-10-06T15:16:45+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "150c8dfac40e0b31ac9eb059d94529179ce018dd"
+                "reference": "2c1aed13eb11703743be401acaf14522360cd922"
             },
             "require": {
                 "brick/money": "^0.5.0",
