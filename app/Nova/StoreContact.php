@@ -85,8 +85,7 @@ class StoreContact extends Resource
 	public function fields(Request $request)
 	{
 		return [
-			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(fn ($request) =>
-				$request->user()->hasRole('Super Admin')
+			BelongsTo::make(__('Store'), 'store', Store::class)->canSee(fn ($request) => $request->user()->hasRole('Super Admin')
 			),
 			MapMarker::make(__('Address'))->defaultZoom(17)
 				->defaultLatitude(36.6966649)

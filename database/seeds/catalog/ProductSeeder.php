@@ -13,8 +13,6 @@ class ProductSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -25,11 +23,10 @@ class ProductSeeder extends Seeder
 	}
 
 	/**
-	 * Get catalog products
+	 * Get catalog products.
 	 *
 	 * Undocumented function long description
 	 *
-	 * @param Type $var Description
 	 * @return type
 	 * @throws conditon
 	 **/

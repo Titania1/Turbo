@@ -8,8 +8,6 @@ class CatalogSeeder extends Seeder
 {
 	/**
 	 * Run the catalog database seeds.
-	 *
-	 * @return void
 	 */
 	public function run(): void
 	{
@@ -41,7 +39,6 @@ class CatalogSeeder extends Seeder
 	 *
 	 * Calls scout flush artisan command
 	 *
-	 * @return void
 	 **/
 	private function clearSearchIndexes(): void
 	{

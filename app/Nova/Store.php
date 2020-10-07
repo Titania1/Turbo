@@ -20,8 +20,6 @@ class Store extends Resource
 
 	/**
 	 * Get the displayable label of the resource.
-	 *
-	 * @return string
 	 */
 	public static function label(): string
 	{
@@ -30,8 +28,6 @@ class Store extends Resource
 
 	/**
 	 * Get the displayable singular label of the resource.
-	 *
-	 * @return string
 	 */
 	public static function singularLabel(): string
 	{
@@ -95,8 +91,6 @@ class Store extends Resource
 
 	/**
 	 * Get the fields displayed by the resource.
-	 *
-	 * @return array
 	 */
 	public function fields(Request $request): array
 	{
