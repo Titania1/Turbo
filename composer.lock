@@ -2565,7 +2565,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "8bd04e8de3c245038c69db2fc24ce4780c13b1de"
+                "reference": "b810fe25269a4fbf962703075e521728d16b709d"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -8691,16 +8691,16 @@
         },
         {
             "name": "titasgailius/search-relations",
-            "version": "1.0.5",
+            "version": "1.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/TitasGailius/nova-search-relations.git",
-                "reference": "dc043261b954fca72b85ae208d52b27276385c30"
+                "reference": "ac999c8d3230573fe5bb81f50cbabfaa62da26c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/TitasGailius/nova-search-relations/zipball/dc043261b954fca72b85ae208d52b27276385c30",
-                "reference": "dc043261b954fca72b85ae208d52b27276385c30",
+                "url": "https://api.github.com/repos/TitasGailius/nova-search-relations/zipball/ac999c8d3230573fe5bb81f50cbabfaa62da26c0",
+                "reference": "ac999c8d3230573fe5bb81f50cbabfaa62da26c0",
                 "shasum": ""
             },
             "require": {
@@ -8723,7 +8723,7 @@
                 "relations",
                 "search"
             ],
-            "time": "2019-03-15T08:17:44+00:00"
+            "time": "2020-10-09T09:25:10+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
