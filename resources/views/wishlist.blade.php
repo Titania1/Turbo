@@ -83,7 +83,7 @@
 									@endif
 								</div>
 							</div>
-						</td>
+						</td>z
 						<td class="wishlist__column wishlist__column--body wishlist__column--price">
 							{{ $item->price }}
 						</td>
@@ -99,9 +99,8 @@
 				@endforeach
 			</tbody>
 		</table>
-		@else
-		@lang('No parts added to wishlist')
-		@endif
+
+@endif
 	</div>
 </div>
 <div class="block-space block-space--layout--before-footer"></div>
