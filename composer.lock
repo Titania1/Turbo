@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6556f209d6e6703744178c469d2a2c33",
+    "content-hash": "e599e4cd6bd1ab544cf9d0c658a8a4d3",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -2571,7 +2571,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova",
-                "reference": "2019a123e0b0156f35af50dea5b3984d01dc2f14"
+                "reference": "ccb495dfb5368764a05b3fbb7b59cbde61a751ce"
             },
             "require": {
                 "brick/money": "^0.5.0",
@@ -9708,16 +9708,16 @@
         },
         {
             "name": "facade/ignition",
-            "version": "2.3.8",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facade/ignition.git",
-                "reference": "e8fed9c382cd1d02b5606688576a35619afdf82c"
+                "reference": "9fc6c3d3de5271a1b94cff19dce2c9295abf0ffa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facade/ignition/zipball/e8fed9c382cd1d02b5606688576a35619afdf82c",
-                "reference": "e8fed9c382cd1d02b5606688576a35619afdf82c",
+                "url": "https://api.github.com/repos/facade/ignition/zipball/9fc6c3d3de5271a1b94cff19dce2c9295abf0ffa",
+                "reference": "9fc6c3d3de5271a1b94cff19dce2c9295abf0ffa",
                 "shasum": ""
             },
             "require": {
@@ -9776,7 +9776,7 @@
                 "laravel",
                 "page"
             ],
-            "time": "2020-10-01T23:01:14+00:00"
+            "time": "2020-10-14T08:59:59+00:00"
         },
         {
             "name": "facade/ignition-contracts",
