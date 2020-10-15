@@ -2884,16 +2884,16 @@
         },
         {
             "name": "laravie/serialize-queries",
-            "version": "v0.2.0",
+            "version": "v0.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravie/serialize-queries.git",
-                "reference": "cb98fc941da65d3ee3cef32fb1599bbffa689138"
+                "reference": "8e0d2a3b4cb2d65e8597c0f1f195c45c99909f85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravie/serialize-queries/zipball/cb98fc941da65d3ee3cef32fb1599bbffa689138",
-                "reference": "cb98fc941da65d3ee3cef32fb1599bbffa689138",
+                "url": "https://api.github.com/repos/laravie/serialize-queries/zipball/8e0d2a3b4cb2d65e8597c0f1f195c45c99909f85",
+                "reference": "8e0d2a3b4cb2d65e8597c0f1f195c45c99909f85",
                 "shasum": ""
             },
             "require": {
@@ -2936,7 +2936,7 @@
                     "type": "liberapay"
                 }
             ],
-            "time": "2020-10-03T13:06:07+00:00"
+            "time": "2020-10-14T22:51:14+00:00"
         },
         {
             "name": "league/commonmark",
