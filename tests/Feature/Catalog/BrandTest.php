@@ -23,7 +23,7 @@ class BrandTest extends TestCase
 	}
 
 	/**
-	 * Test brand models collection
+	 * Test brand models collection.
 	 *
 	 * Assert that a brand can have many models.
 	 *
@@ -33,8 +33,6 @@ class BrandTest extends TestCase
 	 * Hit the brand route
 	 * Assert that we can see the brand name
 	 * Assert a successful HTTP status code
-	 *
-	 * @return void
 	 */
 	public function test_brand_models_collection(): void
 	{
