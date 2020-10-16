@@ -23,19 +23,29 @@ class BrandTest extends TestCase
 	}
 
 	/**
-	 * A basic feature test example.
+	 * Test brand models collection
+	 *
+	 * Assert that a brand can have many models.
+	 *
+	 * Create a fake brand.
+	 * Attach two instances of fake models to that brand.
+	 * Assert that brand models is an instance of eloquent collection
+	 * Hit the brand route
+	 * Assert that we can see the brand name
+	 * Assert a successful HTTP status code
 	 *
 	 * @return void
 	 */
-	public function testExample()
+	public function test_brand_models_collection(): void
 	{
 		$brand = create(Brand::class);
 		$brand->models()->createMany(
+			// 'make' => temporary non persisted instances
 			create(Model::class, [], 'make', 2)->toArray()
 		);
 		$this->assertInstanceOf(Collection::class, $brand->models);
 		$response = $this->get(route('brand', $brand));
 		$response->assertSee($brand->name);
-		$response->assertStatus(200);
+		$response->assertOk();
 	}
 }

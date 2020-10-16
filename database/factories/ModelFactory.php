@@ -7,8 +7,6 @@ declare(strict_types=1);
 use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
-	return [
-		'name' => $faker->word,
-	];
-});
+$factory->define(Model::class, fn (Faker $faker) => [
+	'name' => $faker->unique()->word,
+]);
