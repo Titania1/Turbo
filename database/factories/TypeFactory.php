@@ -8,6 +8,7 @@ use App\Type;
 use Faker\Generator as Faker;
 
 $factory->define(Type::class, fn (Faker $faker) => [
+	'tree_id' => 1,
 	'name' => $faker->unique()->word,
 	'image' => 'types/' . $faker->file(
 		$sourceDir = 'data/departments',

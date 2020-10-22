@@ -15,7 +15,7 @@ class SupplierObserver
 	 */
 	public function creating(Supplier $supplier)
 	{
-		$supplier->owner_id = auth()->id();
+		auth()->check() ? $supplier->owner_id = auth()->id() : '';
 	}
 
 	/**
