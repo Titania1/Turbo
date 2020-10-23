@@ -25,7 +25,7 @@ class OrderSeeder extends Seeder
 				factory(Order::class, 5)->create([
 					'supplier_id' => $supplier,
 					'user_id' => $user,
-				])->each(fn ($order) => $order->attach($parts));
+				])->each(fn ($order) => $order->parts()->attach($parts));
 			}
 		}
 	}
