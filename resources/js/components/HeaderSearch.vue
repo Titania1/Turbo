@@ -7,12 +7,12 @@
 			type="text"
 			:placeholder="$t('Enter Keyword or Part Number')"
 		/>
-		<button class="search__button search__button--start" type="button" @click="toggleCatalog">
+		<!-- <button class="search__button search__button--start" type="button" @click="toggleCatalog">
 			<span class="search__button-icon">
 				<svg-car></svg-car>
 			</span>
 			<span class="search__button-title">{{ $t('Show Catalog') }}</span>
-		</button>
+		</button> -->
 		<button class="search__button search__button--end" type="button" @click="toggleFinder">
 			<span class="search__button-icon">
 				<svg-magnifier></svg-magnifier>
