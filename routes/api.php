@@ -64,18 +64,16 @@ Route::post('/contact', 'ContactController@send');
 
 // ## Articles
 
-Route::get('nova-api/articles/count', 'CatalogCountController@articles');
+Route::get('/articles/count', 'CatalogCountController@articles');
 
-// ## Langues
+// Langues
 Route::get('/lang/{locale}', 'LocalizationController@switch')
 	->name('locale')
 	->where('locale', '(en|fr|ar)');
 Route::get('/', 'PagesController@index');
 
-Route::post('/search', 'SearchController@search')->name('search');
-Route::view('/about', 'about')->name('about');
-Route::get('/part/{part}', 'PartsController@show')->name('part');
-Route::view('/track-order', 'track-order')->name('track');
+Route::get('/part/{part}', '\API\PartsController@show');
+Route::view('/track-order', 'track-order');
 
 
 Route::get('/categories/{category}', 'CategoriesController@show')->name('category');
@@ -134,8 +132,3 @@ Route::prefix('wishlist')->group(function () {
 	Route::post('add/{part}', 'WishlistController@add');
 	Route::post('remove/{part}', 'WishlistController@remove');
 });
-
-
-
-
-

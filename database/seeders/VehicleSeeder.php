@@ -2,8 +2,11 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\Brand;
 use App\Vehicle;
+
 use Illuminate\Database\Seeder;
 
 class VehicleSeeder extends Seeder
@@ -19,3 +22,5 @@ class VehicleSeeder extends Seeder
 		}
 	}
 }
+
+

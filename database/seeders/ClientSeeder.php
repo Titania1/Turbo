@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\User;
 use App\Client;
 use Illuminate\Database\Seeder;

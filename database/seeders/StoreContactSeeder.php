@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
+namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class MessageSeeder extends Seeder
+class StoreContactSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.

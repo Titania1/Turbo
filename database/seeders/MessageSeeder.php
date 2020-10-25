@@ -2,16 +2,19 @@
 
 declare(strict_types=1);
 
-use App\Brand;
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
-class BrandSeeder extends Seeder
+class MessageSeeder extends Seeder
 {
 	/**
 	 * Run the database seeds.
+	 *
+	 * @return void
 	 */
-	public function run(): void
+	public function run()
 	{
-		factory(Brand::class, 2);
+		//
 	}
 }

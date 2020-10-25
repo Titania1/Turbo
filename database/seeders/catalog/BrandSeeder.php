@@ -7,6 +7,7 @@ namespace App\Seeders;
 use App\Brand;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class BrandSeeder extends Seeder
 {

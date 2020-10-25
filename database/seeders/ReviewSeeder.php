@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\Part;
 use App\Review;
 use Illuminate\Database\Seeder;

@@ -5,6 +5,9 @@
 /vendor
 .env
 .env.backup
+.env.dusk.local
+.phpunit.result.cache
+.php_cs.cache
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+namespace Database\Seeders;
+
 use App\User;
 use App\Supplier;
 use Illuminate\Database\Seeder;
@@ -15,12 +17,13 @@ class SupplierSeeder extends Seeder
 	 */
 	public function run()
 	{
-		$ids = User::select('id')->pluck('id');
+		$ids = User::select('id')->pluck('id')->toArray();
 		foreach ($ids as $id) {
 			// Create the user associated supplier (treated as a profile)
-			factory(Supplier::class)->create(['user_id' => $id]);
+			factory(Supplier::class)->create(['user_id' => $id, 'owner_id' => $id]);
 			// Create suppliers owner by the user
 			factory(Supplier::class, 5)->create(['owner_id' => $id]);
 		}
 	}
 }
+
