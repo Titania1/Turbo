@@ -32,7 +32,7 @@ class BrandsController extends Controller
 	}
 
 	/**
-	 * REturn the specified brand
+	 * Return the specified brand
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
@@ -43,3 +43,4 @@ class BrandsController extends Controller
 		], 200);
 	}
 }
+

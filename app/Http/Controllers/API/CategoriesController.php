@@ -38,7 +38,7 @@ class CategoriesController extends Controller
 	{
 		//
 	}
-
+	
 	/**
 	 * Display the specified resource.
 	 *

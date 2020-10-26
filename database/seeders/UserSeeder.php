@@ -29,3 +29,4 @@ class UserSeeder extends Seeder
 		factory(User::class, 50)->create();
 	}
 }
+
