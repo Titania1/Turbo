@@ -178,6 +178,6 @@ return [
 		'available'             => 'disponible',
 		'size'                  => 'taille',
 		'data.0.key_features' => 'Fonctionalitées',
-		'data.0.title' => 'titre'
+		'data.0.title' => 'titre',
 	],
 ];

@@ -156,8 +156,6 @@ class Part extends Resource
 
 	/**
 	 * Get the actions available for the resource.
-	 *
-	 * @return array
 	 */
 	public function actions(Request $request): array
 	{
