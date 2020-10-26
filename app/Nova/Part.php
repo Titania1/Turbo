@@ -67,13 +67,15 @@ class Part extends Resource
 	{
 		return [
 			Text::make(__('Reference'), 'sku')->sortable(),
-			Text::make(__('Title'), 'title')->required(),
+			Text::make(__('Title'), 'title')->creationRules('required', 'unique:parts,title'),
 			Trix::make(__('Description'), 'description'),
 			Image::make(__('Image'), 'image'),
 			Number::make(__('Price'), 'price')
 				->min(1)->max(1e6)->step(0.01)
 				->required()->displayUsing(fn ($p) => $p . ' DZD'),
-			KeyValue::make(__('Key Features'), 'key_features')->rules('json')
+			KeyValue::make(__('Key Features'), 'key_features')
+				->nullable()
+				->rules('json')
 				->keyLabel(__('Feature'))
 				->valueLabel(__('Value'))
 				->actionText(__('Add Another')),
@@ -81,7 +83,7 @@ class Part extends Resource
 			BatchLoadField::make()
 				->accept('.xlsx') // Optional
 				->defaultTabActive(1) // Optional
-				->ignoreAttributes('some_attribute_name') // Optional
+				->ignoreAttributes('key_features') // Optional
 				->keepOriginalFields('belongs|select|boolean'), // Optional
 			Number::make(__('Views'), fn ($part) => $part->views)->canSee(fn ($request) => $request->user()->can('See Part Views')),
 			NovaPreviewResource::make(__('Preview'))
@@ -157,7 +159,7 @@ class Part extends Resource
 	 *
 	 * @return array
 	 */
-	public function actions(Request $request)
+	public function actions(Request $request): array
 	{
 		return [
 			(new DownloadExcel)->except('image'),

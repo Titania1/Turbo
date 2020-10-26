@@ -18,8 +18,8 @@ class CreatePartsTable extends Migration
 		Schema::create('parts', function (Blueprint $table) {
 			$table->id();
 			$table->foreignId('user_id')->constrained();
-			$table->foreignId('vehicle_id')->constrained();
-			$table->string('title');
+			$table->foreignId('vehicle_id')->nullable()->constrained();
+			$table->string('title')->unique();
 			$table->text('excerpt')->nullable();
 			$table->text('description')->nullable();
 			$table->string('image')->nullable();

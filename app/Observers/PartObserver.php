@@ -13,8 +13,10 @@ class PartObserver
 	 */
 	public function creating(Part $part): void
 	{
-		$part->slug = sluggify($part->title);
-		$part->excerpt = str_limit($part->description, 200);
+		if ($part->title) {
+			$part->slug = sluggify($part->title);
+			$part->excerpt = str_limit($part->description, 200);
+		}
 		if (! $part->user_id && auth()->check()) {
 			$part->user_id = auth()->id();
 		}
