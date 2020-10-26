@@ -15,7 +15,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use phpDocumentor\Reflection\Types\This;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**

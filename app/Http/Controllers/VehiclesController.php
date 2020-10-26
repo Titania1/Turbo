@@ -4,12 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Brand;
 use App\Car;
+use App\Brand;
 use App\Model;
-use App\Engine;
 use App\Vehicle;
-use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\BrandModelsRequest;
@@ -95,6 +93,7 @@ class VehiclesController extends Controller
 	{
 		$car = Car::find($request->engine);
 		$categories = $car->categories()->where('categories.category_id', null)->select('id', 'name')->get();
+
 		return $categories;
 	}
 }
