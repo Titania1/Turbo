@@ -8,6 +8,7 @@ use App\Car;
 use App\Brand;
 use App\Model;
 use App\Vehicle;
+use Illuminate\Http\Request;
 
 class CarsController extends Controller
 {
@@ -34,5 +35,10 @@ class CarsController extends Controller
 		$engines = $car->engines()->paginate(16);
 
 		return view('car', compact('brand', 'model', 'vehicle', 'car', 'engines'));
+	}
+
+	public function getCarsByVehicle(Request $request)
+	{
+		return Vehicle::find($request->vehicle)->cars()->select('id', 'type')->get();
 	}
 }

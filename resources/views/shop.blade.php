@@ -15,6 +15,7 @@
 					<h5>@lang('Shop')</h5>
 				</div>
 				<div class="card-divider"></div>
+				@if($parts->isNotEmpty())
 				<div class="card-body card-body--padding--2">
 					<div class="vehicles-list vehicles-list--layout--account">
 						<div class="vehicles-list__body">
@@ -40,6 +41,11 @@
 					</div>
 				</div>
 				<div class="card-divider"></div>
+				@else
+					<div class="card-body">
+						@lang('You have no parts yet')
+					</div>
+				@endif
 				<div class="card-header">
 					<h5 @click="addPart = !addPart" class="add_part_button">@lang('Add a part')</h5>
 				</div>
@@ -104,11 +110,11 @@
 								@enderror
 							</div>
 							<div class="vehicle-form__item vehicle-form__item--select">
-								<select class="form-control form-control-select2" aria-label="@lang('Type')" disabled id="select-type"
-									name="type">
-									<option value="null" selected>@lang('Select Type')</option>
+								<select class="form-control form-control-select2" aria-label="@lang('Part')" disabled id="shop-part"
+									name="part">
+									<option value="null" selected>@lang('Select Part')</option>
 								</select>
-								@error('type')
+								@error('part')
 								<span class="invalid-feedback" role="alert" style="display: block;">
 									<strong>{{ $message }}</strong>
 								</span>

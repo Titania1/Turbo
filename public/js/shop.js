@@ -1,6 +1,3 @@
-/*
-	.block-finder
-*/
 $(function() {
 	// Initialize searchable select elements
 	var selects = $('.form-control-select2');
@@ -64,6 +61,8 @@ $(function() {
 		})
 	});
 	// Catch the change event on the model select
+	// Get the cars for when a vehicle is selected
+	// Cars are displayed as if they are engines
 	$('#shop-vehicle').on('change', (event) => {
 		var selectedVehicle = $('#shop-vehicle').find(":selected").val();
 		// If user selected no vehicle, disable all other selects
@@ -74,7 +73,7 @@ $(function() {
 			$('#shop-category').prop('disabled', true).val('none');
 			return;
 		}
-		$.post('/api/getEnginesByVehicle', {
+		$.post('/api/getEnginesByCar', {
 			vehicle: selectedVehicle
 		}, (data) => {
 			var defaultOption = $('#shop-engine').children(":first")[0].outerHTML;
@@ -82,7 +81,31 @@ $(function() {
 			$('#shop-engine').append(defaultOption);
 			$.each(data, (engine) => {
 				var option = document.createElement('option');
-				$('#shop-engine').append($(option).attr('value', data[engine].id).html(data[engine].type + data[engine].motor_code));
+				$('#shop-engine').append($(option).attr('value', data[engine].id).html(data[engine].type));
+			});
+			// Enable shop engine select
+			$('#shop-engine').prop('disabled', false).val('none');
+		})
+	});
+	$('#shop-car').on('change', (event) => {
+		var selectedCar = $('#shop-car').find(":selected").val();
+		// If user selected no car, disable all other selects
+		if (selectedCar == 'none') {
+			$("#shop-engine").empty();
+			$("#shop-category").empty();
+			$('#shop-engine').prop('disabled', true).val('none');
+			$('#shop-category').prop('disabled', true).val('none');
+			return;
+		}
+		$.post('/api/getCarsByVehicle', {
+			vehicle: vehicle
+		}, (data) => {
+			var defaultOption = $('#shop-engine').children(":first")[0].outerHTML;
+			$("#shop-engine").empty();
+			$('#shop-engine').append(defaultOption);
+			$.each(data, (engine) => {
+				var option = document.createElement('option');
+				$('#shop-engine').append($(option).attr('value', data[engine].id).html(data[engine].motor_code));
 			});
 			// Enable shop engine select
 			$('#shop-engine').prop('disabled', false).val('none');
@@ -111,7 +134,26 @@ $(function() {
 			$('#shop-category').prop('disabled', false).val('none');
 		})
 	});
-	// $('#shop-fuel').on('change', (event) => {
-	// 	$('#submit-search').prop('disabled', false);
-	// });
+	$('#shop-category').on('change', (event) => {
+		var selectedCategory = $('#shop-category').find(":selected").val();
+		// If user selected no engine, disable all other selects
+		if (selectedCategory == 'none') {
+			$("#shop-part").empty();
+			$('#shop-part').prop('disabled', true).val('none');
+			return;
+		}
+		$.post('/api/getPartsByCategory', {
+			category: selectedCategory
+		}, (data) => {
+			var defaultOption = $('#shop-part').children(":first")[0].outerHTML;
+			$("#shop-part").empty();
+			$('#shop-part').append(defaultOption);
+			$.each(data, (part) => {
+				var option = document.createElement('option');
+				$('#shop-part').append($(option).attr('value', data[part].id).html(data[part].name));
+			});
+			// Enable shop category select
+			$('#shop-part').prop('disabled', false).val('none');
+		})
+	});
 });

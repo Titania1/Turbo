@@ -15,6 +15,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use phpDocumentor\Reflection\Types\This;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
@@ -96,8 +97,12 @@ class Part extends Model implements HasMedia, Buyable
 	protected $casts = [
 		'key_features' => 'array',
 		'price' => 'float',
-		'inStock' => 'bool',
 	];
+
+	public function getFeaturesAttribute()
+	{
+		return json_decode($this->key_features, true);
+	}
 
 	public function getBuyableIdentifier($options = null)
 	{

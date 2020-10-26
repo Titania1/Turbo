@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Category;
+use Illuminate\Http\Request;
+
+class ProductsController extends Controller
+{
+    public function getPartsByCategory(Request $request)
+	{
+		$category = Category::find($request->category);
+		$products = $category->products()->select('id', 'name')->get();
+		return $products;
+	}
+}

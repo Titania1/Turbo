@@ -46,7 +46,6 @@ class PartsController extends Controller
 	{
 		$part = new Part();
 		$part->vehicle_id = $request->vehicle;
-		$part->type_id = $request->type;
 		$part->title = $request->title;
 		$part->description = $request->description;
 		$part->key_features = json_encode(array_combine($request->keys, $request->features));
@@ -56,7 +55,9 @@ class PartsController extends Controller
 		}
 		$part->price = $request->price;
 		$part->sku = $request->sku;
-		$part->inStock::where('part_id', $this->id)->where('quantity', '>', 0)->exists();
+		// What is this doing????
+		// Let's check the part class for a potential scope function
+		// $part->inStock::where('part_id', $this->id)->where('quantity', '>', 0)->exists();
 		$part->save();
 
 		return back();

@@ -17,6 +17,7 @@ class BaseSeeder extends Seeder
 	 */
 	public function run()
 	{
+		$this->call(CatalogSeeder::class);
 		Artisan::call('admin:create');
 		$this->call(RoleSeeder::class);
 		$admin = User::first();

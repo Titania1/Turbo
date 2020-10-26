@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Brand;
+use App\Car;
 use App\Model;
 use App\Engine;
 use App\Vehicle;
@@ -82,19 +83,18 @@ class VehiclesController extends Controller
 		return $vehicles;
 	}
 
-	public function getEnginesByVehicle(Request $request)
+	public function getEnginesByCar(Request $request)
 	{
-		$engines = Engine::where('vehicle_id', $request->vehicle)->select('type', 'motor_code', 'id')->get();
-
-		return $engines;
+		return Vehicle::find($request->vehicle)
+					->cars()
+					->select('id', 'type')
+					->get();
 	}
 
 	public function getCategoriesByEngine(Request $request)
 	{
-		$categories = Category::where('engine_id', $request->engine)
-				->where('category_id', null)
-				->select('name', 'id')->get();
-
+		$car = Car::find($request->engine);
+		$categories = $car->categories()->where('categories.category_id', null)->select('id', 'name')->get();
 		return $categories;
 	}
 }

@@ -21,16 +21,16 @@ class CatalogSeeder extends Seeder
 	private function callSeeders(): void
 	{
 		$this->call([
-			\App\Seeders\BrandSeeder::class,
-			\App\Seeders\ModelSeeder::class,
-			\App\Seeders\VehicleSeeder::class,
-			\App\Seeders\CarSeeder::class,
-			\App\Seeders\EngineSeeder::class,
-			\App\Seeders\CarEngineSeeder::class,
-			\App\Seeders\CategorySeeder::class,
-			\App\Seeders\CarCategorySeeder::class,
-			\App\Seeders\ProductSeeder::class,
-			\App\Seeders\CategoryProductSeeder::class,
+			\App\Seeders\Catalog\BrandSeeder::class,
+			\App\Seeders\Catalog\ModelSeeder::class,
+			\App\Seeders\Catalog\VehicleSeeder::class,
+			\App\Seeders\Catalog\CarSeeder::class,
+			\App\Seeders\Catalog\EngineSeeder::class,
+			\App\Seeders\Catalog\CarEngineSeeder::class,
+			\App\Seeders\Catalog\CategorySeeder::class,
+			\App\Seeders\Catalog\CarCategorySeeder::class,
+			\App\Seeders\Catalog\ProductSeeder::class,
+			\App\Seeders\Catalog\CategoryProductSeeder::class,
 		]);
 	}
 
@@ -57,9 +57,8 @@ class CatalogSeeder extends Seeder
 		$folders = [
 			'avatars',
 			'brands',
-			'categories',
-			'parts',
-			'types',
+			// 'categories',
+			// 'types',
 		];
 		foreach ($folders as $folder) {
 			Storage::disk('public')->deleteDirectory($folder);

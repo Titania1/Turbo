@@ -80,6 +80,6 @@ export default {
 	margin-right: 8px;
 }
 .product__actions-item--addtocart .btn {
-	padding: 10px 16px;
+	padding: 10px 10px;
 }
 </style>

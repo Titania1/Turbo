@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', __('Home'))
+@section('title', config('app.name'))
 
 @section('content')
 <div class="block-space block-space--layout--after-header"></div>

@@ -19,7 +19,6 @@ class CreatePartsTable extends Migration
 			$table->id();
 			$table->foreignId('user_id')->constrained();
 			$table->foreignId('vehicle_id')->constrained();
-			$table->foreignId('type_id')->constrained();
 			$table->string('title');
 			$table->text('excerpt')->nullable();
 			$table->text('description')->nullable();

@@ -559,5 +559,9 @@
 	"Engine code": "Codes moteur",
 	"Saloon": "A trois volumes",
 	"Petrol": "Essence",
-	"Value": "Valeur"
+	"Value": "Valeur",
+	"Select Brand": "Selection marque",
+	"You have no parts yet": "Vous n'avez pas encore des pieces",
+	"Advanced Search": "Recherche Avancée",
+	"In Stock": "Disponible"
 }

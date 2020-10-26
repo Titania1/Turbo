@@ -7,9 +7,9 @@ declare(strict_types=1);
  */
 $manufacturers = [
 	'/images/carslogos/audi.png' => 'AUDI',
-	// '/images/carslogos/seat.png' => 'SEAT',
-	// '/images/carslogos/skoda.png' => 'SKODA',
-	// '/images/carslogos/volkswagen.png' => 'VW',
+	'/images/carslogos/seat.png' => 'SEAT',
+	'/images/carslogos/skoda.png' => 'SKODA',
+	'/images/carslogos/volkswagen.png' => 'VW',
 ];
 
 /**

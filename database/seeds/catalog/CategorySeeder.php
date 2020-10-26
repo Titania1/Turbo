@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Seeders;
+namespace App\Seeders\Catalog;
 
 use App\Category;
 use Illuminate\Database\Seeder;
