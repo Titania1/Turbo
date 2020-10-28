@@ -32,12 +32,9 @@ class PartTest extends TestCase
 		$brand = create(Brand::class);
 		$model = create(Model::class, ['brand_id' => $brand->id]);
 		$vehicle = create(Vehicle::class, ['model_id' => $model->id]);
-		$category = create(Category::class, ['internal_id' => 1]);
-		$type = create(Type::class, ['category_id' => $category->id, 'internal_id' => 1, 'tree_id' => 1]);
 		$part = create(Part::class, [
 			'user_id' => $user->id,
 			'vehicle_id' => $vehicle->id,
-			'type_id' => $type->id,
 		]);
 		$response = $this->get(route('part', ['part' => $part]));
 
