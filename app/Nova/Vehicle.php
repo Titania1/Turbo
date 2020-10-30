@@ -24,7 +24,7 @@ class Vehicle extends Resource
 	 *
 	 * @var string
 	 */
-	public static $title = 'model';
+	public static $title = 'name';
 
 	/**
 	 * The columns that should be searched.
