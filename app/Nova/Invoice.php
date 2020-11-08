@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\DateTime;
 use Armincms\Fields\BelongsToMany;
 use Laravel\Nova\Fields\BelongsTo;
+use Emiliogrv\NovaBatchLoad\BatchLoadField;
 
 class Invoice extends Resource
 {
@@ -89,11 +90,16 @@ class Invoice extends Resource
 	 *
 	 * @return array
 	 */
-	public function fields(Request $request)
+	public function fields(Request $request): array
 	{
 		return [
 			ID::make()->sortable(),
 			DateTime::make(__('Reception Date'), 'reception_date')->required(),
+			BatchLoadField::make()
+				->accept('.xlsx') // Optional
+				->defaultTabActive(1) // Optional
+				->ignoreAttributes('parts') // Optional
+				->keepOriginalFields('belongs|select|boolean'), // Optional
 			BelongsTo::make(__('Supplier'), 'supplier', Supplier::class)->showCreateRelationButton(),
 			BelongsToMany::make(__('Parts'), 'parts', Part::class)->hideFromIndex()
 				->fields(function () {

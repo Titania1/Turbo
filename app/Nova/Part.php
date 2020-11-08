@@ -81,10 +81,10 @@ class Part extends Resource
 				->actionText(__('Add Another')),
 			BelongsToMany::make(__('Compatible with'), 'vehicles', Vehicle::class)->hideFromIndex(),
 			BatchLoadField::make()
-				->accept('.xlsx') // Optional
-				->defaultTabActive(1) // Optional
-				->ignoreAttributes('key_features') // Optional
-				->keepOriginalFields('belongs|select|boolean'), // Optional
+				->accept('.xlsx')
+				->defaultTabActive(1)
+				->ignoreAttributes('key_features')
+				->keepOriginalFields('belongs|select|boolean'),
 			Number::make(__('Views'), fn ($part) => $part->views)->canSee(fn ($request) => $request->user()->can('See Part Views')),
 			NovaPreviewResource::make(__('Preview'))
 				->image($this->indexImage)
