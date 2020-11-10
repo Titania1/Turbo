@@ -6,6 +6,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Order.
@@ -45,7 +46,7 @@ class Order extends Model
 		return $this->belongsTo(Supplier::class);
 	}
 
-	public function parts()
+	public function parts() : BelongsToMany
 	{
 		return $this->belongsToMany(Part::class);
 	}

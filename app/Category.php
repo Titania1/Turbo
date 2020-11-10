@@ -8,10 +8,15 @@ use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 
 /**
  * App\Category.
@@ -59,49 +64,49 @@ class Category extends Model implements HasMedia
 
 	// protected $with = ['categories', 'types'];
 
-	public function category()
+	public function category() : BelongsTo
 	{
 		return $this->belongsTo(self::class);
 	}
 
-	public function categories()
+	public function categories() : HasMany
 	{
 		return $this->hasMany(self::class);
 	}
 
-	public function types()
+	public function types() : HasMany
 	{
 		return $this->hasMany(Type::class)->limit(7);
 	}
 
-	public function parts()
+	public function parts() : HasManyThrough
 	{
 		return $this->hasManyThrough(Part::class, Type::class);
 	}
 
-	public function subTypes()
+	public function subTypes() : HasManyThrough
 	{
 		return $this->hasManyThrough(Type::class, self::class)->limit(7);
 	}
 
-	public function subType()
+	public function subType() : HasManyThrough
 	{
 		return $this->hasManyThrough(Type::class, self::class)->limit(1);
 
 		return $this->hasMany(Type::class)->limit(1);
 	}
 
-	public function subParts()
+	public function subParts() : HasManyDeep
 	{
 		return $this->hasManyDeep(Part::class, [self::class, Type::class]);
 	}
 
-	public function getFertileSubCategoriesAttribute()
+	public function getFertileSubCategoriesAttribute() : HasMany
 	{
 		return $this->categories()->whereHas('types')->limit(6)->get();
 	}
 
-	public function getInfertileSubCategoriesAttribute()
+	public function getInfertileSubCategoriesAttribute() : HasMany
 	{
 		return $this->categories()->whereDoesntHave('types')->limit(5)->get();
 	}
@@ -151,7 +156,7 @@ class Category extends Model implements HasMedia
 		return (bool) ! $this->category_id;
 	}
 
-	public function cars()
+	public function cars() : BelongsToMany
 	{
 		return $this->belongsToMany(Car::class);
 	}

@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class CategoriesController extends Controller
 {
@@ -44,7 +45,7 @@ class CategoriesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Category $category)
+	public function show(Category $category) : View
 	{
 		if ($category->parent) {
 			$items = $category->types;

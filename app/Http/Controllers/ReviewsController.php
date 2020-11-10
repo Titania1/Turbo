@@ -8,6 +8,7 @@ use App\Part;
 use App\Review;
 use Illuminate\Http\Request;
 use App\Http\Requests\ReviewPartRequest;
+use Illuminate\Http\RedirectResponse;
 
 class ReviewsController extends Controller
 {
@@ -36,7 +37,7 @@ class ReviewsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(ReviewPartRequest $request, Part $part)
+	public function store(ReviewPartRequest $request, Part $part) : RedirectResponse
 	{
 		$review = new Review;
 		$review->rating = $request->rating;

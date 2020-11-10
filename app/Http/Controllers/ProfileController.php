@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Profile;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UpdateProfileRequest;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
@@ -16,7 +17,7 @@ class ProfileController extends Controller
 	 * @throws \Spatie\MediaLibrary\MediaCollections\Exceptions\FileDoesNotExist
 	 * @return \Illuminate\View\View profile
 	 */
-	public function edit()
+	public function edit() : View
 	{
 		$user = auth()->user();
 		$profile = $user->profile;

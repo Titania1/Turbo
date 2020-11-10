@@ -8,6 +8,7 @@ use App\Brand;
 use App\Vehicle;
 use Illuminate\Support\Collection;
 use App\Http\Requests\YearsBrandRequest;
+use Illuminate\View\View;
 
 class BrandsController extends Controller
 {
@@ -35,7 +36,7 @@ class BrandsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Brand $brand, string $slug = null)
+	public function show(Brand $brand, string $slug = null) : View
 	{
 		if ($slug != $brand->slug) {
 			return redirect()->route('brand', [$brand->id, $brand->slug]);

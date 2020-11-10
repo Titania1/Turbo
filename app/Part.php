@@ -15,6 +15,8 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
@@ -98,27 +100,27 @@ class Part extends Model implements HasMedia, Buyable
 		'price' => 'float',
 	];
 
-	public function getFeaturesAttribute()
+	public function getFeaturesAttribute() : string
 	{
 		return json_decode($this->key_features, true);
 	}
 
-	public function getBuyableIdentifier($options = null)
+	public function getBuyableIdentifier($options = null) : int
 	{
 		return $this->id;
 	}
 
-	public function getBuyableDescription($options = null)
+	public function getBuyableDescription($options = null) : string
 	{
 		return $this->title;
 	}
 
-	public function getBuyablePrice($options = null)
+	public function getBuyablePrice($options = null) : float
 	{
 		return $this->price;
 	}
 
-	public function getBuyableWeight($options = null)
+	public function getBuyableWeight($options = null) : int
 	{
 		return 0;
 	}
@@ -134,7 +136,7 @@ class Part extends Model implements HasMedia, Buyable
 		return $this->belongsTo(Vehicle::class);
 	}
 
-	public function vehicles()
+	public function vehicles() : BelongsToMany
 	{
 		return $this->belongsToMany(Vehicle::class);
 	}
@@ -258,22 +260,22 @@ class Part extends Model implements HasMedia, Buyable
 		return in_array($this->id, $ids);
 	}
 
-	public function invoices()
+	public function invoices() : BelongsToMany
 	{
 		return $this->belongsToMany(Invoice::class);
 	}
 
-	public function brand()
+	public function brand() : BelongsTo
 	{
 		return $this->belongsTo(Brand::class, 'vehicle_id', 'id', Vehicle::class);
 	}
 
-	public function reviews()
+	public function reviews() : HasMany
 	{
 		return $this->hasMany(Review::class);
 	}
 
-	public function getViewsAttribute()
+	public function getViewsAttribute() : Redis
 	{
 		return Redis::zscore('popular_parts', $this->id);
 	}
@@ -288,17 +290,17 @@ class Part extends Model implements HasMedia, Buyable
 		return $this->belongsTo(User::class);
 	}
 
-	public function getBuyPriceAttribute()
+	public function getBuyPriceAttribute() : InvoicePart
 	{
 		return optional(InvoicePart::where('part_id', $this->id)->first())->buyPrice;
 	}
 
-	public function getSellPriceAttribute()
+	public function getSellPriceAttribute() : InvoicePart
 	{
 		return optional(InvoicePart::where('part_id', $this->id)->first())->sellPrice;
 	}
 
-	public function getSupplierAttribute()
+	public function getSupplierAttribute() : InvoicePart
 	{
 		$supplier_id = optional(InvoicePart::where('part_id', $this->id)->first())->supplier_id;
 

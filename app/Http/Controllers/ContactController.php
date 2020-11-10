@@ -9,6 +9,7 @@ use Swift_TransportException;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class ContactController extends Controller
 {
@@ -47,7 +48,7 @@ class ContactController extends Controller
 		return $details;
 	}
 
-	public function show()
+	public function show() : View
 	{
 		return view('contact');
 	}

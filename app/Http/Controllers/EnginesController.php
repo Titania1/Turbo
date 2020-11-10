@@ -9,6 +9,7 @@ use App\Brand;
 use App\Model;
 use App\Engine;
 use App\Vehicle;
+use Illuminate\View\View;
 
 class EnginesController extends Controller
 {
@@ -32,7 +33,8 @@ class EnginesController extends Controller
 		Vehicle $vehicle, string $vehicle_slug = null,
 		Car $car, string $car_slug = null,
 		Engine $engine, string $slug = null
-	) {
+	) : View
+	{
 		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $vehicle_slug != $vehicle->slug || $car_slug != $car->slug || $slug != $engine->slug) {
 			return redirect()->route('engine', [
 				$brand->id,

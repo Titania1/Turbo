@@ -7,6 +7,7 @@ namespace App;
 use Laravel\Scout\Searchable;
 use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
 use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -57,7 +58,7 @@ class Vehicle extends Eloquent
 {
 	use Searchable, HasRelationships;
 
-	public function model()
+	public function model() : BelongsTo
 	{
 		return $this->belongsTo(Model::class);
 	}
@@ -67,7 +68,7 @@ class Vehicle extends Eloquent
 	 *
 	 * @return string
 	 */
-	public function searchableAs()
+	public function searchableAs() : string
 	{
 		return 'vehicles_index';
 	}
@@ -77,7 +78,7 @@ class Vehicle extends Eloquent
 	 *
 	 * @return array
 	 */
-	public function toSearchableArray()
+	public function toSearchableArray() : array
 	{
 		$array = $this->only('brand', 'model', 'year', 'fuel');
 
@@ -87,7 +88,7 @@ class Vehicle extends Eloquent
 	/**
 	 * Get the value used to index the model.
 	 */
-	public function getScoutKey()
+	public function getScoutKey() : string
 	{
 		return $this->model;
 	}
@@ -95,7 +96,7 @@ class Vehicle extends Eloquent
 	/**
 	 * Get the key name used to index the model.
 	 */
-	public function getScoutKeyName()
+	public function getScoutKeyName() : string
 	{
 		return 'model';
 	}

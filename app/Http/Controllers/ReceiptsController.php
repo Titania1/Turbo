@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 
 use App\Receipt;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ReceiptsController extends Controller
 {
@@ -79,7 +80,7 @@ class ReceiptsController extends Controller
 		//
 	}
 
-	public function print(Receipt $receipt)
+	public function print(Receipt $receipt) : View
 	{
 		return view('print.receipt', compact('receipt'));
 	}

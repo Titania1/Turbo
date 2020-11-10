@@ -201,7 +201,7 @@ class User extends Authenticatable implements MustVerifyEmail
 	 *
 	 * @return string
 	 */
-	public function receivesBroadcastNotificationsOn()
+	public function receivesBroadcastNotificationsOn() : string
 	{
 		return 'users.' . $this->id;
 	}

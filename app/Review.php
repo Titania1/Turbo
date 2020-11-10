@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Review.
@@ -36,12 +37,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Review extends Model
 {
-	public function part()
+	public function part() : BelongsTo
 	{
 		return $this->belongsTo(Part::class);
 	}
 
-	public function user()
+	public function user() : BelongsTo
 	{
 		return $this->belongsTo(User::class);
 	}

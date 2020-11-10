@@ -13,9 +13,11 @@ Because the SQL operation to count is resource incentive and super slow, for exa
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Routing\ResponseFactory;
+
 class CatalogCountController extends Controller
 {
-	public function articles()
+	public function articles() : ResponseFactory
 	{
 		return response([
 			'count' => 6722202,

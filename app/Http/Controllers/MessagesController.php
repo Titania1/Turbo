@@ -7,6 +7,7 @@ namespace App\Http\Controllers;
 use App\Message;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactStoreRequest;
+use Illuminate\Http\RedirectResponse;
 
 class MessagesController extends Controller
 {
@@ -35,7 +36,7 @@ class MessagesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(ContactStoreRequest $request)
+	public function store(ContactStoreRequest $request) : RedirectResponse
 	{
 		$created = Message::create([
 			'name' => $request->name,

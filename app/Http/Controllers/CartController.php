@@ -7,17 +7,19 @@ namespace App\Http\Controllers;
 use App\Part;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class CartController extends Controller
 {
-	public function index()
+	public function index() : View
 	{
 		$cart = Cart::content();
 
 		return view('cart', compact('cart'));
 	}
 
-	public function add(Part $part, Request $request)
+	public function add(Part $part, Request $request) : RedirectResponse
 	{
 		Cart::setGlobalTax(0);
 		Cart::add($part, $request->quantity);
@@ -31,14 +33,14 @@ class CartController extends Controller
 		return redirect(url()->previous('/'));
 	}
 
-	public function remove(string $rowId)
+	public function remove(string $rowId) : RedirectResponse
 	{
 		Cart::remove($rowId);
 
 		return back();
 	}
 
-	public function update(request $request, $id)
+	public function update(request $request, $id) : RedirectResponse
 	{
 		Cart::update($id, $request->qty);
 		session()->flash('success_message', 'Quantity was updated successfully!');
