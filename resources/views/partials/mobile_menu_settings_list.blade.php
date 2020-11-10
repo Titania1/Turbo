@@ -39,6 +39,14 @@
 								@lang('fr')
 							</button>
 						</li>
+						<li data-mobile-menu-item>
+							<button type="button" class="" data-mobile-menu-trigger>
+								<div class="mobile-menu__links-image">
+									<img src="/images/languages/ar.png" alt="@lang('Flag')">
+								</div>
+								@lang('ar')
+							</button>
+						</li>
 					</ul>
 				</div>
 			</div>
