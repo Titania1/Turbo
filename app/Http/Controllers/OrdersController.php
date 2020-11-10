@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Order;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
@@ -15,7 +15,7 @@ class OrdersController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index() : View
+	public function index(): View
 	{
 		$orders = Order::where('supplier_id', auth()->id())->paginate(5);
 

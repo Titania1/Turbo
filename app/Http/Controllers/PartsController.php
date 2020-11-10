@@ -8,10 +8,10 @@ use App\Part;
 use App\Brand;
 use App\Review;
 use App\Category;
-use Illuminate\Http\Request;
-use App\Http\Requests\StorePartRequest;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\StorePartRequest;
 
 class PartsController extends Controller
 {
@@ -20,7 +20,7 @@ class PartsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function index() : View
+	public function index(): View
 	{
 		$brands = Brand::select('id', 'name')->get();
 		$categories = Category::select('name', 'id')->get();
@@ -44,7 +44,7 @@ class PartsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(StorePartRequest $request) : RedirectResponse
+	public function store(StorePartRequest $request): RedirectResponse
 	{
 		$part = new Part();
 		$part->vehicle_id = $request->vehicle;
@@ -70,7 +70,7 @@ class PartsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Part $part) : View
+	public function show(Part $part): View
 	{
 		$reviews = Review::where('part_id', $part->id)->paginate(5);
 

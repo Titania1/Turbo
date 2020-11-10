@@ -46,7 +46,7 @@ class Order extends Model
 		return $this->belongsTo(Supplier::class);
 	}
 
-	public function parts() : BelongsToMany
+	public function parts(): BelongsToMany
 	{
 		return $this->belongsToMany(Part::class);
 	}

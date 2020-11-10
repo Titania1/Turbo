@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
+use Illuminate\View\View;
 use Swift_TransportException;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\View\View;
 
 class ContactController extends Controller
 {
@@ -48,7 +48,7 @@ class ContactController extends Controller
 		return $details;
 	}
 
-	public function show() : View
+	public function show(): View
 	{
 		return view('contact');
 	}

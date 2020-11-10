@@ -23,7 +23,7 @@ class HomeController extends Controller
 	 *
 	 * @return \Illuminate\Contracts\Support\Renderable
 	 */
-	public function index() : View
+	public function index(): View
 	{
 		$user = auth()->user();
 		$profile = $user->profile;

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Model.
@@ -40,17 +40,17 @@ class Model extends Eloquent
 	/**
 	 * Get the value of the model's route key.
 	 */
-	public function getRouteKey() : string
+	public function getRouteKey(): string
 	{
 		return $this->id . '/' . $this->slug;
 	}
 
-	public function brand() : BelongsTo
+	public function brand(): BelongsTo
 	{
 		return $this->belongsTo(Brand::class);
 	}
 
-	public function vehicles() : HasMany
+	public function vehicles(): HasMany
 	{
 		return $this->hasMany(Vehicle::class);
 	}

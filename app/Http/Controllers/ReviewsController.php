@@ -7,8 +7,8 @@ namespace App\Http\Controllers;
 use App\Part;
 use App\Review;
 use Illuminate\Http\Request;
-use App\Http\Requests\ReviewPartRequest;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\ReviewPartRequest;
 
 class ReviewsController extends Controller
 {
@@ -37,7 +37,7 @@ class ReviewsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function store(ReviewPartRequest $request, Part $part) : RedirectResponse
+	public function store(ReviewPartRequest $request, Part $part): RedirectResponse
 	{
 		$review = new Review;
 		$review->rating = $request->rating;

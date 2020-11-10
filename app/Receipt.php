@@ -38,13 +38,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Receipt extends Model
 {
-	public function parts() : BelongsToMany
+	public function parts(): BelongsToMany
 	{
 		return $this->belongsToMany(Part::class)
 			->using(PartReceipt::class)->withPivot('quantity');
 	}
 
-	public function client() : BelongsTo
+	public function client(): BelongsTo
 	{
 		return $this->belongsTo(Client::class);
 	}
@@ -54,7 +54,7 @@ class Receipt extends Model
 		return $this->subTotal + $this->vatValue;
 	}
 
-	public function getVatValueAttribute() : string
+	public function getVatValueAttribute(): string
 	{
 		$value = $this->subTotal * $this->vat / 100;
 

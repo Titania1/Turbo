@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
-	public function getPartsByCategory(Request $request) : Category
+	public function getPartsByCategory(Request $request): Category
 	{
 		$category = Category::find($request->category);
 		$products = $category->products()->select('id', 'name')->get();

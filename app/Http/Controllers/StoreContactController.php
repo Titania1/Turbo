@@ -6,8 +6,8 @@ namespace App\Http\Controllers;
 
 use App\Store;
 use App\StoreContact;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class StoreContactController extends Controller
 {
@@ -46,7 +46,7 @@ class StoreContactController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Store $store) : View
+	public function show(Store $store): View
 	{
 		$contact = $store->contact;
 

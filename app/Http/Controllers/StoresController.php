@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Store;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class StoresController extends Controller
 {
@@ -45,7 +45,7 @@ class StoresController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Store $store) : View
+	public function show(Store $store): View
 	{
 		return view('store.index', compact('store'));
 	}

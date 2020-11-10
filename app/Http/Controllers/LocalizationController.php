@@ -16,7 +16,7 @@ class LocalizationController extends Controller
 	 * @param string $lang The language code
 	 * @return void
 	 **/
-	public function switch(string $lang) : RedirectResponse
+	public function switch(string $lang): RedirectResponse
 	{
 		if (in_array($lang, config('app.locales'))) {
 			session(['locale' => $lang]);

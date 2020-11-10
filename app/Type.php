@@ -6,9 +6,9 @@ namespace App;
 
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 /**
@@ -43,12 +43,12 @@ class Type extends Model implements HasMedia
 {
 	use InteractsWithMedia;
 
-	public function category() : BelongsTo
+	public function category(): BelongsTo
 	{
 		return $this->belongsTo(Category::class);
 	}
 
-	public function parts() : HasMany
+	public function parts(): HasMany
 	{
 		return $this->hasMany(Part::class);
 	}

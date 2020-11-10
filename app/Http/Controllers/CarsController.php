@@ -8,8 +8,8 @@ use App\Car;
 use App\Brand;
 use App\Model;
 use App\Vehicle;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class CarsController extends Controller
 {
@@ -18,7 +18,7 @@ class CarsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Car $car, string $slug = null) : View
+	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $vehicle_slug = null, Car $car, string $slug = null): View
 	{
 		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $vehicle_slug != $vehicle->slug || $slug != $car->slug) {
 			return redirect()->route('car', [
@@ -38,7 +38,7 @@ class CarsController extends Controller
 		return view('car', compact('brand', 'model', 'vehicle', 'car', 'engines'));
 	}
 
-	public function getCarsByVehicle(Request $request) : Vehicle
+	public function getCarsByVehicle(Request $request): Vehicle
 	{
 		return Vehicle::find($request->vehicle)->cars()->select('id', 'type')->get();
 	}

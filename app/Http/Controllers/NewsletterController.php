@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
 use Newsletter;
 use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 
 class NewsletterController extends Controller
 {
-	public function store(Request $request) : RedirectResponse
+	public function store(Request $request): RedirectResponse
 	{
 		if (! Newsletter::isSubscribed($request->email)) {
 			Newsletter::subscribePending($request->email);

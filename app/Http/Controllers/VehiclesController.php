@@ -8,12 +8,12 @@ use App\Car;
 use App\Brand;
 use App\Model;
 use App\Vehicle;
+use App\Nova\Category;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use App\Http\Requests\BrandModelsRequest;
 use App\Http\Requests\ModelFuelOptionsRequest;
-use App\Nova\Category;
-use Illuminate\View\View;
 
 class VehiclesController extends Controller
 {
@@ -59,7 +59,7 @@ class VehiclesController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $slug = null) : View
+	public function show(Brand $brand, string $brand_slug = null, Model $model, string $model_slug = null, Vehicle $vehicle, string $slug = null): View
 	{
 		if ($brand_slug != $brand->slug || $model_slug != $model->slug || $slug != $vehicle->slug) {
 			return redirect()->route('vehicle', [
@@ -76,14 +76,14 @@ class VehiclesController extends Controller
 		return view('vehicle', compact('vehicle', 'cars'));
 	}
 
-	public function getVehiclesByModel(Request $request) : Vehicle
+	public function getVehiclesByModel(Request $request): Vehicle
 	{
 		$vehicles = Vehicle::where('model_id', $request->model)->select('name', 'id')->get();
 
 		return $vehicles;
 	}
 
-	public function getEnginesByCar(Request $request) : Vehicle
+	public function getEnginesByCar(Request $request): Vehicle
 	{
 		return Vehicle::find($request->vehicle)
 					->cars()
@@ -91,7 +91,7 @@ class VehiclesController extends Controller
 					->get();
 	}
 
-	public function getCategoriesByEngine(Request $request) : Category
+	public function getCategoriesByEngine(Request $request): Category
 	{
 		$car = Car::find($request->engine);
 		$categories = $car->categories()->where('categories.category_id', null)->select('id', 'name')->get();
