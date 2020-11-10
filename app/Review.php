@@ -10,17 +10,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * App\Review.
  *
- * @property int $id
- * @property int $part_id
- * @property int|null $user_id
- * @property string|null $name
- * @property string|null $email
- * @property string|null $content
- * @property int $rating
+ * @property int                             $id
+ * @property int                             $part_id
+ * @property int|null                        $user_id
+ * @property string|null                     $name
+ * @property string|null                     $email
+ * @property string|null                     $content
+ * @property int                             $rating
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Part $part
  * @property-read \App\User|null $user
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Review newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Review newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Review query()
@@ -37,13 +38,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Review extends Model
 {
-	public function part(): BelongsTo
-	{
-		return $this->belongsTo(Part::class);
-	}
+    public function part(): BelongsTo
+    {
+        return $this->belongsTo(Part::class);
+    }
 
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

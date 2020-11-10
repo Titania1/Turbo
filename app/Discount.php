@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Discount.
  *
- * @property int $id
- * @property string $percentage
- * @property string $code
+ * @property int                             $id
+ * @property string                          $percentage
+ * @property string                          $code
  * @property \Illuminate\Support\Carbon|null $expires
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Discount newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Discount newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Discount query()
@@ -28,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Discount extends Model
 {
-	protected $casts = [
-		'expires' => 'datetime',
-	];
+    protected $casts = [
+        'expires' => 'datetime',
+    ];
 }

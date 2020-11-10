@@ -11,13 +11,13 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 /**
  * App\Brand.
  *
- * @property int $id
- * @property int|null $internal_id
- * @property string $name
- * @property string $logo
- * @property string|null $country
- * @property string $slug
- * @property int $is_commercial
+ * @property int                             $id
+ * @property int|null                        $internal_id
+ * @property string                          $name
+ * @property string                          $logo
+ * @property string|null                     $country
+ * @property string                          $slug
+ * @property int                             $is_commercial
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Model[] $models
@@ -26,6 +26,7 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  * @property-read int|null $parts_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Vehicle[] $vehicles
  * @property-read int|null $vehicles_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Brand newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Brand newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Brand query()
@@ -42,26 +43,26 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
  */
 class Brand extends Eloquent
 {
-	/**
-	 * Get the value of the model's route key.
-	 */
-	public function getRouteKey(): string
-	{
-		return $this->id . '/' . $this->slug;
-	}
+    /**
+     * Get the value of the model's route key.
+     */
+    public function getRouteKey(): string
+    {
+        return $this->id.'/'.$this->slug;
+    }
 
-	public function vehicles(): HasManyThrough
-	{
-		return $this->hasManyThrough(Vehicle::class, Model::class);
-	}
+    public function vehicles(): HasManyThrough
+    {
+        return $this->hasManyThrough(Vehicle::class, Model::class);
+    }
 
-	public function models(): HasMany
-	{
-		return $this->hasMany(Model::class);
-	}
+    public function models(): HasMany
+    {
+        return $this->hasMany(Model::class);
+    }
 
-	public function engines(): HasMany
-	{
-		return $this->hasMany(Engine::class);
-	}
+    public function engines(): HasMany
+    {
+        return $this->hasMany(Engine::class);
+    }
 }

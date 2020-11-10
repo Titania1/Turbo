@@ -10,12 +10,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * App\Workshop.
  *
- * @property int $id
- * @property int $user_id
- * @property string $service
+ * @property int                             $id
+ * @property int                             $user_id
+ * @property string                          $service
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\User $user
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Workshop newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Workshop newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Workshop query()
@@ -28,8 +29,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Workshop extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

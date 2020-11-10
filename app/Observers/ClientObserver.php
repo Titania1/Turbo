@@ -8,15 +8,15 @@ use App\Client;
 
 class ClientObserver
 {
-	/**
-	 * Handle the client "creating" event.
-	 *
-	 * @return void
-	 */
-	public function creating(Client $client)
-	{
-		if (auth()->check()) {
-			$client->user_id = auth()->id();
-		}
-	}
+    /**
+     * Handle the client "creating" event.
+     *
+     * @return void
+     */
+    public function creating(Client $client)
+    {
+        if (auth()->check()) {
+            $client->user_id = auth()->id();
+        }
+    }
 }

@@ -10,16 +10,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * App\Client.
  *
- * @property int $id
- * @property int $user_id
- * @property string $name
- * @property string|null $address
- * @property int|null $phone
- * @property string|null $email
- * @property string|null $credit
+ * @property int                             $id
+ * @property int                             $user_id
+ * @property string                          $name
+ * @property string|null                     $address
+ * @property int|null                        $phone
+ * @property string|null                     $email
+ * @property string|null                     $credit
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\User $user
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Client newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Client newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Client query()
@@ -36,8 +37,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Client extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 }

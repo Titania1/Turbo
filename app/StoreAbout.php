@@ -9,10 +9,11 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\StoreAbout.
  *
- * @property int $id
- * @property int $store_id
+ * @property int                             $id
+ * @property int                             $store_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|StoreAbout newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|StoreAbout newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|StoreAbout query()
@@ -24,5 +25,5 @@ use Illuminate\Database\Eloquent\Model;
  */
 class StoreAbout extends Model
 {
-	//
+    //
 }

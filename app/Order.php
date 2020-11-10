@@ -11,13 +11,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * App\Order.
  *
- * @property int $id
- * @property int $user_id
- * @property float $total
- * @property int $number_of_items
+ * @property int                             $id
+ * @property int                             $user_id
+ * @property float                           $total
+ * @property int                             $number_of_items
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\User $user
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order query()
@@ -28,26 +29,28 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Order whereUserId($value)
  * @mixin \Eloquent
+ *
  * @property int $supplier_id
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $parts
  * @property-read int|null $parts_count
  * @property-read \App\Supplier $supplier
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereSupplierId($value)
  */
 class Order extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
-	public function supplier(): BelongsTo
-	{
-		return $this->belongsTo(Supplier::class);
-	}
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 
-	public function parts(): BelongsToMany
-	{
-		return $this->belongsToMany(Part::class);
-	}
+    public function parts(): BelongsToMany
+    {
+        return $this->belongsToMany(Part::class);
+    }
 }

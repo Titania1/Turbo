@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * @property int $order_id
  * @property int $part_id
  * @property int $quantity
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|OrderPart newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|OrderPart newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|OrderPart query()
@@ -24,10 +25,10 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  */
 class OrderPart extends Pivot
 {
-	/**
-	 * Indicates if the IDs are auto-incrementing.
-	 *
-	 * @var bool
-	 */
-	public $incrementing = true;
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = true;
 }

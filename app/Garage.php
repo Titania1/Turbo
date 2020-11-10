@@ -11,13 +11,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * App\Garage.
  *
- * @property int $id
- * @property int $user_id
+ * @property int                             $id
+ * @property int                             $user_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\User $user
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Vehicle[] $vehicles
  * @property-read int|null $vehicles_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Garage newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Garage newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Garage query()
@@ -29,13 +30,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Garage extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
-	public function vehicles(): BelongsToMany
-	{
-		return $this->belongsToMany(Vehicle::class);
-	}
+    public function vehicles(): BelongsToMany
+    {
+        return $this->belongsToMany(Vehicle::class);
+    }
 }

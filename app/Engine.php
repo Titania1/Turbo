@@ -11,34 +11,35 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * App\Engine.
  *
- * @property int $id
- * @property int|null $internal_id
- * @property int $vehicle_id
- * @property string $type
- * @property string $slug
- * @property string $interval
- * @property string $power
- * @property string $capacity
- * @property string|null $construction
- * @property string|null $fuel
- * @property string|null $fuel_mixture
- * @property string|null $charge
- * @property string|null $cylinder_construction
- * @property string|null $engine_management
- * @property string|null $cooling_type
- * @property string|null $compression
- * @property string|null $torque
- * @property string|null $bore
- * @property string|null $stroke
- * @property int|null $cylinders
- * @property int|null $valves
- * @property int|null $bearings
- * @property string $motor_code
+ * @property int                             $id
+ * @property int|null                        $internal_id
+ * @property int                             $vehicle_id
+ * @property string                          $type
+ * @property string                          $slug
+ * @property string                          $interval
+ * @property string                          $power
+ * @property string                          $capacity
+ * @property string|null                     $construction
+ * @property string|null                     $fuel
+ * @property string|null                     $fuel_mixture
+ * @property string|null                     $charge
+ * @property string|null                     $cylinder_construction
+ * @property string|null                     $engine_management
+ * @property string|null                     $cooling_type
+ * @property string|null                     $compression
+ * @property string|null                     $torque
+ * @property string|null                     $bore
+ * @property string|null                     $stroke
+ * @property int|null                        $cylinders
+ * @property int|null                        $valves
+ * @property int|null                        $bearings
+ * @property string                          $motor_code
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\CatalogCategory[] $categories
  * @property-read int|null $categories_count
  * @property-read \App\Vehicle $vehicle
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Engine newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Engine newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Engine query()
@@ -71,23 +72,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Engine extends Model
 {
-	public function brand(): BelongsTo
-	{
-		return $this->belongsTo(Brand::class);
-	}
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::class);
+    }
 
-	public function getRouteKey(): string
-	{
-		return $this->id . '/' . $this->slug;
-	}
+    public function getRouteKey(): string
+    {
+        return $this->id.'/'.$this->slug;
+    }
 
-	public function cars(): BelongsToMany
-	{
-		return $this->belongsToMany(Car::class);
-	}
+    public function cars(): BelongsToMany
+    {
+        return $this->belongsToMany(Car::class);
+    }
 
-	public function getTypeAttribute(): string
-	{
-		return $this->cars()->select('type')->first()->type;
-	}
+    public function getTypeAttribute(): string
+    {
+        return $this->cars()->select('type')->first()->type;
+    }
 }

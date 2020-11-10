@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\InvoicePart.
  *
- * @property int $id
- * @property int $part_id
- * @property int $invoice_id
- * @property int $quantity
+ * @property int   $id
+ * @property int   $part_id
+ * @property int   $invoice_id
+ * @property int   $quantity
  * @property float $buy_price
  * @property float $sell_price
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|InvoicePart newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|InvoicePart newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|InvoicePart query()
@@ -28,10 +29,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class InvoicePart extends Model
 {
-	/**
-	 * The table associated with the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'invoice_part';
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'invoice_part';
 }

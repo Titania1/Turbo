@@ -8,9 +8,9 @@ use App\Discount;
 use Faker\Generator as Faker;
 
 $factory->define(Discount::class, function (Faker $faker) {
-	return [
-		'percentage' => 10,
-		'code' => str_random(8),
-		'expires' => $faker->dateTime,
-	];
+    return [
+        'percentage' => 10,
+        'code'       => str_random(8),
+        'expires'    => $faker->dateTime,
+    ];
 });

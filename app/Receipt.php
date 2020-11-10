@@ -11,11 +11,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 /**
  * App\Receipt.
  *
- * @property int $id
- * @property int $user_id
- * @property int $client_id
- * @property int|null $vat
- * @property int $display_vat
+ * @property int                             $id
+ * @property int                             $user_id
+ * @property int                             $client_id
+ * @property int|null                        $vat
+ * @property int                             $display_vat
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Client $client
@@ -24,6 +24,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property-read mixed $vat_value
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Part[] $parts
  * @property-read int|null $parts_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Receipt newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Receipt newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Receipt query()
@@ -38,37 +39,37 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Receipt extends Model
 {
-	public function parts(): BelongsToMany
-	{
-		return $this->belongsToMany(Part::class)
-			->using(PartReceipt::class)->withPivot('quantity');
-	}
+    public function parts(): BelongsToMany
+    {
+        return $this->belongsToMany(Part::class)
+            ->using(PartReceipt::class)->withPivot('quantity');
+    }
 
-	public function client(): BelongsTo
-	{
-		return $this->belongsTo(Client::class);
-	}
+    public function client(): BelongsTo
+    {
+        return $this->belongsTo(Client::class);
+    }
 
-	public function getTotalAttribute(): float
-	{
-		return $this->subTotal + $this->vatValue;
-	}
+    public function getTotalAttribute(): float
+    {
+        return $this->subTotal + $this->vatValue;
+    }
 
-	public function getVatValueAttribute(): string
-	{
-		$value = $this->subTotal * $this->vat / 100;
+    public function getVatValueAttribute(): string
+    {
+        $value = $this->subTotal * $this->vat / 100;
 
-		return number_format((float) $value, 2, '.', '');
-	}
+        return number_format((float) $value, 2, '.', '');
+    }
 
-	// Total of receipt H.T without tax
-	public function getSubtotalAttribute(): float
-	{
-		$price = 0;
-		foreach ($this->parts as $part) {
-			$price += ($part->price * (int) $part->pivot->quantity);
-		}
-		// Get the quantity of each part in the receipt
-		return $price;
-	}
+    // Total of receipt H.T without tax
+    public function getSubtotalAttribute(): float
+    {
+        $price = 0;
+        foreach ($this->parts as $part) {
+            $price += ($part->price * (int) $part->pivot->quantity);
+        }
+        // Get the quantity of each part in the receipt
+        return $price;
+    }
 }

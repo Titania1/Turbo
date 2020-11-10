@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  * @property int $part_id
  * @property int $receipt_id
  * @property int $quantity
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|PartReceipt newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PartReceipt newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PartReceipt query()
@@ -24,10 +25,10 @@ use Illuminate\Database\Eloquent\Relations\Pivot;
  */
 class PartReceipt extends Pivot
 {
-	/**
-	 * Indicates if the IDs are auto-incrementing.
-	 *
-	 * @var bool
-	 */
-	public $incrementing = true;
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = true;
 }
