@@ -9,13 +9,13 @@ use Faker\Generator as Faker;
 use Faker\Provider\Fakecar;
 
 $factory->define(Vehicle::class, function (Faker $faker) {
-	$faker->addProvider(new Fakecar($faker));
-	$v = $faker->vehicleArray();
+    $faker->addProvider(new Fakecar($faker));
+    $v = $faker->vehicleArray();
 
-	return [
-		'from'        => $faker->biasedNumberBetween(1998, 2010, 'sqrt'),
-		'to'          => $faker->biasedNumberBetween(2010, 2020, 'sqrt'),
-		'name'        => $v['model'],
-		'internal_id' => 1,
-	];
+    return [
+        'from'        => $faker->biasedNumberBetween(1998, 2010, 'sqrt'),
+        'to'          => $faker->biasedNumberBetween(2010, 2020, 'sqrt'),
+        'name'        => $v['model'],
+        'internal_id' => 1,
+    ];
 });

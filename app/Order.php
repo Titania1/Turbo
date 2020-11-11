@@ -39,18 +39,18 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Order extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
-	public function supplier(): BelongsTo
-	{
-		return $this->belongsTo(Supplier::class);
-	}
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 
-	public function parts(): BelongsToMany
-	{
-		return $this->belongsToMany(Part::class);
-	}
+    public function parts(): BelongsToMany
+    {
+        return $this->belongsToMany(Part::class);
+    }
 }
