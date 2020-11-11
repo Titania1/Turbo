@@ -8,27 +8,27 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateGaragesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('garages', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id')->onDelete('cascade');
-            $table->timestamps();
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('garages', function (Blueprint $table) {
+			$table->id();
+			$table->foreignId('user_id')->onDelete('cascade');
+			$table->timestamps();
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('garages');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('garages');
+	}
 }

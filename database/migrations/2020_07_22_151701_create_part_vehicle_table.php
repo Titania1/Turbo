@@ -8,28 +8,28 @@ use Illuminate\Support\Facades\Schema;
 
 class CreatePartVehicleTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
-    public function up()
-    {
-        Schema::create('part_vehicle', function (Blueprint $table) {
-            $table->id();
-            $table->unsignedBigInteger('part_id');
-            $table->unsignedBigInteger('vehicle_id');
-            $table->unique(['part_id', 'vehicle_id']);
-        });
-    }
+	/**
+	 * Run the migrations.
+	 *
+	 * @return void
+	 */
+	public function up()
+	{
+		Schema::create('part_vehicle', function (Blueprint $table) {
+			$table->id();
+			$table->unsignedBigInteger('part_id');
+			$table->unsignedBigInteger('vehicle_id');
+			$table->unique(['part_id', 'vehicle_id']);
+		});
+	}
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('part_vehicle');
-    }
+	/**
+	 * Reverse the migrations.
+	 *
+	 * @return void
+	 */
+	public function down()
+	{
+		Schema::dropIfExists('part_vehicle');
+	}
 }
