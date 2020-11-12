@@ -142,9 +142,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             NovaPageTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
             NovaPermissionTool::make()
-                ->canSee(fn ($request)             => $request->user()->hasRole('Super Admin')),
-            LogsTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
-			FilemanagerTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
+                ->canSee(fn ($request)                    => $request->user()->hasRole('Super Admin')),
+            LogsTool::make()->canSee(fn ($request)        => $request->user()->hasRole('Super Admin')),
+            FilemanagerTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
         ];
     }
 
