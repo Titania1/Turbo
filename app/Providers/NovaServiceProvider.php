@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Nova\Dashboards\Statistics;
 use Illuminate\Support\Facades\Gate;
+use Infinety\Filemanager\FilemanagerTool;
 use Jubeki\Nova\Cards\Linkable\Linkable;
 use KABBOUCHI\LogsTool\LogsTool;
 use Laravel\Nova\Nova;
@@ -143,6 +144,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             NovaPermissionTool::make()
                 ->canSee(fn ($request)             => $request->user()->hasRole('Super Admin')),
             LogsTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
+			FilemanagerTool::make()->canSee(fn ($request) => $request->user()->hasRole('Super Admin')),
         ];
     }
 

@@ -23,6 +23,7 @@
 		"genealabs/nova-map-marker-field": "^0.2.0",
 		"gregoriohc/laravel-nova-theme-responsive": "master",
 		"guzzlehttp/guzzle": "^7.2.0",
+		"infinety-es/nova-filemanager": "master",
 		"inspheric/nova-defaultable": "^1.2",
 		"jubeki/nova-card-linkable": "^1.1",
 		"kabbouchi/nova-logs-tool": "^0.3.0",
@@ -132,6 +133,10 @@
 		{
 			"type": "vcs",
 			"url": "https://github.com/CaddyDz/laravel-nova-theme-responsive"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/Raye3/Nova-Filemanager"
 		},
 		{
 			"type": "path",
