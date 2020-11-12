@@ -26,3 +26,4 @@ data.zip
 /public/js/app.js.LICENSE.txt
 horizon.log
 .php_cs.cache
+.vscode
