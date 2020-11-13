@@ -61,7 +61,7 @@ mysql -e "DROP DATABASE IF EXISTS turbo;CREATE DATABASE turbo;"
 ```
 6. Migrate and seed the database
 ```shell
-php artisan migrate:refresh --seed
+php artisan migrate:fresh --seed
 ```
 7. Link storage to a publicly accessible endpoint
 ```shell
