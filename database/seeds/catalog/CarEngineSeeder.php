@@ -11,26 +11,26 @@ use Illuminate\Support\Facades\DB;
 
 class CarEngineSeeder extends Seeder
 {
-	/**
-	 * Run the database seeds.
-	 */
-	public function run(): void
-	{
-		// A car has many engines
-		$cars = Car::select('id', 'internal_id')->get();
-		$this->linkCars($cars);
-	}
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // A car has many engines
+        $cars = Car::select('id', 'internal_id')->get();
+        $this->linkCars($cars);
+    }
 
-	private function linkCars($cars): void
-	{
-		foreach ($cars as $car) {
-			$engine_ids = DB::connection('tecdoc')->table('passengercars_link_engines')
-				->where('car_id', $car->internal_id)
-				->select('engine_id')
-				->pluck('engine_id')
-				->toArray();
-			$engines = Engine::whereIn('internal_id', $engine_ids)->select('id')->pluck('id')->toArray();
-			$car->engines()->attach($engines);
-		}
-	}
+    private function linkCars($cars): void
+    {
+        foreach ($cars as $car) {
+            $engine_ids = DB::connection('tecdoc')->table('passengercars_link_engines')
+                ->where('car_id', $car->internal_id)
+                ->select('engine_id')
+                ->pluck('engine_id')
+                ->toArray();
+            $engines = Engine::whereIn('internal_id', $engine_ids)->select('id')->pluck('id')->toArray();
+            $car->engines()->attach($engines);
+        }
+    }
 }

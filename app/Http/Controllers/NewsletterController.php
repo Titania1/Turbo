@@ -10,14 +10,14 @@ use Newsletter;
 
 class NewsletterController extends Controller
 {
-	public function store(Request $request): RedirectResponse
-	{
-		if (!Newsletter::isSubscribed($request->email)) {
-			Newsletter::subscribePending($request->email);
+    public function store(Request $request): RedirectResponse
+    {
+        if (!Newsletter::isSubscribed($request->email)) {
+            Newsletter::subscribePending($request->email);
 
-			return redirect('/')->with('success', 'Thanks For Subscribe');
-		}
+            return redirect('/')->with('success', 'Thanks For Subscribe');
+        }
 
-		return redirect('/')->with('failure', 'Sorry! You have already subscribed ');
-	}
+        return redirect('/')->with('failure', 'Sorry! You have already subscribed ');
+    }
 }
