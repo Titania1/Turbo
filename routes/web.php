@@ -19,14 +19,14 @@ Route::get('nova-api/articles/count', 'CatalogCountController@articles');
 Auth::routes(['verify' => true]);
 Route::get('/dashboard', 'HomeController@index')->name('home');
 Route::get('/lang/{locale}', 'LocalizationController@switch')
-    ->name('locale')
-    ->where('locale', '(en|fr|ar)');
+	->name('locale')
+	->where('locale', '(en|fr|ar)');
 Route::get('/', 'PagesController@index');
 Route::post('/search', 'SearchController@search')->name('search');
 Route::view('/about', 'about')->name('about');
 Route::get('/contact', 'ContactController@show')
-    ->template(\App\Nova\Templates\Contact::class)
-    ->name('contact');
+	->template(\App\Nova\Templates\Contact::class)
+	->name('contact');
 Route::post('/contact', 'ContactController@send');
 Route::get('/part/{part}', 'PartsController@show')->name('part');
 Route::view('/track-order', 'track-order')->name('track');
@@ -46,27 +46,27 @@ Route::view('/checkout', 'checkout');
 Route::view('/compare', 'compare');
 Route::view('/product', 'product');
 Route::middleware('auth', 'verified')->group(function () {
-    Route::prefix('account')->group(function () {
-        Route::view('password', 'auth.passwords.change')->middleware('password.confirm');
-        Route::post('change-password', 'AccountController@changePassword')->name('password.change');
-        Route::get('profile', 'ProfileController@edit')->name('profile.edit');
-        Route::post('profile', 'ProfileController@update')->name('profile.update');
-        Route::get('shop', 'PartsController@index')->name('shop');
-        Route::get('orders', 'OrdersController@index')->name('orders');
-        // Route::get('garage', 'GarageController@show')->name('garage');
-    });
-    Route::post('/parts/add', 'PartsController@store')->name('part.add');
+	Route::prefix('account')->group(function () {
+		Route::view('password', 'auth.passwords.change')->middleware('password.confirm');
+		Route::post('change-password', 'AccountController@changePassword')->name('password.change');
+		Route::get('profile', 'ProfileController@edit')->name('profile.edit');
+		Route::post('profile', 'ProfileController@update')->name('profile.update');
+		Route::get('shop', 'PartsController@index')->name('shop');
+		Route::get('orders', 'OrdersController@index')->name('orders');
+		// Route::get('garage', 'GarageController@show')->name('garage');
+	});
+	Route::post('/parts/add', 'PartsController@store')->name('part.add');
 });
 
 // Catalog routes
 
 Route::prefix('brands/{brand}')->group(function () {
-    Route::get('{slug?}', 'BrandsController@show')->name('brand');
-    Route::prefix('{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}')->group(function () {
-        Route::get('{slug?}', 'VehiclesController@show')->name('vehicle');
-        Route::get('{vehicle_slug?}/cars/{car}/{car_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
-        Route::get('{vehicle_slug?}/cars/{car}/{slug?}', 'CarsController@show')->name('car');
-    });
+	Route::get('{slug?}', 'BrandsController@show')->name('brand');
+	Route::prefix('{brand_slug?}/models/{model}/{model_slug?}/vehicles/{vehicle}')->group(function () {
+		Route::get('{slug?}', 'VehiclesController@show')->name('vehicle');
+		Route::get('{vehicle_slug?}/cars/{car}/{car_slug?}/engines/{engine}/{slug?}', 'EnginesController@show')->name('engine');
+		Route::get('{vehicle_slug?}/cars/{car}/{slug?}', 'CarsController@show')->name('car');
+	});
 });
 
 Route::get('print/receipt/{receipt}', 'ReceiptsController@print');
@@ -81,8 +81,8 @@ Route::view('/pricing', 'pricing');
 Route::post('/newsletter', 'NewsletterController@store')->name('newsletter');
 // Wishlist routes
 Route::prefix('wishlist')->group(function () {
-    Route::get('/', 'WishlistController@index')->name('wishlist');
-    Route::post('add/{part}', 'WishlistController@add')->name('wishlist.add');
-    Route::post('remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
+	Route::get('/', 'WishlistController@index')->name('wishlist');
+	Route::post('add/{part}', 'WishlistController@add')->name('wishlist.add');
+	Route::post('remove/{part}', 'WishlistController@remove')->name('wishlist.remove');
 });
 Route::fallback('FallBackController');

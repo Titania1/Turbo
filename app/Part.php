@@ -91,226 +91,226 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class Part extends Model implements HasMedia, Buyable
 {
-    use Searchable;
-    use InteractsWithMedia;
-    use CanBeBought;
-    use SoftDeletes;
-    use Actionable;
+	use Searchable;
+	use InteractsWithMedia;
+	use CanBeBought;
+	use SoftDeletes;
+	use Actionable;
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'key_features' => 'array',
-        'price'        => 'float',
-    ];
+	/**
+	 * The attributes that should be cast.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'key_features' => 'array',
+		'price'        => 'float',
+	];
 
-    public function getFeaturesAttribute(): string
-    {
-        return json_decode($this->key_features, true);
-    }
+	public function getFeaturesAttribute(): string
+	{
+		return json_decode($this->key_features, true);
+	}
 
-    public function getBuyableIdentifier($options = null): int
-    {
-        return $this->id;
-    }
+	public function getBuyableIdentifier($options = null): int
+	{
+		return $this->id;
+	}
 
-    public function getBuyableDescription($options = null): string
-    {
-        return $this->title;
-    }
+	public function getBuyableDescription($options = null): string
+	{
+		return $this->title;
+	}
 
-    public function getBuyablePrice($options = null): float
-    {
-        return $this->price;
-    }
+	public function getBuyablePrice($options = null): float
+	{
+		return $this->price;
+	}
 
-    public function getBuyableWeight($options = null): int
-    {
-        return 0;
-    }
+	public function getBuyableWeight($options = null): int
+	{
+		return 0;
+	}
 
-    /**
-     * Get the vehicle of a part.
-     *
-     * Defines the Part to Vehicle relationship
-     *
-     **/
-    public function vehicle(): BelongsTo
-    {
-        return $this->belongsTo(Vehicle::class);
-    }
+	/**
+	 * Get the vehicle of a part.
+	 *
+	 * Defines the Part to Vehicle relationship
+	 *
+	 **/
+	public function vehicle(): BelongsTo
+	{
+		return $this->belongsTo(Vehicle::class);
+	}
 
-    public function vehicles(): BelongsToMany
-    {
-        return $this->belongsToMany(Vehicle::class);
-    }
+	public function vehicles(): BelongsToMany
+	{
+		return $this->belongsToMany(Vehicle::class);
+	}
 
-    public function getCompatibilityAttribute(): string
-    {
-        $array = $this->vehicles()->select('model')->pluck('model')->toArray();
-        $string = implode(', ', $array);
+	public function getCompatibilityAttribute(): string
+	{
+		$array = $this->vehicles()->select('model')->pluck('model')->toArray();
+		$string = implode(', ', $array);
 
-        return $string;
-    }
+		return $string;
+	}
 
-    /**
-     * Get the index name for the model.
-     */
-    public function searchableAs(): string
-    {
-        return 'parts_index';
-    }
+	/**
+	 * Get the index name for the model.
+	 */
+	public function searchableAs(): string
+	{
+		return 'parts_index';
+	}
 
-    /**
-     * Get the indexable data array for the model.
-     */
-    public function toSearchableArray(): array
-    {
-        $vehicle = $this->vehicle->only('year', 'brand', 'model', 'fuel');
+	/**
+	 * Get the indexable data array for the model.
+	 */
+	public function toSearchableArray(): array
+	{
+		$vehicle = $this->vehicle->only('year', 'brand', 'model', 'fuel');
 
-        $part = $this->only('title', 'image', 'price');
+		$part = $this->only('title', 'image', 'price');
 
-        $searchable = array_merge($part, $vehicle);
+		$searchable = array_merge($part, $vehicle);
 
-        return $searchable;
-    }
+		return $searchable;
+	}
 
-    /**
-     * Get the value used to index the model.
-     *
-     * @return mixed
-     */
-    public function getScoutKey(): string
-    {
-        return $this->title;
-    }
+	/**
+	 * Get the value used to index the model.
+	 *
+	 * @return mixed
+	 */
+	public function getScoutKey(): string
+	{
+		return $this->title;
+	}
 
-    /**
-     * Get the key name used to index the model.
-     *
-     * @return mixed
-     */
-    public function getScoutKeyName(): string
-    {
-        return 'title';
-    }
+	/**
+	 * Get the key name used to index the model.
+	 *
+	 * @return mixed
+	 */
+	public function getScoutKeyName(): string
+	{
+		return 'title';
+	}
 
-    /**
-     * Get the route key for the model.
-     */
-    public function getRouteKeyName(): string
-    {
-        return 'slug';
-    }
+	/**
+	 * Get the route key for the model.
+	 */
+	public function getRouteKeyName(): string
+	{
+		return 'slug';
+	}
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('_245x245')
-            ->width(245)
-            ->height(245)
-            ->sharpen(10);
-        $this->addMediaConversion('_40x40')
-            ->width(40)
-            ->height(40)
-            ->sharpen(10);
-        $this->addMediaConversion('_70x70')
-            ->width(70)
-            ->height(70)
-            ->sharpen(10);
-        $this->addMediaConversion('_92x92')
-            ->width(92)
-            ->height(92)
-            ->sharpen(10);
-    }
+	public function registerMediaConversions(Media $media = null): void
+	{
+		$this->addMediaConversion('_245x245')
+			->width(245)
+			->height(245)
+			->sharpen(10);
+		$this->addMediaConversion('_40x40')
+			->width(40)
+			->height(40)
+			->sharpen(10);
+		$this->addMediaConversion('_70x70')
+			->width(70)
+			->height(70)
+			->sharpen(10);
+		$this->addMediaConversion('_92x92')
+			->width(92)
+			->height(92)
+			->sharpen(10);
+	}
 
-    public function getIndexImageAttribute(): string
-    {
-        $mediaItems = $this->getMedia();
-        if ($mediaItems->isNotEmpty()) {
-            return $mediaItems[0]->getUrl('_245x245');
-        }
+	public function getIndexImageAttribute(): string
+	{
+		$mediaItems = $this->getMedia();
+		if ($mediaItems->isNotEmpty()) {
+			return $mediaItems[0]->getUrl('_245x245');
+		}
 
-        return '/images/avatar44x44.png';
-    }
+		return '/images/avatar44x44.png';
+	}
 
-    public function getCartHeaderImageAttribute(): string
-    {
-        $mediaItems = $this->getMedia();
-        if ($mediaItems->isNotEmpty()) {
-            return $mediaItems[0]->getUrl('_70x70');
-        }
+	public function getCartHeaderImageAttribute(): string
+	{
+		$mediaItems = $this->getMedia();
+		if ($mediaItems->isNotEmpty()) {
+			return $mediaItems[0]->getUrl('_70x70');
+		}
 
-        return '/images/avatar44x44.png';
-    }
+		return '/images/avatar44x44.png';
+	}
 
-    public function getNewArrivalImageAttribute(): string
-    {
-        $mediaItems = $this->getMedia();
-        if ($mediaItems->isNotEmpty()) {
-            try {
-                return $mediaItems[0]->getUrl('_92x92');
-            } catch (Exception $ex) {
-                return '/images/avatar44x44.png';
-            }
-        }
+	public function getNewArrivalImageAttribute(): string
+	{
+		$mediaItems = $this->getMedia();
+		if ($mediaItems->isNotEmpty()) {
+			try {
+				return $mediaItems[0]->getUrl('_92x92');
+			} catch (Exception $ex) {
+				return '/images/avatar44x44.png';
+			}
+		}
 
-        return '/images/avatar44x44.png';
-    }
+		return '/images/avatar44x44.png';
+	}
 
-    public function getIsHotAttribute(): bool
-    {
-        $ids = \Illuminate\Support\Facades\Redis::zrevrange('popular_parts', 0, 9);
+	public function getIsHotAttribute(): bool
+	{
+		$ids = \Illuminate\Support\Facades\Redis::zrevrange('popular_parts', 0, 9);
 
-        return in_array($this->id, $ids);
-    }
+		return in_array($this->id, $ids);
+	}
 
-    public function invoices(): BelongsToMany
-    {
-        return $this->belongsToMany(Invoice::class);
-    }
+	public function invoices(): BelongsToMany
+	{
+		return $this->belongsToMany(Invoice::class);
+	}
 
-    public function brand(): BelongsTo
-    {
-        return $this->belongsTo(Brand::class, 'vehicle_id', 'id', Vehicle::class);
-    }
+	public function brand(): BelongsTo
+	{
+		return $this->belongsTo(Brand::class, 'vehicle_id', 'id', Vehicle::class);
+	}
 
-    public function reviews(): HasMany
-    {
-        return $this->hasMany(Review::class);
-    }
+	public function reviews(): HasMany
+	{
+		return $this->hasMany(Review::class);
+	}
 
-    public function getViewsAttribute(): Redis
-    {
-        return Redis::zscore('popular_parts', $this->id);
-    }
+	public function getViewsAttribute(): Redis
+	{
+		return Redis::zscore('popular_parts', $this->id);
+	}
 
-    /**
-     * Get the user that owns the part.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo App\User
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	/**
+	 * Get the user that owns the part.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Relations\BelongsTo App\User
+	 */
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 
-    public function getBuyPriceAttribute(): InvoicePart
-    {
-        return optional(InvoicePart::where('part_id', $this->id)->first())->buyPrice;
-    }
+	public function getBuyPriceAttribute(): InvoicePart
+	{
+		return optional(InvoicePart::where('part_id', $this->id)->first())->buyPrice;
+	}
 
-    public function getSellPriceAttribute(): InvoicePart
-    {
-        return optional(InvoicePart::where('part_id', $this->id)->first())->sellPrice;
-    }
+	public function getSellPriceAttribute(): InvoicePart
+	{
+		return optional(InvoicePart::where('part_id', $this->id)->first())->sellPrice;
+	}
 
-    public function getSupplierAttribute(): InvoicePart
-    {
-        $supplier_id = optional(InvoicePart::where('part_id', $this->id)->first())->supplier_id;
+	public function getSupplierAttribute(): InvoicePart
+	{
+		$supplier_id = optional(InvoicePart::where('part_id', $this->id)->first())->supplier_id;
 
-        return optional(Supplier::find($supplier_id))->name;
-    }
+		return optional(Supplier::find($supplier_id))->name;
+	}
 }
