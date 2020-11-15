@@ -72,23 +72,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Engine extends Model
 {
-    public function brand(): BelongsTo
-    {
-        return $this->belongsTo(Brand::class);
-    }
+	public function brand(): BelongsTo
+	{
+		return $this->belongsTo(Brand::class);
+	}
 
-    public function getRouteKey(): string
-    {
-        return $this->id.'/'.$this->slug;
-    }
+	public function getRouteKey(): string
+	{
+		return $this->id.'/'.$this->slug;
+	}
 
-    public function cars(): BelongsToMany
-    {
-        return $this->belongsToMany(Car::class);
-    }
+	public function cars(): BelongsToMany
+	{
+		return $this->belongsToMany(Car::class);
+	}
 
-    public function getTypeAttribute(): string
-    {
-        return $this->cars()->select('type')->first()->type;
-    }
+	public function getTypeAttribute(): string
+	{
+		return $this->cars()->select('type')->first()->type;
+	}
 }

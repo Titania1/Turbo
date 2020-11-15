@@ -13,22 +13,22 @@ use Whitecube\NovaPage\Pages\Manager;
 
 class AppServiceProvider extends ServiceProvider
 {
-    /**
-     * Register services.
-     */
-    public function register(): void
-    {
-        app()->bind('wishlist', fn () => new WishlistFacade());
-    }
+	/**
+	 * Register services.
+	 */
+	public function register(): void
+	{
+		app()->bind('wishlist', fn () => new WishlistFacade());
+	}
 
-    /**
-     * Bootstrap any application services.
-     */
-    public function boot(Manager $pages): void
-    {
-        Model::unguard();
-        $pages->register('option', 'header', HeaderOptions::class);
-        $pages->register('option', 'footer', FooterOptions::class);
-        app('view')->addNamespace('mail', resource_path('views').'/print');
-    }
+	/**
+	 * Bootstrap any application services.
+	 */
+	public function boot(Manager $pages): void
+	{
+		Model::unguard();
+		$pages->register('option', 'header', HeaderOptions::class);
+		$pages->register('option', 'footer', FooterOptions::class);
+		app('view')->addNamespace('mail', resource_path('views').'/print');
+	}
 }

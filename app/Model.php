@@ -38,21 +38,21 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  */
 class Model extends Eloquent
 {
-    /**
-     * Get the value of the model's route key.
-     */
-    public function getRouteKey(): string
-    {
-        return $this->id.'/'.$this->slug;
-    }
+	/**
+	 * Get the value of the model's route key.
+	 */
+	public function getRouteKey(): string
+	{
+		return $this->id.'/'.$this->slug;
+	}
 
-    public function brand(): BelongsTo
-    {
-        return $this->belongsTo(Brand::class);
-    }
+	public function brand(): BelongsTo
+	{
+		return $this->belongsTo(Brand::class);
+	}
 
-    public function vehicles(): HasMany
-    {
-        return $this->hasMany(Vehicle::class);
-    }
+	public function vehicles(): HasMany
+	{
+		return $this->hasMany(Vehicle::class);
+	}
 }

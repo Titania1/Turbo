@@ -38,13 +38,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Review extends Model
 {
-    public function part(): BelongsTo
-    {
-        return $this->belongsTo(Part::class);
-    }
+	public function part(): BelongsTo
+	{
+		return $this->belongsTo(Part::class);
+	}
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 }

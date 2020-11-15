@@ -16,43 +16,43 @@ use Laravel\Nova\Http\Requests\ActionRequest;
 
 class ChangePartViews extends Action implements ShouldQueue
 {
-    use InteractsWithQueue;
-    use Queueable;
+	use InteractsWithQueue;
+	use Queueable;
 
-    /**
-     * Get the displayable name of the action.
-     */
-    public function name(): string
-    {
-        return __('Update Part View Count');
-    }
+	/**
+	 * Get the displayable name of the action.
+	 */
+	public function name(): string
+	{
+		return __('Update Part View Count');
+	}
 
-    /**
-     * Perform the action on the given models.
-     */
-    public function handle(ActionFields $fields, Collection $models)
-    {
-        foreach ($models as $model) {
-            Redis::zadd('popular_parts', $fields->score, $model->id);
-        }
-    }
+	/**
+	 * Perform the action on the given models.
+	 */
+	public function handle(ActionFields $fields, Collection $models)
+	{
+		foreach ($models as $model) {
+			Redis::zadd('popular_parts', $fields->score, $model->id);
+		}
+	}
 
-    public function handleRequest(ActionRequest $request)
-    {
-        parent::handleRequest($request);
+	public function handleRequest(ActionRequest $request)
+	{
+		parent::handleRequest($request);
 
-        return Action::message(__('Views count updated successfully!'));
-    }
+		return Action::message(__('Views count updated successfully!'));
+	}
 
-    /**
-     * Get the fields available on the action.
-     *
-     * @return array
-     */
-    public function fields()
-    {
-        return [
-            Number::make(__('Views'), 'score'),
-        ];
-    }
+	/**
+	 * Get the fields available on the action.
+	 *
+	 * @return array
+	 */
+	public function fields()
+	{
+		return [
+			Number::make(__('Views'), 'score'),
+		];
+	}
 }

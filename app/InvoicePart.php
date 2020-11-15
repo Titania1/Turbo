@@ -29,10 +29,10 @@ use Illuminate\Database\Eloquent\Model;
  */
 class InvoicePart extends Model
 {
-    /**
-     * The table associated with the model.
-     *
-     * @var string
-     */
-    protected $table = 'invoice_part';
+	/**
+	 * The table associated with the model.
+	 *
+	 * @var string
+	 */
+	protected $table = 'invoice_part';
 }

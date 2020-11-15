@@ -8,13 +8,13 @@ use Tests\TestCase;
 
 class WishlistTest extends TestCase
 {
-    /**
-     * Test wishlist index route.
-     */
-    public function test_wishlist_index_page(): void
-    {
-        $response = $this->get('/wishlist');
+	/**
+	 * Test wishlist index route.
+	 */
+	public function test_wishlist_index_page(): void
+	{
+		$response = $this->get('/wishlist');
 
-        $response->assertOk();
-    }
+		$response->assertOk();
+	}
 }

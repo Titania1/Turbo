@@ -29,8 +29,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Workshop extends Model
 {
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 }
