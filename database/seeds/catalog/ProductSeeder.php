@@ -11,32 +11,32 @@ use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
-	/**
-	 * Run the database seeds.
-	 */
-	public function run(): void
-	{
-		$products = $this->getCatalogProducts();
-		foreach ($products as $product) {
-			Product::create(['name' => $product->Description]);
-		}
-	}
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $products = $this->getCatalogProducts();
+        foreach ($products as $product) {
+            Product::create(['name' => $product->Description]);
+        }
+    }
 
-	/**
-	 * Get catalog products.
-	 *
-	 * Undocumented function long description
-	 *
-	 * @throws conditon
-	 *
-	 * @return type
-	 **/
-	private function getCatalogProducts(): Collection
-	{
-		return DB::connection('tecdoc')
-			->table('products')
-			->select('Description')
-			->distinct('Description')
-			->get();
-	}
+    /**
+     * Get catalog products.
+     *
+     * Undocumented function long description
+     *
+     * @throws conditon
+     *
+     * @return type
+     **/
+    private function getCatalogProducts(): Collection
+    {
+        return DB::connection('tecdoc')
+            ->table('products')
+            ->select('Description')
+            ->distinct('Description')
+            ->get();
+    }
 }
