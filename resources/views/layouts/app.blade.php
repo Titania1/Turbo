@@ -23,9 +23,12 @@
 	<link rel="stylesheet" href="/vendor/select2/css/select2.min.css">
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/finder.css">
-	<link rel="stylesheet" href="/css/header.css" media="(min-width: 1200px)">
-	{{-- <link rel="stylesheet" href="/css/rtl.css">
-	<link rel="stylesheet" href="/css/header-rtl.css" media="(min-width: 1200px)"> --}}
+	@if (app()->getLocale() === "ar")
+		<link rel="stylesheet" href="/css/rtl.css">
+		<link rel="stylesheet" href="/css/header-rtl.css" media="(min-width: 1200px)">
+	@else
+		<link rel="stylesheet" href="/css/header.css" media="(min-width: 1200px)">
+	@endif
 	<link rel="stylesheet" href="/css/mobile-header.css" media="(max-width: 1199px)">
 
 	<!-- Fonts -->
