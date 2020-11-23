@@ -17,7 +17,6 @@
 		"coderello/laravel-nova-lang": "^1.4",
 		"coreproc/nova-notification-feed": "^1.4",
 		"dillingham/nova-attach-many": "^1.0",
-		"emiliogrv/nova-batch-load": "*",
 		"fideloper/proxy": "^4.2",
 		"fruitcake/laravel-cors": "^2.0",
 		"genealabs/nova-map-marker-field": "^0.2.0",
@@ -142,10 +141,6 @@
 		{
 			"type": "path",
 			"url": "./nova-components/NovaPreviewResource"
-		},
-		{
-			"type": "path",
-			"url": "./nova-components/BatchLoad"
 		}
 	]
 }
