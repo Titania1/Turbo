@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Nova\Templates;
 
-use GeneaLabs\NovaMapMarkerField\MapMarker;
 use Illuminate\Http\Request;
-use SadekD\NovaOpeningHoursField\NovaOpeningHoursField;
 use Whitecube\NovaPage\Pages\Template;
+use GeneaLabs\NovaMapMarkerField\MapMarker;
+use SadekD\NovaOpeningHoursField\NovaOpeningHoursField;
 
 class Contact extends Template
 {

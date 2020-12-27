@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Brand;
-use App\Engine;
-use App\Model;
-use App\Vehicle;
-use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
+use Illuminate\Support\Facades\Storage;
+use App\{Brand, Engine, Model, Vehicle};
 
 class SearchTest extends TestCase
 {

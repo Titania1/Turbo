@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ChangePasswordRequest;
 use App\User;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\ChangePasswordRequest;
 
 class AccountController extends Controller
 {

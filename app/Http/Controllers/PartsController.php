@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Brand;
-use App\Category;
-use App\Http\Requests\StorePartRequest;
-use App\Part;
-use App\Review;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use App\Http\Requests\StorePartRequest;
+use App\{Brand, Category, Part, Review};
+use Illuminate\Http\{RedirectResponse, Request};
 
 class PartsController extends Controller
 {

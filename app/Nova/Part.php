@@ -4,18 +4,14 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use App\Nova\Actions\ChangePartViews;
-use Armincms\Fields\BelongsToMany;
-use Caddydz\NovaPreviewResource\NovaPreviewResource;
-use Emiliogrv\NovaBatchLoad\BatchLoadField;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\KeyValue;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
+use Armincms\Fields\BelongsToMany;
+use App\Nova\Actions\ChangePartViews;
+use Emiliogrv\NovaBatchLoad\BatchLoadField;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Caddydz\NovaPreviewResource\NovaPreviewResource;
 use Maatwebsite\LaravelNovaExcel\Actions\DownloadExcel;
+use Laravel\Nova\Fields\{Image, KeyValue, Number, Text, Trix};
 
 class Part extends Resource
 {

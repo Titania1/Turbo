@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactRequest;
 use App\Mail\ContactMail;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 use Swift_TransportException;
+use Illuminate\Support\Facades\Mail;
+use App\Http\Requests\ContactRequest;
+use Illuminate\Http\RedirectResponse;
 
 class ContactController extends Controller
 {

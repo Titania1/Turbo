@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
 use App\User;
 use Tests\TestCase;
+use App\Providers\RouteServiceProvider;
 
 class LoginTest extends TestCase
 {

@@ -4,15 +4,12 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use App\Nova\Order\Supplier;
 use App\OrderPart;
-use Armincms\Fields\BelongsToMany;
+use App\Nova\Order\Supplier;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany as FieldsBelongsToMany;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
+use Armincms\Fields\BelongsToMany;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\{BelongsTo, BelongsToMany as FieldsBelongsToMany, ID, Number};
 
 class Order extends Resource
 {

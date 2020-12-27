@@ -5,11 +5,10 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Facades\WishlistFacade;
-use App\Nova\Templates\FooterOptions;
-use App\Nova\Templates\HeaderOptions;
+use Whitecube\NovaPage\Pages\Manager;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
-use Whitecube\NovaPage\Pages\Manager;
+use App\Nova\Templates\{FooterOptions, HeaderOptions};
 
 class AppServiceProvider extends ServiceProvider
 {

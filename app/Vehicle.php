@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Laravel\Scout\Searchable;
-use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
-use Staudenmeir\EloquentHasManyDeep\HasRelationships;
-
+use Illuminate\Database\Eloquent\Model as Eloquent;
+use Staudenmeir\EloquentHasManyDeep\{HasManyDeep, HasRelationships};
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany, HasMany};
 /**
  * App\Vehicle.
  *

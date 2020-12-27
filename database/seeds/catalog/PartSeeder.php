@@ -4,13 +4,9 @@ declare(strict_types=1);
 
 namespace App\Seeders\Catalog;
 
-use App\Category;
-use App\Part;
-use App\Product;
-use App\User;
-use App\Vehicle;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use App\{Category, Part, Product, User, Vehicle};
 
 class PartSeeder extends Seeder
 {

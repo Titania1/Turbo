@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Supplier;
-use App\User;
+use App\{Supplier, User};
 use Illuminate\Database\Seeder;
 
 class SupplierSeeder extends Seeder

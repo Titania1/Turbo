@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Nova\Receipt;
 
-use App\Nova\Part as NovaPart;
 use App\Stock;
+use App\Nova\Part as NovaPart;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Part extends NovaPart

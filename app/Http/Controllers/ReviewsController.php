@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
+use App\{Part, Review};
 use App\Http\Requests\ReviewPartRequest;
-use App\Part;
-use App\Review;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-
+use Illuminate\Http\{RedirectResponse, Request};
 class ReviewsController extends Controller
 {
 	/**

@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\StoreContact;
-use App\User;
+use App\{StoreContact, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StoreContactPolicy

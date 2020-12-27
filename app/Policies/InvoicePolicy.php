@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Invoice;
-use App\User;
+use App\{Invoice, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class InvoicePolicy

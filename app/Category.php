@@ -4,20 +4,12 @@ declare(strict_types=1);
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Staudenmeir\EloquentHasManyDeep\HasManyDeep;
-use Staudenmeir\EloquentHasManyDeep\HasRelationships;
-
-/**
+use Spatie\MediaLibrary\{HasMedia, InteractsWithMedia};
+use Staudenmeir\EloquentHasManyDeep\{/**
  * App\Category.
  *
  * @property int                             $id
@@ -58,7 +50,9 @@ use Staudenmeir\EloquentHasManyDeep\HasRelationships;
  * @property-read int|null $sub_type_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Type[] $subTypes
  * @property-read int|null $sub_types_count
- */
+ */HasManyDeep, HasRelationships};
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany, HasMany, HasManyThrough};
+
 class Category extends Model implements HasMedia
 {
 	use HasRelationships;

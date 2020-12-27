@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Category;
-use App\Type;
+use App\{Category, Type};
 use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder

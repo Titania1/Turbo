@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Store;
-use App\User;
+use App\{Store, User};
 use Illuminate\Database\Seeder;
 
 class StoreSeeder extends Seeder

@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Seeders\Catalog;
 
-use App\Category;
-use App\Type;
+use App\{Category, Type};
 use Illuminate\Database\Seeder;
 
 class TypeSeeder extends Seeder

@@ -3,9 +3,7 @@
 declare(strict_types=1);
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\Storage;
-
+use Illuminate\Support\Facades\{Artisan, Storage};
 class DatabaseSeeder extends Seeder
 {
 	/**

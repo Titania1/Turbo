@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Profile;
-use App\User;
+use App\{Profile, User};
 use Illuminate\Database\Seeder;
 
 class UserSeeder extends Seeder

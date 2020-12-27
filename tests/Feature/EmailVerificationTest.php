@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Notifications\EmailVerificationNotification;
 use App\User;
 use Tests\TestCase;
+use App\Notifications\EmailVerificationNotification;
 
 class EmailVerificationTest extends TestCase
 {

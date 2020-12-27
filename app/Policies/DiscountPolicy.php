@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Discount;
-use App\User;
+use App\{Discount, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class DiscountPolicy

@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Seeders\Catalog;
 
-use App\Car;
-use App\Vehicle;
 use Exception;
+use App\{Car, Vehicle};
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

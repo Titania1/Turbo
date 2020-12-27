@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Garage;
-use App\User;
+use App\{Garage, User};
 use Illuminate\Database\Seeder;
 
 class GarageSeeder extends Seeder

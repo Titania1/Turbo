@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Store;
-use App\User;
+use App\{Store, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StorePolicy

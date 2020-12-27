@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Part;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Cache;
+use App\{Category, Part};
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Database\Eloquent\Builder;
 
 class PagesController extends Controller
 {

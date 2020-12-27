@@ -4,16 +4,12 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use App\Nova\Actions\PrintReceipt;
-use App\Nova\Receipt\Part;
 use App\PartReceipt;
-use Armincms\Fields\BelongsToMany;
+use App\Nova\Receipt\Part;
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\Number;
-
+use App\Nova\Actions\PrintReceipt;
+use Armincms\Fields\BelongsToMany;
+use Laravel\Nova\Fields\{BelongsTo, Boolean, DateTime, Number};
 class Receipt extends Resource
 {
 	/**

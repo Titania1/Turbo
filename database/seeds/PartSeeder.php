@@ -2,11 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Category;
-use App\Part;
-use App\User;
-use App\Vehicle;
 use Illuminate\Database\Seeder;
+use App\{Category, Part, User, Vehicle};
 
 class PartSeeder extends Seeder
 {

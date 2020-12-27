@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
-use App\Invoice;
-use App\Jobs\UpdateStockFromInvoice;
-use App\Notifications\Arrival;
-use App\User;
 use Notification;
+use App\{Invoice, User};
+use App\Notifications\Arrival;
+use App\Jobs\UpdateStockFromInvoice;
 
 class InvoiceObserver
 {

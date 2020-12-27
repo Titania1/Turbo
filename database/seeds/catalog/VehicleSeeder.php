@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace App\Seeders\Catalog;
 
-use App\Model;
-use App\Vehicle;
-use Illuminate\Database\QueryException;
-use Illuminate\Database\Seeder;
+use App\{Model, Vehicle};
 use Illuminate\Support\Collection;
+use Illuminate\Database\{QueryException, Seeder};
 
 class VehicleSeeder extends Seeder
 {

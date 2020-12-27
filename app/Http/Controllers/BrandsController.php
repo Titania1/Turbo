@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Brand;
-use App\Http\Requests\YearsBrandRequest;
-use App\Vehicle;
-use Illuminate\Support\Collection;
+use App\{Brand, Vehicle};
 use Illuminate\View\View;
+use Illuminate\Support\Collection;
+use App\Http\Requests\YearsBrandRequest;
 
 class BrandsController extends Controller
 {

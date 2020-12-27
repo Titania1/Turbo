@@ -5,12 +5,8 @@ declare(strict_types=1);
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\{BelongsTo, HasMany, ID, Image, Text};
 
 class Category extends Resource
 {

@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Newsletter;
+use Illuminate\Http\{RedirectResponse, Request};
 
 class NewsletterController extends Controller
 {

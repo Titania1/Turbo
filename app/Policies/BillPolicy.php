@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Nova\Bill;
 use App\User;
+use App\Nova\Bill;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BillPolicy

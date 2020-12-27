@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
-use App\Profile;
-use App\User;
-
+use App\{Profile, User};
 class UserObserver
 {
 	/**

@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Profile;
-use App\User;
 use Storage;
 use Tests\TestCase;
+use App\{Profile, User};
 
 class ProfileTest extends TestCase
 {

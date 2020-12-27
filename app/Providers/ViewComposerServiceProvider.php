@@ -4,13 +4,10 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
-use App\Brand;
-use App\Category;
-use App\Part;
-use App\Vehicle;
-use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
+use App\{Brand, Category, Part, Vehicle};
+use Gloudemans\Shoppingcart\Facades\Cart;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {

@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactStoreRequest;
 use App\Message;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-
+use App\Http\Requests\ContactStoreRequest;
+use Illuminate\Http\{RedirectResponse, Request};
 class MessagesController extends Controller
 {
 	/**

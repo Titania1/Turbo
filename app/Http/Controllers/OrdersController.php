@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Order;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {

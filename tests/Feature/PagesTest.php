@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Providers\RouteServiceProvider;
 use Tests\TestCase;
+use App\Providers\RouteServiceProvider;
 
 class PagesTest extends TestCase
 {

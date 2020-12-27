@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Part;
-use App\Review;
+use App\{Part, Review};
 use Illuminate\Database\Seeder;
 
 class ReviewSeeder extends Seeder

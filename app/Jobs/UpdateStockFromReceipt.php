@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace App\Jobs;
 
-use App\PartReceipt;
-use App\Stock;
+use App\{PartReceipt, Stock};
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
-
+use Illuminate\Queue\{InteractsWithQueue, SerializesModels};
 class UpdateStockFromReceipt implements ShouldQueue
 {
 	use Dispatchable;

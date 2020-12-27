@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace App\Nova\Templates;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Image;
-use Laravel\Nova\Fields\Number;
-use Laravel\Nova\Fields\Text;
 use Whitecube\NovaPage\Pages\Template;
+use Laravel\Nova\Fields\{Image, Number, Text};
 
 class HeaderOptions extends Template
 {

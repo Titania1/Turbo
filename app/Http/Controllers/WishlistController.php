@@ -5,9 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Facades\Wishlist;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\{RedirectResponse, Request};
 
 class WishlistController extends Controller
 {

@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Category;
-use App\User;
+use App\{Category, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class CategoryPolicy

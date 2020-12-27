@@ -4,15 +4,14 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use KABBOUCHI\LogsTool\LogsTool;
 use App\Nova\Dashboards\Statistics;
 use Illuminate\Support\Facades\Gate;
-use Infinety\Filemanager\FilemanagerTool;
-use Jubeki\Nova\Cards\Linkable\Linkable;
-use KABBOUCHI\LogsTool\LogsTool;
-use Laravel\Nova\Nova;
-use Laravel\Nova\NovaApplicationServiceProvider;
-use Vyuldashev\NovaPermission\NovaPermissionTool;
 use Whitecube\NovaPage\NovaPageTool;
+use Jubeki\Nova\Cards\Linkable\Linkable;
+use Infinety\Filemanager\FilemanagerTool;
+use Vyuldashev\NovaPermission\NovaPermissionTool;
+use Laravel\Nova\{Nova, NovaApplicationServiceProvider};
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {

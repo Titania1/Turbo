@@ -5,8 +5,7 @@ declare(strict_types=1);
 namespace App\Nova\Templates;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Place;
-use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\{Place, Text};
 use Whitecube\NovaPage\Pages\Template;
 
 class FooterOptions extends Template

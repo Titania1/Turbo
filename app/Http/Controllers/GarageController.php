@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Garage;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
 
 class GarageController extends Controller
 {

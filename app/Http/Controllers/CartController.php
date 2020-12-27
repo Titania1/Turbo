@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use App\Part;
-use Gloudemans\Shoppingcart\Facades\Cart;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Http\{RedirectResponse, Request};
 
 class CartController extends Controller
 {

@@ -4,12 +4,11 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Catalog;
 
-use App\Brand;
-use App\Model;
+use Tests\TestCase;
+use App\{Brand, Model};
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Storage;
-use Tests\TestCase;
 
 class BrandTest extends TestCase
 {

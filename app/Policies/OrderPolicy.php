@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Order;
-use App\User;
+use App\{Order, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class OrderPolicy

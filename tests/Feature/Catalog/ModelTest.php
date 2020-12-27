@@ -4,10 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Catalog;
 
-use App\Brand;
-use App\Model;
-use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
+use App\{Brand, Model};
+use Illuminate\Support\Facades\Storage;
 
 class ModelTest extends TestCase
 {

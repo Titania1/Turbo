@@ -5,14 +5,13 @@ declare(strict_types=1);
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use Laravel\Nova\Actions\Action;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Redis;
-use Laravel\Nova\Actions\Action;
-use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Fields\Number;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Laravel\Nova\Http\Requests\ActionRequest;
+use Laravel\Nova\Fields\{ActionFields, Number};
 
 class ChangePartViews extends Action implements ShouldQueue
 {

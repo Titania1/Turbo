@@ -2,11 +2,8 @@
 
 declare(strict_types=1);
 
-use App\Order;
-use App\Part;
-use App\Supplier;
-use App\User;
 use Illuminate\Database\Seeder;
+use App\{Order, Part, Supplier, User};
 
 class OrderSeeder extends Seeder
 {

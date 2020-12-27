@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Auth;
 
+use App\User;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {

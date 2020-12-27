@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Feature\Stock;
 
-use App\Store;
-use App\User;
 use Tests\TestCase;
+use App\{Store, User};
 
 class StoreTest extends TestCase
 {

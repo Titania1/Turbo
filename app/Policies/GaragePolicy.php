@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Garage;
-use App\User;
+use App\{Garage, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class GaragePolicy

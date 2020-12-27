@@ -4,11 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Feature;
 
-use App\Brand;
-use App\Model;
-use App\Vehicle;
-use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
+use App\{Brand, Model, Vehicle};
+use Illuminate\Support\Facades\Storage;
 
 class FinderTest extends TestCase
 {

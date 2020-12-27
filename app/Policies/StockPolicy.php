@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Stock;
-use App\User;
+use App\{Stock, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class StockPolicy

@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Client;
-use App\User;
+use App\{Client, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ClientPolicy

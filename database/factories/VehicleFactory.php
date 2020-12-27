@@ -5,8 +5,8 @@ declare(strict_types=1);
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Vehicle;
-use Faker\Generator as Faker;
 use Faker\Provider\Fakecar;
+use Faker\Generator as Faker;
 
 $factory->define(Vehicle::class, function (Faker $faker) {
 	$faker->addProvider(new Fakecar($faker));

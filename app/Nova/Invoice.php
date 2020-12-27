@@ -4,14 +4,10 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Armincms\Fields\BelongsToMany;
 use Emiliogrv\NovaBatchLoad\BatchLoadField;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\Number;
-
+use Laravel\Nova\Fields\{BelongsTo, DateTime, ID, Number};
 class Invoice extends Resource
 {
 	/**

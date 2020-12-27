@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Nova\Catalog\Article;
 use App\User;
+use App\Nova\Catalog\Article;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ArticlePolicy

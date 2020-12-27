@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Brand;
-use App\User;
+use App\{Brand, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class BrandPolicy

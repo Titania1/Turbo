@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Notifications;
 
 use App\Invoice;
-use Coreproc\NovaNotificationFeed\Notifications\NovaBroadcastMessage;
 use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
+use Illuminate\Notifications\Messages\MailMessage;
+use Coreproc\NovaNotificationFeed\Notifications\NovaBroadcastMessage;
 
 class Arrival extends Notification
 {

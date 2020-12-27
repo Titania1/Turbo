@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\SearchRequest;
 use App\Part;
 use Illuminate\View\View;
+use App\Http\Requests\SearchRequest;
 
 class SearchController extends Controller
 {

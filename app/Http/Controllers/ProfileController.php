@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UpdateProfileRequest;
 use App\Profile;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\UpdateProfileRequest;
 
 class ProfileController extends Controller
 {

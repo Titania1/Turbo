@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Seeders\Catalog;
 
-use App\Brand;
-use App\Model;
 use Exception;
+use App\{Brand, Model};
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;

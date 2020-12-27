@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use App\Client;
-use App\User;
+use App\{Client, User};
 use Illuminate\Database\Seeder;
 
 class ClientSeeder extends Seeder

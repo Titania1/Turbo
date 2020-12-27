@@ -5,9 +5,7 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 /**
  * App\Model.
  *

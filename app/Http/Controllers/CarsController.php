@@ -4,12 +4,9 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Brand;
-use App\Car;
-use App\Model;
-use App\Vehicle;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Illuminate\Http\Request;
+use App\{Brand, Car, Model, Vehicle};
 
 class CarsController extends Controller
 {

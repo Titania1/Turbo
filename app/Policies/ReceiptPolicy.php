@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Receipt;
-use App\User;
+use App\{Receipt, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ReceiptPolicy

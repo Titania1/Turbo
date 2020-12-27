@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
+use Illuminate\Http\Request;
 use Bissolli\NovaPhoneField\PhoneNumber;
 use GeneaLabs\NovaMapMarkerField\MapMarker;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\Place;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\{BelongsTo, Place, Text, Trix};
 use SadekD\NovaOpeningHoursField\NovaOpeningHoursField;
 
 class StoreContact extends Resource

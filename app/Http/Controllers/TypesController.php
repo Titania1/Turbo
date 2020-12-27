@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Type;
+use App\{Category, Type};
 use Illuminate\Http\Request;
 
 class TypesController extends Controller

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Nova;
 
-use Inspheric\NovaDefaultable\HasDefaultableFields;
-use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Inspheric\NovaDefaultable\HasDefaultableFields;
 use Titasgailius\SearchRelations\SearchesRelations;
 
 abstract class Resource extends NovaResource

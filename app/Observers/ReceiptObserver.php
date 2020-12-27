@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Observers;
 
-use App\Jobs\UpdateStockFromReceipt;
 use App\Receipt;
+use App\Jobs\UpdateStockFromReceipt;
 
 class ReceiptObserver
 {

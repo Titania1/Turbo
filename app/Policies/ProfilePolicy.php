@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace App\Policies;
 
-use App\Profile;
-use App\User;
+use App\{Profile, User};
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ProfilePolicy
