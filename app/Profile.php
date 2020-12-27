@@ -6,9 +6,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\{HasMedia, InteractsWithMedia};
 
 /**
  * App\Profile.
@@ -44,22 +43,22 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
  */
 class Profile extends Model implements HasMedia
 {
-    use InteractsWithMedia;
+	use InteractsWithMedia;
 
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 
-    public function registerMediaConversions(Media $media = null): void
-    {
-        $this->addMediaConversion('account_menu')
-            ->width(44)
-            ->height(44)
-            ->sharpen(10);
-        $this->addMediaConversion('dashboard')
-            ->width(90)
-            ->height(90)
-            ->sharpen(10);
-    }
+	public function registerMediaConversions(Media $media = null): void
+	{
+		$this->addMediaConversion('account_menu')
+			->width(44)
+			->height(44)
+			->sharpen(10);
+		$this->addMediaConversion('dashboard')
+			->width(90)
+			->height(90)
+			->sharpen(10);
+	}
 }

@@ -4,13 +4,12 @@ declare(strict_types=1);
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Relations\{HasMany, HasOne};
 
 /**
  * App\User.
@@ -83,129 +82,129 @@ use Spatie\Permission\Traits\HasRoles;
  */
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
-    use HasRoles;
-    use Billable;
+	use Notifiable;
+	use HasRoles;
+	use Billable;
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+	/**
+	 * The attributes that should be hidden for arrays.
+	 *
+	 * @var array
+	 */
+	protected $hidden = [
+		'password', 'remember_token',
+	];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+	/**
+	 * The attributes that should be cast to native types.
+	 *
+	 * @var array
+	 */
+	protected $casts = [
+		'email_verified_at' => 'datetime',
+	];
 
-    public function profile(): HasOne
-    {
-        return $this->hasOne(Profile::class);
-    }
+	public function profile(): HasOne
+	{
+		return $this->hasOne(Profile::class);
+	}
 
-    // The supplier associated with this user
-    public function supplier(): HasOne
-    {
-        return $this->hasOne(Supplier::class);
-    }
+	// The supplier associated with this user
+	public function supplier(): HasOne
+	{
+		return $this->hasOne(Supplier::class);
+	}
 
-    public function getAvatarAttribute(): string
-    {
-        if ($this->provider) {
-            return $this->profile->avatar;
-        }
-        $mediaItems = optional($this->profile)->getMedia();
-        if ($mediaItems->isNotEmpty()) {
-            return $mediaItems[0]->getFullUrl();
-        }
+	public function getAvatarAttribute(): string
+	{
+		if ($this->provider) {
+			return $this->profile->avatar;
+		}
+		$mediaItems = optional($this->profile)->getMedia();
+		if ($mediaItems->isNotEmpty()) {
+			return $mediaItems[0]->getFullUrl();
+		}
 
-        return '/images/avatar.png';
-    }
+		return '/images/avatar.png';
+	}
 
-    public function getAccountMenuAvatarAttribute(): string
-    {
-        if ($this->provider) {
-            return $this->profile->avatar;
-        }
-        $mediaItems = optional($this->profile)->getMedia() ?? collect([]);
-        if ($mediaItems->isNotEmpty()) {
-            return $mediaItems[0]->getUrl('account_menu');
-        }
+	public function getAccountMenuAvatarAttribute(): string
+	{
+		if ($this->provider) {
+			return $this->profile->avatar;
+		}
+		$mediaItems = optional($this->profile)->getMedia() ?? collect([]);
+		if ($mediaItems->isNotEmpty()) {
+			return $mediaItems[0]->getUrl('account_menu');
+		}
 
-        return '/images/avatar44x44.png';
-    }
+		return '/images/avatar44x44.png';
+	}
 
-    public function getDashboardAvatarAttribute(): string
-    {
-        if ($this->provider) {
-            return $this->profile->avatar;
-        }
-        $mediaItems = optional($this->profile)->getMedia() ?? collect([]);
-        if ($mediaItems->isNotEmpty()) {
-            return $mediaItems[0]->getUrl('dashboard');
-        }
+	public function getDashboardAvatarAttribute(): string
+	{
+		if ($this->provider) {
+			return $this->profile->avatar;
+		}
+		$mediaItems = optional($this->profile)->getMedia() ?? collect([]);
+		if ($mediaItems->isNotEmpty()) {
+			return $mediaItems[0]->getUrl('dashboard');
+		}
 
-        return '/images/avatar.png'; // Default 90x90
-    }
+		return '/images/avatar.png'; // Default 90x90
+	}
 
-    public function orders(): HasMany
-    {
-        return $this->hasMany(Order::class);
-    }
+	public function orders(): HasMany
+	{
+		return $this->hasMany(Order::class);
+	}
 
-    // The suppliers created by this user
-    public function suppliers(): HasMany
-    {
-        return $this->hasMany(Supplier::class, 'owner_id');
-    }
+	// The suppliers created by this user
+	public function suppliers(): HasMany
+	{
+		return $this->hasMany(Supplier::class, 'owner_id');
+	}
 
-    public function workshop(): HasOne
-    {
-        return $this->hasOne(Workshop::class);
-    }
+	public function workshop(): HasOne
+	{
+		return $this->hasOne(Workshop::class);
+	}
 
-    /**
-     * Get the stocks for the user.
-     *
-     * @return \Illuminate\Database\Eloquent\Collection $stocks
-     */
-    public function stocks(): HasMany
-    {
-        return $this->hasMany(Stock::class);
-    }
+	/**
+	 * Get the stocks for the user.
+	 *
+	 * @return \Illuminate\Database\Eloquent\Collection $stocks
+	 */
+	public function stocks(): HasMany
+	{
+		return $this->hasMany(Stock::class);
+	}
 
-    /**
-     * Get the store record associated with the user.
-     *
-     * @return \App\Store $store
-     */
-    public function store(): HasOne
-    {
-        return $this->hasOne(Store::class);
-    }
+	/**
+	 * Get the store record associated with the user.
+	 *
+	 * @return \App\Store $store
+	 */
+	public function store(): HasOne
+	{
+		return $this->hasOne(Store::class);
+	}
 
-    public function parts()
-    {
-        return $this->hasMany(Part::class);
-    }
+	public function parts()
+	{
+		return $this->hasMany(Part::class);
+	}
 
-    public function garage(): HasOne
-    {
-        return $this->hasOne(Garage::class);
-    }
+	public function garage(): HasOne
+	{
+		return $this->hasOne(Garage::class);
+	}
 
-    /**
-     * The channels the user receives notification broadcasts on.
-     */
-    public function receivesBroadcastNotificationsOn(): string
-    {
-        return 'users.'.$this->id;
-    }
+	/**
+	 * The channels the user receives notification broadcasts on.
+	 */
+	public function receivesBroadcastNotificationsOn(): string
+	{
+		return 'users.'.$this->id;
+	}
 }

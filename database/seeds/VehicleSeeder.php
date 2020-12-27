@@ -2,20 +2,19 @@
 
 declare(strict_types=1);
 
-use App\Brand;
-use App\Vehicle;
+use App\{Brand, Vehicle};
 use Illuminate\Database\Seeder;
 
 class VehicleSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
-    public function run(): void
-    {
-        $brands = Brand::all();
-        foreach ($brands as $brand) {
-            factory(Vehicle::class, 2)->create(['brand_id' => $brand->id]);
-        }
-    }
+	/**
+	 * Run the database seeds.
+	 */
+	public function run(): void
+	{
+		$brands = Brand::all();
+		foreach ($brands as $brand) {
+			factory(Vehicle::class, 2)->create(['brand_id' => $brand->id]);
+		}
+	}
 }

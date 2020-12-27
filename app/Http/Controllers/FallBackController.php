@@ -8,8 +8,8 @@ use Illuminate\Http\Response;
 
 class FallBackController extends Controller
 {
-    public function __invoke(): Response
-    {
-        return response()->view('errors.404', [], 404);
-    }
+	public function __invoke(): Response
+	{
+		return response()->view('errors.404', [], 404);
+	}
 }
