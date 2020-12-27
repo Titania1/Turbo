@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany};
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 /**
  * App\Engine.
  *
@@ -70,23 +72,23 @@ use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany};
  */
 class Engine extends Model
 {
-	public function brand(): BelongsTo
-	{
-		return $this->belongsTo(Brand::class);
-	}
+    public function brand(): BelongsTo
+    {
+        return $this->belongsTo(Brand::class);
+    }
 
-	public function getRouteKey(): string
-	{
-		return $this->id.'/'.$this->slug;
-	}
+    public function getRouteKey(): string
+    {
+        return $this->id.'/'.$this->slug;
+    }
 
-	public function cars(): BelongsToMany
-	{
-		return $this->belongsToMany(Car::class);
-	}
+    public function cars(): BelongsToMany
+    {
+        return $this->belongsToMany(Car::class);
+    }
 
-	public function getTypeAttribute(): string
-	{
-		return $this->cars()->select('type')->first()->type;
-	}
+    public function getTypeAttribute(): string
+    {
+        return $this->cars()->select('type')->first()->type;
+    }
 }

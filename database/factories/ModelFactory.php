@@ -8,5 +8,5 @@ use App\Model;
 use Faker\Generator as Faker;
 
 $factory->define(Model::class, fn (Faker $faker) => [
-	'name' => $faker->unique()->word,
+    'name' => $faker->unique()->word,
 ]);
