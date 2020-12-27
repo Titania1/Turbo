@@ -29,7 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Discount extends Model
 {
-	protected $casts = [
-		'expires' => 'datetime',
-	];
+    protected $casts = [
+        'expires' => 'datetime',
+    ];
 }

@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use Spatie\MediaLibrary\{HasMedia, InteractsWithMedia};
-use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
 
 /**
  * App\Type.
@@ -41,38 +43,38 @@ use Illuminate\Database\Eloquent\Relations\{BelongsTo, HasMany};
  */
 class Type extends Model implements HasMedia
 {
-	use InteractsWithMedia;
+    use InteractsWithMedia;
 
-	public function category(): BelongsTo
-	{
-		return $this->belongsTo(Category::class);
-	}
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class);
+    }
 
-	public function parts(): HasMany
-	{
-		return $this->hasMany(Part::class);
-	}
+    public function parts(): HasMany
+    {
+        return $this->hasMany(Part::class);
+    }
 
-	public function getRouteKeyName(): string
-	{
-		return 'slug';
-	}
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 
-	public function registerMediaConversions(Media $media = null): void
-	{
-		$this->addMediaConversion('_148x148')
-			->width(148)
-			->height(148)
-			->sharpen(10);
-	}
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this->addMediaConversion('_148x148')
+            ->width(148)
+            ->height(148)
+            ->sharpen(10);
+    }
 
-	public function getSubCategoryImageAttribute(): string
-	{
-		$mediaItems = $this->getMedia();
-		if ($mediaItems->isNotEmpty()) {
-			return $mediaItems[0]->getUrl('_148x148');
-		}
+    public function getSubCategoryImageAttribute(): string
+    {
+        $mediaItems = $this->getMedia();
+        if ($mediaItems->isNotEmpty()) {
+            return $mediaItems[0]->getUrl('_148x148');
+        }
 
-		return '/images/avatar44x44.png';
-	}
+        return '/images/avatar44x44.png';
+    }
 }

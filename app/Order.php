@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany};
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+
 /**
  * App\Order.
  *
@@ -37,18 +39,18 @@ use Illuminate\Database\Eloquent\Relations\{BelongsTo, BelongsToMany};
  */
 class Order extends Model
 {
-	public function user(): BelongsTo
-	{
-		return $this->belongsTo(User::class);
-	}
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
-	public function supplier(): BelongsTo
-	{
-		return $this->belongsTo(Supplier::class);
-	}
+    public function supplier(): BelongsTo
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 
-	public function parts(): BelongsToMany
-	{
-		return $this->belongsToMany(Part::class);
-	}
+    public function parts(): BelongsToMany
+    {
+        return $this->belongsToMany(Part::class);
+    }
 }

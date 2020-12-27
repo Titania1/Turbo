@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace App;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
-use Illuminate\Database\Eloquent\Relations\{HasMany, HasManyThrough};
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+
 /**
  * App\Brand.
  *
@@ -41,26 +43,26 @@ use Illuminate\Database\Eloquent\Relations\{HasMany, HasManyThrough};
  */
 class Brand extends Eloquent
 {
-	/**
-	 * Get the value of the model's route key.
-	 */
-	public function getRouteKey(): string
-	{
-		return $this->id.'/'.$this->slug;
-	}
+    /**
+     * Get the value of the model's route key.
+     */
+    public function getRouteKey(): string
+    {
+        return $this->id.'/'.$this->slug;
+    }
 
-	public function vehicles(): HasManyThrough
-	{
-		return $this->hasManyThrough(Vehicle::class, Model::class);
-	}
+    public function vehicles(): HasManyThrough
+    {
+        return $this->hasManyThrough(Vehicle::class, Model::class);
+    }
 
-	public function models(): HasMany
-	{
-		return $this->hasMany(Model::class);
-	}
+    public function models(): HasMany
+    {
+        return $this->hasMany(Model::class);
+    }
 
-	public function engines(): HasMany
-	{
-		return $this->hasMany(Engine::class);
-	}
+    public function engines(): HasMany
+    {
+        return $this->hasMany(Engine::class);
+    }
 }
