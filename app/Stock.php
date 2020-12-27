@@ -32,23 +32,23 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class Stock extends Model
 {
-    /**
-     * Get the part that owns the stock.
-     *
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo App\Part
-     */
-    public function part(): BelongsTo
-    {
-        return $this->belongsTo(Part::class);
-    }
+	/**
+	 * Get the part that owns the stock.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo App\Part
+	 */
+	public function part(): BelongsTo
+	{
+		return $this->belongsTo(Part::class);
+	}
 
-    /**
-     * Get the user that owns the stock.
-     *
-     * @return Illuminate\Database\Eloquent\Relations\BelongsTo App\User
-     */
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+	/**
+	 * Get the user that owns the stock.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo App\User
+	 */
+	public function user(): BelongsTo
+	{
+		return $this->belongsTo(User::class);
+	}
 }

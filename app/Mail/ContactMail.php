@@ -11,34 +11,34 @@ use Illuminate\Queue\SerializesModels;
 
 class ContactMail extends Mailable implements ShouldQueue
 {
-    use Queueable;
-    use SerializesModels;
+	use Queueable;
+	use SerializesModels;
 
-    // Array of email data from request object
-    public array $details;
+	// Array of email data from request object
+	public array $details;
 
-    /**
-     * Create a new message instance.
-     *
-     * @return void
-     */
-    public function __construct(array $details)
-    {
-        $this->details = $details;
-    }
+	/**
+	 * Create a new message instance.
+	 *
+	 * @return void
+	 */
+	public function __construct(array $details)
+	{
+		$this->details = $details;
+	}
 
-    /**
-     * Build the message.
-     *
-     * @return $this
-     */
-    public function build()
-    {
-        $this->from([
-            'address' => $this->details['email'],
-            'name'    => $this->details['name'],
-        ])->subject($this->details['subject'])
-            ->markdown('emails.contact')
-            ->with('details', $this->details);
-    }
+	/**
+	 * Build the message.
+	 *
+	 * @return $this
+	 */
+	public function build()
+	{
+		$this->from([
+			'address' => $this->details['email'],
+			'name'    => $this->details['name'],
+		])->subject($this->details['subject'])
+			->markdown('emails.contact')
+			->with('details', $this->details);
+	}
 }

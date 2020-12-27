@@ -8,8 +8,8 @@ use App\Stock;
 use Faker\Generator as Faker;
 
 $factory->define(
-    Stock::class,
-    fn (Faker $faker) => [
-        'quantity' => $faker->randomNumber(),
-    ]
+	Stock::class,
+	fn (Faker $faker) => [
+		'quantity' => $faker->randomNumber(),
+	]
 );
